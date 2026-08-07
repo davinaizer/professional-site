@@ -38,7 +38,7 @@ Each task should remain small enough to:
 ## Project Bootstrap
 
 - [x] Initialise the React and TypeScript application.
-- [ ] Enable strict TypeScript configuration.
+- [x] Enable strict TypeScript configuration.
 - [ ] Configure package scripts for development, build, type checking, linting, formatting, and testing.
 - [ ] Configure baseline linting and formatting.
 - [ ] Verify the application builds successfully.
