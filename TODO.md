@@ -39,9 +39,9 @@ Each task should remain small enough to:
 
 - [x] Initialise the React and TypeScript application.
 - [x] Enable strict TypeScript configuration.
-- [ ] Configure package scripts for development, build, type checking, linting, formatting, and testing.
-- [ ] Configure baseline linting and formatting.
-- [ ] Verify the application builds successfully.
+- [x] Configure package scripts for development, build, type checking, linting, and formatting.
+- [x] Configure baseline linting and formatting.
+- [x] Verify the application builds successfully.
 
 ## Application Structure
 
