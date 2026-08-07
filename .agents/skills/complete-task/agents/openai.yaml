@@ -1,0 +1,4 @@
+interface:
+  display_name: "Complete Task"
+  short_description: "Close an accepted task without planning the next"
+  default_prompt: "Use $complete-task to close the accepted task after a passing review without planning the next task."

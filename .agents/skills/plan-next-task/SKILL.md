@@ -1,66 +1,62 @@
 ---
 name: plan-next-task
-description: Define the next small Professional Site task before implementation. Use when selecting or planning a task, including when the user or current handoff already identifies it, to establish scope, constraints, completion criteria, and validation without making changes.
+description: Define the next small Professional Site task for developer approval before implementation. Use when selecting or planning work to establish its product objective, roadmap contribution, scope, completion criteria, and validation without making changes.
 ---
 
-# Plan Task
+# Plan Next Task
 
-Define one implementation-ready unit of work before coding starts.
+## Purpose
 
-## Task selection
+Turn the current roadmap state or a developer-selected objective into one small implementation plan for developer approval.
 
-Use the first source that identifies the task:
+## Inputs
 
-1. A task explicitly named by the user
-2. The `Next task` section of `docs/HANDOFF.md`
-3. The next incomplete item in `TODO.md`
+- The task named by the developer, otherwise the current handoff or next incomplete `TODO.md` item.
+- The relevant product, roadmap, architecture, decision, code, test, and repository-state evidence.
 
-Confirm the selected task is not already complete or superseded. Treat `TODO.md` as execution authority; use the handoff only as a current-state index.
+## Responsibilities
 
-## Inspection
+1. Confirm the candidate task is not complete or superseded.
+2. Confirm it supports at least one `PRODUCT_REQUIREMENTS.md` objective.
+3. Confirm it advances the current `ROADMAP.md` milestone.
+4. Inspect only the repository evidence needed to understand the task.
+5. Define the objective, scope, explicit exclusions, affected areas, risks, and material unknowns.
+6. Define measurable completion criteria and proportional validation.
+7. Propose the smallest coherent implementation sequence.
+8. Present one plan and wait for the developer to approve or revise it.
 
-Start with the minimum evidence required:
+## Boundaries
 
-1. Read the relevant sections of `docs/HANDOFF.md` and `TODO.md`.
-2. Inspect repository status.
-3. Inspect code, tests, configuration, and assets directly relevant to the task.
-4. Search `ROADMAP.md`, `docs/ARCHITECTURE.md`, and `docs/DECISIONS.md` using the task, file, and governance references from the handoff.
-5. Read enough surrounding context to interpret each relevant match correctly.
+- Do not implement or modify files.
+- Do not approve the plan on the developer's behalf.
+- Do not plan multiple future tasks in detail.
+- Do not broaden scope, reopen settled decisions without new evidence, or propose speculative abstractions.
+- Do not treat a handoff as higher authority than repository governance or developer direction.
 
-Read the complete `README.md`, `ROADMAP.md`, `docs/ARCHITECTURE.md`, or `docs/DECISIONS.md` only when:
+## Escalation
 
-- no task can be identified;
-- the handoff is missing, stale, or inconsistent with `TODO.md`;
-- a listed file or governance reference is missing or incorrect;
-- targeted inspection does not establish the wider outcome or applicable constraints;
-- the task changes architecture, dependencies, deployment, content modelling, or public behaviour; or
-- materially different approaches remain unresolved.
+Stop and return control to the developer when repository documents conflict, architecture needs to change, product requirements appear incomplete, a significant engineering or product decision is required, or the proposed task scope is no longer valid.
 
-Do not reread repository content already inspected during the current task unless it changed.
-
-## Rules
-
-- Do not implement the task.
-- Do not broaden scope or pull in deferred roadmap work.
-- Do not reopen settled decisions without new repository evidence.
-- Do not propose speculative abstractions.
-- Do not silently choose between materially different approaches; identify the decision needed.
-- State `Insufficient data` when repository evidence cannot resolve a material issue.
+State the evidence, impact, and decision required without resolving it autonomously.
 
 ## Output
 
-Provide a concise, implementation-ready plan containing only:
+Provide one concise proposed implementation plan containing:
 
-1. Task objective
-2. Current state
+1. Product objective and roadmap milestone
+2. Task objective and current evidence
 3. Scope and explicit exclusions
-4. Assumptions, risks, and blockers
+4. Assumptions, risks, blockers, and required decisions
 5. Completion criteria
-6. Smallest practical implementation plan
-7. Recommended validation commands
+6. Implementation sequence
+7. Validation
 
-Keep sections brief and omit empty sections.
+The plan becomes the single implementation contract and `review-task` baseline only after explicit developer approval.
 
-## Handoff
+## Completion criteria
 
-The approved plan is the input to manual implementation. Codex may provide focused implementation support without expanding the approved scope.
+- The task is small, coherent, evidence-backed, and testable.
+- Its product and roadmap contribution are explicit.
+- Material unknowns are resolved or returned to the developer.
+- The developer has approved the plan.
+- No implementation changes were made.

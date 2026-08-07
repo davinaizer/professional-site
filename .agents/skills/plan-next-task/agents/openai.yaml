@@ -1,4 +1,4 @@
 interface:
   display_name: "Plan Next Task"
-  short_description: "Plan the next task from current project state"
-  default_prompt: "Use $plan-next-task to define the next implementation-ready task from the current handoff and project state."
+  short_description: "Prepare one scoped task for developer approval"
+  default_prompt: "Use $plan-next-task to prepare the next small task for my approval without implementing it."

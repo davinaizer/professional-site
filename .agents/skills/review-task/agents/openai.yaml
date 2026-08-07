@@ -1,4 +1,4 @@
 interface:
   display_name: "Review Task"
-  short_description: "Review completed work against its plan"
-  default_prompt: "Use $review-task to review the completed task against its approved plan."
+  short_description: "Review completed work against its approved plan"
+  default_prompt: "Use $review-task to review the completed implementation against my approved task plan."

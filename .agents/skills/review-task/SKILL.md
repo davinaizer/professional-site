@@ -1,41 +1,73 @@
 ---
 name: review-task
-description: Review a completed Professional Site task against its approved scope and completion criteria. Use after implementation and before task handoff; do not implement fixes.
+description: Review a completed Professional Site implementation against its developer-approved task plan, repository governance, and engineering quality. Use after code-pairing and before complete-task; inspect evidence and validation without implementing fixes.
 ---
 
 # Review Task
 
 ## Purpose
 
-Review a completed implementation against the agreed task, rather than conduct an unrestricted repository audit.
+Determine whether the completed implementation satisfies the developer-approved plan and repository quality requirements.
 
-## Required inspection
+## Inputs
 
-1. Locate the current task plan from the conversation or the latest `docs/HANDOFF.md`.
-2. Inspect changed files and relevant surrounding code.
-3. Compare the work with the task objective, scope, exclusions, completion criteria, architecture, recorded decisions, and established conventions.
-4. Check, where relevant, correctness, maintainability, accessibility, semantic HTML, responsive behaviour, unnecessary complexity, dependency changes, test coverage, and build/lint results.
-5. Run the smallest relevant validation set.
+- The developer-approved task plan.
+- The completed implementation and task-scoped changes.
+- Relevant governance, code, tests, documentation, and validation evidence.
 
-## Rules
+## Responsibilities
 
-- Do not implement fixes or update the handoff.
-- Do not recommend unrelated refactoring or future roadmap work.
-- If no current task plan or handoff establishes the scope, request it; do not infer scope from the diff alone.
-- Return `CHANGES REQUIRED` when completion criteria are unmet, relevant validation fails, accessibility or functional regressions remain, or documentation no longer reflects a changed long-lived decision.
+1. Locate the approved plan; do not infer scope from the implementation or diff.
+2. Compare the implementation with its objective, scope, exclusions, completion criteria, and validation requirements.
+3. Check relevant repository governance and established architecture.
+4. Evaluate correctness, TypeScript safety, accessibility, maintainability, responsive behaviour, testing, regressions, documentation accuracy, and unnecessary complexity where applicable.
+5. Run the smallest relevant validation set needed to support the verdict.
+6. Report only evidence-backed findings.
+
+Every finding must include:
+
+- Issue
+- Evidence
+- Impact
+- Recommended fix
+
+Classify findings as:
+
+1. Blocking defects
+2. Improvements
+3. Future work
+
+## Boundaries
+
+- Do not implement fixes or modify task state.
+- Do not infer requirements from the implementation alone.
+- Do not use an unapproved handoff as the review contract.
+- Do not expand scope, require unrelated refactoring, or fail the task for optional future work.
+- Do not proceed to completion when any blocking defect remains.
+
+## Escalation
+
+Stop and return control to the developer when repository documents conflict, architecture needs to change, product requirements appear incomplete, a significant engineering or product decision is required, or the approved task scope is no longer valid.
+
+Report why the review cannot produce a valid verdict and identify the decision required.
 
 ## Output
 
-Report findings in this exact order:
+Report, in order:
 
 1. Blocking defects
-2. Important improvements
-3. Minor observations
+2. Improvements
+3. Future work
 4. Verification performed
 5. Final verdict
 
 The final verdict must be exactly `PASS` or `CHANGES REQUIRED`.
 
-## Handoff
+If the verdict is `CHANGES REQUIRED`, explicitly set the next workflow stage to `code-pairing`. Only `PASS` may proceed to `complete-task`.
 
-Only a `PASS` result may proceed to `complete-task`.
+## Completion criteria
+
+- Every applicable completion criterion was assessed against evidence.
+- Findings are classified and actionable.
+- Verification is recorded.
+- The verdict and next workflow stage are unambiguous.

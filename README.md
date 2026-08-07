@@ -127,6 +127,8 @@ complete-task
 
 The workflow intentionally separates planning, implementation assistance, review and completion.
 
+The developer approves the plan and owns implementation and significant decisions. AI supports implementation through collaborative code pairing, then reviews and validates the accepted work in separate stages.
+
 The goal is to maximise engineering understanding rather than implementation speed.
 
 ---

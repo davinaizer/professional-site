@@ -217,7 +217,7 @@ When uncertainty does not materially affect the task, choose the simplest revers
 Use the following workflow:
 
 ```text
-plan-next-task → assist-task → review-task → close-task
+plan-next-task → code-pairing → review-task → complete-task
 ```
 
 The reusable workflow skills live under `.agents/skills/`.
@@ -234,6 +234,14 @@ Do not review unfinished work.
 
 Do not begin a new task before the current one has been completed.
 
+Every workflow stage must stop and return control to the developer when:
+
+- repository documents conflict;
+- architecture needs to change;
+- product requirements appear incomplete;
+- a significant engineering or product decision is required; or
+- the approved task scope is no longer valid.
+
 ---
 
 ## `plan-next-task`
@@ -246,16 +254,20 @@ The planning step should:
 
 1. read the relevant authoritative documentation;
 2. inspect the current implementation;
-3. identify the next smallest coherent increment;
-4. state the purpose of the task;
-5. define explicit scope and non-scope;
-6. identify affected files where reasonably predictable;
-7. define acceptance criteria;
-8. identify decisions or unknowns that could materially affect implementation.
+3. confirm the task supports a product objective and advances the current roadmap milestone;
+4. identify the next smallest coherent increment;
+5. state the purpose of the task;
+6. define explicit scope and non-scope;
+7. identify affected files where reasonably predictable;
+8. define acceptance criteria and proportional validation;
+9. identify decisions or unknowns that could materially affect implementation;
+10. present one implementation plan for developer approval.
 
 Do not implement during planning.
 
 Avoid planning multiple future tasks in detail.
+
+Only the developer-approved plan becomes the implementation contract and review baseline.
 
 ---
 
@@ -267,12 +279,13 @@ Collaborate with the developer to complete the approved task while maximising un
 
 During collaboration:
 
-- explain trade-offs before coding;
+- explain the reasoning, alternatives, and trade-offs before implementation;
 - answer implementation questions;
 - generate code only when requested;
 - review code as it evolves;
 - suggest incremental improvements;
-- help unblock difficult problems;
+- help debug and unblock difficult problems;
+- identify material decisions and return them to the developer;
 - preserve agreed scope;
 - avoid taking ownership of the implementation.
 
@@ -290,6 +303,7 @@ Evaluate the completed implementation against requirements rather than merely ch
 
 Review should consider:
 
+- the approved task plan and its explicit exclusions;
 - task acceptance criteria;
 - correctness;
 - TypeScript safety;
@@ -304,17 +318,21 @@ Review should consider:
 
 Review defects only when evidence supports them.
 
+Every finding must state the issue, evidence, impact, and recommended fix.
+
 Distinguish:
 
 - blocking defects;
-- non-blocking improvements;
-- optional future work.
+- improvements;
+- future work.
 
 Do not expand the task during review.
 
+Return `PASS` or `CHANGES REQUIRED`. When changes are required, return the workflow to `code-pairing`.
+
 ---
 
-## `close-task`
+## `complete-task`
 
 Purpose:
 
@@ -324,13 +342,16 @@ Completion should:
 
 1. run relevant checks;
 2. confirm acceptance criteria;
-3. resolve or explicitly record remaining blockers;
+3. require a `PASS` from `review-task`;
 4. update `TODO.md`;
 5. update documentation when required;
 6. leave the repository in a deployable state;
-7. record meaningful follow-up work without automatically implementing it.
+7. record accepted significant decisions where appropriate;
+8. identify the next task candidate without planning it.
 
 A task is not complete solely because code was written.
+
+Do not plan the next task, create a detailed handoff, introduce architecture, make product decisions, or suggest a commit message during completion.
 
 ---
 
