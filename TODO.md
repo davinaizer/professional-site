@@ -52,7 +52,7 @@ Task boundaries should balance developer implementation effort with reliable AI-
 ## Application Structure
 
 - [x] Establish the initial source structure and application entry boundaries.
-- [ ] Create the semantic application shell and baseline page composition.
+- [x] Create the semantic application shell and baseline page composition.
 - [ ] Establish the MVP route structure and navigation behaviour.
 - [ ] Verify usable content and navigation with minimal client-side behaviour where practical.
 
