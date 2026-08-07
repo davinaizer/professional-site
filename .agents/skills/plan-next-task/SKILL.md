@@ -11,7 +11,7 @@ Turn the current roadmap state or a developer-selected objective into one small 
 
 ## Inputs
 
-- The task named by the developer, otherwise the current handoff or next incomplete `TODO.md` item.
+- The task named by the developer, otherwise the next valid incomplete `TODO.md` item.
 - The relevant product, roadmap, architecture, decision, code, test, and repository-state evidence.
 
 ## Responsibilities
@@ -31,7 +31,7 @@ Turn the current roadmap state or a developer-selected objective into one small 
 - Do not approve the plan on the developer's behalf.
 - Do not plan multiple future tasks in detail.
 - Do not broaden scope, reopen settled decisions without new evidence, or propose speculative abstractions.
-- Do not treat a handoff as higher authority than repository governance or developer direction.
+- Do not treat `TODO.md` as higher authority than repository governance or developer direction.
 
 ## Escalation
 

@@ -29,6 +29,7 @@ Each task should remain small enough to:
 # Completed Governance
 
 - [x] Create the initial `ROADMAP.md` derived from `PRODUCT_REQUIREMENTS.md`.
+- [x] Align the project-local AI workflow and skills with the developer-owned collaboration model.
 
 ---
 

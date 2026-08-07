@@ -41,7 +41,6 @@ Classify findings as:
 
 - Do not implement fixes or modify task state.
 - Do not infer requirements from the implementation alone.
-- Do not use an unapproved handoff as the review contract.
 - Do not expand scope, require unrelated refactoring, or fail the task for optional future work.
 - Do not proceed to completion when any blocking defect remains.
 

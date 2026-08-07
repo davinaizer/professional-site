@@ -39,7 +39,7 @@ Close the accepted task cleanly without beginning or planning another task.
 
 Stop and return control to the developer when repository documents conflict, architecture needs to change, product requirements appear incomplete, a significant engineering or product decision is required, or the approved task scope is no longer valid.
 
-Also stop when the final repository state no longer matches the passing review. State the evidence and required resolution; do not close the task.
+Any material change after `PASS` invalidates that verdict. Return the changed implementation to `review-task`; do not close the task until the current repository state has a matching `PASS`.
 
 ## Output
 
