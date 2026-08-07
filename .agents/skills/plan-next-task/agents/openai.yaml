@@ -1,0 +1,4 @@
+interface:
+  display_name: "Plan Next Task"
+  short_description: "Plan the next task from current project state"
+  default_prompt: "Use $plan-next-task to define the next implementation-ready task from the current handoff and project state."
