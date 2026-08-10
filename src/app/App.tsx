@@ -1,22 +1,20 @@
+import { Outlet } from "react-router";
+import PrimaryNavigation from "../components/PrimaryNavigation.tsx";
+import Footer from "./Footer.tsx";
+
 function App() {
 	return (
 		<>
 			<header>
 				<p>Professional Site</p>
+				<PrimaryNavigation />
 			</header>
 
 			<main>
-				<h1>Davi Naizer Santos</h1>
-				<p>A professional evidence application in development.</p>
-				<p>
-					This foundation will evolve to organise experience, engineering
-					decisions, and selected work.
-				</p>
+				<Outlet />
 			</main>
 
-			<footer>
-				<small>© Davi Naizer Santos</small>
-			</footer>
+			<Footer />
 		</>
 	);
 }
