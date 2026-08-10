@@ -1,7 +1,7 @@
 function Footer() {
 	return (
 		<footer>
-			<small>© Davi Naizer Santos | 2026</small>
+			<small>© DAVI NAIZER SANTOS | 2026</small>
 		</footer>
 	);
 }
