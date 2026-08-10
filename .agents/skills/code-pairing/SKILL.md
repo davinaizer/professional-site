@@ -1,6 +1,6 @@
 ---
 name: code-pairing
-description: Collaborate with the developer on an approved Professional Site task while preserving developer ownership, engineering judgement, learning, and scope. Use for implementation discussion, focused guidance, incremental code review, requested code generation, and debugging before formal review.
+description: Pair with the developer on an approved Professional Site task. Use after plan approval when the developer requests implementation discussion, focused guidance, bounded code, debugging, or incremental feedback. Preserve developer ownership and scope; do not issue the formal review verdict.
 ---
 
 # Code Pairing

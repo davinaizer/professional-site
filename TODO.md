@@ -1,7 +1,7 @@
 ---
 createdAt: 2026-08-07
 updatedAt: 2026-08-10
-version: 1.1
+version: 1.2
 status: active
 ---
 
@@ -39,6 +39,7 @@ Task boundaries should balance developer implementation effort with reliable AI-
 
 - [x] Create the initial `ROADMAP.md` derived from `PRODUCT_REQUIREMENTS.md`.
 - [x] Align the project-local AI workflow and skills with the developer-owned collaboration model.
+- [x] Optimise agent guidance discoverability and context efficiency while preserving governance semantics.
 
 ---
 

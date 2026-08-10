@@ -1,6 +1,6 @@
 ---
 name: review-task
-description: Review a completed Professional Site implementation against its developer-approved task plan, repository governance, and engineering quality. Use after code-pairing and before complete-task; inspect evidence and validation without implementing fixes.
+description: Review a finished Professional Site implementation against its approved plan and repository quality requirements. Use when the developer requests the formal task review or verdict after implementation. Return PASS or CHANGES REQUIRED without implementing fixes.
 ---
 
 # Review Task

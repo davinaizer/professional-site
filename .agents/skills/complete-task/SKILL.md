@@ -1,6 +1,6 @@
 ---
 name: complete-task
-description: Complete an accepted Professional Site task after review-task returns PASS. Use to verify completion, update execution state and necessary documentation, confirm deployability, record accepted decisions, and refresh the concise handoff with the next task candidate without planning it.
+description: Complete one accepted Professional Site task. Use only after review-task returns a current same-scope PASS and the developer asks to close or complete the task. Verify final state, update execution documentation, and refresh the concise handoff without planning the next task.
 ---
 
 # Complete Task
@@ -42,12 +42,12 @@ Keep `docs/HANDOFF.md` concise and replace its current-state content rather than
 
 - completed outcome;
 - next task candidate copied exactly from current `TODO.md`;
-- current roadmap milestone and outcome;
-- relevant implementation and governance paths;
+- current roadmap milestone and workflow state;
+- direct pointers to relevant implementation and governance evidence;
 - blockers;
-- explicit exclusions, implementation context, and deferred work that materially constrain the next task.
+- task-specific constraints or deferred work not already captured by the referenced authorities.
 
-Use `None` where a field has no applicable value. Do not include diffs, validation logs, commit history, detailed implementation instructions, or a plan for the next task. `TODO.md` remains execution authority; the handoff is a progressive-disclosure index.
+Use `None` where a field has no applicable value. Prefer pointers over copied explanations. Do not include roadmap text, architecture summaries, diffs, validation logs, commit history, detailed implementation instructions, or a plan for the next task. `TODO.md` remains execution authority; the handoff is a progressive-disclosure index.
 
 ## Escalation
 

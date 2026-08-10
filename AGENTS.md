@@ -1,144 +1,40 @@
 ---
 createdAt: 2026-08-07
-updatedAt: 2026-08-07
-version: 1.0
+updatedAt: 2026-08-10
+version: 1.1
 status: active
 ---
 
 # AGENTS.md
 
-## Repository Mission
+## Mission and role
 
-This repository exists to build a production-quality engineering product.
+Build a production-quality React and TypeScript application whose domain is professional experience. The product exists to improve frontend engineering fluency, interview readiness, reusable professional evidence, and engineering judgement.
 
-Every contribution should improve one or more of:
+Codex supports planning, implementation assistance, review, validation, documentation, and handoff. The developer owns the code, implementation plans, product and architecture decisions, and acceptance of changes. Preserve learning through implementation; explain meaningful reasoning and trade-offs before taking over work the developer is practising.
 
-- the product;
-- engineering quality;
-- learning value;
-- interview readiness;
-- professional evidence.
-
-Avoid work that improves none of these.
-
-## Role
-
-Codex supports the developer through planning, implementation assistance, review, validation, documentation, and handoff.
-
-The developer remains responsible for:
-
-- writing and understanding the code;
-- approving implementation plans;
-- architectural decisions;
-- product decisions;
-- accepting or rejecting proposed changes.
-
-Codex is a technical collaborator, not an autonomous project owner.
-
-The objective is to augment engineering judgement rather than replace it.
-
----
-
-## Product Context
-
-This repository is both:
-
-1. a production-quality professional web application;
-2. a deliberate environment for maintaining and improving modern frontend engineering skills.
-
-The application supports job applications, interview preparation, professional evidence consolidation, and frontend practice.
-
-React and TypeScript are therefore intentional product requirements rather than incidental technology choices.
-
-Do not optimise the project into a static publishing site solely because that would be technically simpler.
-
-Refer to `PRODUCT_REQUIREMENTS.md` for the canonical product definition.
-
----
-
-## Project Priorities
+Use `PRODUCT_REQUIREMENTS.md` for the canonical product definition. Do not reduce the product to a static publishing site or expand it into speculative infrastructure, content systems, or showcase-driven technology.
 
 Prioritise, in order:
 
-1. Preserve the intent defined in `PRODUCT_REQUIREMENTS.md`.
+1. Preserve product intent.
 2. Deliver useful, complete increments.
-3. Support deliberate React, TypeScript, CSS, accessibility, and frontend engineering practice.
+3. Support deliberate frontend practice.
 4. Prefer simple, maintainable solutions.
 5. Keep completed work deployable.
-6. Maintain high engineering quality without unnecessary complexity.
-7. Document meaningful product and engineering decisions.
+6. Maintain quality without unnecessary complexity.
+7. Document meaningful decisions.
 8. Avoid speculative features, abstractions, dependencies, and infrastructure.
 
-The project should demonstrate engineering judgement partly through what it deliberately does **not** build.
+Deliberate restraint is part of the product's engineering evidence.
 
----
+When multiple solutions are technically sound, prefer the option that satisfies the product requirement, represents sound production engineering, provides relevant frontend practice, and avoids unjustified complexity.
 
-## Engineering Principles
+Explain why before how, compare credible alternatives when they exist, prefer explanation over code generation where appropriate, and calibrate guidance to the task and developer request.
 
-- Prefer clarity over cleverness.
-- Apply KISS and YAGNI aggressively.
-- Apply DRY pragmatically; duplication is preferable to a premature abstraction.
-- Apply SOLID where it improves meaningful boundaries or maintainability.
-- Do not introduce abstractions before repetition or change pressure justifies them.
-- Keep changes small, focused, and reversible where practical.
-- Separate content, presentation, and behaviour where useful.
-- Prefer composition over unnecessary abstraction.
-- Use strict TypeScript.
-- Prefer semantic HTML.
-- Treat accessibility as a product requirement.
-- Build responsive behaviour intentionally.
-- Verify behaviour rather than assuming correctness.
-- Treat failing checks, warnings, regressions, and accessibility issues as defects.
-- Add dependencies only when they solve a concrete current problem.
-- Preserve established conventions unless evidence justifies changing them.
-- Optimise for maintainability rather than novelty.
-- Measure performance where performance matters rather than claiming it.
-- Avoid technology introduced primarily for signalling.
-- Keep architectural complexity proportional to demonstrated requirements.
+## Authority and context routing
 
----
-
-## Learning Principle
-
-This project deliberately supports learning through implementation.
-
-When multiple technically sound solutions exist, prefer the solution that:
-
-1. satisfies the product requirement;
-2. represents sound production engineering;
-3. provides useful practice relevant to modern frontend work;
-4. does not create unjustified complexity.
-
-Learning value is a legitimate consideration.
-
-It is not justification for unnecessary dependencies, abstractions, or features.
-
-Do not manufacture requirements merely to practise a technology.
-
----
-
-## Teaching Principle
-
-The goal of Codex is to improve the developer's engineering capability rather than maximise implementation speed.
-
-When assisting:
-
-- explain why before how;
-- discuss meaningful trade-offs;
-- compare credible alternatives when they exist;
-- prefer explanation over code generation where appropriate;
-- avoid solving problems the developer is intentionally working through;
-- adapt the level of guidance to the complexity of the task.
-
-Treat every interaction as an opportunity to improve understanding, judgement and long-term maintainability rather than simply completing work.
-
----
-
-## Documentation Authority
-
-Repository documents have an explicit authority hierarchy.
-
-Use this order when resolving conflicts:
+Resolve conflicts in this order:
 
 1. `PRODUCT_REQUIREMENTS.md`
 2. `ROADMAP.md`
@@ -146,311 +42,73 @@ Use this order when resolving conflicts:
 4. `docs/ENGINEERING_PRINCIPLES.md`
 5. `docs/DECISIONS.md`
 6. `TODO.md`
-7. Current task plan
+7. Developer-approved task plan
 8. Existing code and tests
 9. `README.md`
 
-Higher-level documents define constraints for lower-level documents.
+Use each source for its defined concern:
 
-Examples:
+- Product intent and non-goals: `PRODUCT_REQUIREMENTS.md`
+- Milestones and delivery sequence: `ROADMAP.md`
+- Long-lived technical boundaries: `docs/ARCHITECTURE.md`
+- Implementation principles: `docs/ENGINEERING_PRINCIPLES.md`
+- Accepted significant decisions and review triggers: `docs/DECISIONS.md`
+- Current execution sequence: `TODO.md`
+- Compact current-state index: `docs/HANDOFF.md`
+- Current implementation behaviour: code and tests
 
-- `PRODUCT_REQUIREMENTS.md` defines why and what the product is.
-- `ROADMAP.md` defines delivery sequencing and release scope.
-- `docs/ARCHITECTURE.md` defines long-lived technical structure.
-- `docs/ENGINEERING_PRINCIPLES.md` defines implementation principles.
-- `docs/DECISIONS.md` records significant contextual decisions and trade-offs.
-- `TODO.md` tracks current execution.
+`TODO.md` is execution authority but cannot redefine higher-level documents. `docs/HANDOFF.md` is a verified pointer into current state, not a second backlog or source of truth. Surface conflicts instead of silently choosing a lower-authority source.
 
-`TODO.md` may govern what is being worked on now, but it must not redefine product intent, roadmap scope, or architecture.
+## Workflow selector
 
-When implementation reveals that a higher-level document is no longer appropriate, surface the conflict rather than silently working around it.
-
----
-
-## Documentation Discipline
-
-Documentation is part of the engineering evidence of this project.
-
-Document decisions that explain:
-
-- why something exists;
-- why one meaningful alternative was chosen over another;
-- significant trade-offs;
-- architectural boundaries;
-- constraints future work needs to understand;
-- review triggers for decisions that may later change.
-
-Do not document:
-
-- obvious implementation details;
-- routine commands;
-- information already clear from the code;
-- speculative future architecture;
-- decisions that have not actually been made.
-
-Prefer short, meaningful documentation over exhaustive documentation.
-
-Code remains the primary source of truth for implementation behaviour.
-
----
-
-## Change Discipline
-
-- Work on one approved task at a time.
-- Do not modify unrelated files.
-- Do not silently change product scope or architecture.
-- Do not pull deferred roadmap items into the active task.
-- Do not replace working code without a concrete benefit.
-- Do not refactor unrelated code while implementing a feature.
-- Do not introduce infrastructure for hypothetical future requirements.
-- Do not duplicate documentation.
-- Keep public repository files free from secrets, private notes, confidential employer information, and unsupported claims.
-- Preserve personal versus team contribution boundaries in professional evidence.
-- Ask for clarification only when a material decision cannot be resolved from repository evidence.
-
-When uncertainty does not materially affect the task, choose the simplest reversible option and state the assumption.
-
----
-
-## Workflow
-
-Use the following workflow:
+Use exactly one stage at a time:
 
 ```text
 plan-next-task → code-pairing → review-task → complete-task
 ```
 
-The reusable workflow skills live under `.agents/skills/`.
-
-Keep the skill set intentionally small.
-
-Do not create specialised skills unless repeated workflow friction demonstrates a concrete need.
-
-Only one workflow stage should be active at a time.
-
-Do not implement while planning.
-
-Do not review unfinished work.
-
-Do not begin a new task before the current one has been completed.
-
-Every workflow stage must stop and return control to the developer when:
-
-- repository documents conflict;
-- architecture needs to change;
-- product requirements appear incomplete;
-- a significant engineering or product decision is required; or
-- the approved task scope is no longer valid.
-
----
-
-## `plan-next-task`
-
-Purpose:
-
-Convert the current roadmap state into one small, implementable task.
-
-The planning step should:
-
-1. read the relevant authoritative documentation;
-2. use `docs/HANDOFF.md` as a compact starting point when present and verify it against `TODO.md` and current repository evidence;
-3. establish the most recent relevant completed outcome, current milestone and repository state, immediate downstream outcome, and workflow stage;
-4. inspect the current implementation;
-5. confirm the task supports a product objective and advances the current roadmap milestone;
-6. identify the next smallest coherent increment;
-7. state the purpose of the task;
-8. define explicit scope and non-scope;
-9. identify affected files where reasonably predictable;
-10. define acceptance criteria and proportional validation;
-11. identify decisions or unknowns that could materially affect implementation;
-12. present one implementation plan for developer approval.
-
-Do not implement during planning.
-
-Avoid planning multiple future tasks in detail.
-
-Only the developer-approved plan becomes the implementation contract and review baseline.
-
----
-
-## `code-pairing`
-
-Purpose:
-
-Collaborate with the developer to complete the approved task while maximising understanding, engineering quality and learning.
-
-During collaboration:
-
-- explain the reasoning, alternatives, and trade-offs before implementation;
-- answer implementation questions;
-- generate code only when requested;
-- review code as it evolves;
-- suggest incremental improvements;
-- help debug and unblock difficult problems;
-- identify material decisions and return them to the developer;
-- preserve agreed scope;
-- avoid taking ownership of the implementation.
-
-The developer may write some or all implementation code directly.
-
-Codex should support that workflow rather than assume ownership of implementation.
-
----
-
-## `review-task`
-
-Purpose:
-
-Evaluate the completed implementation against requirements rather than merely checking whether it runs.
-
-Review should consider:
-
-- the approved task plan and its explicit exclusions;
-- task acceptance criteria;
-- correctness;
-- TypeScript safety;
-- accessibility;
-- maintainability;
-- unnecessary complexity;
-- architecture consistency;
-- relevant responsive behaviour;
-- testing;
-- regressions;
-- documentation accuracy.
-
-Review defects only when evidence supports them.
-
-Every finding must state the issue, evidence, impact, and recommended fix.
-
-Distinguish:
-
-- blocking defects;
-- improvements;
-- future work.
-
-Do not expand the task during review.
-
-Return `PASS` or `CHANGES REQUIRED`. When changes are required, return the workflow to `code-pairing`.
-
----
-
-## `complete-task`
-
-Purpose:
-
-Validate and close the task cleanly.
-
-Completion should:
-
-1. run relevant checks;
-2. confirm acceptance criteria;
-3. require a `PASS` from `review-task`;
-4. update `TODO.md`;
-5. update documentation when required;
-6. leave the repository in a deployable state;
-7. record accepted significant decisions where appropriate;
-8. identify the next task candidate without planning it;
-9. update `docs/HANDOFF.md` as a compact current-state index.
-
-A task is not complete solely because code was written.
-
-Do not plan the next task, create a detailed next-task plan, introduce architecture, make product decisions, or suggest a commit message during completion. Maintain `docs/HANDOFF.md` only as a compact current-state index for the next planning invocation; `TODO.md` remains execution authority.
-
----
-
-## Definition of Done
-
-Unless a task defines more specific criteria, implementation is complete when:
-
-- the intended behaviour works;
-- scope matches the approved task;
-- TypeScript checks pass;
-- relevant tests pass;
-- accessibility has been considered;
-- relevant responsive behaviour has been verified;
-- no known regression has been introduced;
-- architecture remains consistent or its change has been documented;
-- documentation affected by the task is accurate;
-- the repository remains buildable and deployable.
-
-Not every task requires every type of test or documentation update.
-
-Apply quality requirements proportionally to the change.
-
----
-
-## Decision Handling
-
-Do not silently make significant product or architectural decisions.
-
-When a meaningful decision is required:
-
-1. identify the decision;
-2. explain the relevant constraint;
-3. present the smallest credible set of alternatives;
-4. state the trade-offs;
-5. recommend one option;
-6. allow the developer to make the final decision.
-
-Once accepted, record significant long-lived decisions in `docs/DECISIONS.md`.
-
-Routine implementation choices do not require formal decision records.
-
----
-
-## Scope Control
-
-Before introducing a feature, dependency, abstraction, service, or architectural layer, ask:
-
-> What current requirement requires this?
-> Which product objective does this support?
-
-If there is no concrete answer, defer it.
-
-Before expanding a task, ask:
-
-> Is this necessary to satisfy the current acceptance criteria?
-
-If not, record it as possible follow-up work rather than implementing it.
-
----
-
-## Development
-
-Use repository-defined `pnpm` scripts for:
-
-- installation;
-- development;
-- builds;
-- type checking;
-- linting;
-- testing;
-- formatting.
-
-Do not invent alternative commands when repository scripts already provide the required operation.
-
-When development tooling changes, update this section rather than relying on undocumented conventions.
-
----
-
-## Operating Principle
-
-Prefer:
-
-- fewer moving parts;
-- explicit constraints;
-- evidence-backed decisions;
-- small deployable increments;
-- production-quality fundamentals;
-- documentation that captures reasoning;
-- deliberate practice through real implementation.
-
-Avoid:
-
-- autonomous expansion of scope;
-- excessive scaffolding;
-- speculative architecture;
-- framework-driven design;
-- unnecessary automation;
-- performative complexity;
-- replacing developer judgement with agent judgement.
+- Use `$plan-next-task` before implementation when the developer asks what to do next, requests a task plan, or selects an incomplete TODO item.
+- Use `$code-pairing` after plan approval for implementation discussion, requested bounded code, debugging, or incremental feedback.
+- Use `$review-task` only when implementation is finished and the developer requests the formal evidence-backed verdict.
+- Use `$complete-task` only after a current same-scope `PASS` to close execution state and refresh the handoff.
+
+The complete stage contracts live in `.agents/skills/`. Do not reproduce them here. Keep the skill set small; add a skill only after repeated workflow friction demonstrates a distinct reusable job.
+
+Do not implement while planning, formally review unfinished work, complete without a same-scope `PASS`, or begin a new task before completing the current one.
+
+## Repository-wide invariants
+
+- Work on one developer-approved task at a time.
+- Preserve the approved objective, scope, exclusions, and acceptance criteria.
+- Keep changes small, focused, reviewable, and deployable.
+- Prefer the simplest reversible option when uncertainty is immaterial; state the assumption.
+- For a material product, architecture, content, or engineering decision, identify the constraint, present the smallest credible alternatives and trade-offs, recommend an evidence-backed option, and leave the final choice to the developer.
+- Add dependencies, abstractions, services, or layers only for a demonstrated current requirement.
+- Replace working code only when a concrete benefit justifies the change.
+- Preserve strict TypeScript, semantic HTML, accessibility, intentional responsive behaviour, and maintainable composition.
+- Treat failing checks, warnings, regressions, and accessibility defects as defects.
+- Keep code, documentation, and professional claims evidence-backed and free from secrets, confidential material, and unsupported ownership or impact claims.
+- Preserve personal versus team contribution boundaries in professional evidence.
+- Ask for clarification only when a material decision cannot be resolved from repository evidence.
+- Document accepted rationale, meaningful alternatives, trade-offs, architectural boundaries, future constraints, and review triggers.
+- Keep documentation concise; omit routine commands, obvious implementation details, duplicated facts, speculative architecture, and unaccepted decisions.
+- Record accepted long-lived decisions in `docs/DECISIONS.md`; code remains the source of truth for implementation behaviour.
+- Modify only task-relevant files. Record optional discoveries as future candidates rather than expanding scope.
+
+Stop and return control to the developer when documents conflict, architecture must change, product requirements are incomplete, a significant decision is unresolved, or the approved task scope is no longer valid.
+
+## Development and validation
+
+Use the scripts defined in `package.json` through `pnpm`; do not invent alternate commands when a repository script exists.
+
+Validate proportionally to the change. Unless the approved task defines stricter criteria, completion requires:
+
+- intended behaviour and acceptance criteria are satisfied;
+- scope and architecture remain consistent;
+- TypeScript and relevant repository checks pass;
+- relevant tests, accessibility, and responsive behaviour are verified where applicable;
+- documentation is accurate;
+- no known regression remains;
+- the repository is buildable and deployable.
+
+Testing and documentation requirements depend on the task. Do not introduce a test runner, dependency, abstraction, or document without a concrete current need.

@@ -1,6 +1,6 @@
 ---
 name: plan-next-task
-description: Situate the current Professional Site state and define the next small task for developer approval before implementation. Use when selecting or planning work to establish where the project was, where it is, what the task enables, and its objective, scope, completion criteria, and validation without making changes.
+description: Plan one Professional Site task for developer approval. Use before implementation when the developer asks what to do next, requests a task plan, or selects an incomplete TODO item. Establish project position, scope, completion criteria, and validation without modifying files.
 ---
 
 # Plan Next Task
