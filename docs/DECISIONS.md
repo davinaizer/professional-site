@@ -1,7 +1,7 @@
 ---
 createdAt: 2026-08-07
-updatedAt: 2026-08-09
-version: 1.1
+updatedAt: 2026-08-10
+version: 1.2
 status: active
 order: ASC
 ---
@@ -16,7 +16,11 @@ order: ASC
 
 Adopting Next.js solely for its routing system would replace the current application architecture and revisit completed foundation work. The product does not currently require its server rendering, Server Component, or full-stack capabilities, so that migration would be disproportionate to the present routing requirement.
 
-**Deferred:** Loaders, actions, and other data-routing capabilities will be introduced only when required by a route. A framework migration may be reconsidered if future product requirements demonstrate a need for rendering or server capabilities that the existing architecture cannot serve proportionally.
+**Consequence:** The current application is rendered and routed on the client, so its content and navigation require JavaScript. This is an accepted limitation of the present foundation, not a claim that the product already provides no-JavaScript access.
+
+**Review triggers:** Reconsider the rendering architecture if measured accessibility, performance, resilience, discoverability, deployment, or user evidence shows that client-only rendering prevents a product requirement from being met. Any replacement must solve a demonstrated problem proportionally rather than introduce server rendering or a framework migration for technology signalling.
+
+**Deferred:** Loaders, actions, and other data-routing capabilities will be introduced only when required by a route. Server rendering, static generation, and framework migration remain undefined until a review trigger demonstrates a concrete need.
 
 ## Use Biome for baseline linting and formatting — 2026-08-07 18:00 BST
 
