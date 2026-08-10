@@ -1,32 +1,33 @@
 import { NavLink } from "react-router";
+import { routes } from "../app/routes";
 
 function PrimaryNavigation() {
 	return (
 		<nav>
 			<ul>
 				<li>
-					<NavLink to="/">Home</NavLink>
+					<NavLink to={routes.home}>Home</NavLink>
 				</li>
 				<li>
-					<NavLink to="/summary">Summary</NavLink>
+					<NavLink to={routes.summary}>Summary</NavLink>
 				</li>
 				<li>
-					<NavLink to="/experience">Experience</NavLink>
+					<NavLink to={routes.experience}>Experience</NavLink>
 				</li>
 				<li>
-					<NavLink to="/projects">Projects</NavLink>
+					<NavLink to={routes.projects}>Projects</NavLink>
 				</li>
 				<li>
-					<NavLink to="/case-studies">Case Studies</NavLink>
+					<NavLink to={routes.caseStudies}>Case Studies</NavLink>
 				</li>
 				<li>
-					<NavLink to="/engineering">Engineering</NavLink>
+					<NavLink to={routes.engineering}>Engineering</NavLink>
 				</li>
 				<li>
-					<NavLink to="/resume">Resume</NavLink>
+					<NavLink to={routes.resume}>Resume</NavLink>
 				</li>
 				<li>
-					<NavLink to="/contact">Contact</NavLink>
+					<NavLink to={routes.contact}>Contact</NavLink>
 				</li>
 			</ul>
 		</nav>

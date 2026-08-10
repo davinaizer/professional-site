@@ -1,11 +1,12 @@
 import { Link } from "react-router";
+import { routes } from "../app/routes";
 
 function NotFoundPage() {
 	return (
 		<section>
 			<h1>Page Not Found</h1>
 			<p>
-				<Link to="/">Click here to go back to the homepage.</Link>
+				<Link to={routes.home}>Click here to go back to the homepage.</Link>
 			</p>
 		</section>
 	);
