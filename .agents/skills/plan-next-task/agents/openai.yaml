@@ -1,4 +1,4 @@
 interface:
   display_name: "Plan Next Task"
-  short_description: "Prepare one scoped task for developer approval"
-  default_prompt: "Use $plan-next-task to prepare the next small task for my approval without implementing it."
+  short_description: "Situate and scope one task for approval"
+  default_prompt: "Use $plan-next-task to situate the current project state and prepare the next small task for my approval without implementing it."

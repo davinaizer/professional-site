@@ -253,15 +253,17 @@ Convert the current roadmap state into one small, implementable task.
 The planning step should:
 
 1. read the relevant authoritative documentation;
-2. inspect the current implementation;
-3. confirm the task supports a product objective and advances the current roadmap milestone;
-4. identify the next smallest coherent increment;
-5. state the purpose of the task;
-6. define explicit scope and non-scope;
-7. identify affected files where reasonably predictable;
-8. define acceptance criteria and proportional validation;
-9. identify decisions or unknowns that could materially affect implementation;
-10. present one implementation plan for developer approval.
+2. use `docs/HANDOFF.md` as a compact starting point when present and verify it against `TODO.md` and current repository evidence;
+3. establish the most recent relevant completed outcome, current milestone and repository state, immediate downstream outcome, and workflow stage;
+4. inspect the current implementation;
+5. confirm the task supports a product objective and advances the current roadmap milestone;
+6. identify the next smallest coherent increment;
+7. state the purpose of the task;
+8. define explicit scope and non-scope;
+9. identify affected files where reasonably predictable;
+10. define acceptance criteria and proportional validation;
+11. identify decisions or unknowns that could materially affect implementation;
+12. present one implementation plan for developer approval.
 
 Do not implement during planning.
 
@@ -347,11 +349,12 @@ Completion should:
 5. update documentation when required;
 6. leave the repository in a deployable state;
 7. record accepted significant decisions where appropriate;
-8. identify the next task candidate without planning it.
+8. identify the next task candidate without planning it;
+9. update `docs/HANDOFF.md` as a compact current-state index.
 
 A task is not complete solely because code was written.
 
-Do not plan the next task, create a detailed handoff, introduce architecture, make product decisions, or suggest a commit message during completion.
+Do not plan the next task, create a detailed next-task plan, introduce architecture, make product decisions, or suggest a commit message during completion. Maintain `docs/HANDOFF.md` only as a compact current-state index for the next planning invocation; `TODO.md` remains execution authority.
 
 ---
 

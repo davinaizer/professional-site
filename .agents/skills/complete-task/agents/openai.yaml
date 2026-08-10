@@ -1,4 +1,4 @@
 interface:
   display_name: "Complete Task"
-  short_description: "Close an accepted task without planning the next"
-  default_prompt: "Use $complete-task to close the accepted task after a passing review without planning the next task."
+  short_description: "Close a task and refresh its concise handoff"
+  default_prompt: "Use $complete-task to close the accepted task after a passing review and refresh the concise handoff without planning the next task."
