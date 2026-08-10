@@ -21,7 +21,7 @@ Turn the current roadmap state or a developer-selected objective into one small 
 3. Confirm it advances the current `ROADMAP.md` milestone.
 4. Inspect only the repository evidence needed to understand the task.
 5. Define the objective, scope, explicit exclusions, affected areas, risks, and material unknowns.
-6. Define measurable completion criteria and proportional validation.
+6. For each completion criterion, define the observable outcome and the evidence or proportional validation that will demonstrate it; use manual verification when automation is unjustified.
 7. Propose the smallest coherent implementation sequence.
 8. Present one plan and wait for the developer to approve or revise it.
 

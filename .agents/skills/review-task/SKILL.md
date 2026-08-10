@@ -18,9 +18,9 @@ Determine whether the completed implementation satisfies the developer-approved 
 ## Responsibilities
 
 1. Locate the approved plan; do not infer scope from the implementation or diff.
-2. Compare the implementation with its objective, scope, exclusions, completion criteria, and validation requirements.
-3. Check relevant repository governance and established architecture.
-4. Evaluate correctness, TypeScript safety, accessibility, maintainability, responsive behaviour, testing, regressions, documentation accuracy, and unnecessary complexity where applicable.
+2. Review the task contract first: compare the implementation with its objective, scope, exclusions, completion criteria, and required evidence or validation.
+3. Review engineering quality second: check relevant governance and architecture, then evaluate correctness, TypeScript safety, accessibility, maintainability, responsive behaviour, testing, regressions, documentation accuracy, and unnecessary complexity where applicable.
+4. Keep contract findings and engineering-quality findings distinct so quality preferences do not redefine the approved scope.
 5. Run the smallest relevant validation set needed to support the verdict.
 6. Report only evidence-backed findings.
 

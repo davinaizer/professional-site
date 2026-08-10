@@ -29,6 +29,16 @@ Help the developer implement the approved plan while improving understanding and
 10. Record optional discoveries as possible follow-up work rather than implementing them.
 11. Keep changes small, maintainable, testable, and deployable.
 
+## Debugging
+
+When diagnosing a defect:
+
+1. Establish the smallest proportional feedback loop that reproduces the developer's exact symptom before proposing a cause.
+2. Make the loop deterministic and fast where practical; if no reliable loop is possible, state the evidence gap and required input.
+3. Minimise the reproduction when doing so materially narrows the problem.
+4. Form falsifiable hypotheses, test one variable at a time, and retain the evidence that confirms or rejects each cause.
+5. When a fix is requested, rerun the original reproduction and add a regression check at the relevant public boundary where justified.
+
 ## Boundaries
 
 - Do not implement autonomously or take ownership of the task.
