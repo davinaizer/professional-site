@@ -1,0 +1,45 @@
+/* Predictable sizing for elements and pseudo-elements. */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* Remove browser margins so spacing is deliberately defined below. */
+*:not(dialog) {
+	margin: 0;
+}
+
+/* Prevent inherited font mismatches when controls are introduced. */
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+/* Make future media responsive by default. */
+img,
+picture,
+video,
+canvas,
+svg {
+	display: block;
+	max-width: 100%;
+}
+
+/* Keep long words and URLs from forcing horizontal overflow. */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	overflow-wrap: break-word;
+}
+
+/* Let the application shell occupy the available viewport height. */
+#root {
+	min-height: 100vh;
+}

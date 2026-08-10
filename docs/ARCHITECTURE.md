@@ -1,7 +1,7 @@
 ---
 createdAt: 2026-08-10
 updatedAt: 2026-08-10
-version: 1.0
+version: 1.1
 status: active
 ---
 
@@ -44,7 +44,10 @@ src/main.tsx
 - `src/app/` contains application-wide composition owned by the shell or router.
 - `src/pages/` contains route-level page components. Pages compose content and reusable UI for one route.
 - `src/components/` contains reusable UI that is not owned by one route.
-- `src/index.css` is the current global style entry point. More detailed styling boundaries remain undefined until the styling foundation is implemented.
+- `src/index.css` is the global style entry point and imports the global styling layers.
+- `src/styles/reset.css` establishes browser-normalising defaults.
+- `src/styles/tokens.css` defines CSS-first semantic design tokens.
+- `src/styles/global.css` applies document-level typography, content flow, and layout defaults.
 
 Keep these boundaries shallow. Introduce new layers only when a current requirement or repeated change pressure demonstrates that the existing structure is insufficient.
 
@@ -86,7 +89,7 @@ Keep code close to the route, component, or application boundary that owns it. E
 The following are not architectural commitments:
 
 - the professional-content schema and source;
-- styling layers, design tokens, and reusable visual primitives;
+- reusable visual primitives and component-level styling boundaries;
 - unit, component, end-to-end, or automated accessibility testing tools;
 - remote data loading, persistence, APIs, or server processes;
 - global client state management;

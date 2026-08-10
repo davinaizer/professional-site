@@ -1,12 +1,24 @@
 ---
 createdAt: 2026-08-07
 updatedAt: 2026-08-10
-version: 1.2
+version: 1.3
 status: active
 order: ASC
 ---
 
 # Decisions
+
+## Use reference hex values for the initial CSS token foundation — 2026-08-10
+
+**Decision:** Use the hex values defined in `docs/design/DESIGN.md` for the initial CSS token foundation. Defer OKLCH colour values until a demonstrated need justifies their adoption.
+
+**Rationale:** `docs/DESIGN_PRINCIPLES.md` establishes OKLCH as the long-term colour direction, while the current visual reference supplies specific hex values. Converting those values now would add a colour-authoring decision without a current requirement for themes, derived palettes, or token transformation. Semantic CSS custom properties preserve a clear future conversion path without changing the approved foundation visuals.
+
+**Consequence:** `src/styles/tokens.css` remains the CSS-first source for the implemented palette and uses the reference hex values. Accessibility still requires contrast verification at the point where a colour is assigned to a concrete text, control, or focus treatment.
+
+**Review triggers:** Reconsider this decision when the product needs colour modes, derived colour scales, systematic contrast adjustment, a token-generation pipeline, or another demonstrated colour-maintenance problem.
+
+**Deferred:** OKLCH conversion, derived colour tokens, theme modes, and token transformation tooling remain undefined until a review trigger is met.
 
 ## Use React Router v8 in Data Mode — 2026-08-09 23:43 BST
 
