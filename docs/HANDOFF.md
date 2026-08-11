@@ -1,7 +1,7 @@
 ---
 createdAt: 2026-08-10
 updatedAt: 2026-08-11
-version: 1.4
+version: 1.5
 status: active
 ---
 
@@ -9,30 +9,29 @@ status: active
 
 ## Completed outcome
 
-The shared application shell now applies the approved editorial styling foundation to the header, primary navigation, main-content alignment, and footer.
+The shared shell now has the approved responsive primary-navigation hierarchy: a home-linked identity, centred direct navigation, a Contact CTA, and a Work index that groups Projects and Case Studies while preserving their direct routes.
 
 ## Next task candidate
 
-Establish responsive shell and navigation behaviour.
+Establish keyboard-accessible navigation and visible focus behaviour.
 
 ## Roadmap position
 
 - **Milestone:** Milestone 1 — Application Foundation (`ROADMAP.md`)
-- **Workflow stage:** The application-shell styling task is complete; the next task has not been planned or started.
+- **Workflow stage:** The responsive shell and navigation task is complete; the next task has not been planned or started.
 
 ## Evidence pointers
 
 - `TODO.md`
-- `src/index.css`
-- `src/styles/tokens.css`
+- `src/app/App.tsx`
+- `src/app/routes.ts`
+- `src/app/router.tsx`
+- `src/components/PrimaryNavigation.tsx`
+- `src/pages/WorkPage.tsx`
 - `src/styles/global.css`
 - `src/styles/shell.css`
-- `src/app/App.tsx`
-- `src/app/Footer.tsx`
-- `src/components/PrimaryNavigation.tsx`
-- `docs/design/DESIGN.md`
-- `docs/DESIGN_PRINCIPLES.md`
-- `docs/DECISIONS.md#use-reference-hex-values-for-the-initial-css-token-foundation--2026-08-10`
+- `docs/ARCHITECTURE.md#navigation-and-rendering`
+- `docs/DECISIONS.md#use-a-centred-primary-navigation-and-work-evidence-hub--2026-08-11`
 
 ## Blockers
 
@@ -40,4 +39,5 @@ None.
 
 ## Constraints and context
 
-- Responsive shell and navigation behaviour, visible focus treatment, and broader accessibility validation remain separate `TODO.md` work.
+- Custom focus treatment and keyboard-navigation validation remain the next separate Accessibility Foundation task.
+- The final Work content and project/case-study relationships remain deferred as recorded in `docs/DECISIONS.md`.

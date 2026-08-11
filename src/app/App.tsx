@@ -1,14 +1,20 @@
-import { Outlet } from "react-router";
+import { Link, Outlet } from "react-router";
 import PrimaryNavigation from "../components/PrimaryNavigation.tsx";
 import Footer from "./Footer.tsx";
+import { routes } from "./routes.ts";
 
 function App() {
 	return (
 		<>
 			<header className="site-header">
 				<div className="site-header__inner">
-					<p className="site-header__identity">Professional Site</p>
+					<Link className="site-header__identity" to={routes.home}>
+						Professional Site
+					</Link>
 					<PrimaryNavigation />
+					<Link className="site-header__contact" to={routes.contact}>
+						Contact
+					</Link>
 				</div>
 			</header>
 

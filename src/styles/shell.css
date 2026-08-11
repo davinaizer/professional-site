@@ -10,15 +10,16 @@
 }
 
 .site-header__inner {
-	display: flex;
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
 	align-items: center;
-	justify-content: space-between;
 	gap: var(--space-3);
 	padding-block: var(--space-2);
 }
 
-.site-header__identity {
-	color: var(--color-text-secondary);
+.site-header__identity,
+.primary-navigation a,
+.site-header__contact {
 	font-family: var(--font-family-mono);
 	font-size: var(--font-size-label);
 	font-weight: var(--font-weight-medium);
@@ -27,8 +28,20 @@
 	text-transform: uppercase;
 }
 
+.site-header__identity {
+	justify-self: start;
+	color: var(--color-text-secondary);
+	text-decoration: none;
+}
+
+.primary-navigation {
+	justify-self: center;
+}
+
 .primary-navigation ul {
 	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 	gap: var(--space-2);
 	padding-inline-start: 0;
 	list-style: none;
@@ -44,12 +57,6 @@
 	color: var(--color-text-primary);
 	padding-block: var(--space-1);
 	text-decoration: none;
-	font-family: var(--font-family-mono);
-	font-size: var(--font-size-label);
-	font-weight: var(--font-weight-medium);
-	letter-spacing: var(--letter-spacing-label);
-	line-height: var(--line-height-label);
-	text-transform: uppercase;
 }
 
 .primary-navigation a:hover {
@@ -59,6 +66,20 @@
 .primary-navigation .active {
 	color: var(--color-accent);
 	border-block-end-color: var(--color-accent);
+}
+
+.site-header__contact {
+	justify-self: end;
+	border: var(--border-width-default) solid var(--color-text-primary);
+	background-color: var(--color-text-primary);
+	color: var(--color-background);
+	padding: var(--space-1) var(--space-2);
+	text-decoration: none;
+}
+
+.site-header__contact:hover {
+	background-color: transparent;
+	color: var(--color-text-primary);
 }
 
 .site-footer {
@@ -73,4 +94,21 @@
 .site-footer small {
 	color: var(--color-text-secondary);
 	font-size: var(--font-size-caption);
+}
+
+@media (max-width: 56rem) {
+	.site-header__inner {
+		grid-template-columns: minmax(0, 1fr);
+		justify-items: center;
+	}
+
+	.site-header__identity,
+	.primary-navigation,
+	.site-header__contact {
+		justify-self: center;
+	}
+
+	.primary-navigation {
+		grid-column: auto;
+	}
 }

@@ -1,7 +1,7 @@
 ---
 createdAt: 2026-08-07
 updatedAt: 2026-08-11
-version: 1.5
+version: 1.6
 status: active
 ---
 
@@ -61,7 +61,7 @@ Task boundaries should balance developer implementation effort with reliable AI-
 
 - [x] Define the initial global CSS, design tokens, typography, and spacing primitives.
 - [x] Apply the styling foundation and existing design principles to the application shell.
-- [ ] Establish responsive shell and navigation behaviour.
+- [x] Establish responsive shell and navigation behaviour.
 
 ## Accessibility Foundation
 

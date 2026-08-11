@@ -53,9 +53,9 @@ Keep these boundaries shallow. Introduce new layers only when a current requirem
 
 ## Navigation and rendering
 
-The root route renders the shared application shell and nested page routes through an outlet. The route configuration includes the MVP product areas and a catch-all not-found page.
+The root route renders the shared application shell and nested page routes through an outlet. The route configuration includes the MVP product areas, a Work index that links to Projects and Case Studies, and a catch-all not-found page.
 
-Use semantic links and document structure so navigation remains understandable and keyboard accessible. Prefer content that does not require unnecessary interaction to discover. Client-side routing is the current delivery architecture; progressive enhancement beyond semantic browser foundations remains subject to demonstrated product need and the review triggers in `docs/DECISIONS.md`.
+The shared shell provides a home-linked identity, direct routes to Experience, Work, Engineering, and Resume, and a distinct Contact link. The Summary, Projects, and Case Studies routes remain independently addressable but are not primary navigation destinations. Use semantic links and document structure so navigation remains understandable and keyboard accessible. Prefer content that does not require unnecessary interaction to discover. Client-side routing is the current delivery architecture; progressive enhancement beyond semantic browser foundations remains subject to demonstrated product need and the review triggers in `docs/DECISIONS.md`.
 
 ## Content and data
 

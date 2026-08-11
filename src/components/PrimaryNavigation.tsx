@@ -6,28 +6,16 @@ function PrimaryNavigation() {
 		<nav className="primary-navigation" aria-label="Primary">
 			<ul>
 				<li>
-					<NavLink to={routes.home}>Home</NavLink>
-				</li>
-				<li>
-					<NavLink to={routes.summary}>Summary</NavLink>
-				</li>
-				<li>
 					<NavLink to={routes.experience}>Experience</NavLink>
 				</li>
 				<li>
-					<NavLink to={routes.projects}>Projects</NavLink>
-				</li>
-				<li>
-					<NavLink to={routes.caseStudies}>Case Studies</NavLink>
+					<NavLink to={routes.work}>Work</NavLink>
 				</li>
 				<li>
 					<NavLink to={routes.engineering}>Engineering</NavLink>
 				</li>
 				<li>
 					<NavLink to={routes.resume}>Resume</NavLink>
-				</li>
-				<li>
-					<NavLink to={routes.contact}>Contact</NavLink>
 				</li>
 			</ul>
 		</nav>

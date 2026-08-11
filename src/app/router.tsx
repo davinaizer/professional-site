@@ -8,6 +8,7 @@ import NotFoundPage from "../pages/NotFoundPage.tsx";
 import ProfessionalSummaryPage from "../pages/ProfessionalSummaryPage.tsx";
 import ProjectsPage from "../pages/ProjectsPage.tsx";
 import ResumePage from "../pages/ResumePage.tsx";
+import WorkPage from "../pages/WorkPage.tsx";
 import App from "./App.tsx";
 import { routes } from "./routes.ts";
 
@@ -18,6 +19,7 @@ export default createBrowserRouter([
 			{ path: routes.home, Component: HomePage, index: true },
 			{ path: routes.summary, Component: ProfessionalSummaryPage },
 			{ path: routes.experience, Component: ExperiencePage },
+			{ path: routes.work, Component: WorkPage },
 			{ path: routes.projects, Component: ProjectsPage },
 			{ path: routes.caseStudies, Component: CaseStudiesPage },
 			{ path: routes.engineering, Component: EngineeringPage },

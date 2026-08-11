@@ -64,3 +64,9 @@ li + li {
 small {
 	font-family: var(--font-family-mono);
 }
+
+@media (max-width: 40rem) {
+	:root {
+		--layout-gutter: var(--space-2);
+	}
+}
