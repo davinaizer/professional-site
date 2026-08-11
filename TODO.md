@@ -1,7 +1,7 @@
 ---
 createdAt: 2026-08-07
 updatedAt: 2026-08-11
-version: 1.7
+version: 1.8
 status: active
 ---
 
@@ -66,7 +66,7 @@ Task boundaries should balance developer implementation effort with reliable AI-
 ## Accessibility Foundation
 
 - [x] Establish keyboard-accessible navigation and visible focus behaviour.
-- [ ] Validate shell semantics, baseline colour contrast, and representative viewport layouts.
+- [x] Validate shell semantics, baseline colour contrast, and representative viewport layouts.
 
 ## Quality Foundation
 

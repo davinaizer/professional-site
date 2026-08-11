@@ -1,7 +1,7 @@
 ---
 createdAt: 2026-08-10
 updatedAt: 2026-08-11
-version: 1.6
+version: 1.7
 status: active
 ---
 
@@ -9,24 +9,26 @@ status: active
 
 ## Completed outcome
 
-Keyboard-accessible shared navigation now has a visible `:focus-visible` indicator using the existing focus colour token. Manual keyboard and responsive verification passed.
+The shared shell has verified baseline semantics, sufficient concrete text, link, focus, and control contrast, and usable representative mobile, tablet, and desktop layouts.
 
 ## Next task candidate
 
-Validate shell semantics, baseline colour contrast, and representative viewport layouts.
+Establish the initial unit/component testing and automated accessibility-validation approach where justified.
 
 ## Roadmap position
 
 - **Milestone:** Milestone 1 — Application Foundation (`ROADMAP.md`)
-- **Workflow stage:** The keyboard-navigation and visible-focus task is complete; the next task has not been planned or started.
+- **Workflow stage:** The shell accessibility and responsive-baseline task is complete; the next task has not been planned or started.
 
 ## Evidence pointers
 
 - `TODO.md`
+- `index.html`
 - `src/app/App.tsx`
 - `src/components/PrimaryNavigation.tsx`
 - `src/styles/global.css`
 - `src/styles/shell.css`
+- `src/styles/tokens.css`
 - `docs/ARCHITECTURE.md#navigation-and-rendering`
 
 ## Blockers
