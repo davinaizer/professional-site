@@ -14,11 +14,11 @@ order: ASC
 
 **Rationale:** The shared shell and route structure now have stable browser-observable behaviour that JSDOM cannot fully verify: direct route entry, client-side navigation, and recovery from an unknown route. Chromium provides a proportional real-browser baseline without prematurely committing to cross-browser, mobile, or visual-regression coverage.
 
-**Consequence:** Playwright starts the local Vite server for the suite and covers the Work route, representative Home and primary navigation, and not-found recovery. Vitest continues to own non-interactive unit and component tests through `pnpm test`; the test directories remain separate so each runner executes only its own suite. The browser suite is not yet part of CI or `pnpm validate`.
+**Consequence:** Playwright starts the local Vite server for the suite and covers the Work route, representative Home and primary navigation, and not-found recovery. Vitest continues to own non-interactive unit and component tests through `pnpm test`; the test directories remain separate so each runner executes only its own suite. The GitHub Actions Quality Gate runs `pnpm test:e2e` alongside `pnpm validate` and `pnpm build` for pull requests targeting `main` and pushes to `main`. Deployment remains outside this workflow.
 
-**Review triggers:** Reconsider this boundary when CI is configured, a supported deployment target needs route-fallback verification, critical interactions require additional browser coverage, browser-specific defects appear, or browser-level accessibility checks provide demonstrated value.
+**Review triggers:** Reconsider this boundary when a supported deployment target needs route-fallback verification, critical interactions require additional browser coverage, browser-specific defects appear, CI execution becomes slow or unreliable, or browser-level accessibility checks provide demonstrated value.
 
-**Deferred:** CI execution, cross-browser and mobile coverage, browser-level automated accessibility checks, visual regression testing, network mocking, and broad route coverage remain undefined until a demonstrated requirement exists.
+**Deferred:** Cross-browser and mobile coverage, browser-level automated accessibility checks, visual regression testing, network mocking, broad route coverage, and deployment remain undefined until a demonstrated requirement exists.
 
 ## Use Vitest, React Testing Library, and axe checks for the initial component-test foundation — 2026-08-11
 

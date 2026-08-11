@@ -1,7 +1,7 @@
 ---
 createdAt: 2026-08-10
-updatedAt: 2026-08-11
-version: 1.9
+updatedAt: 2026-08-12
+version: 1.10
 status: active
 ---
 
@@ -9,22 +9,22 @@ status: active
 
 ## Completed outcome
 
-The application has a bounded Playwright Chromium suite for direct route entry, representative navigation, and not-found recovery. The browser suite runs through `pnpm test:e2e` and remains separate from the Vitest component suite.
+The GitHub Actions Quality Gate runs frozen pnpm installation, `pnpm validate`, `pnpm build`, and the bounded Chromium critical-journey suite for pull requests targeting and pushes to `main`.
 
 ## Next task candidate
 
-Configure CI to run the established relevant quality checks.
+Select the simplest suitable deployment target.
 
 ## Roadmap position
 
 - **Milestone:** Milestone 1 — Application Foundation (`ROADMAP.md`)
-- **Workflow stage:** End-to-end testing for a bounded set of critical journeys is complete; the next task has not been planned or started.
+- **Workflow stage:** CI configuration is complete; the next task has not been planned or started.
 
 ## Evidence pointers
 
 - `TODO.md`
 - `package.json`
-- `vite.config.ts`
+- `.github/workflows/quality-gate.yml`
 - `playwright.config.ts`
 - `e2e/critical-journeys.spec.ts`
 - `docs/ARCHITECTURE.md#quality-attributes`
@@ -36,4 +36,4 @@ None.
 
 ## Constraints and context
 
-CI execution, cross-browser and mobile coverage, browser-level automated accessibility checks, visual regression testing, network mocking, and broad route coverage remain deferred as recorded in `docs/DECISIONS.md`.
+GitHub-hosted execution remains to be confirmed by the first pull request. Deployment, cross-browser and mobile coverage, browser-level automated accessibility checks, visual regression testing, network mocking, and broad route coverage remain deferred as recorded in `docs/DECISIONS.md`.
