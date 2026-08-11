@@ -1,7 +1,7 @@
 ---
 createdAt: 2026-08-10
 updatedAt: 2026-08-11
-version: 1.8
+version: 1.9
 status: active
 ---
 
@@ -9,28 +9,26 @@ status: active
 
 ## Completed outcome
 
-The application has a Vitest, React Testing Library, and `vitest-axe` component-test foundation covering the shared shell and primary navigation. The non-interactive suite runs through `pnpm test` and `pnpm validate`.
+The application has a bounded Playwright Chromium suite for direct route entry, representative navigation, and not-found recovery. The browser suite runs through `pnpm test:e2e` and remains separate from the Vitest component suite.
 
 ## Next task candidate
 
-Establish end-to-end testing for a bounded set of critical journeys.
+Configure CI to run the established relevant quality checks.
 
 ## Roadmap position
 
 - **Milestone:** Milestone 1 — Application Foundation (`ROADMAP.md`)
-- **Workflow stage:** The initial unit/component testing and automated accessibility-validation task is complete; the next task has not been planned or started.
+- **Workflow stage:** End-to-end testing for a bounded set of critical journeys is complete; the next task has not been planned or started.
 
 ## Evidence pointers
 
 - `TODO.md`
 - `package.json`
 - `vite.config.ts`
-- `src/app/App.test.tsx`
-- `src/components/PrimaryNavigation.test.tsx`
-- `src/test/axe.ts`
-- `src/test/setup.ts`
+- `playwright.config.ts`
+- `e2e/critical-journeys.spec.ts`
 - `docs/ARCHITECTURE.md#quality-attributes`
-- `docs/DECISIONS.md#use-vitest-react-testing-library-and-axe-checks-for-the-initial-component-test-foundation--2026-08-11`
+- `docs/DECISIONS.md#use-playwright-with-chromium-for-bounded-critical-journey-testing--2026-08-11`
 
 ## Blockers
 
@@ -38,4 +36,4 @@ None.
 
 ## Constraints and context
 
-None.
+CI execution, cross-browser and mobile coverage, browser-level automated accessibility checks, visual regression testing, network mocking, and broad route coverage remain deferred as recorded in `docs/DECISIONS.md`.

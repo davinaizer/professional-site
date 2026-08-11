@@ -1,12 +1,24 @@
 ---
 createdAt: 2026-08-07
 updatedAt: 2026-08-11
-version: 1.5
+version: 1.6
 status: active
 order: ASC
 ---
 
 # Decisions
+
+## Use Playwright with Chromium for bounded critical-journey testing — 2026-08-11
+
+**Decision:** Use Playwright with a Chromium project for browser-driven testing of the current critical journeys. Run the suite through `pnpm test:e2e`. Keep Playwright specs in `e2e/` and exclude that directory from Vitest discovery.
+
+**Rationale:** The shared shell and route structure now have stable browser-observable behaviour that JSDOM cannot fully verify: direct route entry, client-side navigation, and recovery from an unknown route. Chromium provides a proportional real-browser baseline without prematurely committing to cross-browser, mobile, or visual-regression coverage.
+
+**Consequence:** Playwright starts the local Vite server for the suite and covers the Work route, representative Home and primary navigation, and not-found recovery. Vitest continues to own non-interactive unit and component tests through `pnpm test`; the test directories remain separate so each runner executes only its own suite. The browser suite is not yet part of CI or `pnpm validate`.
+
+**Review triggers:** Reconsider this boundary when CI is configured, a supported deployment target needs route-fallback verification, critical interactions require additional browser coverage, browser-specific defects appear, or browser-level accessibility checks provide demonstrated value.
+
+**Deferred:** CI execution, cross-browser and mobile coverage, browser-level automated accessibility checks, visual regression testing, network mocking, and broad route coverage remain undefined until a demonstrated requirement exists.
 
 ## Use Vitest, React Testing Library, and axe checks for the initial component-test foundation — 2026-08-11
 
@@ -18,7 +30,7 @@ order: ASC
 
 **Review triggers:** Reconsider this boundary when critical user journeys require browser-driven verification, when browser-only behaviour or CSS-dependent accessibility checks need automated coverage, when repeated test setup obscures intent, or when test execution becomes slow or unreliable.
 
-**Deferred:** End-to-end test tooling, browser-level automated accessibility testing, visual regression testing, network mocking, and broad page-level coverage remain undefined until a demonstrated requirement exists.
+**Deferred:** Browser-level automated accessibility testing, visual regression testing, network mocking, and broad page-level coverage remain undefined until a demonstrated requirement exists.
 
 ## Use a centred primary navigation and Work evidence hub — 2026-08-11
 
