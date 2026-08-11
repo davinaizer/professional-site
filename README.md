@@ -1,216 +1,50 @@
----
-createdAt: 2026-08-07
-updatedAt: 2026-08-07
-version: 1.0
-status: active
----
+# Professional Site
 
-# Professional Website
+A production-quality React and TypeScript application for communicating professional experience through clear, evidence-backed content. It is also an inspectable record of the engineering decisions, quality practices, and trade-offs behind the product.
 
-A production-quality React and TypeScript application built around a real domain: my professional experience.
+The application is being built as a real, maintainable product—not as a technology showcase. Its public content will support job applications and interviews while respecting contribution boundaries and confidentiality.
 
-This repository serves two purposes simultaneously:
+## Current status
 
-1. A professional website that supports job applications and interviews.
-2. A long-term engineering project used to maintain and improve modern frontend engineering skills.
+Milestone 1, the application foundation, is in progress. The project currently includes:
 
-The project intentionally treats implementation as part of the product. The engineering decisions, architecture, accessibility, testing and maintainability are as important as the content itself.
+- a strict TypeScript React application built with Vite;
+- route structure and keyboard-accessible primary navigation;
+- a semantic application shell with a responsive, CSS-first styling foundation;
+- component, automated accessibility, and bounded browser-journey tests; and
+- formatting, linting, type-checking, test, and build scripts.
 
----
+Professional profile, experience, project, and contact content are intentionally still in development. CI configuration and deployment are the next foundation tasks.
 
-# Why this project exists
+## Technology and quality practices
 
-Traditional portfolio websites often optimise for presentation.
+- React, TypeScript, Vite, and React Router
+- CSS custom properties and semantic component styling
+- Biome for formatting and static analysis
+- Vitest, Testing Library, and axe-based accessibility checks
+- Playwright for critical browser journeys
 
-This project optimises for engineering.
+## Run locally
 
-It exists to:
+Install dependencies with pnpm, then use the repository scripts:
 
-- strengthen React and TypeScript fluency;
-- maintain modern frontend engineering skills;
-- prepare for technical and behavioural interviews;
-- consolidate professional knowledge into reusable evidence;
-- demonstrate engineering judgement through a real product.
-
-The website is the visible outcome.
-
-Building the product is the primary objective.
-
----
-
-# Philosophy
-
-This project follows a few simple principles.
-
-- Build a product, not a marketing website.
-- Evidence over claims.
-- Learn through implementation.
-- Prefer clarity over cleverness.
-- Optimise for maintainability.
-- Deliver small, complete increments.
-- Keep the repository deployable.
-- Avoid speculative complexity.
-
-Technology is chosen to solve real problems—not to maximise signalling.
-
----
-
-# Project Goals
-
-The project should continuously improve one or more of the following:
-
-- Professional communication
-- Frontend engineering capability
-- Product engineering judgement
-- Interview readiness
-- Engineering quality
-- Reusable professional evidence
-
-Every feature should contribute to at least one of these goals.
-
----
-
-# Repository Structure
-
-```text
-.
-├── PRODUCT_REQUIREMENTS.md
-├── AGENTS.md
-├── ROADMAP.md
-├── TODO.md
-├── README.md
-│
-├── docs/
-│   ├── ARCHITECTURE.md
-│   ├── DECISIONS.md
-│   ├── design-principles.md
-│   └── ...
-│
-├── src/
-├── public/
-└── ...
+```sh
+pnpm dev
+pnpm validate
+pnpm test:e2e
+pnpm build
 ```
 
----
+`pnpm validate` runs type-checking, formatting and lint checks, and the component test suite.
 
-# Documentation
+## Project documentation
 
-This repository follows an explicit documentation hierarchy.
+- [Product requirements](PRODUCT_REQUIREMENTS.md) — product purpose, users, scope, and non-goals.
+- [Roadmap](ROADMAP.md) — delivery milestones and their completion conditions.
+- [Architecture](docs/ARCHITECTURE.md) — durable technical boundaries and quality attributes.
+- [Engineering principles](docs/ENGINEERING_PRINCIPLES.md) — implementation standards and constraints.
+- [Decisions](docs/DECISIONS.md) — accepted material product and engineering decisions.
 
-| Document                    | Purpose                                                |
-| --------------------------- | ------------------------------------------------------ |
-| `PRODUCT_REQUIREMENTS.md`   | Canonical definition of the product and project goals. |
-| `ROADMAP.md`                | Delivery strategy and milestone planning.              |
-| `AGENTS.md`                 | Working agreement for AI-assisted development.         |
-| `docs/ARCHITECTURE.md`      | Long-lived technical architecture.                     |
-| `docs/DESIGN_PRINCIPLES.md` | Long-lived design princples.                     |
-| `docs/DECISIONS.md`         | Significant engineering and product decisions.         |
-| `TODO.md`                   | Current implementation work.                           |
+## Public-content boundary
 
-Higher-level documents define constraints for lower-level documents.
-
----
-
-# Development Workflow
-
-Development follows a lightweight workflow:
-
-```text
-plan-next-task
-    ↓
-code-pairing
-    ↓
-review-task
-    ↓
-complete-task
-```
-
-The workflow intentionally separates planning, implementation assistance, review and completion.
-
-The developer approves the plan and owns implementation and significant decisions. AI supports implementation through collaborative code pairing, then reviews and validates the accepted work in separate stages.
-
-The goal is to maximise engineering understanding rather than implementation speed.
-
----
-
-# Engineering
-
-The project aims to demonstrate production-quality engineering through:
-
-- React
-- TypeScript
-- Accessibility
-- Responsive design
-- Testing
-- Progressive enhancement
-- Performance
-- Maintainable architecture
-- Thoughtful trade-offs
-
-Quality should emerge naturally from implementation rather than being explicitly advertised.
-
----
-
-# Design
-
-The interface is intentionally restrained.
-
-Design should communicate:
-
-- clarity;
-- confidence;
-- professionalism;
-- editorial quality;
-- attention to detail.
-
-Visual design exists to support comprehension rather than persuasion.
-
-See `docs/DESIGN-PRINCIPLES.md`.
-
----
-
-# AI Collaboration
-
-Development is intentionally AI-assisted.
-
-The developer remains responsible for:
-
-- implementation;
-- architecture;
-- technical decisions;
-- code quality.
-
-AI acts as a collaborative pair programmer that helps with:
-
-- planning;
-- explanation;
-- implementation guidance;
-- architecture discussions;
-- debugging;
-- review;
-- documentation.
-
-The objective is to improve engineering judgement—not replace it.
-
----
-
-# Current Status
-
-The project is under active development.
-
-Development prioritises:
-
-1. Solid engineering foundations.
-2. Small, deployable increments.
-3. Sustainable progress.
-4. Continuous learning.
-
-Features are added only when they satisfy a demonstrated product requirement.
-
----
-
-# License
-
-This repository is provided as a personal engineering project.
-
-Unless otherwise stated, all written content, professional experience and project material remain the intellectual property of the repository owner.
+This repository will contain only professional evidence suitable for public sharing. Claims will be evidence-backed, distinguish personal from team contributions, and exclude confidential employer, client, and personal information.
