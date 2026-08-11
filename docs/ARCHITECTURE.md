@@ -1,7 +1,7 @@
 ---
 createdAt: 2026-08-10
-updatedAt: 2026-08-10
-version: 1.1
+updatedAt: 2026-08-11
+version: 1.2
 status: active
 ---
 
@@ -76,7 +76,7 @@ All architectural changes must preserve:
 - proportional automated and manual validation;
 - a buildable and deployable repository.
 
-Biome owns linting, formatting, and import organisation. TypeScript owns static type checking. Testing and automated accessibility tooling remain undefined until the corresponding quality-foundation tasks establish them.
+Biome owns linting, formatting, and import organisation. TypeScript owns static type checking. Vitest owns non-interactive unit and component test execution in JSDOM. React Testing Library owns rendered DOM and semantic assertions. `vitest-axe` provides component-level automated accessibility regression checks. The `test` script runs the suite; `validate` runs type checking, Biome checks, and tests.
 
 ## Dependency and abstraction policy
 
@@ -90,7 +90,8 @@ The following are not architectural commitments:
 
 - the professional-content schema and source;
 - reusable visual primitives and component-level styling boundaries;
-- unit, component, end-to-end, or automated accessibility testing tools;
+- browser-driven end-to-end testing and critical-journey coverage;
+- browser-level automated accessibility testing, including CSS-dependent colour-contrast checks;
 - remote data loading, persistence, APIs, or server processes;
 - global client state management;
 - server rendering or static generation;

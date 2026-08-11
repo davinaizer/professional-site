@@ -1,12 +1,24 @@
 ---
 createdAt: 2026-08-07
 updatedAt: 2026-08-11
-version: 1.4
+version: 1.5
 status: active
 order: ASC
 ---
 
 # Decisions
+
+## Use Vitest, React Testing Library, and axe checks for the initial component-test foundation — 2026-08-11
+
+**Decision:** Use Vitest with JSDOM for non-interactive unit and component test execution, React Testing Library for rendered DOM and semantic assertions, and `vitest-axe` for automated accessibility regression checks. Run the suite through `pnpm test` and include it in `pnpm validate`.
+
+**Rationale:** The current application has a shared React shell and primary navigation whose semantic links, route-aware active state, and landmark structure are stable, user-observable behaviour. A Vite-aligned runner with DOM-level assertions establishes a fast, proportional feedback loop without adding browser automation or testing every placeholder route. Axe checks add useful regression coverage for detectable rendered-DOM accessibility defects and supplement—rather than replace—the existing manual keyboard, responsive, and contrast verification.
+
+**Consequence:** Tests use router-aware in-memory rendering and live beside the shell and reusable component they cover. JSDOM does not provide the canvas support required for axe's `color-contrast` rule, so that rule is disabled in component tests; concrete contrast remains subject to real-browser/manual verification. The production runtime and bundle are unaffected because the test tooling is development-only.
+
+**Review triggers:** Reconsider this boundary when critical user journeys require browser-driven verification, when browser-only behaviour or CSS-dependent accessibility checks need automated coverage, when repeated test setup obscures intent, or when test execution becomes slow or unreliable.
+
+**Deferred:** End-to-end test tooling, browser-level automated accessibility testing, visual regression testing, network mocking, and broad page-level coverage remain undefined until a demonstrated requirement exists.
 
 ## Use a centred primary navigation and Work evidence hub — 2026-08-11
 

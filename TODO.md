@@ -1,7 +1,7 @@
 ---
 createdAt: 2026-08-07
 updatedAt: 2026-08-11
-version: 1.8
+version: 1.9
 status: active
 ---
 
@@ -70,7 +70,7 @@ Task boundaries should balance developer implementation effort with reliable AI-
 
 ## Quality Foundation
 
-- [ ] Establish the initial unit/component testing and automated accessibility-validation approach where justified.
+- [x] Establish the initial unit/component testing and automated accessibility-validation approach where justified.
 - [ ] Establish end-to-end testing for a bounded set of critical journeys.
 - [ ] Configure CI to run the established relevant quality checks.
 
