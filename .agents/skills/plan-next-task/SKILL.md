@@ -20,23 +20,28 @@ Turn the current roadmap state or a developer-selected objective into one small 
 1. Establish the developer's position by identifying the current milestone, most recent relevant completed outcome, candidate task, and immediate downstream outcome.
 2. Use `docs/HANDOFF.md` as a compact starting point when it is present, but verify it against `TODO.md`, repository status, and relevant implementation evidence. `TODO.md` remains execution authority.
 3. Confirm the candidate task is not complete or superseded.
-4. Confirm it supports at least one `PRODUCT_REQUIREMENTS.md` objective.
-5. Confirm it advances the current `ROADMAP.md` milestone.
-6. Inspect only the repository evidence needed to understand the task. Escalate to broader documentation only when the handoff is missing, stale, inconsistent, insufficient, or the task could affect architecture, dependencies, deployment, or public behaviour.
-7. Define the objective, scope, explicit exclusions, affected areas, risks, and material unknowns.
-8. For each completion criterion, define the observable outcome and the evidence or proportional validation that will demonstrate it; use manual verification when automation is unjustified.
-9. Propose the smallest coherent implementation sequence.
-10. Present one plan and wait for the developer to approve or revise it.
+4. Apply one governance gate before planning. Confirm that the task:
+   - supports a `PRODUCT_REQUIREMENTS.md` objective and advances the current `ROADMAP.md` milestone;
+   - preserves relevant architecture and accepted decisions;
+   - has a small, independently reviewable scope; and
+   - has no unresolved material decision.
+5. Inspect only the repository evidence needed to understand the task. Escalate to broader documentation only when the handoff is missing, stale, inconsistent, insufficient, or the task could affect architecture, dependencies, deployment, or public behaviour.
+6. Define an observable objective; explicit scope and exclusions; affected areas; assumptions, risks, blockers, and material unknowns.
+7. For each completion criterion, define the observable outcome and the evidence or proportional validation that will demonstrate it; use manual verification when automation is unjustified.
+8. Propose the smallest coherent implementation sequence.
+9. Present one plan and wait for the developer to approve or revise it.
 
 ## Boundaries
 
-- Do not implement or modify files.
+- Do not implement or modify files while proposing the plan.
 - Do not approve the plan on the developer's behalf.
 - Do not plan multiple future tasks in detail.
 - Do not broaden scope, reopen settled decisions without new evidence, or propose speculative abstractions.
 - Do not treat `TODO.md` as higher authority than repository governance or developer direction.
 - Do not reproduce the roadmap, TODO history, commit log, or detailed future tasks.
 - Describe only the immediate downstream outcome; do not plan it.
+
+After explicit developer approval, save the approved plan in `docs/plans/` only when it has a material decision, multiple acceptance criteria, handoff risk, or expected multi-session work. Treat this as an approval-authorised documentation action; otherwise, do not create a plan file.
 
 ## Escalation
 

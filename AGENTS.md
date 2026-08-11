@@ -76,6 +76,12 @@ The complete stage contracts live in `.agents/skills/`. Do not reproduce them he
 
 Do not implement while planning, formally review unfinished work, complete without a same-scope `PASS`, or begin a new task before completing the current one.
 
+## Approved plan records
+
+An explicitly developer-approved task plan is the implementation and review contract whether it remains in the approved conversation or is saved in the repository.
+
+After approval, `plan-next-task` may save the contract in `docs/plans/` only when the task has a material decision, multiple acceptance criteria, handoff risk, or expected multi-session work. This is a narrow, approval-authorised documentation action, not implementation. Otherwise, do not create a plan file.
+
 ## Repository-wide invariants
 
 - Work on one developer-approved task at a time.
