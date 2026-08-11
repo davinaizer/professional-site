@@ -5,9 +5,11 @@ import Footer from "./Footer.tsx";
 function App() {
 	return (
 		<>
-			<header>
-				<p>Professional Site</p>
-				<PrimaryNavigation />
+			<header className="site-header">
+				<div className="site-header__inner">
+					<p className="site-header__identity">Professional Site</p>
+					<PrimaryNavigation />
+				</div>
 			</header>
 
 			<main>

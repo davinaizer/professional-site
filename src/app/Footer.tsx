@@ -1,7 +1,9 @@
 function Footer() {
 	return (
-		<footer>
-			<small>© DAVI NAIZER SANTOS | 2026</small>
+		<footer className="site-footer">
+			<div className="site-footer__inner">
+				<small>© DAVI NAIZER SANTOS | 2026</small>
+			</div>
 		</footer>
 	);
 }

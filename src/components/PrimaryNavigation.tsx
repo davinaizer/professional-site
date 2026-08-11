@@ -3,7 +3,7 @@ import { routes } from "../app/routes";
 
 function PrimaryNavigation() {
 	return (
-		<nav>
+		<nav className="primary-navigation" aria-label="Primary">
 			<ul>
 				<li>
 					<NavLink to={routes.home}>Home</NavLink>
