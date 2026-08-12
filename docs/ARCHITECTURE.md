@@ -1,7 +1,7 @@
 ---
 createdAt: 2026-08-10
 updatedAt: 2026-08-12
-version: 1.4
+version: 1.5
 status: active
 ---
 
@@ -60,9 +60,9 @@ The shared shell provides a home-linked identity, direct routes to Experience, W
 
 ## Content and data
 
-Current page content is colocated with route components. Public professional content is an editorially approved projection for identity, professional summary, experience, resume access, and contact. Home composes this core content and has no separate content model.
+Current page content is colocated with route components. `src/content/professional.ts` owns the initial local TypeScript contract for the editorially approved public projection: identity, professional summary, experience, resume access, and contact. Home composes this core content and has no separate content model.
 
-The concrete public-content representation and source remain intentionally undefined. Do not introduce a CMS, database, API, state-management library, content abstraction, or PKM integration until a current product requirement or repeated maintenance problem justifies it. PKM evidence and source-governance metadata remain private; public content must preserve evidence accuracy, contribution boundaries, confidentiality, chronology, and reuse requirements from `PRODUCT_REQUIREMENTS.md`.
+Content remains static and manually curated in the site. Do not introduce a CMS, database, API, state-management library, additional content abstraction, or PKM integration until a current product requirement or repeated maintenance problem justifies it. PKM evidence and source-governance metadata remain private; public content must preserve evidence accuracy, contribution boundaries, confidentiality, chronology, and reuse requirements from `PRODUCT_REQUIREMENTS.md`.
 
 ## Quality attributes
 
@@ -89,7 +89,7 @@ Keep code close to the route, component, or application boundary that owns it. E
 
 The following are not architectural commitments:
 
-- the concrete public-content representation and source;
+- a PKM export/import format or toolchain;
 - PKM integration;
 - reusable visual primitives and component-level styling boundaries;
 - browser-level automated accessibility testing, including CSS-dependent colour-contrast checks;

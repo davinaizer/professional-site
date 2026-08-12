@@ -1,12 +1,24 @@
 ---
 createdAt: 2026-08-07
 updatedAt: 2026-08-12
-version: 1.10
+version: 1.12
 status: active
 order: ASC
 ---
 
 # Decisions
+
+## Use a local TypeScript contract for public professional content — 2026-08-12
+
+**Decision:** Use `src/content/professional.ts` as the initial local, typed contract for the public professional-content projection. It exports types for public links, identity, summary, experience entries, resume access, and the aggregate projection. Content remains static and manually curated in the site; this task introduces no content values.
+
+**Rationale:** Identity, summary, and experience information will be reused across core routes, so route-local definitions would duplicate a known public boundary. A TypeScript module gives strict compile-time checking and straightforward React imports without adding parsing, runtime validation, dependencies, or build complexity. Markdown is better suited to future narrative content, while JSON becomes useful only when the PKM can produce an accepted public export that warrants a validated import boundary.
+
+**Consequence:** `src/content/professional.ts` is the local source of truth for the public-content shape. Collections are readonly; experience dates are represented as distinct start and optional end values so current roles can be unambiguous. `ResumeAccess` composes `PublicLink` with an optional updated date. The module contains no PKM imports, paths, provenance, confidentiality, or source-governance metadata.
+
+**Review triggers:** Reconsider this representation when accepted public-ready PKM records and repeated manual-transfer friction justify a versioned static export and validated import or generation step; when editorial authoring needs show that a narrative representation is required; or when a content requirement cannot be expressed cleanly by the current contract.
+
+**Deferred:** PKM export/import tooling, JSON or Markdown content formats, runtime or build-time PKM integration, schema-validation dependencies, CMS or remote data loading, and public content values remain undefined until a demonstrated requirement or later approved content task exists.
 
 ## Use an editorially approved projection for public professional content — 2026-08-12
 
@@ -16,9 +28,9 @@ order: ASC
 
 **Consequence:** Public experience entries use approved company, role, dates, optional broad location, responsibilities, selected contributions, selected outcomes, and optional technologies. Published dates use one approved consistent precision, normally month/year; uncertain employment or role boundaries must be resolved rather than inferred. Contributions and outcomes require editorial review for attribution, evidence, chronology, and confidentiality. PKM visibility, provenance, confidentiality, attribution, outcome-type, and publication-approval controls remain private source-governance metadata, not public application fields.
 
-**Review triggers:** Reconsider this boundary when current content-maintenance pressure justifies a concrete local representation, when the PKM contains accepted public-ready records with sufficient governance metadata, when a public content area needs fields beyond the recorded vocabulary, or when a product requirement requires a content source, loading mechanism, or integration.
+**Review triggers:** Reconsider this boundary when the PKM contains accepted public-ready records with sufficient governance metadata, when a public content area needs fields beyond the recorded vocabulary, or when a product requirement requires a content source, loading mechanism, or integration.
 
-**Deferred:** The concrete public-content representation and source, PKM integration, CMS or remote data loading, generated resume, and Milestone 3 project, case-study, and engineering-evidence structures remain undefined until a demonstrated requirement exists.
+**Deferred:** PKM integration, CMS or remote data loading, generated resume, and Milestone 3 project, case-study, and engineering-evidence structures remain undefined until a demonstrated requirement exists.
 
 ## Use Cloudflare Pages for static application deployment — 2026-08-12
 
