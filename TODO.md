@@ -76,8 +76,8 @@ Task boundaries should balance developer implementation effort with reliable AI-
 
 ## Deployment Foundation
 
-- [ ] Select the simplest suitable deployment target.
-- [ ] Configure, deploy, and validate the application foundation using the approved deployment target.
+- [x] Select the simplest suitable deployment target.
+- [x] Configure, deploy, and validate the application foundation using the approved deployment target.
 
 ### Milestone 1 Completion
 
