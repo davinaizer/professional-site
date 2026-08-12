@@ -81,7 +81,7 @@ Task boundaries should balance developer implementation effort with reliable AI-
 
 ### Milestone 1 Completion
 
-- [ ] Complete Milestone 1 after confirming:
+- [x] Complete Milestone 1 after confirming:
   - the application builds and deploys;
   - strict TypeScript and relevant quality checks pass;
   - baseline accessibility and responsive behaviour are verified;
