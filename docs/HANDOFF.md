@@ -13,7 +13,13 @@ Cloudflare Pages deploys `main` to [https://davi-naizer.pages.dev/](https://davi
 
 ## Next task candidate
 
-Assess and complete the documented Milestone 1 completion conditions.
+Complete Milestone 1 after confirming:
+
+- the application builds and deploys;
+- strict TypeScript and relevant quality checks pass;
+- baseline accessibility and responsive behaviour are verified;
+- the structure remains understandable and maintainable; and
+- no speculative architecture or unnecessary dependency was introduced.
 
 ## Roadmap position
 
