@@ -1,7 +1,7 @@
 ---
 createdAt: 2026-08-07
 updatedAt: 2026-08-12
-version: 1.11
+version: 1.12
 status: active
 ---
 
@@ -94,7 +94,7 @@ Task boundaries should balance developer implementation effort with reliable AI-
 
 ## Content Foundation
 
-- [ ] Define the minimum content structure required for core professional information.
+- [x] Define the minimum content structure required for core professional information.
 - [ ] Decide where professional content should live and how it should be represented.
 - [ ] Add the approved professional identity and summary content.
 - [ ] Add the approved experience content.

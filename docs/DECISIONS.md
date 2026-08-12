@@ -1,12 +1,24 @@
 ---
 createdAt: 2026-08-07
 updatedAt: 2026-08-12
-version: 1.8
+version: 1.10
 status: active
 order: ASC
 ---
 
 # Decisions
+
+## Use an editorially approved projection for public professional content — 2026-08-12
+
+**Decision:** Define public professional content as a small, editorially approved projection: identity (name, professional headline, optional broad location, and profile links); professional summary (summary and focus areas); experience (company, role, start and end date or present, optional broad location, responsibilities, selected contributions and outcomes, and optional technologies); resume access (label, URL, and optional updated date); and contact (explicitly approved public email, URL, and professional links). Home composes identity, a short summary, selected experience highlights, and calls to Resume and Contact; it has no separate content model.
+
+**Rationale:** The current PKM material contains converted historical sources but no accepted knowledge entities, claims, provenance records, generated resume, or evidence map. Publishing directly from it, performance reviews, or derived audits would risk unsupported claims, ambiguous chronology, confidentiality exposure, and unclear personal-versus-team attribution. A minimal projection supports the Milestone 2 professional experience while keeping public content accurate, reusable, and proportionate.
+
+**Consequence:** Public experience entries use approved company, role, dates, optional broad location, responsibilities, selected contributions, selected outcomes, and optional technologies. Published dates use one approved consistent precision, normally month/year; uncertain employment or role boundaries must be resolved rather than inferred. Contributions and outcomes require editorial review for attribution, evidence, chronology, and confidentiality. PKM visibility, provenance, confidentiality, attribution, outcome-type, and publication-approval controls remain private source-governance metadata, not public application fields.
+
+**Review triggers:** Reconsider this boundary when current content-maintenance pressure justifies a concrete local representation, when the PKM contains accepted public-ready records with sufficient governance metadata, when a public content area needs fields beyond the recorded vocabulary, or when a product requirement requires a content source, loading mechanism, or integration.
+
+**Deferred:** The concrete public-content representation and source, PKM integration, CMS or remote data loading, generated resume, and Milestone 3 project, case-study, and engineering-evidence structures remain undefined until a demonstrated requirement exists.
 
 ## Use Cloudflare Pages for static application deployment — 2026-08-12
 
