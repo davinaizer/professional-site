@@ -1,7 +1,7 @@
 ---
 createdAt: 2026-08-07
-updatedAt: 2026-08-07
-version: 1.0
+updatedAt: 2026-08-12
+version: 1.11
 status: active
 ---
 
@@ -24,11 +24,22 @@ Each task should remain small enough to:
 - review against explicit acceptance criteria;
 - complete without starting unrelated work.
 
+Task boundaries should balance developer implementation effort with reliable AI-assisted review:
+
+- Each task should have one primary objective and preferably no more than one material decision.
+- Combine implementation with its direct acceptance checks; record those checks as task criteria rather than separate tasks.
+- Separate product, architecture, content, or engineering decisions when they materially affect later implementation.
+- Separate diagnosis or measurement from remediation when the remediation scope is not yet known.
+- Keep the change surface and validation set small enough for `review-task` to assess completely from the approved plan and task-scoped evidence.
+- Prefer a separate task when a failure would otherwise return several unrelated concerns to `code-pairing`.
+
 ---
 
 # Completed Governance
 
 - [x] Create the initial `ROADMAP.md` derived from `PRODUCT_REQUIREMENTS.md`.
+- [x] Align the project-local AI workflow and skills with the developer-owned collaboration model.
+- [x] Optimise agent guidance discoverability and context efficiency while preserving governance semantics.
 
 ---
 
@@ -36,59 +47,46 @@ Each task should remain small enough to:
 
 ## Project Bootstrap
 
-- [ ] Initialise the React and TypeScript application.
-- [ ] Enable strict TypeScript configuration.
-- [ ] Configure package scripts for development, build, type checking, linting, formatting, and testing.
-- [ ] Configure baseline linting and formatting.
-- [ ] Verify the application builds successfully.
+- [x] Initialise and validate the React application with strict TypeScript.
+- [x] Configure and validate the development, build, type-checking, linting, and formatting tooling.
 
 ## Application Structure
 
-- [ ] Establish the initial source structure.
-- [ ] Create the application shell.
-- [ ] Establish routing/navigation structure required by the MVP.
-- [ ] Define the baseline page/layout composition.
-- [ ] Verify core content remains usable with minimal client-side behaviour where practical.
+- [x] Establish the initial source structure and application entry boundaries.
+- [x] Create the semantic application shell and baseline page composition.
+- [x] Establish the MVP route structure and navigation behaviour.
+- [x] Verify usable content and navigation with minimal client-side behaviour where practical.
 
 ## Styling Foundation
 
-- [ ] Establish global CSS foundations.
-- [ ] Define baseline typography.
-- [ ] Define spacing and layout primitives.
-- [ ] Define initial design tokens required by the current UI.
-- [ ] Establish responsive layout behaviour.
-- [ ] Apply the existing design principles to the initial shell.
+- [x] Define the initial global CSS, design tokens, typography, and spacing primitives.
+- [x] Apply the styling foundation and existing design principles to the application shell.
+- [x] Establish responsive shell and navigation behaviour.
 
 ## Accessibility Foundation
 
-- [ ] Establish semantic page structure.
-- [ ] Establish keyboard-accessible navigation.
-- [ ] Define visible focus behaviour.
-- [ ] Verify baseline colour contrast.
-- [ ] Verify initial layouts at representative viewport sizes.
+- [x] Establish keyboard-accessible navigation and visible focus behaviour.
+- [x] Validate shell semantics, baseline colour contrast, and representative viewport layouts.
 
 ## Quality Foundation
 
-- [ ] Configure the initial unit/component testing approach where justified.
-- [ ] Configure end-to-end testing for critical journeys.
-- [ ] Add baseline automated accessibility validation where appropriate.
-- [ ] Configure CI for relevant quality checks.
-- [ ] Verify all current checks pass.
+- [x] Establish the initial unit/component testing and automated accessibility-validation approach where justified.
+- [x] Establish end-to-end testing for a bounded set of critical journeys.
+- [x] Configure CI to run the established relevant quality checks.
 
 ## Deployment Foundation
 
 - [ ] Select the simplest suitable deployment target.
-- [ ] Configure production build and deployment.
-- [ ] Deploy the initial application foundation.
-- [ ] Verify the deployed application works correctly.
+- [ ] Configure, deploy, and validate the application foundation using the approved deployment target.
 
 ### Milestone 1 Completion
 
-- [ ] Confirm application builds and deploys.
-- [ ] Confirm strict TypeScript and quality checks pass.
-- [ ] Confirm baseline accessibility and responsive behaviour.
-- [ ] Confirm the structure remains understandable and maintainable.
-- [ ] Confirm no speculative architecture or unnecessary dependency was introduced.
+- [ ] Complete Milestone 1 after confirming:
+  - the application builds and deploys;
+  - strict TypeScript and relevant quality checks pass;
+  - baseline accessibility and responsive behaviour are verified;
+  - the structure remains understandable and maintainable; and
+  - no speculative architecture or unnecessary dependency was introduced.
 
 ---
 
@@ -98,51 +96,40 @@ Each task should remain small enough to:
 
 - [ ] Define the minimum content structure required for core professional information.
 - [ ] Decide where professional content should live and how it should be represented.
-- [ ] Add professional identity and summary content.
-- [ ] Add experience content.
-- [ ] Add resume access.
-- [ ] Add contact information.
+- [ ] Add the approved professional identity and summary content.
+- [ ] Add the approved experience content.
 
 ## Home
 
-- [ ] Implement the Home experience.
-- [ ] Communicate professional focus clearly within the initial viewport.
-- [ ] Provide clear routes to experience, projects/evidence, resume, and contact where relevant.
+- [ ] Implement the Home experience, communicating professional focus within the initial viewport and providing clear routes to relevant core areas.
 
 ## Professional Summary
 
-- [ ] Implement the professional summary.
-- [ ] Align positioning with the current CV and product-engineering direction.
-- [ ] Keep claims concise and defensible.
+- [ ] Implement a concise, defensible professional summary aligned with the current CV and product-engineering direction.
 
 ## Experience
 
-- [ ] Implement the career timeline / experience presentation.
-- [ ] Ensure roles and chronology are easy to understand.
-- [ ] Preserve personal versus team contribution boundaries.
-- [ ] Ensure content remains useful for interview preparation and future reuse.
+- [ ] Implement the career timeline with clear chronology, defensible contribution boundaries, and content suitable for interview preparation and reuse.
 
 ## Resume
 
-- [ ] Add the current CV as a downloadable or accessible document.
-- [ ] Verify the resume link works in production.
+- [ ] Add production-ready access to the current CV.
 
 ## Contact
 
-- [ ] Add relevant professional contact links.
-- [ ] Verify external links and accessible labelling.
+- [ ] Add and validate accessible professional contact links.
 
 ## Core Navigation
 
-- [ ] Connect all core professional areas through consistent navigation.
-- [ ] Verify keyboard and responsive navigation behaviour.
+- [ ] Connect and validate all core professional areas through consistent keyboard-accessible and responsive navigation.
 
 ### Milestone 2 Completion
 
-- [ ] Confirm professional identity is understandable within one or two minutes.
-- [ ] Confirm core content is clear, accessible, responsive, and deployable.
-- [ ] Confirm professional evidence remains accurate and defensible.
-- [ ] Confirm the site does not require unnecessary interaction to understand the core profile.
+- [ ] Complete Milestone 2 after confirming:
+  - professional identity is understandable within one or two minutes;
+  - core content is clear, accessible, responsive, and deployable;
+  - professional evidence remains accurate and defensible; and
+  - the core profile does not require unnecessary interaction to understand.
 
 ---
 
@@ -162,28 +149,28 @@ Each task should remain small enough to:
 
 ## Case Studies
 
-- [ ] Define a reusable case-study structure.
-- [ ] Write and implement the first complete case study.
-- [ ] Add further case studies only when they provide distinct evidence.
+- [ ] Define the minimum reusable case-study structure.
+- [ ] Write and implement one deliberately bounded case study that validates the approved structure.
+
+Add further case studies only when they provide distinct evidence.
 
 ## Engineering
 
 - [ ] Define the purpose and scope of the Engineering area.
-- [ ] Surface meaningful architecture, quality, testing, accessibility, or delivery decisions.
-- [ ] Avoid duplicating repository documentation without user value.
+- [ ] Implement the approved Engineering area using meaningful evidence without duplicating repository documentation.
 
 ## Evidence Connections
 
-- [ ] Link professional claims to relevant projects, case studies, decisions, or outcomes.
-- [ ] Ensure deeper evidence remains optional rather than required for understanding the profile.
+- [ ] Connect professional claims to optional supporting projects, case studies, decisions, or outcomes.
 
 ### Milestone 3 Completion
 
-- [ ] Confirm every evidence area adds useful depth beyond the CV.
-- [ ] Confirm claims are supported by defensible evidence.
-- [ ] Confirm personal and team contributions are clearly distinguished.
-- [ ] Confirm evidence is useful for interview preparation and professional reuse.
-- [ ] Confirm the product has not drifted into a general knowledge-management system.
+- [ ] Complete Milestone 3 after confirming:
+  - every evidence area adds useful depth beyond the CV;
+  - claims are supported by defensible evidence;
+  - personal and team contributions are clearly distinguished;
+  - evidence supports interview preparation and professional reuse; and
+  - the product has not drifted into a general knowledge-management system.
 
 ---
 
@@ -191,60 +178,50 @@ Each task should remain small enough to:
 
 ## Integration
 
-- [ ] Review navigation and information architecture across all MVP areas.
-- [ ] Remove duplication and inconsistent interaction patterns.
-- [ ] Verify content hierarchy across the complete experience.
+- [ ] Review navigation, information architecture, and content hierarchy across all MVP areas.
+- [ ] Resolve material duplication and inconsistent interaction patterns identified by the integration review.
 
 ## Accessibility
 
-- [ ] Perform full keyboard review.
-- [ ] Verify focus order and focus visibility.
-- [ ] Verify semantic structure.
-- [ ] Run automated accessibility checks.
-- [ ] Resolve material accessibility issues.
+- [ ] Review keyboard behaviour, focus, semantics, and automated accessibility results across the MVP.
+- [ ] Resolve material accessibility issues identified by the accessibility review.
 
 ## Responsive Behaviour
 
-- [ ] Review representative mobile, tablet, and desktop layouts.
-- [ ] Resolve material layout or readability issues.
-- [ ] Verify navigation across viewport sizes.
+- [ ] Review layouts, readability, and navigation at representative mobile, tablet, and desktop viewports.
+- [ ] Resolve material issues identified by the responsive-behaviour review.
 
 ## Testing
 
-- [ ] Review test coverage against critical user journeys.
-- [ ] Add or update tests where gaps create meaningful risk.
-- [ ] Run the complete relevant test suite.
+- [ ] Review and strengthen test coverage for a bounded set of critical user journeys, then run the complete relevant test suite.
 
 ## Performance
 
-- [ ] Measure production performance.
-- [ ] Identify material bottlenecks.
-- [ ] Resolve or explicitly document meaningful issues.
-- [ ] Avoid optimisation without measured need.
+- [ ] Measure production performance and identify any material bottlenecks.
+- [ ] Resolve or explicitly document measured material performance issues.
+
+Do not optimise without measured need.
 
 ## Content Review
 
-- [ ] Verify professional claims against source evidence.
-- [ ] Check for confidential or proprietary information.
-- [ ] Proofread all public content.
-- [ ] Verify all resume, contact, project, and external links.
+- [ ] Verify professional claims and contribution boundaries against source evidence.
+- [ ] Review all public content for confidentiality, accuracy, and presentation quality.
+- [ ] Validate all resume, contact, project, and external links.
 
 ## Production Readiness
 
-- [ ] Run production build.
-- [ ] Run relevant automated checks.
-- [ ] Verify production deployment.
-- [ ] Confirm the MVP remains within defined product scope.
-- [ ] Publish the MVP.
+- [ ] Validate release readiness through the production build, relevant automated checks, deployment verification, and product-scope confirmation.
+- [ ] Publish and verify the approved MVP release.
 
 ### Milestone 4 Completion
 
-- [ ] Confirm all MVP areas are complete and coherent.
-- [ ] Confirm relevant checks pass.
-- [ ] Confirm accessibility and responsive behaviour are verified.
-- [ ] Confirm performance has been measured.
-- [ ] Confirm public content is accurate and safe to publish.
-- [ ] Confirm the application is production-ready and deployable.
+- [ ] Complete Milestone 4 after confirming:
+  - all MVP areas are complete and coherent;
+  - relevant checks pass;
+  - accessibility and responsive behaviour are verified;
+  - performance has been measured;
+  - public content is accurate and safe to publish; and
+  - the application is production-ready and deployable.
 
 ---
 

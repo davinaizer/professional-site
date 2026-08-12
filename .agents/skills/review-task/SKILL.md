@@ -1,6 +1,6 @@
 ---
 name: review-task
-description: Review a completed Professional Site implementation against its developer-approved task plan, repository governance, and engineering quality. Use after code-pairing and before complete-task; inspect evidence and validation without implementing fixes.
+description: Review a finished Professional Site implementation against its approved plan and repository quality requirements. Use when the developer requests the formal task review or verdict after implementation. Return PASS or CHANGES REQUIRED without implementing fixes.
 ---
 
 # Review Task
@@ -18,11 +18,12 @@ Determine whether the completed implementation satisfies the developer-approved 
 ## Responsibilities
 
 1. Locate the approved plan; do not infer scope from the implementation or diff.
-2. Compare the implementation with its objective, scope, exclusions, completion criteria, and validation requirements.
-3. Check relevant repository governance and established architecture.
-4. Evaluate correctness, TypeScript safety, accessibility, maintainability, responsive behaviour, testing, regressions, documentation accuracy, and unnecessary complexity where applicable.
-5. Run the smallest relevant validation set needed to support the verdict.
-6. Report only evidence-backed findings.
+2. Review the task contract first: compare the implementation with its objective, scope, exclusions, completion criteria, and required evidence or validation. For each applicable completion criterion, record the implementation and validation evidence plus the result.
+3. Review engineering quality second: check relevant governance and architecture, then evaluate correctness, TypeScript safety, accessibility, maintainability, responsive behaviour, testing, regressions, documentation accuracy, and unnecessary complexity where applicable.
+4. Keep contract findings and engineering-quality findings distinct so quality preferences do not redefine the approved scope.
+5. Confirm that the approved plan, implementation, affected documentation, and validation evidence are consistent. Report any gap under the existing finding classes.
+6. Run the smallest relevant validation set needed to support the verdict.
+7. Report only evidence-backed findings.
 
 Every finding must include:
 
@@ -41,7 +42,6 @@ Classify findings as:
 
 - Do not implement fixes or modify task state.
 - Do not infer requirements from the implementation alone.
-- Do not use an unapproved handoff as the review contract.
 - Do not expand scope, require unrelated refactoring, or fail the task for optional future work.
 - Do not proceed to completion when any blocking defect remains.
 
@@ -58,8 +58,9 @@ Report, in order:
 1. Blocking defects
 2. Improvements
 3. Future work
-4. Verification performed
-5. Final verdict
+4. Completion-criteria traceability, with criterion, implementation evidence, validation evidence, and result
+5. Verification performed
+6. Final verdict
 
 The final verdict must be exactly `PASS` or `CHANGES REQUIRED`.
 
