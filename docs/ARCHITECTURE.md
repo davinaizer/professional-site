@@ -27,6 +27,7 @@ The application must remain intentionally small, content-first, accessible, main
 - React Router v8 Data Mode owns client-side route matching through route objects, `createBrowserRouter`, and `RouterProvider`.
 - The browser is the only current runtime. No server application, API, persistence layer, or background process exists.
 - Rendering and navigation currently require client-side JavaScript. The consequences and review triggers are recorded in `docs/DECISIONS.md`.
+- Cloudflare Pages hosts the Vite `dist` output. Its production deployment tracks `main`; preview deployments do not update the production URL.
 
 ## Application boundaries
 
@@ -94,7 +95,7 @@ The following are not architectural commitments:
 - remote data loading, persistence, APIs, or server processes;
 - global client state management;
 - server rendering or static generation;
-- deployment provider and hosting configuration;
+
 - performance budgets.
 
 Resolve each area through the smallest task that has enough current evidence to make the decision. Record long-lived decisions in `docs/DECISIONS.md`.

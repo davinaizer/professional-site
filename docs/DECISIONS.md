@@ -1,7 +1,7 @@
 ---
 createdAt: 2026-08-07
 updatedAt: 2026-08-12
-version: 1.7
+version: 1.8
 status: active
 order: ASC
 ---
@@ -10,15 +10,15 @@ order: ASC
 
 ## Use Cloudflare Pages for static application deployment — 2026-08-12
 
-**Decision:** Deploy the Vite-built application to Cloudflare Pages. Retain React Router browser-history routing and configure the project to build with `pnpm build` and publish the `dist` directory. Use Cloudflare Pages' SPA fallback behaviour so direct requests to client-side routes are served by the application entry document.
+**Decision:** Deploy the Vite-built application to Cloudflare Pages. Retain React Router browser-history routing and configure the project to build with `pnpm build` and publish the `dist` directory. Use Cloudflare Pages' SPA fallback behaviour so direct requests to client-side routes are served by the application entry document. Configure `main` as the Cloudflare Pages production branch; Cloudflare deploys `davi-naizer.pages.dev` only when a commit reaches `main`.
 
-**Rationale:** Cloudflare Pages provides a proportional static deployment target for the browser-only application without an application server, runtime dependency, or routing-architecture change. It supports the existing durable routes and enables branch and pull-request preview deployments for practical frontend verification before production publication.
+**Rationale:** Cloudflare Pages provides a proportional static deployment target for the browser-only application without an application server, runtime dependency, or routing-architecture change. Deploying the protected `main` branch keeps the public site aligned with the repository's production history while avoiding deployment credentials, a second deployment workflow, and release-management ceremony that the current product does not require. Cloudflare preview deployments may be used for pull requests, but they do not update the production URL.
 
-**Consequence:** Deployment configuration and production verification will be completed as the next Milestone 1 task. The existing GitHub Actions quality gate remains responsible for repository checks; deployment remains a separate concern. A Cloudflare account and Pages project are required. The initial deployment can use the Pages-provided URL; a custom domain is not part of this decision.
+**Consequence:** GitHub branch protection must require the existing Quality Gate before pull requests can merge to `main`; after merge, Cloudflare Pages independently builds and deploys that commit. The existing GitHub Actions workflow remains responsible for repository checks rather than deployment. A Cloudflare account and Pages project are required. The initial deployment uses `https://davi-naizer.pages.dev`; a custom domain is not part of this decision.
 
-**Review triggers:** Reconsider this target when the product requires server-side rendering, server-side logic, authenticated APIs, a deployment capability Cloudflare Pages cannot provide, material delivery reliability issues, or a demonstrated need for a different hosting model.
+**Review triggers:** Reconsider this target or deployment policy when the product requires server-side rendering, server-side logic, authenticated APIs, a deployment capability Cloudflare Pages cannot provide, material delivery reliability issues, an explicit release-approval requirement, or a demonstrated need for deployment to wait for checks on the merged commit.
 
-**Deferred:** Custom-domain configuration, server-side capabilities, deployment previews as a required release gate, and automated production smoke testing remain undefined until a demonstrated requirement exists.
+**Deferred:** Custom-domain configuration, server-side capabilities, making preview deployments a required release gate, automated production smoke testing, and release- or tag-triggered deployment remain undefined until a demonstrated requirement exists.
 
 ## Use Playwright with Chromium for bounded critical-journey testing — 2026-08-11
 

@@ -12,9 +12,10 @@ Milestone 1, the application foundation, is in progress. The project currently i
 - route structure and keyboard-accessible primary navigation;
 - a semantic application shell with a responsive, CSS-first styling foundation;
 - component, automated accessibility, and bounded browser-journey tests; and
-- formatting, linting, type-checking, test, and build scripts.
+- formatting, linting, type-checking, test, and build scripts; and
+- a Cloudflare Pages deployment target, with production deployments from `main` and optional isolated pull-request previews.
 
-Professional profile, experience, project, and contact content are intentionally still in development. CI configuration and deployment are the next foundation tasks.
+Professional profile, experience, project, and contact content are intentionally still in development. Production deployment verification is the remaining foundation task.
 
 ## Technology and quality practices
 
