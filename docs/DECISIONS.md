@@ -1,12 +1,24 @@
 ---
 createdAt: 2026-08-07
-updatedAt: 2026-08-12
-version: 1.12
+updatedAt: 2026-08-14
+version: 1.13
 status: active
 order: ASC
 ---
 
 # Decisions
+
+## Colocate route-owned CSS with route components — 2026-08-14
+
+**Decision:** Keep global styling layers in `src/styles/` and import them through `src/index.css`. Place CSS that belongs exclusively to one route alongside that route component in `src/pages/`, using a matching filename and a direct component import—for example, `ProfessionalSummaryPage.tsx` imports `./ProfessionalSummaryPage.css`. Continue to scope selectors with distinctive page prefixes. Migrate the existing Home route stylesheet to `src/pages/HomePage.css` as part of adopting this convention; subsequent route-owned styles follow it by default.
+
+**Rationale:** Page components and their presentation change together. Colocation makes the ownership, discovery, maintenance, and removal of route-specific styles explicit without introducing CSS Modules, a dependency, or a component abstraction. The repository has a demonstrated need for a second page-owned stylesheet; maintaining a central registry for route-owned CSS would separate related implementation without providing a current benefit.
+
+**Consequence:** `src/index.css` remains the entry point for reset, tokens, document-wide rules, and shared-shell styling; it is not the registry for route-owned styles. Route components directly import their own CSS. `HomePage.tsx` now owns the import for its migrated stylesheet. Shared styling patterns are not introduced merely to remove local repetition: revisit a shared styling boundary after the remaining core pages provide sufficient evidence of stable semantic reuse.
+
+**Review triggers:** Reconsider this boundary when route-local styles cause cascade-order defects, selector collisions, repeated import or testing friction, or when stable reuse demonstrates the need for a shared styling layer, CSS Modules, or another scoped styling approach.
+
+**Deferred:** CSS Modules; a shared composition-pattern layer; reusable style primitives; and any broad stylesheet reorganisation.
 
 ## Use a local TypeScript contract for public professional content — 2026-08-12
 
