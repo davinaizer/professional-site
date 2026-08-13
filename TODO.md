@@ -101,7 +101,7 @@ Task boundaries should balance developer implementation effort with reliable AI-
 
 ## Home
 
-- [ ] Implement the Home experience, communicating professional focus within the initial viewport and providing clear routes to relevant core areas.
+- [x] Implement the Home experience, communicating professional focus within the initial viewport and providing clear routes to relevant core areas.
 
 ## Professional Summary
 

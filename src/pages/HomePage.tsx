@@ -1,28 +1,60 @@
 import { Link } from "react-router";
 import { routes } from "../app/routes.ts";
+import { professionalContent } from "../content/professional-content.ts";
 
 function HomePage() {
+	const { identity, summary, experience, resume } = professionalContent;
+	const currentExperience = experience[0];
+
 	return (
-		<section>
-			<h1>Davi Naizer Santos</h1>
-			<p>A professional evidence application in development.</p>
-			<p>
-				This foundation will organise professional experience, selected work,
-				and engineering decisions into reusable evidence.
-			</p>
-			<nav aria-label="Explore the application">
+		<section className="home">
+			<div className="home__hero">
+				<p className="home__label">Professional profile</p>
+				<h1>{identity.name}</h1>
+				<p className="home__headline">{identity.headline}</p>
+				<p className="home__summary">{summary.summary}</p>
+				<nav
+					aria-label="Explore core professional areas"
+					className="home__actions"
+				>
+					<ul>
+						<li>
+							<Link to={routes.summary}>Professional summary</Link>
+						</li>
+						<li>
+							<Link to={routes.experience}>Explore experience</Link>
+						</li>
+						<li>
+							<a href={resume.url}>{resume.label}</a>
+						</li>
+						<li>
+							<Link to={routes.contact}>Contact</Link>
+						</li>
+					</ul>
+				</nav>
+			</div>
+
+			<section aria-labelledby="focus-heading" className="home__focus">
+				<div>
+					<p className="home__label">Focus areas</p>
+					<h2 id="focus-heading">Product-minded frontend engineering</h2>
+				</div>
 				<ul>
-					<li>
-						<Link to={routes.summary}>Explore the professional summary</Link>
-					</li>
-					<li>
-						<Link to={routes.experience}>Explore experience</Link>
-					</li>
-					<li>
-						<Link to={routes.engineering}>Explore engineering decisions</Link>
-					</li>
+					{summary.focusAreas.map((focusArea) => (
+						<li key={focusArea}>{focusArea}</li>
+					))}
 				</ul>
-			</nav>
+			</section>
+
+			<section
+				aria-labelledby="current-role-heading"
+				className="home__highlight"
+			>
+				<p className="home__label">Current role</p>
+				<h2 id="current-role-heading">{currentExperience.role}</h2>
+				<p>{currentExperience.company}</p>
+				<Link to={routes.experience}>View career timeline</Link>
+			</section>
 		</section>
 	);
 }
