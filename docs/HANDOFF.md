@@ -1,7 +1,7 @@
 ---
 createdAt: 2026-08-10
-updatedAt: 2026-08-12
-version: 1.15
+updatedAt: 2026-08-13
+version: 1.16
 status: active
 ---
 
@@ -9,21 +9,23 @@ status: active
 
 ## Completed outcome
 
-Established `src/content/professional.ts` as the local TypeScript contract for the editorially approved public professional-content projection. The contract is static, manually curated, and contains no public content values or PKM dependency.
+Added CV-backed public identity and summary data in `src/content/professional-content.ts`, scoped to the existing local TypeScript contract.
 
 ## Next task candidate
 
-Add the approved professional identity and summary content.
+Add the approved experience content.
 
 ## Roadmap position
 
 - **Milestone:** Milestone 2 — Core Professional Experience (`ROADMAP.md`)
-- **Workflow stage:** The Milestone 2 Content Foundation representation task is complete; the next task has not been planned or started.
+- **Workflow stage:** The identity and summary content task is complete; the next task has not been planned or started.
 
 ## Evidence pointers
 
 - `TODO.md#content-foundation`
 - `src/content/professional.ts`
+- `src/content/professional-content.ts`
+- `docs/resume.md`
 - `docs/DECISIONS.md#use-a-local-typescript-contract-for-public-professional-content--2026-08-12`
 - `docs/ARCHITECTURE.md#content-and-data`
 
@@ -33,4 +35,4 @@ None.
 
 ## Constraints and context
 
-Add only editorially approved public content through the local TypeScript contract. PKM export/import tooling, JSON or Markdown formats, PKM integration, CMS or remote loading, schema-validation dependencies, and a generated resume remain deferred.
+Experience, resume, and contact content remain intentionally absent. The existing Home and Professional Summary pages do not yet consume the new data.
