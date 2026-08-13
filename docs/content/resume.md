@@ -6,6 +6,7 @@ contact_lines:
   - Hove, United Kingdom
   - davi.naizer@gmail.com | linkedin.com/in/davi-naizer
   - English (C1), Portuguese
+updatedAt: 2026-08-13
 ---
 
 # Davi Naizer Santos
@@ -67,7 +68,7 @@ Co-creating Alfred with a backend engineer. The product helps people capture ide
 
 ---
 
-## **Planned Career Break | 11/2024 – 11/2025**
+## **Planned Career Break | Self-Employed | Brazil | 11/2024 – 11/2025**
 
 Took a planned break from full-time employment after relocating permanently to the UK. During that time I focused on recovery, re-evaluated the direction I wanted my career to take and returned to hands-on product development by building Alfred, a native SwiftUI application.
 

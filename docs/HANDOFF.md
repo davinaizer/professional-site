@@ -1,7 +1,7 @@
 ---
 createdAt: 2026-08-10
 updatedAt: 2026-08-13
-version: 1.16
+version: 1.17
 status: active
 ---
 
@@ -9,23 +9,25 @@ status: active
 
 ## Completed outcome
 
-Added CV-backed public identity and summary data in `src/content/professional-content.ts`, scoped to the existing local TypeScript contract.
+Completed the static public professional-content projection: identity, summary, experience, résumé access, and contact links. The approved résumé is published at `public/resume.pdf`.
 
 ## Next task candidate
 
-Add the approved experience content.
+Implement the Home experience, communicating professional focus within the initial viewport and providing clear routes to relevant core areas.
 
 ## Roadmap position
 
 - **Milestone:** Milestone 2 — Core Professional Experience (`ROADMAP.md`)
-- **Workflow stage:** The identity and summary content task is complete; the next task has not been planned or started.
+- **Workflow stage:** The Content Foundation task is complete; the next task has not been planned or started.
 
 ## Evidence pointers
 
 - `TODO.md#content-foundation`
 - `src/content/professional.ts`
 - `src/content/professional-content.ts`
-- `docs/resume.md`
+- `docs/content/resume.md`
+- `docs/content/resume.pdf`
+- `public/resume.pdf`
 - `docs/DECISIONS.md#use-a-local-typescript-contract-for-public-professional-content--2026-08-12`
 - `docs/ARCHITECTURE.md#content-and-data`
 
@@ -35,4 +37,4 @@ None.
 
 ## Constraints and context
 
-Experience, resume, and contact content remain intentionally absent. The existing Home and Professional Summary pages do not yet consume the new data.
+The existing route pages do not yet consume the completed content projection. PKM integration, CMS or remote loading, schema validation, and generated résumé workflows remain deferred.

@@ -1,7 +1,7 @@
 ---
 createdAt: 2026-08-07
 updatedAt: 2026-08-13
-version: 1.14
+version: 1.15
 status: active
 ---
 
@@ -97,7 +97,7 @@ Task boundaries should balance developer implementation effort with reliable AI-
 - [x] Define the minimum content structure required for core professional information.
 - [x] Decide where professional content should live and how it should be represented.
 - [x] Add the approved professional identity and summary content.
-- [ ] Add the approved experience content.
+- [x] Add the approved experience content, résumé, and contact.
 
 ## Home
 
