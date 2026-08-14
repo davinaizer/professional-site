@@ -1,7 +1,7 @@
 ---
 createdAt: 2026-08-10
 updatedAt: 2026-08-14
-version: 1.19
+version: 1.20
 status: active
 ---
 
@@ -9,27 +9,27 @@ status: active
 
 ## Completed outcome
 
-Completed the Professional Summary experience using the approved local professional-content projection. It presents the concise summary and focus areas with semantic, responsive styling and regression coverage. Route-owned CSS is now colocated with its page component; the existing Home stylesheet was migrated to the same convention.
+Completed the Experience route using the approved local professional-content projection. It presents the complete career history in reverse chronology with distinct responsibility and contribution boundaries, responsive route-owned styling, and component accessibility regression coverage.
 
 ## Next task candidate
 
-Implement the career timeline with clear chronology, defensible contribution boundaries, and content suitable for interview preparation and reuse.
+Add production-ready access to the current CV.
 
 ## Roadmap position
 
 - **Milestone:** Milestone 2 — Core Professional Experience (`ROADMAP.md`)
-- **Workflow stage:** The Professional Summary task is complete; the next task has not been planned or started.
+- **Workflow stage:** The Experience task is complete; the next task has not been planned or started.
 
 ## Evidence pointers
 
-- `TODO.md#professional-summary`
-- `src/pages/ProfessionalSummaryPage.tsx`
-- `src/pages/ProfessionalSummaryPage.css`
-- `src/pages/ProfessionalSummaryPage.test.tsx`
-- `src/pages/HomePage.tsx`
-- `src/pages/HomePage.css`
+- `TODO.md#experience`
+- `src/pages/ExperiencePage.tsx`
+- `src/pages/ExperiencePage.css`
+- `src/pages/ExperiencePage.test.tsx`
 - `src/content/professional.ts`
 - `src/content/professional-content.ts`
+- `docs/DECISIONS.md#use-a-local-typescript-contract-for-public-professional-content`
+- `docs/DECISIONS.md#use-an-editorially-approved-projection-for-public-professional-content`
 - `docs/DECISIONS.md#colocate-route-owned-css-with-route-components`
 - `docs/ARCHITECTURE.md#content-and-data`
 - `docs/ARCHITECTURE.md#quality-attributes`
@@ -40,4 +40,4 @@ None.
 
 ## Constraints and context
 
-Experience, résumé, and Contact have not yet consumed the completed content projection. Shared styling patterns remain deferred until the remaining core pages provide evidence of stable semantic reuse. PKM integration, CMS or remote loading, schema validation, and generated résumé workflows remain deferred.
+Résumé and Contact have not yet consumed the completed content projection. Shared styling patterns remain deferred until remaining core routes show stable semantic reuse. PKM integration, CMS or remote loading, schema validation, and generated résumé workflows remain deferred.

@@ -1,7 +1,7 @@
 ---
 createdAt: 2026-08-07
-updatedAt: 2026-08-13
-version: 1.15
+updatedAt: 2026-08-14
+version: 1.16
 status: active
 ---
 
@@ -109,7 +109,7 @@ Task boundaries should balance developer implementation effort with reliable AI-
 
 ## Experience
 
-- [ ] Implement the career timeline with clear chronology, defensible contribution boundaries, and content suitable for interview preparation and reuse.
+- [x] Implement the career timeline with clear chronology, defensible contribution boundaries, and content suitable for interview preparation and reuse.
 
 ## Resume
 
