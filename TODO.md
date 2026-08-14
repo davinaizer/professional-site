@@ -105,7 +105,7 @@ Task boundaries should balance developer implementation effort with reliable AI-
 
 ## Professional Summary
 
-- [ ] Implement a concise, defensible professional summary aligned with the current CV and product-engineering direction.
+- [x] Implement a concise, defensible professional summary aligned with the current CV and product-engineering direction.
 
 ## Experience
 
