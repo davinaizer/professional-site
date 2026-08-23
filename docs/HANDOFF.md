@@ -1,7 +1,7 @@
 ---
 createdAt: 2026-08-10
-updatedAt: 2026-08-14
-version: 1.20
+updatedAt: 2026-08-23
+version: 1.21
 status: active
 ---
 
@@ -9,27 +9,28 @@ status: active
 
 ## Completed outcome
 
-Completed the Experience route using the approved local professional-content projection. It presents the complete career history in reverse chronology with distinct responsibility and contribution boundaries, responsive route-owned styling, and component accessibility regression coverage.
+Completed production-ready access to the current CV through the Resume route. It consumes the approved local professional-content projection, provides an accessible same-origin PDF download link and updated date, uses responsive route-owned styling, and includes component accessibility regression coverage.
 
 ## Next task candidate
 
-Add production-ready access to the current CV.
+Add and validate accessible professional contact links.
 
 ## Roadmap position
 
 - **Milestone:** Milestone 2 — Core Professional Experience (`ROADMAP.md`)
-- **Workflow stage:** The Experience task is complete; the next task has not been planned or started.
+- **Workflow stage:** The Resume task is complete; the Contact task has not been planned or started.
 
 ## Evidence pointers
 
-- `TODO.md#experience`
-- `src/pages/ExperiencePage.tsx`
-- `src/pages/ExperiencePage.css`
-- `src/pages/ExperiencePage.test.tsx`
+- `TODO.md#resume`
+- `src/pages/ResumePage.tsx`
+- `src/pages/ResumePage.css`
+- `src/pages/ResumePage.test.tsx`
+- `public/resume.pdf`
 - `src/content/professional.ts`
 - `src/content/professional-content.ts`
+- `docs/plans/RESUME_ACCESS_PLAN.md`
 - `docs/DECISIONS.md#use-a-local-typescript-contract-for-public-professional-content`
-- `docs/DECISIONS.md#use-an-editorially-approved-projection-for-public-professional-content`
 - `docs/DECISIONS.md#colocate-route-owned-css-with-route-components`
 - `docs/ARCHITECTURE.md#content-and-data`
 - `docs/ARCHITECTURE.md#quality-attributes`
@@ -40,4 +41,4 @@ None.
 
 ## Constraints and context
 
-Résumé and Contact have not yet consumed the completed content projection. Shared styling patterns remain deferred until remaining core routes show stable semantic reuse. PKM integration, CMS or remote loading, schema validation, and generated résumé workflows remain deferred.
+The existing `public/resume.pdf` remains the approved CV artefact and is exposed through native browser PDF/download behaviour. Contact has not yet consumed the completed content projection. Shared styling patterns remain deferred until remaining core routes show stable semantic reuse. PKM integration, CMS or remote loading, schema validation, and generated résumé workflows remain deferred.

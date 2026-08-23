@@ -113,7 +113,7 @@ Task boundaries should balance developer implementation effort with reliable AI-
 
 ## Resume
 
-- [ ] Add production-ready access to the current CV.
+- [x] Add production-ready access to the current CV.
 
 ## Contact
 
