@@ -1,7 +1,7 @@
 ---
 createdAt: 2026-08-07
-updatedAt: 2026-08-14
-version: 1.16
+updatedAt: 2026-08-23
+version: 1.17
 status: active
 ---
 
@@ -117,7 +117,7 @@ Task boundaries should balance developer implementation effort with reliable AI-
 
 ## Contact
 
-- [ ] Add and validate accessible professional contact links.
+- [x] Add and validate accessible professional contact links.
 
 ## Core Navigation
 
