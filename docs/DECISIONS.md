@@ -1,12 +1,24 @@
 ---
 createdAt: 2026-08-07
-updatedAt: 2026-08-14
-version: 1.13
+updatedAt: 2026-08-24
+version: 1.14
 status: active
 order: ASC
 ---
 
 # Decisions
+
+## Use a contact-specific public-link contract — 2026-08-24
+
+**Decision:** Keep `PublicLink` limited to the shared `label` and `url` fields used by identity profile links and resume access. Define `ContactLink` as a contact-specific extension with `category`, `actionLabel`, and optional `description` fields, and use it for `ProfessionalContent.contact`.
+
+**Rationale:** Contact options need editorial context and clear actions as the contact area grows, while category and description copy do not apply naturally to every public link. A specialised type preserves the small shared link contract, keeps public content typed and manually curated, and avoids route-level label mappings or duplicated presentation copy.
+
+**Consequence:** Contact content can render a concise metadata category, an actionable link label, and optional supporting copy without changing profile-link or resume content. The contact route remains static and uses native accessible links; no new content source, runtime validation, or shared component is introduced.
+
+**Review triggers:** Reconsider this boundary when multiple public-link consumers need the same contextual fields, contact descriptions create repeated editorial maintenance, or a broader public-link vocabulary is required by an approved content area.
+
+**Deferred:** Contact forms, contact-link icons, external service integrations, and a generalised metadata schema remain undefined until a demonstrated requirement exists.
 
 ## Colocate route-owned CSS with route components — 2026-08-14
 

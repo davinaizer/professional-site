@@ -31,10 +31,16 @@ export type ResumeAccess = PublicLink & {
 	updatedAt?: string;
 };
 
+export type ContactLink = PublicLink & {
+	category: string;
+	actionLabel: string;
+	description?: string;
+};
+
 export type ProfessionalContent = {
 	identity: ProfessionalIdentity;
 	summary: ProfessionalSummary;
 	experience: readonly ExperienceEntry[];
 	resume: ResumeAccess;
-	contact: readonly PublicLink[];
+	contact: readonly ContactLink[];
 };

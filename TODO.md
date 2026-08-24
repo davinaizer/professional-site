@@ -1,6 +1,10 @@
 ---
 createdAt: 2026-08-07
+<<<<<<< Updated upstream
 updatedAt: 2026-08-23
+=======
+updatedAt: 2026-08-24
+>>>>>>> Stashed changes
 version: 1.17
 status: active
 ---

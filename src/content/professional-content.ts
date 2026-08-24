@@ -177,10 +177,16 @@ export const professionalContent: ProfessionalContent = {
 		{
 			label: "Email",
 			url: "mailto:davi.naizer@gmail.com",
+			category: "Direct",
+			actionLabel: "Send an email",
+			description: "For professional opportunities and direct enquiries.",
 		},
 		{
 			label: "LinkedIn",
 			url: "https://www.linkedin.com/in/davi-naizer",
+			category: "Professional profile",
+			actionLabel: "View LinkedIn profile",
+			description: "Connect and learn more about my professional background.",
 		},
 	],
 };
