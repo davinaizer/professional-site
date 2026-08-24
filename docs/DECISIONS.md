@@ -8,6 +8,18 @@ order: ASC
 
 # Decisions
 
+## Select a small set of distinct evidence projects — 2026-08-24
+
+**Decision:** Select three public-safe project narratives for the Selected Projects area: **Vessel List Template Administration**, **an internal content-production workflow**, and **Alfred**. Map them to the existing experience entries for Signal, Gamesys / Bally's, and the independent product venture / planned career break respectively. Use these narratives to represent distinct evidence dimensions: production product and frontend delivery; workflow-oriented product engineering and automation; and recent product-engineering ownership, architecture, and learning in an unfamiliar ecosystem.
+
+**Rationale:** The set is intentionally small and avoids representing every employer or technology. Vessel List Template Administration provides the clearest recent production React and TypeScript product evidence. The internal content-production workflow adds distinct systems, workflow, validation, and delivery evidence without exposing internal project details. Alfred is the most recent project and validates the product-engineer direction through end-to-end product development, shared product and architecture decisions, and recent work in an unfamiliar ecosystem. Together they add depth beyond the CV without duplicating the same narrative.
+
+**Consequence:** The selected identities are public-safe working descriptions rather than an import of PKM project records. Future project content must remain within the approved experience evidence, contribution boundaries, outcome confidence, and confidentiality rules. Alfred must be described as recent exploratory or private-validation work where applicable; no public-launch, adoption, or market-success claims are implied. Beacon's micro-frontend POC is not part of this set and remains a reserve candidate if a later content allocation uses Alfred for a case study instead of a Selected Projects record.
+
+**Review triggers:** Reconsider the set if a selected narrative cannot be represented clearly by the existing `Project` contract, public-safe review disallows its current abstraction, or later approved content demonstrates that another candidate provides more distinct evidence with less duplication. Any decision to allocate Alfred to a case study or replace it with Beacon must be made before project content implementation and recorded separately.
+
+**Deferred:** Project records, final public copy, stable project slugs, evidence relationships, project-page rendering, case-study allocation, and Beacon implementation remain deferred to later approved tasks.
+
 ## Establish public evidence governance rules — 2026-08-24
 
 **Decision:** Treat evidence confidence, contribution boundaries, and confidentiality as editorial publication gates for manually curated public content rather than public application metadata or runtime validation. Publish claims and outcomes only when the available evidence supports the strength of the statement. Distinguish measured outcomes from qualitative outcomes, and omit or reframe unsupported, uncertain, or unverifiable claims. Describe personal contribution separately from team, client, or organisational contribution without implying sole ownership where the work was collaborative. Distinguish production work from exploratory work. Publish only approved public-safe abstractions, excluding confidential employer or client information, private metrics, internal system details, secrets, personal information, and private source-governance metadata.
