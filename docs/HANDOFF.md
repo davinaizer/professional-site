@@ -1,7 +1,7 @@
 ---
 createdAt: 2026-08-10
 updatedAt: 2026-08-24
-version: 1.29
+version: 1.30
 status: active
 ---
 
@@ -9,25 +9,29 @@ status: active
 
 ## Completed outcome
 
-Completed the first Milestone 3 Selected Projects task: three distinct public-safe project narratives are selected—Vessel List Template Administration, an internal content-production workflow, and Alfred.
+Completed the Milestone 3 Selected Projects task: three public-safe project narratives are rendered on `/projects`, and the Work hub now provides a structured entry point to Projects and Case Studies.
 
 ## Next task candidate
 
-- [ ] Implement the Selected Projects experience.
+- [ ] Connect projects to relevant experience and capabilities.
 
 ## Roadmap position
 
-- **Milestone:** Milestone 3 — Professional Evidence; the Selected Projects set is defined and its implementation is the next TODO item (`ROADMAP.md`).
-- **Workflow stage:** The project-selection task has passed review and is complete; the next task has not been planned or started.
+- **Milestone:** Milestone 3 — Professional Evidence; the Selected Projects implementation is complete and the next TODO item is relationship wiring.
+- **Workflow stage:** The Selected Projects task has passed review and is complete; the next task has not been planned or started.
 
 ## Evidence pointers
 
 - `TODO.md#selected-projects`
+- `docs/ARCHITECTURE.md#navigation-and-rendering`
 - `docs/ARCHITECTURE.md#content-and-data`
-- `docs/DECISIONS.md` — selected-projects decision and evidence-governance decision
-- `docs/plans/2026-08-24-selected-projects.md`
-- `src/content/evidence.ts`
-- `src/content/professional-content.ts`
+- `docs/DECISIONS.md` — selected-projects and evidence-governance decisions
+- `src/content/evidence-content.ts`
+- `src/pages/ProjectsPage.tsx`
+- `src/pages/WorkPage.tsx`
+- `src/pages/ProjectsPage.test.tsx`
+- `src/pages/WorkPage.test.tsx`
+- `e2e/critical-journeys.spec.ts`
 
 ## Blockers
 
@@ -35,4 +39,4 @@ None.
 
 ## Constraints and context
 
-Project records, final public copy, stable project slugs, evidence relationships, and rendering remain deferred. Alfred must retain accurate exploratory or private-validation framing; Beacon is a reserve candidate if Alfred is later allocated to a case study.
+Project-to-experience and capability relationships remain deferred to the next task. Case studies and evidence claims remain deferred; Alfred must retain exploratory or private-validation framing, and the internal workflow must remain safely abstracted.

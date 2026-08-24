@@ -1,7 +1,7 @@
 ---
 createdAt: 2026-08-07
 updatedAt: 2026-08-24
-version: 1.21
+version: 1.22
 status: active
 ---
 
@@ -148,7 +148,7 @@ Task boundaries should balance developer implementation effort with reliable AI-
 ## Selected Projects
 
 - [x] Select the smallest set of projects that add distinct evidence.
-- [ ] Implement the Selected Projects experience.
+- [x] Implement the Selected Projects experience.
 - [ ] Connect projects to relevant experience and capabilities.
 
 ## Case Studies

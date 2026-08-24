@@ -26,7 +26,14 @@ test("navigates through the shell and Work routes", async ({ page }) => {
 
 	await page.getByRole("link", { name: "Selected projects" }).click();
 	await expect(page).toHaveURL(/\/projects$/);
-	await expect(page.getByRole("heading", { name: "Projects" })).toBeVisible();
+	await expect(
+		page.getByRole("heading", { name: "Selected Projects" }),
+	).toBeVisible();
+	await expect(
+		page.getByRole("heading", {
+			name: "Vessel List Template Administration",
+		}),
+	).toBeVisible();
 
 	await page.goto("/work");
 	await page.getByRole("link", { name: "Case studies" }).click();
