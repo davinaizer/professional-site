@@ -9,7 +9,7 @@ function App() {
 			<header className="site-header">
 				<div className="site-header__inner">
 					<Link className="site-header__identity" to={routes.home}>
-						Professional Site
+						Davi Naizer Santos
 					</Link>
 					<PrimaryNavigation />
 					<Link className="site-header__contact" to={routes.contact}>

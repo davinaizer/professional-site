@@ -8,12 +8,12 @@ function HomePage() {
 	const currentExperience = experience[0];
 
 	return (
-		<section className="home">
-			<div className="home__hero">
-				<p className="home__label">Professional profile</p>
+		<section className="home page-section">
+			<div className="home__hero page-lead">
+				<p className="eyebrow">Professional profile</p>
 				<h1>{identity.name}</h1>
 				<p className="home__headline">{identity.headline}</p>
-				<p className="home__summary">{summary.summary}</p>
+				<p className="home__summary page-intro">{summary.summary}</p>
 				<nav
 					aria-label="Explore core professional areas"
 					className="home__actions"
@@ -37,7 +37,7 @@ function HomePage() {
 
 			<section aria-labelledby="focus-heading" className="home__focus">
 				<div>
-					<p className="home__label">Focus areas</p>
+					<p className="eyebrow">Focus areas</p>
 					<h2 id="focus-heading">Product-minded frontend engineering</h2>
 				</div>
 				<ul>
@@ -51,7 +51,7 @@ function HomePage() {
 				aria-labelledby="current-role-heading"
 				className="home__highlight"
 			>
-				<p className="home__label">Current role</p>
+				<p className="eyebrow">Current role</p>
 				<h2 id="current-role-heading">{currentExperience.role}</h2>
 				<p>{currentExperience.company}</p>
 				<Link to={routes.experience}>View career timeline</Link>

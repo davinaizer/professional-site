@@ -5,11 +5,13 @@ function ProfessionalSummaryPage() {
 	const { summary } = professionalContent;
 
 	return (
-		<section className="professional-summary">
-			<header className="professional-summary__header">
-				<p className="professional-summary__label">Professional profile</p>
+		<section className="professional-summary page-section">
+			<header className="professional-summary__header page-lead">
+				<p className="eyebrow">Professional profile</p>
 				<h1>Professional Summary</h1>
-				<p className="professional-summary__intro">{summary.summary}</p>
+				<p className="professional-summary__intro page-intro">
+					{summary.summary}
+				</p>
 			</header>
 
 			<section

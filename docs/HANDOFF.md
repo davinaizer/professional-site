@@ -1,7 +1,7 @@
 ---
 createdAt: 2026-08-10
 updatedAt: 2026-08-24
-version: 1.23
+version: 1.25
 status: active
 ---
 
@@ -9,27 +9,28 @@ status: active
 
 ## Completed outcome
 
-Completed Core Navigation validation with consistent shell and Work-route browser journeys, primary-link contract and active-state component coverage, keyboard traversal coverage, narrow-viewport overflow coverage, and manual keyboard/responsive verification.
+Completed the focused shared CSS extraction after Milestone 2: stable page-section, page-lead, eyebrow, and page-intro patterns now serve the four core routes while route-specific variations remain colocated.
 
 ## Next task candidate
 
-Complete Milestone 2 after confirming:
+- [ ] Define the minimum structure for projects, case studies, outcomes, and engineering evidence.
 
 ## Roadmap position
 
-- **Milestone:** Milestone 2 — Core Professional Experience (`ROADMAP.md`)
-- **Workflow stage:** The Core Navigation task is complete and accepted; the next task has not been planned or started.
+- **Milestone:** Milestone 2 — Core Professional Experience and its accepted CSS follow-up are complete; the next candidate is the first Milestone 3 Evidence Model item (`ROADMAP.md`).
+- **Workflow stage:** The shared CSS extraction task is complete and accepted; the next task has not been planned or started.
 
 ## Evidence pointers
 
-- `TODO.md#core-navigation`
-- `src/app/App.tsx`
-- `src/components/PrimaryNavigation.tsx`
-- `src/components/PrimaryNavigation.test.tsx`
-- `src/styles/shell.css`
-- `e2e/critical-journeys.spec.ts`
-- `docs/DECISIONS.md#use-a-centred-primary-navigation-and-work-evidence-hub`
-- `docs/ARCHITECTURE.md#navigation-and-rendering`
+- `TODO.md#shared-css-patterns`
+- `src/styles/patterns.css`
+- `src/index.css`
+- `src/pages/HomePage.tsx`
+- `src/pages/ProfessionalSummaryPage.tsx`
+- `src/pages/ExperiencePage.tsx`
+- `src/pages/ResumePage.tsx`
+- `docs/DECISIONS.md#add-a-small-shared-css-pattern-layer-for-stable-core-route-reuse`
+- `docs/CSS_ABSTRACTION_REPORT.md`
 - `docs/ARCHITECTURE.md#quality-attributes`
 
 ## Blockers
@@ -38,4 +39,4 @@ None.
 
 ## Constraints and context
 
-The accepted visible-link navigation model remains in place: home-linked identity, direct primary links, distinct Contact action, and no menu or dropdown interaction. The unrelated `public/resume.pdf` change was excluded from this task review.
+The shared pattern layer is deliberately limited to four stable patterns. Tag, metadata, action, divider, utility, CSS Module, and component abstractions remain deferred. No Milestone 3 task has been planned or started.

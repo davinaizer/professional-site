@@ -25,7 +25,7 @@ describe("App", () => {
 		renderApp();
 
 		expect(
-			screen.getByRole("link", { name: "Professional Site" }),
+			screen.getByRole("link", { name: "Davi Naizer Santos" }),
 		).toHaveAttribute("href", routes.home);
 		expect(
 			screen.getByRole("navigation", { name: "Primary" }),

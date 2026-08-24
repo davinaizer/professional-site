@@ -1,7 +1,7 @@
 ---
 createdAt: 2026-08-07
 updatedAt: 2026-08-24
-version: 1.14
+version: 1.15
 status: active
 order: ASC
 ---
@@ -30,7 +30,19 @@ order: ASC
 
 **Review triggers:** Reconsider this boundary when route-local styles cause cascade-order defects, selector collisions, repeated import or testing friction, or when stable reuse demonstrates the need for a shared styling layer, CSS Modules, or another scoped styling approach.
 
-**Deferred:** CSS Modules; a shared composition-pattern layer; reusable style primitives; and any broad stylesheet reorganisation.
+**Deferred:** CSS Modules and any broad stylesheet reorganisation remain undefined until a demonstrated requirement exists. The accepted shared pattern boundary and its remaining exclusions are recorded below.
+
+## Add a small shared CSS pattern layer for stable core route reuse — 2026-08-24
+
+**Decision:** Keep route-owned CSS colocated with route components and add `src/styles/patterns.css`, imported through `src/index.css`, for the four stable semantic patterns `.page-section`, `.page-lead`, `.eyebrow`, and `.page-intro`. Keep route-specific classes and modifiers in each page stylesheet.
+
+**Rationale:** Contact and Core Navigation completed the core route set, and the four routes demonstrated repeated semantic styling with no need for a component abstraction. A small CSS layer removes verified duplication while preserving the shallow route ownership boundary and relevant frontend practice.
+
+**Consequence:** The shared layer owns only the four extracted patterns and their shared mobile page-section adjustment. Home layout variations, Experience timeline styling, Summary focus styling, and Resume-specific responsive treatment remain colocated with their routes. No dependency, CSS Module, utility framework, or React wrapper is introduced.
+
+**Review triggers:** Reconsider the boundary if shared selectors cause cascade-order defects, semantic roles diverge, route-specific modifiers become difficult to understand, or later evidence justifies extracting additional patterns.
+
+**Deferred:** `.tag-list`, `.tag`, `.page-metadata`, `.action-link`, `.section-divider`, generic list-reset utilities, CSS Modules, utility frameworks, and React wrapper components remain undefined until demonstrated reuse or a concrete requirement justifies them.
 
 ## Use a local TypeScript contract for public professional content — 2026-08-12
 

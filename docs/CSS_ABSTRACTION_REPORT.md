@@ -1,7 +1,7 @@
 ---
 createdAt: 2026-08-23
-updatedAt: 2026-08-23
-version: 1.0
+updatedAt: 2026-08-24
+version: 1.1
 status: analysis
 ---
 
@@ -213,18 +213,17 @@ The repeated styles do not currently justify shared React layout components. The
 
 ## Architectural constraint
 
-`docs/HANDOFF.md` states that shared styling remains deferred until the remaining core routes show stable semantic reuse. The next planned core task is accessible professional contact links, and Contact has not yet been implemented.
+Contact and Core Navigation are now complete, so the documented stable-reuse review trigger has been met. The first extraction is implemented in `src/styles/patterns.css` and imported through `src/index.css`.
 
-`docs/DECISIONS.md` also records that reusable style primitives and a shared composition-pattern layer remain deferred until stable reuse is demonstrated.
+Implemented patterns:
 
-The recommended future implementation approach is therefore:
+- `.page-section`
+- `.page-lead`
+- `.eyebrow`
+- `.page-intro`
 
-- revisit this report after Contact and core navigation are complete;
-- add shared classes alongside existing route classes;
-- retain route-specific classes for variations such as the Home grid;
-- use a deliberately small shared stylesheet if the reuse remains stable;
-- avoid CSS Modules, a utility framework, or React wrapper components unless a later review trigger justifies them.
+Route-specific classes remain colocated with their page stylesheets, including variations such as the Home grid. CSS Modules, utility frameworks, React wrapper components, and the remaining report candidates remain deferred under `docs/DECISIONS.md`.
 
 ## Conclusion
 
-The repository has meaningful, repeated route styling, particularly around page framing, route leads, labels, introductions, tags, actions, dividers, and metadata. The duplication is sufficient to justify a later focused styling task, but current project decisions correctly defer implementation until the remaining core routes provide stronger evidence of stable semantic reuse.
+The repository has meaningful repeated route styling. The first high-confidence layout and content-role patterns are now shared without broad stylesheet reorganisation or new dependencies. Tags, metadata, actions, dividers, and other lower-priority candidates remain available for later evidence-based review rather than being extracted speculatively.

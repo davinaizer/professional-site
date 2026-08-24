@@ -1,7 +1,7 @@
 ---
 createdAt: 2026-08-07
 updatedAt: 2026-08-24
-version: 1.17
+version: 1.19
 status: active
 ---
 
@@ -125,11 +125,15 @@ Task boundaries should balance developer implementation effort with reliable AI-
 
 ### Milestone 2 Completion
 
-- [ ] Complete Milestone 2 after confirming:
+- [x] Complete Milestone 2 after confirming:
   - professional identity is understandable within one or two minutes;
   - core content is clear, accessible, responsive, and deployable;
   - professional evidence remains accurate and defensible; and
-  - the core profile does not require unnecessary interaction to understand.
+	  - the core profile does not require unnecessary interaction to understand.
+
+## Shared CSS Patterns
+
+- [x] Extract high-confidence shared page styles for the core routes.
 
 ---
 

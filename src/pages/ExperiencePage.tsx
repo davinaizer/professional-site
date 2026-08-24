@@ -5,11 +5,11 @@ function ExperiencePage() {
 	const { experience } = professionalContent;
 
 	return (
-		<section className="experience">
-			<header className="experience__header">
-				<p className="experience__label">Career history</p>
+		<section className="experience page-section">
+			<header className="experience__header page-lead">
+				<p className="eyebrow">Career history</p>
 				<h1>Experience</h1>
-				<p className="experience__intro">
+				<p className="experience__intro page-intro">
 					Career history with clear context and accurate contribution
 					boundaries.
 				</p>
