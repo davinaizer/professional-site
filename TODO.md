@@ -1,7 +1,7 @@
 ---
 createdAt: 2026-08-07
 updatedAt: 2026-08-24
-version: 1.19
+version: 1.20
 status: active
 ---
 
@@ -141,7 +141,7 @@ Task boundaries should balance developer implementation effort with reliable AI-
 
 ## Evidence Model
 
-- [ ] Define the minimum structure for projects, case studies, outcomes, and engineering evidence.
+- [x] Define the minimum structure for projects, case studies, outcomes, and engineering evidence.
 - [ ] Define how evidence connects back to experience and professional claims.
 - [ ] Establish rules for evidence confidence, contribution boundaries, and confidentiality.
 

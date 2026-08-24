@@ -8,6 +8,18 @@ order: ASC
 
 # Decisions
 
+## Define a static evidence contract from approved PKM projection patterns — 2026-08-24
+
+**Decision:** Add `src/content/evidence.ts` as a separate local TypeScript contract for `Outcome`, `Project`, `CaseStudy`, and `EngineeringEvidence`. Use explicit narrative fields for case studies rather than a flexible section or block model. Let `Project` own purpose, problem, solution, technologies, and outcomes; let `CaseStudy` own personal contribution and narrative decisions; and let `EngineeringEvidence` capture actions, decisions, trade-offs, technologies, outcomes, and lessons. Keep the contract limited to manually curated site content.
+
+**Rationale:** The PKM entity schema distinguishes a project from the experiences and claims derived from it. Its project contract owns purpose, problem, solution, technologies, and outcomes, while its experience contract owns factual actions and outcomes. The site contract adopts those useful ownership boundaries without reproducing PKM entities, relationships, or private editorial metadata such as evidence levels, provenance, unsupported claims, missing-evidence notes, and source links.
+
+**Consequence:** The repository contains only approved site content. Because the repository is public, PKM source files and source-governance metadata must not be committed, imported, or represented as hidden application fields. Stable slugs identify site records, unknown optional fields are omitted, and relationships to experience or professional claims remain deferred. The evidence contract adds no content values, routes, rendering, runtime validation, or PKM integration.
+
+**Review triggers:** Reconsider the contract when approved evidence content cannot be represented clearly, repeated narrative changes justify a different boundary, or a demonstrated requirement supports a validated public export. Any import or synchronisation proposal must be reviewed as a separate architecture decision.
+
+**Deferred:** Evidence connections to experience and professional claims, confidence and contribution-boundary rules, confidentiality and publication governance, and project, case-study, and engineering page implementation remain undefined until later approved tasks.
+
 ## Use a contact-specific public-link contract — 2026-08-24
 
 **Decision:** Keep `PublicLink` limited to the shared `label` and `url` fields used by identity profile links and resume access. Define `ContactLink` as a contact-specific extension with `category`, `actionLabel`, and optional `description` fields, and use it for `ProfessionalContent.contact`.
