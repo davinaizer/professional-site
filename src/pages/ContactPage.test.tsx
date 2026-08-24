@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, within } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 import { professionalContent } from "../content/professional-content.ts";
 import { axe } from "../test/axe.ts";
@@ -12,12 +12,26 @@ describe("ContactPage", () => {
 			screen.getByRole("heading", { level: 1, name: "Contact" }),
 		).toBeInTheDocument();
 
-		const contactLinks = screen.getAllByRole("link");
-		expect(contactLinks).toHaveLength(professionalContent.contact.length);
+		const contactLinks = screen.getByRole("list", {
+			name: "Professional contact links",
+		});
+		const links = within(contactLinks).getAllByRole("link");
 
+		expect(links).toHaveLength(professionalContent.contact.length);
 		for (const contact of professionalContent.contact) {
-			const contactLink = screen.getByRole("link", { name: contact.label });
-			expect(contactLink).toHaveAttribute("href", contact.url);
+			const link = within(contactLinks).getByRole("link", {
+				name: contact.actionLabel,
+			});
+
+			expect(link).toHaveAttribute("href", contact.url);
+			expect(
+				within(contactLinks).getByText(contact.category),
+			).toBeInTheDocument();
+			if (contact.description) {
+				expect(
+					within(contactLinks).getByText(contact.description),
+				).toBeInTheDocument();
+			}
 		}
 	});
 
