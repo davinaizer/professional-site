@@ -26,6 +26,7 @@ Close the accepted task cleanly without beginning or planning another task.
 7. Identify the next task candidate from current execution state without planning it.
 8. Update `docs/HANDOFF.md` as a compact current-state index for the next `plan-next-task` invocation.
 9. Report completion, validation, documentation changes, and known non-blocking limitations.
+10. Provide a concise suggested commit message for the accepted task changes as the final output item; do not create the commit.
 
 ## Boundaries
 
@@ -33,7 +34,7 @@ Close the accepted task cleanly without beginning or planning another task.
 - Do not plan the next task or create a detailed next-task plan.
 - Do not introduce architecture or make new product or engineering decisions.
 - Do not modify unrelated files.
-- Do not suggest commit messages, commit, or push.
+- Do not commit or push.
 - Do not begin the next workflow stage.
 
 ## Handoff contract
@@ -65,8 +66,9 @@ State:
 4. Known non-blocking limitations
 5. Handoff update
 6. Next task candidate, without scope or implementation planning
+7. Suggested commit message for the accepted task changes
 
-The task and workflow end here.
+The suggested commit message must be the final output item. The task and workflow end here.
 
 ## Completion criteria
 

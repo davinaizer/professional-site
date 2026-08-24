@@ -1,0 +1,106 @@
+.contact {
+	padding-block: var(--space-8);
+}
+
+.contact__layout {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.9fr);
+	gap: var(--space-8);
+	align-items: start;
+}
+
+.contact__header {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-2);
+	max-inline-size: 34rem;
+}
+
+.contact__label {
+	color: var(--color-text-secondary);
+	font-family: var(--font-family-mono);
+	font-size: var(--font-size-label);
+	font-weight: var(--font-weight-medium);
+	letter-spacing: var(--letter-spacing-label);
+	line-height: var(--line-height-label);
+	text-transform: uppercase;
+}
+
+.contact__intro {
+	font-size: var(--font-size-body-lg);
+	margin-block-start: var(--space-1);
+}
+
+.contact__links {
+	display: grid;
+	max-inline-size: none;
+	margin-block-start: 0;
+	padding-inline-start: 0;
+	list-style: none;
+}
+
+.contact__link {
+	display: grid;
+	gap: var(--space-1);
+	border-block-start: var(--border-width-default) solid
+		var(--color-border-subtle);
+	padding-block: var(--space-2);
+}
+
+.contact__link:last-child {
+	border-block-end: var(--border-width-default) solid var(--color-border-subtle);
+}
+
+.contact__link + .contact__link {
+	margin-block-start: 0;
+}
+
+.contact__metadata {
+	display: flex;
+	gap: var(--space-2);
+	color: var(--color-text-secondary);
+	font-family: var(--font-family-mono);
+	font-size: var(--font-size-label);
+	font-weight: var(--font-weight-medium);
+	letter-spacing: var(--letter-spacing-label);
+	line-height: var(--line-height-label);
+	text-transform: uppercase;
+}
+
+.contact__link a {
+	display: flex;
+	justify-content: space-between;
+	gap: var(--space-2);
+	font-size: var(--font-size-body-lg);
+	text-decoration-thickness: var(--border-width-default);
+}
+
+.contact__link a span {
+	color: var(--color-text-secondary);
+	font-family: var(--font-family-mono);
+}
+
+.contact__link a:hover span {
+	color: var(--color-link);
+}
+
+.contact__description {
+	max-inline-size: 45ch;
+	color: var(--color-text-secondary);
+	font-size: var(--font-size-caption);
+}
+
+@media (max-width: 40rem) {
+	.contact {
+		padding-block: var(--space-6);
+	}
+
+	.contact__layout {
+		grid-template-columns: 1fr;
+		gap: var(--space-6);
+	}
+
+	.contact__intro {
+		font-size: var(--font-size-body);
+	}
+}

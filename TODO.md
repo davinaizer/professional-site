@@ -1,7 +1,7 @@
 ---
 createdAt: 2026-08-07
-updatedAt: 2026-08-12
-version: 1.11
+updatedAt: 2026-08-24
+version: 1.19
 status: active
 ---
 
@@ -76,12 +76,12 @@ Task boundaries should balance developer implementation effort with reliable AI-
 
 ## Deployment Foundation
 
-- [ ] Select the simplest suitable deployment target.
-- [ ] Configure, deploy, and validate the application foundation using the approved deployment target.
+- [x] Select the simplest suitable deployment target.
+- [x] Configure, deploy, and validate the application foundation using the approved deployment target.
 
 ### Milestone 1 Completion
 
-- [ ] Complete Milestone 1 after confirming:
+- [x] Complete Milestone 1 after confirming:
   - the application builds and deploys;
   - strict TypeScript and relevant quality checks pass;
   - baseline accessibility and responsive behaviour are verified;
@@ -94,42 +94,46 @@ Task boundaries should balance developer implementation effort with reliable AI-
 
 ## Content Foundation
 
-- [ ] Define the minimum content structure required for core professional information.
-- [ ] Decide where professional content should live and how it should be represented.
-- [ ] Add the approved professional identity and summary content.
-- [ ] Add the approved experience content.
+- [x] Define the minimum content structure required for core professional information.
+- [x] Decide where professional content should live and how it should be represented.
+- [x] Add the approved professional identity and summary content.
+- [x] Add the approved experience content, résumé, and contact.
 
 ## Home
 
-- [ ] Implement the Home experience, communicating professional focus within the initial viewport and providing clear routes to relevant core areas.
+- [x] Implement the Home experience, communicating professional focus within the initial viewport and providing clear routes to relevant core areas.
 
 ## Professional Summary
 
-- [ ] Implement a concise, defensible professional summary aligned with the current CV and product-engineering direction.
+- [x] Implement a concise, defensible professional summary aligned with the current CV and product-engineering direction.
 
 ## Experience
 
-- [ ] Implement the career timeline with clear chronology, defensible contribution boundaries, and content suitable for interview preparation and reuse.
+- [x] Implement the career timeline with clear chronology, defensible contribution boundaries, and content suitable for interview preparation and reuse.
 
 ## Resume
 
-- [ ] Add production-ready access to the current CV.
+- [x] Add production-ready access to the current CV.
 
 ## Contact
 
-- [ ] Add and validate accessible professional contact links.
+- [x] Add and validate accessible professional contact links.
 
 ## Core Navigation
 
-- [ ] Connect and validate all core professional areas through consistent keyboard-accessible and responsive navigation.
+- [x] Connect and validate all core professional areas through consistent keyboard-accessible and responsive navigation.
 
 ### Milestone 2 Completion
 
-- [ ] Complete Milestone 2 after confirming:
+- [x] Complete Milestone 2 after confirming:
   - professional identity is understandable within one or two minutes;
   - core content is clear, accessible, responsive, and deployable;
   - professional evidence remains accurate and defensible; and
-  - the core profile does not require unnecessary interaction to understand.
+	  - the core profile does not require unnecessary interaction to understand.
+
+## Shared CSS Patterns
+
+- [x] Extract high-confidence shared page styles for the core routes.
 
 ---
 

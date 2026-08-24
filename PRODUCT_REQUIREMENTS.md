@@ -2,7 +2,7 @@
 createdAt: 2026-08-07
 updatedAt: 2026-08-07
 version: 1.0
-status: draft
+status: active
 ---
 
 # Product Requirements

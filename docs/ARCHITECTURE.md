@@ -1,7 +1,7 @@
 ---
 createdAt: 2026-08-10
-updatedAt: 2026-08-11
-version: 1.3
+updatedAt: 2026-08-12
+version: 1.5
 status: active
 ---
 
@@ -60,9 +60,9 @@ The shared shell provides a home-linked identity, direct routes to Experience, W
 
 ## Content and data
 
-Current page content is colocated with route components. The long-term content representation and source are intentionally undefined.
+Current page content is colocated with route components. `src/content/professional.ts` owns the initial local TypeScript contract for the editorially approved public projection: identity, professional summary, experience, resume access, and contact. Home composes this core content and has no separate content model.
 
-Do not introduce a CMS, database, API, state-management library, or content abstraction until a current product requirement or repeated maintenance problem justifies it. Any professional content model must preserve evidence accuracy, contribution boundaries, confidentiality, and reuse requirements from `PRODUCT_REQUIREMENTS.md`.
+Content remains static and manually curated in the site. Do not introduce a CMS, database, API, state-management library, additional content abstraction, or PKM integration until a current product requirement or repeated maintenance problem justifies it. PKM evidence and source-governance metadata remain private; public content must preserve evidence accuracy, contribution boundaries, confidentiality, chronology, and reuse requirements from `PRODUCT_REQUIREMENTS.md`.
 
 ## Quality attributes
 
@@ -89,7 +89,8 @@ Keep code close to the route, component, or application boundary that owns it. E
 
 The following are not architectural commitments:
 
-- the professional-content schema and source;
+- a PKM export/import format or toolchain;
+- PKM integration;
 - reusable visual primitives and component-level styling boundaries;
 - browser-level automated accessibility testing, including CSS-dependent colour-contrast checks;
 - remote data loading, persistence, APIs, or server processes;

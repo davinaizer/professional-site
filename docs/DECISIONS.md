@@ -1,12 +1,72 @@
 ---
 createdAt: 2026-08-07
-updatedAt: 2026-08-12
-version: 1.8
+updatedAt: 2026-08-24
+version: 1.15
 status: active
 order: ASC
 ---
 
 # Decisions
+
+## Use a contact-specific public-link contract — 2026-08-24
+
+**Decision:** Keep `PublicLink` limited to the shared `label` and `url` fields used by identity profile links and resume access. Define `ContactLink` as a contact-specific extension with `category`, `actionLabel`, and optional `description` fields, and use it for `ProfessionalContent.contact`.
+
+**Rationale:** Contact options need editorial context and clear actions as the contact area grows, while category and description copy do not apply naturally to every public link. A specialised type preserves the small shared link contract, keeps public content typed and manually curated, and avoids route-level label mappings or duplicated presentation copy.
+
+**Consequence:** Contact content can render a concise metadata category, an actionable link label, and optional supporting copy without changing profile-link or resume content. The contact route remains static and uses native accessible links; no new content source, runtime validation, or shared component is introduced.
+
+**Review triggers:** Reconsider this boundary when multiple public-link consumers need the same contextual fields, contact descriptions create repeated editorial maintenance, or a broader public-link vocabulary is required by an approved content area.
+
+**Deferred:** Contact forms, contact-link icons, external service integrations, and a generalised metadata schema remain undefined until a demonstrated requirement exists.
+
+## Colocate route-owned CSS with route components — 2026-08-14
+
+**Decision:** Keep global styling layers in `src/styles/` and import them through `src/index.css`. Place CSS that belongs exclusively to one route alongside that route component in `src/pages/`, using a matching filename and a direct component import—for example, `ProfessionalSummaryPage.tsx` imports `./ProfessionalSummaryPage.css`. Continue to scope selectors with distinctive page prefixes. Migrate the existing Home route stylesheet to `src/pages/HomePage.css` as part of adopting this convention; subsequent route-owned styles follow it by default.
+
+**Rationale:** Page components and their presentation change together. Colocation makes the ownership, discovery, maintenance, and removal of route-specific styles explicit without introducing CSS Modules, a dependency, or a component abstraction. The repository has a demonstrated need for a second page-owned stylesheet; maintaining a central registry for route-owned CSS would separate related implementation without providing a current benefit.
+
+**Consequence:** `src/index.css` remains the entry point for reset, tokens, document-wide rules, and shared-shell styling; it is not the registry for route-owned styles. Route components directly import their own CSS. `HomePage.tsx` now owns the import for its migrated stylesheet. Shared styling patterns are not introduced merely to remove local repetition: revisit a shared styling boundary after the remaining core pages provide sufficient evidence of stable semantic reuse.
+
+**Review triggers:** Reconsider this boundary when route-local styles cause cascade-order defects, selector collisions, repeated import or testing friction, or when stable reuse demonstrates the need for a shared styling layer, CSS Modules, or another scoped styling approach.
+
+**Deferred:** CSS Modules and any broad stylesheet reorganisation remain undefined until a demonstrated requirement exists. The accepted shared pattern boundary and its remaining exclusions are recorded below.
+
+## Add a small shared CSS pattern layer for stable core route reuse — 2026-08-24
+
+**Decision:** Keep route-owned CSS colocated with route components and add `src/styles/patterns.css`, imported through `src/index.css`, for the four stable semantic patterns `.page-section`, `.page-lead`, `.eyebrow`, and `.page-intro`. Keep route-specific classes and modifiers in each page stylesheet.
+
+**Rationale:** Contact and Core Navigation completed the core route set, and the four routes demonstrated repeated semantic styling with no need for a component abstraction. A small CSS layer removes verified duplication while preserving the shallow route ownership boundary and relevant frontend practice.
+
+**Consequence:** The shared layer owns only the four extracted patterns and their shared mobile page-section adjustment. Home layout variations, Experience timeline styling, Summary focus styling, and Resume-specific responsive treatment remain colocated with their routes. No dependency, CSS Module, utility framework, or React wrapper is introduced.
+
+**Review triggers:** Reconsider the boundary if shared selectors cause cascade-order defects, semantic roles diverge, route-specific modifiers become difficult to understand, or later evidence justifies extracting additional patterns.
+
+**Deferred:** `.tag-list`, `.tag`, `.page-metadata`, `.action-link`, `.section-divider`, generic list-reset utilities, CSS Modules, utility frameworks, and React wrapper components remain undefined until demonstrated reuse or a concrete requirement justifies them.
+
+## Use a local TypeScript contract for public professional content — 2026-08-12
+
+**Decision:** Use `src/content/professional.ts` as the initial local, typed contract for the public professional-content projection. It exports types for public links, identity, summary, experience entries, resume access, and the aggregate projection. Content remains static and manually curated in the site; this task introduces no content values.
+
+**Rationale:** Identity, summary, and experience information will be reused across core routes, so route-local definitions would duplicate a known public boundary. A TypeScript module gives strict compile-time checking and straightforward React imports without adding parsing, runtime validation, dependencies, or build complexity. Markdown is better suited to future narrative content, while JSON becomes useful only when the PKM can produce an accepted public export that warrants a validated import boundary.
+
+**Consequence:** `src/content/professional.ts` is the local source of truth for the public-content shape. Collections are readonly; experience dates are represented as distinct start and optional end values so current roles can be unambiguous. `ResumeAccess` composes `PublicLink` with an optional updated date. The module contains no PKM imports, paths, provenance, confidentiality, or source-governance metadata.
+
+**Review triggers:** Reconsider this representation when accepted public-ready PKM records and repeated manual-transfer friction justify a versioned static export and validated import or generation step; when editorial authoring needs show that a narrative representation is required; or when a content requirement cannot be expressed cleanly by the current contract.
+
+**Deferred:** PKM export/import tooling, JSON or Markdown content formats, runtime or build-time PKM integration, schema-validation dependencies, CMS or remote data loading, and public content values remain undefined until a demonstrated requirement or later approved content task exists.
+
+## Use an editorially approved projection for public professional content — 2026-08-12
+
+**Decision:** Define public professional content as a small, editorially approved projection: identity (name, professional headline, optional broad location, and profile links); professional summary (summary and focus areas); experience (company, role, start and end date or present, optional broad location, responsibilities, selected contributions and outcomes, and optional technologies); resume access (label, URL, and optional updated date); and contact (explicitly approved public email, URL, and professional links). Home composes identity, a short summary, selected experience highlights, and calls to Resume and Contact; it has no separate content model.
+
+**Rationale:** The current PKM material contains converted historical sources but no accepted knowledge entities, claims, provenance records, generated resume, or evidence map. Publishing directly from it, performance reviews, or derived audits would risk unsupported claims, ambiguous chronology, confidentiality exposure, and unclear personal-versus-team attribution. A minimal projection supports the Milestone 2 professional experience while keeping public content accurate, reusable, and proportionate.
+
+**Consequence:** Public experience entries use approved company, role, dates, optional broad location, responsibilities, selected contributions, selected outcomes, and optional technologies. Published dates use one approved consistent precision, normally month/year; uncertain employment or role boundaries must be resolved rather than inferred. Contributions and outcomes require editorial review for attribution, evidence, chronology, and confidentiality. PKM visibility, provenance, confidentiality, attribution, outcome-type, and publication-approval controls remain private source-governance metadata, not public application fields.
+
+**Review triggers:** Reconsider this boundary when the PKM contains accepted public-ready records with sufficient governance metadata, when a public content area needs fields beyond the recorded vocabulary, or when a product requirement requires a content source, loading mechanism, or integration.
+
+**Deferred:** PKM integration, CMS or remote data loading, generated resume, and Milestone 3 project, case-study, and engineering-evidence structures remain undefined until a demonstrated requirement exists.
 
 ## Use Cloudflare Pages for static application deployment — 2026-08-12
 
