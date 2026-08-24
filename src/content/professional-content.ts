@@ -25,6 +25,7 @@ export const professionalContent: ProfessionalContent = {
 	},
 	experience: [
 		{
+			slug: "independent-product-venture-product-engineer-co-creator-2025",
 			company: "Independent Product Venture",
 			role: "Product Engineer & Co-creator",
 			startDate: "12/2025",
@@ -46,6 +47,7 @@ export const professionalContent: ProfessionalContent = {
 			],
 		},
 		{
+			slug: "self-employed-planned-career-break-2024-2025",
 			company: "Self-employed",
 			role: "Planned Career Break",
 			startDate: "11/2024",
@@ -58,6 +60,7 @@ export const professionalContent: ProfessionalContent = {
 			technologies: [],
 		},
 		{
+			slug: "signal-group-senior-frontend-software-engineer-2023-2024",
 			company: "The Signal Group",
 			role: "Senior Frontend Software Engineer",
 			startDate: "12/2023",
@@ -84,6 +87,7 @@ export const professionalContent: ProfessionalContent = {
 			],
 		},
 		{
+			slug: "ballys-interactive-frontend-tech-lead-2022-2023",
 			company: "Bally's Interactive",
 			role: "Frontend Tech Lead",
 			startDate: "11/2022",
@@ -111,6 +115,7 @@ export const professionalContent: ProfessionalContent = {
 			],
 		},
 		{
+			slug: "gamesys-ballys-senior-frontend-engineer-2020-2022",
 			company: "Gamesys / Bally's Interactive",
 			role: "Senior Frontend Engineer",
 			startDate: "10/2020",
@@ -136,6 +141,7 @@ export const professionalContent: ProfessionalContent = {
 			],
 		},
 		{
+			slug: "gamesys-frontend-developer-2019-2020",
 			company: "Gamesys",
 			role: "Frontend Developer",
 			startDate: "03/2019",
@@ -152,6 +158,7 @@ export const professionalContent: ProfessionalContent = {
 			technologies: ["React", "JavaScript", "Redux", "Sass", "Node.js"],
 		},
 		{
+			slug: "unbox-learning-experience-co-founder-technical-lead-2009-2017",
 			company: "UNBOX Learning Experience",
 			role: "Co-founder & Technical Lead",
 			startDate: "2009",
@@ -168,6 +175,7 @@ export const professionalContent: ProfessionalContent = {
 			technologies: ["JavaScript", "HTML", "CSS", "ActionScript", "Moodle"],
 		},
 	],
+	claims: [],
 	resume: {
 		label: "Download Resume",
 		url: "/resume.pdf",

@@ -3,6 +3,11 @@ export type Outcome = {
 	detail?: string;
 };
 
+export type EvidenceReference =
+	| { kind: "project"; slug: string }
+	| { kind: "case-study"; slug: string }
+	| { kind: "engineering"; slug: string };
+
 type EvidenceBase = {
 	slug: string;
 	title: string;

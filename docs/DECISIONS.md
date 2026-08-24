@@ -8,17 +8,29 @@ order: ASC
 
 # Decisions
 
+## Define claim-owned relationships between evidence and professional experience — 2026-08-24
+
+**Decision:** Add stable `slug` identifiers to `ExperienceEntry`, define `EvidenceReference` as a discriminated reference to a project, case study, or engineering-evidence record, and define `ProfessionalClaim` with optional experience references and required supporting-evidence references. Add an empty claims collection to `ProfessionalContent`. Claims own the one-way relationships; evidence and experience do not store reciprocal claim arrays.
+
+**Rationale:** The PKM schema makes claims the reusable assertion boundary and lets claims reference the experiences and evidence that support them. A claim-owned relationship model preserves that ownership without importing PKM entities, wiki links, provenance, or a general knowledge graph. Stable slugs make the manually curated public projection addressable without coupling identifiers to display copy.
+
+**Consequence:** Existing experience copy remains unchanged while each entry gains a stable public slug. The current site content contains no claim records yet; `ProfessionalContent.claims` is initialised empty. Evidence references are manually curated strings distinguished by evidence kind, with no runtime resolver or reciprocal relationship state.
+
+**Review triggers:** Reconsider the relationship owner when public content requires derived reverse indexes, relationship resolution becomes error-prone, or a validated content source replaces manual curation. Review the identifier strategy if display-independent stable slugs cannot remain unique.
+
+**Deferred:** Evidence confidence, contribution-boundary, and confidentiality rules; claim content; relationship rendering; and PKM import or synchronisation remain undefined until later approved tasks.
+
 ## Define a static evidence contract from approved PKM projection patterns — 2026-08-24
 
 **Decision:** Add `src/content/evidence.ts` as a separate local TypeScript contract for `Outcome`, `Project`, `CaseStudy`, and `EngineeringEvidence`. Use explicit narrative fields for case studies rather than a flexible section or block model. Let `Project` own purpose, problem, solution, technologies, and outcomes; let `CaseStudy` own personal contribution and narrative decisions; and let `EngineeringEvidence` capture actions, decisions, trade-offs, technologies, outcomes, and lessons. Keep the contract limited to manually curated site content.
 
 **Rationale:** The PKM entity schema distinguishes a project from the experiences and claims derived from it. Its project contract owns purpose, problem, solution, technologies, and outcomes, while its experience contract owns factual actions and outcomes. The site contract adopts those useful ownership boundaries without reproducing PKM entities, relationships, or private editorial metadata such as evidence levels, provenance, unsupported claims, missing-evidence notes, and source links.
 
-**Consequence:** The repository contains only approved site content. Because the repository is public, PKM source files and source-governance metadata must not be committed, imported, or represented as hidden application fields. Stable slugs identify site records, unknown optional fields are omitted, and relationships to experience or professional claims remain deferred. The evidence contract adds no content values, routes, rendering, runtime validation, or PKM integration.
+**Consequence:** The repository contains only approved site content. Because the repository is public, PKM source files and source-governance metadata must not be committed, imported, or represented as hidden application fields. Stable slugs identify site records, unknown optional fields are omitted, and claim-owned relationships are defined separately. The evidence contract adds no content values, routes, rendering, runtime validation, or PKM integration.
 
 **Review triggers:** Reconsider the contract when approved evidence content cannot be represented clearly, repeated narrative changes justify a different boundary, or a demonstrated requirement supports a validated public export. Any import or synchronisation proposal must be reviewed as a separate architecture decision.
 
-**Deferred:** Evidence connections to experience and professional claims, confidence and contribution-boundary rules, confidentiality and publication governance, and project, case-study, and engineering page implementation remain undefined until later approved tasks.
+**Deferred:** Evidence confidence and contribution-boundary rules, confidentiality and publication governance, claim content, and project, case-study, and engineering page implementation remain undefined until later approved tasks.
 
 ## Use a contact-specific public-link contract — 2026-08-24
 
