@@ -5,8 +5,15 @@ import { routes } from "../app/routes.ts";
 import { axe } from "../test/axe.ts";
 import PrimaryNavigation from "./PrimaryNavigation.tsx";
 
+const navigationItems = [
+	{ name: "Experience", href: routes.experience },
+	{ name: "Work", href: routes.work },
+	{ name: "Engineering", href: routes.engineering },
+	{ name: "Resume", href: routes.resume },
+] as const;
+
 describe("PrimaryNavigation", () => {
-	it("renders the primary navigation links with their expected destinations", () => {
+	it("renders the complete primary navigation contract in order", () => {
 		render(
 			<MemoryRouter initialEntries={[routes.work]}>
 				<PrimaryNavigation />
@@ -16,32 +23,34 @@ describe("PrimaryNavigation", () => {
 		const navigation = screen.getByRole("navigation", { name: "Primary" });
 		const links = within(navigation).getAllByRole("link");
 
-		expect(links).toHaveLength(4);
-		expect(
-			within(navigation).getByRole("link", { name: "Experience" }),
-		).toHaveAttribute("href", routes.experience);
-		expect(
-			within(navigation).getByRole("link", { name: "Work" }),
-		).toHaveAttribute("href", routes.work);
-		expect(
-			within(navigation).getByRole("link", { name: "Engineering" }),
-		).toHaveAttribute("href", routes.engineering);
-		expect(
-			within(navigation).getByRole("link", { name: "Resume" }),
-		).toHaveAttribute("href", routes.resume);
+		expect(links).toHaveLength(navigationItems.length);
+		expect(links.map((link) => link.textContent)).toEqual(
+			navigationItems.map((item) => item.name),
+		);
+		expect(links.map((link) => link.getAttribute("href"))).toEqual(
+			navigationItems.map((item) => item.href),
+		);
 	});
 
-	it("marks the current route as active", () => {
+	it("marks only the current route as active", () => {
 		render(
 			<MemoryRouter initialEntries={[routes.work]}>
 				<PrimaryNavigation />
 			</MemoryRouter>,
 		);
 
-		expect(screen.getByRole("link", { name: "Work" })).toHaveAttribute(
-			"aria-current",
-			"page",
-		);
+		const navigation = screen.getByRole("navigation", { name: "Primary" });
+
+		expect(
+			within(navigation).getByRole("link", { name: "Work" }),
+		).toHaveAttribute("aria-current", "page");
+		for (const item of navigationItems.filter(
+			(item) => item.href !== routes.work,
+		)) {
+			expect(
+				within(navigation).getByRole("link", { name: item.name }),
+			).not.toHaveAttribute("aria-current");
+		}
 	});
 
 	it("has no detectable accessibility violations", async () => {

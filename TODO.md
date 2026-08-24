@@ -121,7 +121,7 @@ Task boundaries should balance developer implementation effort with reliable AI-
 
 ## Core Navigation
 
-- [ ] Connect and validate all core professional areas through consistent keyboard-accessible and responsive navigation.
+- [x] Connect and validate all core professional areas through consistent keyboard-accessible and responsive navigation.
 
 ### Milestone 2 Completion
 
