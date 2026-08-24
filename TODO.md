@@ -143,7 +143,7 @@ Task boundaries should balance developer implementation effort with reliable AI-
 
 - [x] Define the minimum structure for projects, case studies, outcomes, and engineering evidence.
 - [x] Define how evidence connects back to experience and professional claims.
-- [ ] Establish rules for evidence confidence, contribution boundaries, and confidentiality.
+- [x] Establish rules for evidence confidence, contribution boundaries, and confidentiality.
 
 ## Selected Projects
 

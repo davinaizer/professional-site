@@ -8,6 +8,18 @@ order: ASC
 
 # Decisions
 
+## Establish public evidence governance rules — 2026-08-24
+
+**Decision:** Treat evidence confidence, contribution boundaries, and confidentiality as editorial publication gates for manually curated public content rather than public application metadata or runtime validation. Publish claims and outcomes only when the available evidence supports the strength of the statement. Distinguish measured outcomes from qualitative outcomes, and omit or reframe unsupported, uncertain, or unverifiable claims. Describe personal contribution separately from team, client, or organisational contribution without implying sole ownership where the work was collaborative. Distinguish production work from exploratory work. Publish only approved public-safe abstractions, excluding confidential employer or client information, private metrics, internal system details, secrets, personal information, and private source-governance metadata.
+
+**Rationale:** The product must provide useful professional evidence without overstating ownership, impact, certainty, or public disclosure. Editorial gates preserve honest boundaries while keeping the public content model small, static, and manually curated. Confidence and confidentiality are properties of the publication decision and source governance, not information that the public application needs to render or resolve.
+
+**Consequence:** Existing `Project`, `CaseStudy`, `EngineeringEvidence`, `Outcome`, and `ProfessionalClaim` contracts remain unchanged. Fields such as `contribution`, `actions`, and `outcomes` support clear narrative boundaries but do not certify evidence or encode private governance state. Future content must be reviewed against these rules before it is added to the public repository. When evidence or confidentiality is uncertain, the content is excluded or rewritten at a safer level of abstraction.
+
+**Review triggers:** Reconsider this policy if repeated editorial errors show that manual review is insufficient, public users need an explicit evidence-status presentation, or an approved public content source requires a different governance boundary. Any schema, runtime validation, provenance, or synchronisation proposal must be reviewed as a separate decision.
+
+**Deferred:** Public confidence labels, publication-status fields, provenance, source links, confidentiality metadata, automated content governance, PKM import or synchronisation, and claim content remain undefined until a demonstrated requirement and separate approved task justify them.
+
 ## Define claim-owned relationships between evidence and professional experience — 2026-08-24
 
 **Decision:** Add stable `slug` identifiers to `ExperienceEntry`, define `EvidenceReference` as a discriminated reference to a project, case study, or engineering-evidence record, and define `ProfessionalClaim` with optional experience references and required supporting-evidence references. Add an empty claims collection to `ProfessionalContent`. Claims own the one-way relationships; evidence and experience do not store reciprocal claim arrays.
@@ -18,7 +30,7 @@ order: ASC
 
 **Review triggers:** Reconsider the relationship owner when public content requires derived reverse indexes, relationship resolution becomes error-prone, or a validated content source replaces manual curation. Review the identifier strategy if display-independent stable slugs cannot remain unique.
 
-**Deferred:** Evidence confidence, contribution-boundary, and confidentiality rules; claim content; relationship rendering; and PKM import or synchronisation remain undefined until later approved tasks.
+**Deferred at the time of this decision:** Evidence confidence, contribution-boundary, and confidentiality rules were left to a separate governance decision; claim content, relationship rendering, and PKM import or synchronisation remain deferred.
 
 ## Define a static evidence contract from approved PKM projection patterns — 2026-08-24
 
@@ -30,7 +42,7 @@ order: ASC
 
 **Review triggers:** Reconsider the contract when approved evidence content cannot be represented clearly, repeated narrative changes justify a different boundary, or a demonstrated requirement supports a validated public export. Any import or synchronisation proposal must be reviewed as a separate architecture decision.
 
-**Deferred:** Evidence confidence and contribution-boundary rules, confidentiality and publication governance, claim content, and project, case-study, and engineering page implementation remain undefined until later approved tasks.
+**Deferred at the time of this decision:** Evidence confidence, contribution-boundary, confidentiality, and publication-governance rules were left to a separate governance decision; claim content and project, case-study, and engineering page implementation remain deferred.
 
 ## Use a contact-specific public-link contract — 2026-08-24
 
