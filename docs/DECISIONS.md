@@ -8,13 +8,23 @@ order: ASC
 
 # Decisions
 
+## Allocate Alfred: What To Do Next as the first case study — 2026-08-31
+
+**Decision:** Allocate Alfred to the Case Studies area as **Alfred: What To Do Next**, using the stable slug `alfred-what-to-do-next`. Treat Alfred and the possible future name UpNext as the same project identity; UpNext is not used as the current public case-study name. Keep the existing `alfred` Selected Projects record unchanged as the shorter project projection. Beacon remains deferred.
+
+**Rationale:** The reviewed Alfred evidence provides the strongest current basis for one deeper narrative: clear product intent, mobile UX and implementation ownership, layered architecture, asynchronous recommendation integration, explicit decision states, and broad test coverage. The evidence also gives clear limits: the work is exploratory, and user validation, adoption, public launch, market success, and unsupported metrics are unavailable.
+
+**Consequence:** The first populated `CaseStudy` record expands the existing Alfred project narrative without importing source material, private paths, provenance, or governance metadata. Public copy must preserve the shared product-direction and backend-ownership boundary and must describe results as implementation evidence rather than validated user or business outcomes.
+
+**Review triggers:** Reconsider the public name if the project is formally renamed, if new evidence changes the approved contribution or confidentiality boundary, or if public validation establishes a stronger outcome. Any later allocation of Beacon or another case study remains a separate decision.
+
 ## Use explicit fields for reusable case-study narratives — 2026-08-31
 
 **Decision:** Define `CaseStudy` with explicit fields for context, problem, role, constraints, decisions, product and user experience, engineering, outcomes, reflection, and a public-safe evidence boundary. Keep the public-safe boundary as curated narrative content that explains the scope of what can be shared; it is not private confidence, provenance, confidentiality, or publication-status metadata. Render each field as a named page section and keep the manually curated case-study collection empty until approved content is ready.
 
 **Rationale:** A case study needs a repeatable narrative that supports product, UX, engineering, attribution, outcomes, and interview reflection without hiding meaning inside a generic approach field or flexible content-block system. Explicit fields keep the content contract understandable and make omissions visible during editorial review.
 
-**Consequence:** The case-study contract is stricter than the project contract and does not inherit optional narrative fields. The page supports fixture-driven verification of populated content while the public application publishes no case-study record yet. Alfred remains deferred until a separate content task approves its public-safe narrative.
+**Consequence:** The case-study contract is stricter than the project contract and does not inherit optional narrative fields. The page supports fixture-driven verification of populated content, while case-study content and allocation remain governed by separate approved decisions.
 
 **Review triggers:** Reconsider the fields if an approved case study cannot be represented clearly, repeated narrative changes create meaningful maintenance pressure, or a demonstrated product requirement requires a different content boundary. Any flexible block model, content source, or governance metadata proposal remains a separate decision.
 
@@ -24,11 +34,11 @@ order: ASC
 
 **Rationale:** The set is intentionally small and avoids representing every employer or technology. Vessel List Template Administration provides the clearest recent production React and TypeScript product evidence. The internal content-production workflow adds distinct systems, workflow, validation, and delivery evidence without exposing internal project details. Alfred is the most recent project and validates the product-engineer direction through end-to-end product development, shared product and architecture decisions, and recent work in an unfamiliar ecosystem. Together they add depth beyond the CV without duplicating the same narrative.
 
-**Consequence:** The selected identities are public-safe working descriptions rather than an import of PKM project records. Future project content must remain within the approved experience evidence, contribution boundaries, outcome confidence, and confidentiality rules. Alfred must be described as recent exploratory or private-validation work where applicable; no public-launch, adoption, or market-success claims are implied. Beacon's micro-frontend POC is not part of this set and remains a reserve candidate if a later content allocation uses Alfred for a case study instead of a Selected Projects record.
+**Consequence:** The selected identities are public-safe working descriptions rather than an import of PKM project records. Future project content must remain within the approved experience evidence, contribution boundaries, outcome confidence, and confidentiality rules. Alfred must be described as recent exploratory or private-validation work where applicable; no public-launch, adoption, or market-success claims are implied. The separate Alfred case-study allocation keeps the existing Selected Projects record as its shorter projection. Beacon's micro-frontend POC is not part of this set and remains deferred.
 
 **Review triggers:** Reconsider the set if a selected narrative cannot be represented clearly by the existing `Project` contract, public-safe review disallows its current abstraction, or later approved content demonstrates that another candidate provides more distinct evidence with less duplication. Any decision to allocate Alfred to a case study or replace it with Beacon must be made before project content implementation and recorded separately.
 
-**Deferred:** Project records, final public copy, stable project slugs, evidence relationships, project-page rendering, case-study allocation, and Beacon implementation remain deferred to later approved tasks.
+**Deferred:** Project records, final public copy, stable project slugs, evidence relationships, project-page rendering, and Beacon implementation remain deferred to later approved tasks.
 
 ## Establish public evidence governance rules — 2026-08-24
 

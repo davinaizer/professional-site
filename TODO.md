@@ -1,7 +1,7 @@
 ---
 createdAt: 2026-08-07
 updatedAt: 2026-08-31
-version: 1.24
+version: 1.25
 status: active
 ---
 
@@ -154,7 +154,7 @@ Task boundaries should balance developer implementation effort with reliable AI-
 ## Case Studies
 
 - [x] Define the minimum reusable case-study structure.
-- [ ] Write and implement one deliberately bounded case study that validates the approved structure.
+- [x] Write and implement one deliberately bounded case study that validates the approved structure.
 
 Add further case studies only when they provide distinct evidence.
 

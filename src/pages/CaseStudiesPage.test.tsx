@@ -35,7 +35,7 @@ const caseStudyFixture: CaseStudy = {
 
 describe("CaseStudiesPage", () => {
 	it("renders an intentional empty state when no case studies are published", () => {
-		render(<CaseStudiesPage />);
+		render(<CaseStudiesPage caseStudies={[]} />);
 
 		expect(
 			screen.getByRole("heading", { level: 1, name: "Case Studies" }),
@@ -47,7 +47,28 @@ describe("CaseStudiesPage", () => {
 			}),
 		).toBeInTheDocument();
 		expect(screen.queryByRole("article")).not.toBeInTheDocument();
-		expect(caseStudies).toHaveLength(0);
+		expect(caseStudies).toHaveLength(1);
+	});
+
+	it("renders the approved Alfred case study content", () => {
+		render(<CaseStudiesPage />);
+
+		const caseStudy = caseStudies.find(
+			({ slug }) => slug === "alfred-what-to-do-next",
+		);
+		if (!caseStudy) {
+			throw new Error("Expected the Alfred case study to be published.");
+		}
+
+		const article = screen.getByRole("article", {
+			name: caseStudy.title,
+		});
+
+		expect(within(article).getByText(caseStudy.summary)).toBeInTheDocument();
+		expect(
+			within(article).getByText(caseStudy.publicEvidenceBoundary),
+		).toBeInTheDocument();
+		expect(within(article).queryByText("UpNext")).not.toBeInTheDocument();
 	});
 
 	it("renders each explicit narrative section from a fixture", () => {

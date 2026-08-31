@@ -1,7 +1,7 @@
 ---
 createdAt: 2026-08-10
 updatedAt: 2026-08-31
-version: 1.32
+version: 1.33
 status: active
 ---
 
@@ -9,26 +9,25 @@ status: active
 
 ## Completed outcome
 
-Completed the Milestone 3 case-study structure task: the refined `CaseStudy` contract now supports explicit narrative fields, the page renders the reusable structure, and the published case-study collection remains intentionally empty.
+Completed the Milestone 3 Alfred case-study task: **Alfred: What To Do Next** is now published through the explicit `CaseStudy` structure with evidence-bounded narrative, ownership boundaries, and implementation-based outcomes.
 
 ## Next task candidate
 
-- [ ] Write and implement one deliberately bounded case study that validates the approved structure.
+- [ ] Define the purpose and scope of the Engineering area.
 
 ## Roadmap position
 
-- **Milestone:** Milestone 3 — Professional Evidence; the reusable case-study structure is complete and no case study is published.
-- **Workflow stage:** The case-study structure task has passed review and is complete; the next task has not been planned or started.
+- **Milestone:** Milestone 3 — Professional Evidence; the first bounded case study is complete and the next TODO item is the Engineering-area purpose and scope.
+- **Workflow stage:** The Alfred case-study task has passed review and is complete; the next task has not been planned or started.
 
 ## Evidence pointers
 
 - `TODO.md#case-studies`
-- `docs/plans/2026-08-31-case-study-structure.md`
-- `docs/DECISIONS.md` — explicit case-study narrative fields
+- `docs/plans/2026-08-31-alfred-case-study.md`
+- `docs/DECISIONS.md` — Alfred allocation and explicit case-study narrative decisions
 - `src/content/evidence.ts`
 - `src/content/evidence-content.ts`
 - `src/pages/CaseStudiesPage.tsx`
-- `src/pages/CaseStudiesPage.css`
 - `src/pages/CaseStudiesPage.test.tsx`
 
 ## Blockers
@@ -37,4 +36,4 @@ None.
 
 ## Constraints and context
 
-The `caseStudies` collection is intentionally empty; Alfred content remains deferred. Case studies use explicit narrative fields and no generic approach or flexible block model.
+Alfred is presented as exploratory product work with implementation-based evidence only. User validation, adoption, public launch, market success, and unsupported metrics remain unavailable. UpNext is a possible future rename rather than a separate project; Beacon remains deferred.
