@@ -1,7 +1,7 @@
 ---
 createdAt: 2026-08-10
-updatedAt: 2026-08-24
-version: 1.30
+updatedAt: 2026-08-31
+version: 1.31
 status: active
 ---
 
@@ -9,28 +9,28 @@ status: active
 
 ## Completed outcome
 
-Completed the Milestone 3 Selected Projects task: three public-safe project narratives are rendered on `/projects`, and the Work hub now provides a structured entry point to Projects and Case Studies.
+Completed the Milestone 3 project-relationship task: selected projects now expose curated links to relevant experience entries and capability labels drawn from the professional summary focus areas.
 
 ## Next task candidate
 
-- [ ] Connect projects to relevant experience and capabilities.
+- [ ] Define the minimum reusable case-study structure.
 
 ## Roadmap position
 
-- **Milestone:** Milestone 3 — Professional Evidence; the Selected Projects implementation is complete and the next TODO item is relationship wiring.
-- **Workflow stage:** The Selected Projects task has passed review and is complete; the next task has not been planned or started.
+- **Milestone:** Milestone 3 — Professional Evidence; selected project relationships are complete and the next TODO item is case-study structure.
+- **Workflow stage:** The project relationship task has passed review and is complete; the next task has not been planned or started.
 
 ## Evidence pointers
 
 - `TODO.md#selected-projects`
-- `docs/ARCHITECTURE.md#navigation-and-rendering`
 - `docs/ARCHITECTURE.md#content-and-data`
-- `docs/DECISIONS.md` — selected-projects and evidence-governance decisions
+- `docs/DECISIONS.md` — project-owned presentation connections and evidence-governance decisions
+- `src/content/evidence.ts`
 - `src/content/evidence-content.ts`
 - `src/pages/ProjectsPage.tsx`
-- `src/pages/WorkPage.tsx`
 - `src/pages/ProjectsPage.test.tsx`
-- `src/pages/WorkPage.test.tsx`
+- `src/pages/ExperiencePage.tsx`
+- `src/pages/ExperiencePage.test.tsx`
 - `e2e/critical-journeys.spec.ts`
 
 ## Blockers
@@ -39,4 +39,4 @@ None.
 
 ## Constraints and context
 
-Project-to-experience and capability relationships remain deferred to the next task. Case studies and evidence claims remain deferred; Alfred must retain exploratory or private-validation framing, and the internal workflow must remain safely abstracted.
+Project-to-experience links are presentation-level connections and remain separate from `ProfessionalClaim` evidentiary relationships. Capability records, capability routes, reciprocal indexes, runtime relationship validation, and claim content remain deferred.

@@ -19,6 +19,11 @@ describe("ExperiencePage", () => {
 
 		for (const entry of professionalContent.experience) {
 			expect(screen.getByText(entry.company)).toBeInTheDocument();
+			expect(
+				screen
+					.getByRole("heading", { level: 2, name: entry.role })
+					.closest("article"),
+			).toHaveAttribute("id", entry.slug);
 
 			const metadata = [
 				`${entry.startDate} – ${entry.endDate ?? "Present"}`,

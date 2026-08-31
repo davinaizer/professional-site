@@ -1,4 +1,7 @@
+import { Link } from "react-router";
+import { routes } from "../app/routes.ts";
 import { projects } from "../content/evidence-content.ts";
+import { professionalContent } from "../content/professional-content.ts";
 import "./ProjectsPage.css";
 
 function ProjectsPage() {
@@ -27,6 +30,51 @@ function ProjectsPage() {
 
 							{project.context ? (
 								<p className="projects__context">{project.context}</p>
+							) : null}
+
+							{project.relatedExperienceSlugs?.length ? (
+								<section
+									aria-label={`Relevant experience for ${project.title}`}
+									className="projects__detail"
+								>
+									<h3 id={`${project.slug}-experience-heading`}>
+										Relevant experience
+									</h3>
+									<ul className="projects__links">
+										{project.relatedExperienceSlugs.map((experienceSlug) => {
+											const experienceEntry =
+												professionalContent.experience.find(
+													(entry) => entry.slug === experienceSlug,
+												);
+
+											return experienceEntry ? (
+												<li key={experienceEntry.slug}>
+													<Link
+														to={`${routes.experience}#${experienceEntry.slug}`}
+													>
+														{experienceEntry.role} at {experienceEntry.company}
+													</Link>
+												</li>
+											) : null;
+										})}
+									</ul>
+								</section>
+							) : null}
+
+							{project.capabilities?.length ? (
+								<section
+									aria-label={`Capabilities for ${project.title}`}
+									className="projects__detail"
+								>
+									<h3 id={`${project.slug}-capabilities-heading`}>
+										Capabilities
+									</h3>
+									<ul className="projects__capabilities">
+										{project.capabilities.map((capability) => (
+											<li key={capability}>{capability}</li>
+										))}
+									</ul>
+								</section>
 							) : null}
 
 							<section className="projects__detail">

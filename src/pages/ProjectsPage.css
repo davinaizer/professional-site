@@ -59,6 +59,7 @@
 	padding-inline-start: var(--space-4);
 }
 
+.projects__capabilities,
 .projects__technologies {
 	display: flex;
 	flex-wrap: wrap;
@@ -67,6 +68,7 @@
 	list-style: none;
 }
 
+.projects__capabilities li,
 .projects__technologies li {
 	border: var(--border-width-default) solid var(--color-border-subtle);
 	color: var(--color-text-secondary);

@@ -35,6 +35,18 @@ test("navigates through the shell and Work routes", async ({ page }) => {
 		}),
 	).toBeVisible();
 
+	await page
+		.getByRole("link", {
+			name: "Senior Frontend Software Engineer at The Signal Group",
+		})
+		.click();
+	await expect(page).toHaveURL(
+		/\/experience#signal-group-senior-frontend-software-engineer-2023-2024$/,
+	);
+	await expect(
+		page.locator("#signal-group-senior-frontend-software-engineer-2023-2024"),
+	).toBeVisible();
+
 	await page.goto("/work");
 	await page.getByRole("link", { name: "Case studies" }).click();
 	await expect(page).toHaveURL(/\/case-studies$/);

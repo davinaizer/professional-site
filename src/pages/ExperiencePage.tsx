@@ -25,7 +25,7 @@ function ExperiencePage() {
 							className="experience__item"
 							key={`${entry.company}-${entry.role}-${entry.startDate}`}
 						>
-							<article className="experience__entry">
+							<article className="experience__entry" id={entry.slug}>
 								<header className="experience__entry-header">
 									<h2>{entry.role}</h2>
 									<p className="experience__company">{entry.company}</p>

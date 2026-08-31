@@ -1,7 +1,7 @@
 ---
 createdAt: 2026-08-07
-updatedAt: 2026-08-24
-version: 1.22
+updatedAt: 2026-08-31
+version: 1.23
 status: active
 ---
 
@@ -129,7 +129,7 @@ Task boundaries should balance developer implementation effort with reliable AI-
   - professional identity is understandable within one or two minutes;
   - core content is clear, accessible, responsive, and deployable;
   - professional evidence remains accurate and defensible; and
-	  - the core profile does not require unnecessary interaction to understand.
+    - the core profile does not require unnecessary interaction to understand.
 
 ## Shared CSS Patterns
 
@@ -149,7 +149,7 @@ Task boundaries should balance developer implementation effort with reliable AI-
 
 - [x] Select the smallest set of projects that add distinct evidence.
 - [x] Implement the Selected Projects experience.
-- [ ] Connect projects to relevant experience and capabilities.
+- [x] Connect projects to relevant experience and capabilities.
 
 ## Case Studies
 

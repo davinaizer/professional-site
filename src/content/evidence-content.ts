@@ -14,6 +14,14 @@ export const projects: readonly Project[] = [
 			"Data-intensive configuration required clear validation, permissions, interaction states, and reusable editing behaviour.",
 		solution:
 			"Implemented the frontend experience, including role-based template management, validation, reusable editing behaviour, testing, fixes, and production release.",
+		relatedExperienceSlugs: [
+			"signal-group-senior-frontend-software-engineer-2023-2024",
+		],
+		capabilities: [
+			"Frontend architecture",
+			"Product development",
+			"Engineering practices",
+		],
 		outcomes: [
 			{
 				statement:
@@ -35,6 +43,15 @@ export const projects: readonly Project[] = [
 			"A promotional-content workflow took days and depended on repetitive operational steps.",
 		solution:
 			"Built reusable Node.js and API tooling around internal workflow systems, with validation and automation that reduced the workflow from days to minutes.",
+		relatedExperienceSlugs: [
+			"gamesys-ballys-senior-frontend-engineer-2020-2022",
+			"ballys-interactive-frontend-tech-lead-2022-2023",
+		],
+		capabilities: [
+			"Developer tooling",
+			"Workflow automation",
+			"Engineering practices",
+		],
 		outcomes: [
 			{
 				statement:
@@ -56,6 +73,15 @@ export const projects: readonly Project[] = [
 			"A complete product experience needed coherent boundaries across networking, domain logic, application state, and presentation.",
 		solution:
 			"Delivered the first end-to-end experience and designed a layered architecture using MVVM-style presentation, repositories, use cases, and dependency injection.",
+		relatedExperienceSlugs: [
+			"independent-product-venture-product-engineer-co-creator-2025",
+			"self-employed-planned-career-break-2024-2025",
+		],
+		capabilities: [
+			"Product development",
+			"Frontend architecture",
+			"Engineering practices",
+		],
 		outcomes: [
 			{
 				statement:

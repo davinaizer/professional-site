@@ -1,7 +1,7 @@
 ---
 createdAt: 2026-08-07
-updatedAt: 2026-08-24
-version: 1.15
+updatedAt: 2026-08-31
+version: 1.16
 status: active
 order: ASC
 ---
@@ -43,6 +43,18 @@ order: ASC
 **Review triggers:** Reconsider the relationship owner when public content requires derived reverse indexes, relationship resolution becomes error-prone, or a validated content source replaces manual curation. Review the identifier strategy if display-independent stable slugs cannot remain unique.
 
 **Deferred at the time of this decision:** Evidence confidence, contribution-boundary, and confidentiality rules were left to a separate governance decision; claim content, relationship rendering, and PKM import or synchronisation remain deferred.
+
+## Use project-owned presentation connections for selected-project context — 2026-08-31
+
+**Decision:** Store optional `relatedExperienceSlugs` and capability labels on manually curated `Project` records. Use stable `ExperienceEntry.slug` values for one-way navigation from selected projects to the experience timeline. Treat capabilities as a curated subset of the existing professional summary focus areas. These are presentation-level connections and do not replace `ProfessionalClaim` as the owner of evidentiary relationships.
+
+**Rationale:** The selected project set already has an approved mapping to existing experience entries, and the summary already provides a small, public capability vocabulary. Project-level context makes the relationship visible where the evidence is read without introducing a capability entity, reciprocal relationship state, or a general relationship resolver.
+
+**Consequence:** Project entries can show relevant experience links and capability signals, while experience entries expose stable anchors for direct navigation. Claim content and claim-owned evidence relationships remain separate and deferred. No new route, dependency, API, CMS, or PKM integration is required.
+
+**Review triggers:** Reconsider this boundary if capabilities require independent descriptions or routes, project labels repeatedly drift from the summary vocabulary, relationship maintenance becomes error-prone, or public claims require explicit claim rendering.
+
+**Deferred:** Capability records, capability routes, reverse project indexes, claim content, runtime relationship validation, and reciprocal relationship arrays remain undefined until a demonstrated requirement justifies them.
 
 ## Define a static evidence contract from approved PKM projection patterns — 2026-08-24
 

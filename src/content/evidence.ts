@@ -20,6 +20,8 @@ export type Project = EvidenceBase & {
 	purpose: string;
 	problem?: string;
 	solution?: string;
+	relatedExperienceSlugs?: readonly string[];
+	capabilities?: readonly string[];
 	technologies?: readonly string[];
 };
 
