@@ -8,6 +8,16 @@ order: ASC
 
 # Decisions
 
+## Use explicit fields for reusable case-study narratives — 2026-08-31
+
+**Decision:** Define `CaseStudy` with explicit fields for context, problem, role, constraints, decisions, product and user experience, engineering, outcomes, reflection, and a public-safe evidence boundary. Keep the public-safe boundary as curated narrative content that explains the scope of what can be shared; it is not private confidence, provenance, confidentiality, or publication-status metadata. Render each field as a named page section and keep the manually curated case-study collection empty until approved content is ready.
+
+**Rationale:** A case study needs a repeatable narrative that supports product, UX, engineering, attribution, outcomes, and interview reflection without hiding meaning inside a generic approach field or flexible content-block system. Explicit fields keep the content contract understandable and make omissions visible during editorial review.
+
+**Consequence:** The case-study contract is stricter than the project contract and does not inherit optional narrative fields. The page supports fixture-driven verification of populated content while the public application publishes no case-study record yet. Alfred remains deferred until a separate content task approves its public-safe narrative.
+
+**Review triggers:** Reconsider the fields if an approved case study cannot be represented clearly, repeated narrative changes create meaningful maintenance pressure, or a demonstrated product requirement requires a different content boundary. Any flexible block model, content source, or governance metadata proposal remains a separate decision.
+
 ## Select a small set of distinct evidence projects — 2026-08-24
 
 **Decision:** Select three public-safe project narratives for the Selected Projects area: **Vessel List Template Administration**, **an internal content-production workflow**, and **Alfred**. Map them to the existing experience entries for Signal, Gamesys / Bally's, and the independent product venture / planned career break respectively. Use these narratives to represent distinct evidence dimensions: production product and frontend delivery; workflow-oriented product engineering and automation; and recent product-engineering ownership, architecture, and learning in an unfamiliar ecosystem.

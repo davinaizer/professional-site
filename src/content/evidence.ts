@@ -26,11 +26,16 @@ export type Project = EvidenceBase & {
 };
 
 export type CaseStudy = EvidenceBase & {
-	problem?: string;
-	approach?: string;
-	contribution?: string;
-	decisions?: readonly string[];
-	lessons?: readonly string[];
+	context: string;
+	problem: string;
+	role: string;
+	constraints: readonly string[];
+	decisions: readonly string[];
+	productAndUx: string;
+	engineering: string;
+	outcomes: readonly Outcome[];
+	reflection: string;
+	publicEvidenceBoundary: string;
 };
 
 export type EngineeringEvidence = EvidenceBase & {
