@@ -1,7 +1,7 @@
 ---
 createdAt: 2026-08-10
 updatedAt: 2026-09-15
-version: 1.7
+version: 1.8
 status: active
 ---
 
@@ -15,7 +15,7 @@ This document defines the current architecture and the constraints that future c
 
 ## System context
 
-The product is a browser-based React and TypeScript application whose domain is professional experience and engineering evidence. Its primary user is the developer; recruiters, hiring managers, and engineers are secondary users.
+The product is a browser-based React and TypeScript application whose domain is professional experience and supporting work evidence. Its primary user is the developer; recruiters, hiring managers, and engineers are secondary users.
 
 The application must remain intentionally small, content-first, accessible, maintainable, and deployable. React and TypeScript are product requirements because implementation is also deliberate frontend practice.
 
@@ -56,11 +56,11 @@ Keep these boundaries shallow. Introduce new layers only when a current requirem
 
 The root route renders the shared application shell and nested page routes through an outlet. The route configuration includes the implemented product areas, a Work index that links to Projects and Case Studies, and a catch-all not-found page.
 
-The shared shell provides a home-linked identity, direct routes to Experience, Work, and Resume, and a distinct Contact link. Projects and Case Studies remain independently addressable but are not primary navigation destinations. Home owns the professional summary and focus-area content. The planned Engineering area has no route until its purpose and content are approved. Use semantic links and document structure so navigation remains understandable and keyboard accessible. Prefer content that does not require unnecessary interaction to discover. Client-side routing is the current delivery architecture; progressive enhancement beyond semantic browser foundations remains subject to demonstrated product need and the review triggers in `docs/DECISIONS.md`.
+The shared shell provides a home-linked identity, direct routes to Experience, Work, and Resume, and a distinct Contact link. Projects and Case Studies remain independently addressable but are not primary navigation destinations. Home owns the professional summary and focus-area content. There is no separate Engineering area; engineering judgement is communicated through experience, projects, case studies, and the implementation itself. Use semantic links and document structure so navigation remains understandable and keyboard accessible. Prefer content that does not require unnecessary interaction to discover. Client-side routing is the current delivery architecture; progressive enhancement beyond semantic browser foundations remains subject to demonstrated product need and the review triggers in `docs/DECISIONS.md`.
 
 ## Content and data
 
-Current page content is colocated with route components. `src/content/professional.ts` owns the local TypeScript contract for the editorially approved professional projection: identity, professional summary, stable-slugged experience entries, claim references, resume access, and contact. `src/content/evidence.ts` owns the separate local TypeScript contract for manually curated projects, case studies, outcomes, engineering evidence, and typed evidence references. Professional claims own one-way references to experience and supporting evidence; the model stores no reciprocal relationship arrays. Home composes core content and has no separate content model.
+Current page content is colocated with route components. `src/content/professional.ts` owns the local TypeScript contract for the editorially approved professional projection: identity, professional summary, stable-slugged experience entries, claim references, resume access, and contact. `src/content/evidence.ts` owns the separate local TypeScript contract for manually curated projects, case studies, outcomes, and typed evidence references. Professional claims own one-way references to experience and supporting evidence; the model stores no reciprocal relationship arrays. Home composes core content and has no separate content model.
 
 Content remains static and manually curated in the site. Do not introduce a CMS, database, API, state-management library, additional content abstraction, or PKM integration until a current product requirement or repeated maintenance problem justifies it. The repository is public, so only approved site content may be committed: PKM source files and source-governance metadata must not be copied into, imported into, or stored in this repository, whether or not the website would render them. Relationship references are manually curated stable slugs with no runtime resolver. Site content must preserve evidence accuracy, contribution boundaries, confidentiality, chronology, and reuse requirements from `PRODUCT_REQUIREMENTS.md`.
 

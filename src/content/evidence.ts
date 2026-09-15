@@ -5,8 +5,7 @@ export type Outcome = {
 
 export type EvidenceReference =
 	| { kind: "project"; slug: string }
-	| { kind: "case-study"; slug: string }
-	| { kind: "engineering"; slug: string };
+	| { kind: "case-study"; slug: string };
 
 type EvidenceBase = {
 	slug: string;
@@ -35,12 +34,4 @@ export type CaseStudy = EvidenceBase & {
 	engineering: string;
 	outcomes: readonly Outcome[];
 	reflection: string;
-};
-
-export type EngineeringEvidence = EvidenceBase & {
-	actions?: readonly string[];
-	decision?: string;
-	tradeOffs?: readonly string[];
-	technologies?: readonly string[];
-	lessons?: readonly string[];
 };

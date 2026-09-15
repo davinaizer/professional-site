@@ -1,7 +1,7 @@
 ---
 createdAt: 2026-08-10
-updatedAt: 2026-08-31
-version: 1.33
+updatedAt: 2026-09-15
+version: 1.34
 status: active
 ---
 
@@ -9,26 +9,25 @@ status: active
 
 ## Completed outcome
 
-Completed the Milestone 3 Alfred case-study task: **Alfred: What To Do Next** is now published through the explicit `CaseStudy` structure with evidence-bounded narrative, ownership boundaries, and implementation-based outcomes.
+Completed and approved the implemented MVP scope. The site now focuses on professional experience, selected projects, and case studies; the standalone Engineering and Professional Summary areas are removed. Professional copy is reconciled against the canonical resume-builder source.
 
 ## Next task candidate
 
-- [ ] Define the purpose and scope of the Engineering area.
+- [ ] Complete publication metadata after confirming the production domain.
+- [ ] Run the tracked live-production verification after deployment.
 
 ## Roadmap position
 
-- **Milestone:** Milestone 3 — Professional Evidence; the first bounded case study is complete and the next TODO item is the Engineering-area purpose and scope.
-- **Workflow stage:** The Alfred case-study task has passed review and is complete; the next task has not been planned or started.
+- **Milestone:** Milestone 4 — MVP Release Readiness is complete, validated, and approved for the implemented scope.
+- **Workflow stage:** Post-MVP publication follow-up remains intentionally separate and is tracked in `TODO.md`.
 
 ## Evidence pointers
 
-- `TODO.md#case-studies`
-- `docs/plans/2026-08-31-alfred-case-study.md`
-- `docs/DECISIONS.md` — Alfred allocation and explicit case-study narrative decisions
-- `src/content/evidence.ts`
+- `TODO.md#post-mvp-publication-follow-up`
+- `docs/DECISIONS.md` — permanent Engineering-area removal and canonical-copy decisions
+- `PRODUCT_REQUIREMENTS.md#9-mvp-scope`
+- `src/content/professional-content.ts`
 - `src/content/evidence-content.ts`
-- `src/pages/CaseStudiesPage.tsx`
-- `src/pages/CaseStudiesPage.test.tsx`
 
 ## Blockers
 
@@ -36,4 +35,4 @@ None.
 
 ## Constraints and context
 
-Alfred is presented as exploratory product work with implementation-based evidence only. User validation, adoption, public launch, market success, and unsupported metrics remain unavailable. UpNext is a possible future rename rather than a separate project; Beacon remains deferred.
+The canonical resume-builder source owns professional summary and experience copy. The site remains a manually curated projection with no runtime dependency on that repository. Publication metadata and verification against the live production environment are pending follow-up tasks, not completed checks.

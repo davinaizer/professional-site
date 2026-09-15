@@ -1,7 +1,7 @@
 ---
 createdAt: 2026-08-07
 updatedAt: 2026-09-15
-version: 1.1
+version: 1.2
 status: active
 ---
 
@@ -178,7 +178,7 @@ The objective is repeated exposure rather than memorisation.
 
 ## 4.4 Consolidate professional knowledge
 
-The project becomes the canonical source for professional evidence.
+The canonical resume-builder source owns approved professional summary and experience copy. This project publishes a website-specific projection of that content and adds approved project and case-study context without redefining the canonical career record.
 
 Content should be reusable across:
 
@@ -189,7 +189,7 @@ Content should be reusable across:
 - presentations
 - future writing
 
-Professional knowledge should be written once and reused everywhere.
+Professional summary and experience changes should be reconciled with the canonical resume-builder content before publication. Website-specific presentation copy may remain local when it does not introduce or contradict professional claims.
 
 ---
 
@@ -387,7 +387,6 @@ The first public release should contain only:
 - Experience
 - Selected Projects
 - Case Studies
-- Engineering
 - Resume
 - Contact
 

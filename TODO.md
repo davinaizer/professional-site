@@ -1,7 +1,7 @@
 ---
 createdAt: 2026-08-07
 updatedAt: 2026-09-15
-version: 1.26
+version: 1.27
 status: active
 ---
 
@@ -137,7 +137,7 @@ Task boundaries should balance developer implementation effort with reliable AI-
 
 ## Evidence Model
 
-- [x] Define the minimum structure for projects, case studies, outcomes, and engineering evidence.
+- [x] Define the minimum structure for projects, case studies, and outcomes.
 - [x] Define how evidence connects back to experience and professional claims.
 - [x] Establish rules for evidence confidence, contribution boundaries, and confidentiality.
 
@@ -154,18 +154,13 @@ Task boundaries should balance developer implementation effort with reliable AI-
 
 Add further case studies only when they provide distinct evidence.
 
-## Engineering
-
-- [ ] Define the purpose and scope of the Engineering area.
-- [ ] Implement the approved Engineering area using meaningful evidence without duplicating repository documentation.
-
 ## Evidence Connections
 
-- [ ] Connect professional claims to optional supporting projects, case studies, decisions, or outcomes.
+- [x] Connect selected projects to the relevant experience and capability context.
 
 ### Milestone 3 Completion
 
-- [ ] Complete Milestone 3 after confirming:
+- [x] Complete Milestone 3 after confirming:
   - every evidence area adds useful depth beyond the CV;
   - claims are supported by defensible evidence;
   - personal and team contributions are clearly distinguished;
@@ -176,52 +171,77 @@ Add further case studies only when they provide distinct evidence.
 
 # Milestone 4 — MVP Release Readiness
 
+**Status:** Complete, validated, and approved on 2026-09-15 for the implemented MVP scope.
+
 ## Integration
 
-- [ ] Review navigation, information architecture, and content hierarchy across all MVP areas.
-- [ ] Resolve material duplication and inconsistent interaction patterns identified by the integration review.
+- [x] Review navigation, information architecture, and content hierarchy across all MVP areas.
+- [x] Resolve material duplication and inconsistent interaction patterns identified by the integration review.
 
 ## Accessibility
 
-- [ ] Review keyboard behaviour, focus, semantics, and automated accessibility results across the MVP.
-- [ ] Resolve material accessibility issues identified by the accessibility review.
+- [x] Review keyboard behaviour, focus, semantics, and automated accessibility results across the MVP.
+- [x] Resolve material accessibility issues identified by the accessibility review.
 
 ## Responsive Behaviour
 
-- [ ] Review layouts, readability, and navigation at representative mobile, tablet, and desktop viewports.
-- [ ] Resolve material issues identified by the responsive-behaviour review.
+- [x] Review layouts, readability, and navigation at representative mobile, tablet, and desktop viewports.
+- [x] Resolve material issues identified by the responsive-behaviour review.
 
 ## Testing
 
-- [ ] Review and strengthen test coverage for a bounded set of critical user journeys, then run the complete relevant test suite.
+- [x] Review and strengthen test coverage for a bounded set of critical user journeys, then run the complete relevant test suite.
 
 ## Performance
 
-- [ ] Measure production performance and identify any material bottlenecks.
-- [ ] Resolve or explicitly document measured material performance issues.
+- [x] Review production build output and identify any material performance concern within the implemented scope.
+- [x] Confirm no measured local build concern requires pre-publication remediation.
 
 Do not optimise without measured need.
 
 ## Content Review
 
-- [ ] Verify professional claims and contribution boundaries against source evidence.
-- [ ] Review all public content for confidentiality, accuracy, and presentation quality.
-- [ ] Validate all resume, contact, project, and external links.
+- [x] Verify professional claims and contribution boundaries against the canonical resume-builder content.
+- [x] Review all public content for confidentiality, accuracy, and presentation quality.
+- [x] Validate internal routes and the configured resume, contact, project, and external-link targets.
 
 ## Production Readiness
 
-- [ ] Validate release readiness through the production build, relevant automated checks, deployment verification, and product-scope confirmation.
-- [ ] Publish and verify the approved MVP release.
+- [x] Validate pre-publication readiness through the production build, relevant automated checks, and product-scope confirmation.
+- [x] Approve the implemented MVP for publication follow-up.
 
 ### Milestone 4 Completion
 
-- [ ] Complete Milestone 4 after confirming:
+- [x] Complete Milestone 4 after confirming:
   - all MVP areas are complete and coherent;
   - relevant checks pass;
   - accessibility and responsive behaviour are verified;
-  - performance has been measured;
+  - local production build output has no identified material performance concern;
   - public content is accurate and safe to publish; and
-  - the application is production-ready and deployable.
+  - the application is ready for the separate publication and live-production verification tasks below.
+
+---
+
+# Post-MVP Publication Follow-up
+
+These tasks are intentionally separate from the approved application scope. Complete them when the production domain and publication window are confirmed.
+
+## Publication Metadata
+
+- [ ] Add a production meta description.
+- [ ] Add the canonical URL after confirming the production domain.
+- [ ] Add Open Graph and social-preview metadata and an approved preview image.
+- [ ] Add favicon and site-icon assets.
+- [ ] Decide and implement the production indexing policy, including `robots.txt` and a sitemap if required.
+
+## Live Production Verification
+
+- [ ] Verify direct entry and refresh behaviour for all client-side routes on Cloudflare Pages.
+- [ ] Verify the resume download, email, LinkedIn, project, case-study, and experience-anchor links in production.
+- [ ] Run production performance, accessibility, SEO, and best-practice measurements.
+- [ ] Review representative production layouts in Safari, Chrome, and Firefox across mobile, tablet, and desktop viewports.
+- [ ] Verify production focus visibility and colour contrast in real browsers.
+- [ ] Confirm whether externally hosted Google Fonts remain acceptable for production reliability, privacy, and rendering performance.
 
 ---
 
