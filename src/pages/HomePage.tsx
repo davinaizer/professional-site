@@ -14,7 +14,7 @@ function HomePage() {
 				<p className="eyebrow">Professional profile</p>
 				<h1>{identity.name}</h1>
 				<p className="home__headline">{identity.headline}</p>
-				<p className="home__summary page-intro">{summary.summary}</p>
+				<p className="home__summary page-intro">{summary.homeExcerpt}</p>
 				<nav
 					aria-label="Explore core professional areas"
 					className="home__actions"
@@ -38,7 +38,7 @@ function HomePage() {
 					<p className="eyebrow">Focus areas</p>
 					<h2 id="focus-heading">Product-minded frontend engineering</h2>
 					<p>
-						Building useful products, scalable interfaces, and thoughtful
+						Building useful products, clearer workflows, and maintainable
 						engineering systems.
 					</p>
 				</div>

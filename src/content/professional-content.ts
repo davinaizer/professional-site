@@ -15,6 +15,8 @@ export const professionalContent: ProfessionalContent = {
 	summary: {
 		summary:
 			"Senior frontend and product engineer with experience building product applications, internal tools, and the engineering systems behind them. My commercial experience centres on React, TypeScript, and JavaScript, alongside recent native iOS development with Swift and SwiftUI.",
+		homeExcerpt:
+			"Senior frontend and product engineer who builds product experiences and improves the systems around them. My work centres on understanding workflows, reducing recurring friction, and making software easier to build, maintain, and use, with commercial experience in React and TypeScript and recent native iOS development in SwiftUI.",
 		focusAreas: [
 			"Frontend architecture",
 			"Product development",

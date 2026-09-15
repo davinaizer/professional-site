@@ -14,6 +14,7 @@ export type ProfessionalIdentity = {
 
 export type ProfessionalSummary = {
 	summary: string;
+	homeExcerpt: string;
 	focusAreas: readonly string[];
 };
 
