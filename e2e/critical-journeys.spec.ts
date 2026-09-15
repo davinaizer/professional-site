@@ -24,7 +24,7 @@ test("navigates through the shell and Work routes", async ({ page }) => {
 	await expect(page).toHaveURL(/\/work$/);
 	await expect(page.getByRole("heading", { name: "Work" })).toBeVisible();
 
-	await page.getByRole("link", { name: "Selected projects" }).click();
+	await page.getByRole("link", { name: "Explore projects" }).click();
 	await expect(page).toHaveURL(/\/projects$/);
 	await expect(
 		page.getByRole("heading", { name: "Selected Projects" }),
@@ -48,16 +48,10 @@ test("navigates through the shell and Work routes", async ({ page }) => {
 	).toBeVisible();
 
 	await page.goto("/work");
-	await page.getByRole("link", { name: "Case studies" }).click();
+	await page.getByRole("link", { name: "Read case studies" }).click();
 	await expect(page).toHaveURL(/\/case-studies$/);
 	await expect(
 		page.getByRole("heading", { name: "Case Studies" }),
-	).toBeVisible();
-
-	await primaryNavigation.getByRole("link", { name: "Engineering" }).click();
-	await expect(page).toHaveURL(/\/engineering$/);
-	await expect(
-		page.getByRole("heading", { name: "Engineering" }),
 	).toBeVisible();
 
 	await primaryNavigation.getByRole("link", { name: "Resume" }).click();
@@ -86,9 +80,6 @@ test("supports keyboard traversal through the shell navigation", async ({
 			.getByRole("link", { name: "Work" }),
 		header
 			.getByRole("navigation", { name: "Primary" })
-			.getByRole("link", { name: "Engineering" }),
-		header
-			.getByRole("navigation", { name: "Primary" })
 			.getByRole("link", { name: "Resume" }),
 		header.getByRole("link", { name: "Contact" }),
 	];
@@ -110,7 +101,6 @@ test("keeps shell links visible without horizontal overflow at a narrow viewport
 		"Davi Naizer Santos",
 		"Experience",
 		"Work",
-		"Engineering",
 		"Resume",
 		"Contact",
 	]) {
@@ -132,11 +122,18 @@ test("recovers from an unknown route", async ({ page }) => {
 		page.getByRole("heading", { name: "Page Not Found" }),
 	).toBeVisible();
 
-	await page
-		.getByRole("link", { name: "Click here to go back to the homepage." })
-		.click();
+	await page.getByRole("link", { name: "Return home" }).click();
 	await expect(page).toHaveURL(/\/$/);
 	await expect(
 		page.getByRole("heading", { name: "Davi Naizer Santos" }),
 	).toBeVisible();
+});
+
+test("does not expose removed routes", async ({ page }) => {
+	for (const path of ["/engineering", "/summary"]) {
+		await page.goto(path);
+		await expect(
+			page.getByRole("heading", { name: "Page Not Found" }),
+		).toBeVisible();
+	}
 });

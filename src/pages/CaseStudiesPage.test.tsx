@@ -29,27 +29,9 @@ const caseStudyFixture: CaseStudy = {
 	],
 	reflection:
 		"The clearest boundary was more valuable than adding another abstraction.",
-	publicEvidenceBoundary:
-		"This account describes the contribution and learning without naming private systems or metrics.",
 };
 
 describe("CaseStudiesPage", () => {
-	it("renders an intentional empty state when no case studies are published", () => {
-		render(<CaseStudiesPage caseStudies={[]} />);
-
-		expect(
-			screen.getByRole("heading", { level: 1, name: "Case Studies" }),
-		).toBeInTheDocument();
-		expect(
-			screen.getByRole("heading", {
-				level: 2,
-				name: "Case studies in progress",
-			}),
-		).toBeInTheDocument();
-		expect(screen.queryByRole("article")).not.toBeInTheDocument();
-		expect(caseStudies).toHaveLength(1);
-	});
-
 	it("renders the approved Alfred case study content", () => {
 		render(<CaseStudiesPage />);
 
@@ -65,9 +47,6 @@ describe("CaseStudiesPage", () => {
 		});
 
 		expect(within(article).getByText(caseStudy.summary)).toBeInTheDocument();
-		expect(
-			within(article).getByText(caseStudy.publicEvidenceBoundary),
-		).toBeInTheDocument();
 		expect(within(article).queryByText("UpNext")).not.toBeInTheDocument();
 	});
 
@@ -89,10 +68,6 @@ describe("CaseStudiesPage", () => {
 			["Product / UX", caseStudyFixture.productAndUx],
 			["Engineering", caseStudyFixture.engineering],
 			["Reflection", caseStudyFixture.reflection],
-			[
-				"Public-safe evidence boundary",
-				caseStudyFixture.publicEvidenceBoundary,
-			],
 		] as const) {
 			const section = within(article).getByRole("region", { name: heading });
 			expect(within(section).getByText(content)).toBeInTheDocument();

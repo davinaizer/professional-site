@@ -35,7 +35,6 @@ export type CaseStudy = EvidenceBase & {
 	engineering: string;
 	outcomes: readonly Outcome[];
 	reflection: string;
-	publicEvidenceBoundary: string;
 };
 
 export type EngineeringEvidence = EvidenceBase & {

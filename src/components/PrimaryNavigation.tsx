@@ -11,9 +11,6 @@ function PrimaryNavigation() {
 				<li>
 					<NavLink to={routes.work}>Work</NavLink>
 				</li>
-				{/*<li>
-					<NavLink to={routes.engineering}>Engineering</NavLink>
-				</li>*/}
 				<li>
 					<NavLink to={routes.resume}>Resume</NavLink>
 				</li>

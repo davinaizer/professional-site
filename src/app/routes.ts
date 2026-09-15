@@ -5,7 +5,6 @@ export const routes = {
 	work: "/work",
 	projects: "/projects",
 	caseStudies: "/case-studies",
-	engineering: "/engineering",
 	resume: "/resume",
 	contact: "/contact",
 } as const satisfies Record<string, `/${string}`>;

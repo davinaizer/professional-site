@@ -10,7 +10,7 @@ export const caseStudies: readonly CaseStudy[] = [
 			"Alfred: What To Do Next was an exploratory native iOS product built around a decision-first loop: Idea -> Recommendation -> Decision -> Event/commitment. The product work covered onboarding, idea capture, recommendations, and planning.",
 		problem:
 			"The product was designed to help move an idea or intention toward a concrete next action. A browsing-first experience would leave the decision unresolved, so the core problem was to make recommendation, choice, and commitment understandable as one flow.",
-		role: "I owned the mobile app work end-to-end, including UX/UI, user flows, mobile architecture, technical concepts, SwiftUI implementation, client-side API and real-time integration, and testing. Product direction was shared with the backend engineer, who owned infrastructure, data management, LLM model training, and API development.",
+		role: "I lead development of the native iOS application while sharing responsibility for product direction, application architecture and technical decisions.",
 		constraints: [
 			"The work was exploratory, and no user validation feedback or adoption metrics are available.",
 			"Recommendation enrichment was asynchronous, so the client had to represent loading, intermediate progress, completion, and refresh states.",
@@ -32,20 +32,14 @@ export const caseStudies: readonly CaseStudy[] = [
 			{
 				statement:
 					"The mobile implementation established an end-to-end product experience across onboarding, idea capture, recommendations, planning, authentication, and application state.",
-				detail:
-					"This is implementation evidence from the Alfred repository, not evidence of adoption or user impact.",
 			},
 			{
 				statement:
-					"The repository contains broad test coverage across routing, view models, domain services, data mapping, repositories, notifications, real-time refresh, and design-system utilities.",
-				detail:
-					"The available evidence does not establish that the full suite passed.",
+					"Added automated tests across routing, view models, domain services, data mapping, repositories, notifications, real-time refresh, and design-system utilities.",
 			},
 		],
 		reflection:
-			"I would validate the decision-first proposition with users earlier, then preserve only the architectural boundaries that demonstrably improve feature isolation or testability. I would also replace historical design references with confirmed final implementation evidence before presenting specific screens as shipped UI.",
-		publicEvidenceBoundary:
-			"This case study describes the mobile product experience and client-side implementation. Product direction was shared with the backend engineer; infrastructure, data management, model training, and API development are not claimed as my work. Alfred is presented as exploratory product work. No public launch, adoption, user validation, market success, unsupported metrics, private backend details, source paths, provenance, or governance metadata are claimed.",
+			"I would validate the decision-first proposition with users earlier, then preserve only the architectural boundaries that demonstrably improve feature isolation or testability.",
 	},
 ];
 
@@ -74,7 +68,7 @@ export const projects: readonly Project[] = [
 		outcomes: [
 			{
 				statement:
-					"Owned the frontend implementation, testing, fixes, and production release of the Template Admin experience.",
+					"Developed the frontend implementation of the Template Admin experience, taking the feature through implementation, testing, fixes and production release.",
 			},
 		],
 		technologies: ["React", "TypeScript", "MobX", "AG Grid", "REST APIs"],
@@ -85,7 +79,7 @@ export const projects: readonly Project[] = [
 		summary:
 			"A safe abstraction of internal tooling that improved the repeatability and speed of a promotional-content workflow.",
 		context:
-			"Workflow-oriented product engineering across internal tools and developer-facing automation; private systems and project details are intentionally omitted.",
+			"Workflow-oriented product engineering across internal tools and developer-facing automation.",
 		purpose:
 			"Reduce manual effort in content production while making delivery steps more repeatable and reviewable.",
 		problem:
@@ -115,7 +109,7 @@ export const projects: readonly Project[] = [
 		summary:
 			"A native product experience exploring end-to-end development, shared product decisions, and architecture in an unfamiliar ecosystem.",
 		context:
-			"Recent exploratory product work spanning an independent product venture and a planned career break; public details are intentionally limited to the product-engineering evidence.",
+			"Recent exploratory product work spanning an independent product project and a planned career break.",
 		purpose:
 			"Build and learn through a complete product experience across onboarding, authentication, recommendations, and planning.",
 		problem:

@@ -20,18 +20,7 @@ function CaseStudiesPage({
 				</p>
 			</header>
 
-			{caseStudies.length === 0 ? (
-				<section
-					aria-labelledby="case-studies-empty-heading"
-					className="case-studies__empty"
-				>
-					<h2 id="case-studies-empty-heading">Case studies in progress</h2>
-					<p>
-						Focused case studies will be added as their public-safe narratives
-						are ready.
-					</p>
-				</section>
-			) : (
+			{caseStudies.length ? (
 				<ul aria-label="Case studies" className="case-studies__list">
 					{caseStudies.map((caseStudy) => (
 						<li className="case-studies__item" key={caseStudy.slug}>
@@ -144,22 +133,12 @@ function CaseStudiesPage({
 											))}
 										</ul>
 									</section>
-
-									<section
-										aria-labelledby={`${caseStudy.slug}-evidence-boundary-heading`}
-										className="case-studies__detail case-studies__boundary"
-									>
-										<h3 id={`${caseStudy.slug}-evidence-boundary-heading`}>
-											Public-safe evidence boundary
-										</h3>
-										<p>{caseStudy.publicEvidenceBoundary}</p>
-									</section>
 								</aside>
 							</article>
 						</li>
 					))}
 				</ul>
-			)}
+			) : null}
 		</section>
 	);
 }

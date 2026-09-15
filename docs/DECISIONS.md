@@ -1,20 +1,30 @@
 ---
 createdAt: 2026-08-07
 updatedAt: 2026-09-15
-version: 1.17
+version: 1.18
 status: active
 order: ASC
 ---
 
 # Decisions
 
+## Remove unfinished and obsolete routes — 2026-09-15
+
+**Decision:** Remove the placeholder Engineering route until that area has an approved purpose and substantive content. Remove the obsolete `/summary` compatibility redirect because Home is now the only supported destination for professional-summary content.
+
+**Rationale:** Publicly reachable placeholder or legacy routes do not provide useful professional evidence and conflict with the requirement that every page justify its existence. The roadmap may retain Engineering as planned scope without exposing an unfinished page.
+
+**Consequence:** `/engineering` and `/summary` now use the standard not-found route. Primary navigation contains Experience, Work, and Resume, with Contact presented separately. Engineering can return only through a new approved implementation decision.
+
+**Review triggers:** Add an Engineering route when its scope and public evidence are approved. Add a redirect only when a demonstrated compatibility requirement identifies active inbound links that should be preserved.
+
 ## Consolidate Professional Summary into Home — 2026-09-15
 
-**Decision:** Remove the dedicated Professional Summary page because Home already renders the same approved summary and complete focus-area content. Keep the shared professional-summary content contract because Home consumes it. Redirect the legacy `/summary` path to Home rather than returning a not-found response.
+**Decision:** Remove the dedicated Professional Summary page because Home already renders the same approved summary and complete focus-area content. Keep the shared professional-summary content contract because Home consumes it. The later “Remove unfinished and obsolete routes” decision supersedes the original compatibility redirect.
 
 **Rationale:** The dedicated route added no unique evidence, context, or interaction and was discoverable only through a Home-page action. Consolidating the content removes an unnecessary navigation step and better satisfies the product requirement that every page justify its existence.
 
-**Consequence:** Home is the sole presentation owner for the professional summary and focus areas. The Summary component, route constant, route-specific styling, test, and Home action are removed. The compatibility redirect is routing infrastructure, not an independently addressable product area.
+**Consequence:** Home is the sole presentation owner for the professional summary and focus areas. The Summary component, route constant, route-specific styling, test, Home action, and legacy redirect are removed.
 
 **Review triggers:** Introduce a dedicated summary destination again only when approved content or a user need cannot be represented clearly on Home without harming its hierarchy or initial comprehension.
 
@@ -196,9 +206,9 @@ order: ASC
 
 ## Use a centred primary navigation and Work evidence hub — 2026-08-11
 
-**Decision:** Use a shared header with a home-linked identity at the left, centred direct navigation to Experience, Work, Engineering, and Resume, and a visually distinct Contact link at the right. Add a Work index route that groups the existing Projects and Case Studies routes. Keep Engineering top-level. Preserve Projects and Case Studies as independently addressable routes without presenting them as primary-navigation items. The original Summary-route decision is superseded by “Consolidate Professional Summary into Home.”
+**Decision:** Use a shared header with a home-linked identity at the left, centred direct navigation to Experience, Work, and Resume, and a visually distinct Contact link at the right. Add a Work index route that groups the existing Projects and Case Studies routes. Preserve Projects and Case Studies as independently addressable routes without presenting them as primary-navigation items. Engineering remains planned scope but is excluded from navigation until implemented. The original Summary-route decision is superseded by “Consolidate Professional Summary into Home.”
 
-**Rationale:** Recruiters need direct access to career history, the CV, and contact details, while hiring managers need a concise path to professional evidence and engineering judgement. Projects provide scan-friendly evidence and case studies provide selected depth, so grouping them under Work establishes their relationship without hiding destinations behind a dropdown. Engineering represents the product's engineering practice and decisions rather than a project subtype. A three-column CSS Grid keeps the core navigation genuinely centred even though the identity and Contact link have different widths.
+**Rationale:** Recruiters need direct access to career history, the CV, and contact details, while hiring managers need a concise path to professional evidence and engineering judgement. Projects provide scan-friendly evidence and case studies provide selected depth, so grouping them under Work establishes their relationship without hiding destinations behind a dropdown. A three-column CSS Grid keeps the core navigation genuinely centred even though the identity and Contact link have different widths.
 
 **Consequence:** `/work` is the durable evidence entry point; `/projects` and `/case-studies` remain stable direct destinations. The header has no separate Home item because the identity links home. Contact uses anchor semantics because it navigates. Responsive CSS reflows the same visible links rather than introducing a menu control or client state.
 
