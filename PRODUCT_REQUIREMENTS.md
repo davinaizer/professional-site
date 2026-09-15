@@ -1,7 +1,7 @@
 ---
 createdAt: 2026-08-07
-updatedAt: 2026-08-07
-version: 1.0
+updatedAt: 2026-09-15
+version: 1.1
 status: active
 ---
 
@@ -384,7 +384,6 @@ A feature is complete when:
 The first public release should contain only:
 
 - Home
-- Professional Summary
 - Experience
 - Selected Projects
 - Case Studies

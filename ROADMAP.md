@@ -1,7 +1,7 @@
 ---
 createdAt: 2026-08-07
-updatedAt: 2026-08-07
-version: 1.0
+updatedAt: 2026-09-15
+version: 1.1
 status: active
 ---
 
@@ -97,7 +97,6 @@ Milestone 1.
 ### Scope
 
 - Home
-- Professional Summary
 - Experience
 - Resume
 - Contact

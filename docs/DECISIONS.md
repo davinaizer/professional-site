@@ -1,12 +1,22 @@
 ---
 createdAt: 2026-08-07
-updatedAt: 2026-08-31
-version: 1.16
+updatedAt: 2026-09-15
+version: 1.17
 status: active
 order: ASC
 ---
 
 # Decisions
+
+## Consolidate Professional Summary into Home — 2026-09-15
+
+**Decision:** Remove the dedicated Professional Summary page because Home already renders the same approved summary and complete focus-area content. Keep the shared professional-summary content contract because Home consumes it. Redirect the legacy `/summary` path to Home rather than returning a not-found response.
+
+**Rationale:** The dedicated route added no unique evidence, context, or interaction and was discoverable only through a Home-page action. Consolidating the content removes an unnecessary navigation step and better satisfies the product requirement that every page justify its existence.
+
+**Consequence:** Home is the sole presentation owner for the professional summary and focus areas. The Summary component, route constant, route-specific styling, test, and Home action are removed. The compatibility redirect is routing infrastructure, not an independently addressable product area.
+
+**Review triggers:** Introduce a dedicated summary destination again only when approved content or a user need cannot be represented clearly on Home without harming its hierarchy or initial comprehension.
 
 ## Allocate Alfred: What To Do Next as the first case study — 2026-08-31
 
@@ -102,7 +112,7 @@ order: ASC
 
 ## Colocate route-owned CSS with route components — 2026-08-14
 
-**Decision:** Keep global styling layers in `src/styles/` and import them through `src/index.css`. Place CSS that belongs exclusively to one route alongside that route component in `src/pages/`, using a matching filename and a direct component import—for example, `ProfessionalSummaryPage.tsx` imports `./ProfessionalSummaryPage.css`. Continue to scope selectors with distinctive page prefixes. Migrate the existing Home route stylesheet to `src/pages/HomePage.css` as part of adopting this convention; subsequent route-owned styles follow it by default.
+**Decision:** Keep global styling layers in `src/styles/` and import them through `src/index.css`. Place CSS that belongs exclusively to one route alongside that route component in `src/pages/`, using a matching filename and a direct component import—for example, `ProjectsPage.tsx` imports `./ProjectsPage.css`. Continue to scope selectors with distinctive page prefixes. Migrate the existing Home route stylesheet to `src/pages/HomePage.css` as part of adopting this convention; subsequent route-owned styles follow it by default.
 
 **Rationale:** Page components and their presentation change together. Colocation makes the ownership, discovery, maintenance, and removal of route-specific styles explicit without introducing CSS Modules, a dependency, or a component abstraction. The repository has a demonstrated need for a second page-owned stylesheet; maintaining a central registry for route-owned CSS would separate related implementation without providing a current benefit.
 
@@ -118,7 +128,7 @@ order: ASC
 
 **Rationale:** Contact and Core Navigation completed the core route set, and the four routes demonstrated repeated semantic styling with no need for a component abstraction. A small CSS layer removes verified duplication while preserving the shallow route ownership boundary and relevant frontend practice.
 
-**Consequence:** The shared layer owns only the four extracted patterns and their shared mobile page-section adjustment. Home layout variations, Experience timeline styling, Summary focus styling, and Resume-specific responsive treatment remain colocated with their routes. No dependency, CSS Module, utility framework, or React wrapper is introduced.
+**Consequence:** The shared layer owns only the four extracted patterns and their shared mobile page-section adjustment. Home layout and focus styling, Experience timeline styling, and Resume-specific responsive treatment remain colocated with their routes. No dependency, CSS Module, utility framework, or React wrapper is introduced.
 
 **Review triggers:** Reconsider the boundary if shared selectors cause cascade-order defects, semantic roles diverge, route-specific modifiers become difficult to understand, or later evidence justifies extracting additional patterns.
 
@@ -186,15 +196,15 @@ order: ASC
 
 ## Use a centred primary navigation and Work evidence hub — 2026-08-11
 
-**Decision:** Use a shared header with a home-linked identity at the left, centred direct navigation to Experience, Work, Engineering, and Resume, and a visually distinct Contact link at the right. Add a Work index route that groups the existing Projects and Case Studies routes. Keep Engineering top-level. Preserve Summary, Projects, and Case Studies as independently addressable routes without presenting them as primary-navigation items.
+**Decision:** Use a shared header with a home-linked identity at the left, centred direct navigation to Experience, Work, Engineering, and Resume, and a visually distinct Contact link at the right. Add a Work index route that groups the existing Projects and Case Studies routes. Keep Engineering top-level. Preserve Projects and Case Studies as independently addressable routes without presenting them as primary-navigation items. The original Summary-route decision is superseded by “Consolidate Professional Summary into Home.”
 
 **Rationale:** Recruiters need direct access to career history, the CV, and contact details, while hiring managers need a concise path to professional evidence and engineering judgement. Projects provide scan-friendly evidence and case studies provide selected depth, so grouping them under Work establishes their relationship without hiding destinations behind a dropdown. Engineering represents the product's engineering practice and decisions rather than a project subtype. A three-column CSS Grid keeps the core navigation genuinely centred even though the identity and Contact link have different widths.
 
 **Consequence:** `/work` is the durable evidence entry point; `/projects` and `/case-studies` remain stable direct destinations. The header has no separate Home item because the identity links home. Contact uses anchor semantics because it navigates. Responsive CSS reflows the same visible links rather than introducing a menu control or client state.
 
-**Review triggers:** Reconsider the primary navigation when real content shows that Summary needs persistent direct discovery, when additional evidence areas make the Work grouping unclear, when measured navigation behaviour indicates the visible-link model is unusable at supported viewports, or when user evidence justifies a different navigation interaction.
+**Review triggers:** Reconsider the primary navigation when additional evidence areas make the Work grouping unclear, when measured navigation behaviour indicates the visible-link model is unusable at supported viewports, or when user evidence justifies a different navigation interaction.
 
-**Deferred:** The final content and layout of the Work index, the future relationship between individual projects and case studies, whether Summary needs a dedicated content destination, custom focus treatment, and any dropdown or menu interaction remain undefined until a demonstrated requirement exists.
+**Deferred:** The future relationship between individual projects and case studies, custom focus treatment, and any dropdown or menu interaction remain undefined until a demonstrated requirement exists.
 
 ## Use reference hex values for the initial CSS token foundation — 2026-08-10
 

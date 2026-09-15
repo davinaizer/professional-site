@@ -25,13 +25,14 @@ describe("ExperiencePage", () => {
 					.closest("article"),
 			).toHaveAttribute("id", entry.slug);
 
-			const metadata = [
-				`${entry.startDate} – ${entry.endDate ?? "Present"}`,
-				entry.location,
-			]
-				.filter(Boolean)
-				.join(" · ");
-			expect(screen.getByText(metadata)).toBeInTheDocument();
+			expect(
+				screen.getByText(`${entry.startDate} – ${entry.endDate ?? "Present"}`),
+			).toBeInTheDocument();
+			if (entry.location) {
+				expect(
+					screen.getAllByText(entry.location, { exact: false }).length,
+				).toBeGreaterThan(0);
+			}
 
 			for (const responsibility of entry.responsibilities ?? []) {
 				expect(screen.getByText(responsibility)).toBeInTheDocument();

@@ -1,7 +1,7 @@
 ---
 createdAt: 2026-08-07
-updatedAt: 2026-08-31
-version: 1.25
+updatedAt: 2026-09-15
+version: 1.26
 status: active
 ---
 
@@ -102,10 +102,6 @@ Task boundaries should balance developer implementation effort with reliable AI-
 ## Home
 
 - [x] Implement the Home experience, communicating professional focus within the initial viewport and providing clear routes to relevant core areas.
-
-## Professional Summary
-
-- [x] Implement a concise, defensible professional summary aligned with the current CV and product-engineering direction.
 
 ## Experience
 

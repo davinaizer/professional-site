@@ -16,9 +16,9 @@ function ExperiencePage() {
 			</header>
 
 			<ol className="experience__timeline">
-				{experience.map((entry) => {
+				{experience.map((entry, entryIndex) => {
 					const dates = `${entry.startDate} – ${entry.endDate ?? "Present"}`;
-					const metadata = [dates, entry.location].filter(Boolean).join(" · ");
+					const roleSummary = entry.responsibilities?.[0];
 
 					return (
 						<li
@@ -27,35 +27,36 @@ function ExperiencePage() {
 						>
 							<article className="experience__entry" id={entry.slug}>
 								<header className="experience__entry-header">
+									<p className="experience__chronology">
+										<span aria-hidden="true">
+											{String(entryIndex + 1).padStart(2, "0")}
+										</span>
+										{dates}
+									</p>
 									<h2>{entry.role}</h2>
-									<p className="experience__company">{entry.company}</p>
-									<p className="experience__metadata">{metadata}</p>
+									<p className="experience__company">
+										<span>{entry.company}</span>
+										{entry.location ? ` · ${entry.location}` : null}
+									</p>
 								</header>
 
-								{entry.responsibilities?.length ? (
-									<section className="experience__detail">
-										<h3>Responsibilities</h3>
-										<ul>
-											{entry.responsibilities.map((responsibility) => (
-												<li key={responsibility}>{responsibility}</li>
-											))}
-										</ul>
-									</section>
+								{roleSummary ? (
+									<p className="experience__summary">{roleSummary}</p>
 								) : null}
 
 								{entry.contributions?.length ? (
 									<section className="experience__detail">
 										<h3>Selected contributions</h3>
-										<ul>
+										<ol className="experience__contributions">
 											{entry.contributions.map((contribution) => (
 												<li key={contribution}>{contribution}</li>
 											))}
-										</ul>
+										</ol>
 									</section>
 								) : null}
 
 								{entry.technologies?.length ? (
-									<section className="experience__detail">
+									<section className="experience__detail experience__technology-group">
 										<h3>Technologies</h3>
 										<ul className="experience__technologies">
 											{entry.technologies.map((technology) => (

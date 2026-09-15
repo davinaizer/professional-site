@@ -1,7 +1,7 @@
 ---
 createdAt: 2026-08-10
-updatedAt: 2026-08-12
-version: 1.5
+updatedAt: 2026-09-15
+version: 1.6
 status: active
 ---
 
@@ -54,9 +54,9 @@ Keep these boundaries shallow. Introduce new layers only when a current requirem
 
 ## Navigation and rendering
 
-The root route renders the shared application shell and nested page routes through an outlet. The route configuration includes the MVP product areas, a Work index that links to Projects and Case Studies, and a catch-all not-found page.
+The root route renders the shared application shell and nested page routes through an outlet. The route configuration includes the MVP product areas, a Work index that links to Projects and Case Studies, a legacy `/summary` redirect to Home, and a catch-all not-found page.
 
-The shared shell provides a home-linked identity, direct routes to Experience, Work, Engineering, and Resume, and a distinct Contact link. The Summary, Projects, and Case Studies routes remain independently addressable but are not primary navigation destinations. Use semantic links and document structure so navigation remains understandable and keyboard accessible. Prefer content that does not require unnecessary interaction to discover. Client-side routing is the current delivery architecture; progressive enhancement beyond semantic browser foundations remains subject to demonstrated product need and the review triggers in `docs/DECISIONS.md`.
+The shared shell provides a home-linked identity, direct routes to Experience, Work, Engineering, and Resume, and a distinct Contact link. Projects and Case Studies remain independently addressable but are not primary navigation destinations. Home owns the professional summary and focus-area content; `/summary` redirects to Home for compatibility. Use semantic links and document structure so navigation remains understandable and keyboard accessible. Prefer content that does not require unnecessary interaction to discover. Client-side routing is the current delivery architecture; progressive enhancement beyond semantic browser foundations remains subject to demonstrated product need and the review triggers in `docs/DECISIONS.md`.
 
 ## Content and data
 

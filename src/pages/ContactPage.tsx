@@ -5,10 +5,10 @@ function ContactPage() {
 	const { contact } = professionalContent;
 
 	return (
-		<section className="contact">
+		<section className="contact page-section">
 			<div className="contact__layout">
-				<header className="contact__header">
-					<p className="contact__label">Get in touch</p>
+				<header className="contact__header page-lead">
+					<p className="eyebrow">Get in touch</p>
 					<h1>Contact</h1>
 					<p className="contact__intro">
 						For professional opportunities, conversations, and collaboration,
@@ -17,20 +17,20 @@ function ContactPage() {
 				</header>
 
 				<ul aria-label="Professional contact links" className="contact__links">
-					{contact.map((link, index) => (
+					{contact.map((link) => (
 						<li className="contact__link" key={link.label}>
-							<p className="contact__metadata">
-								<span>{String(index + 1).padStart(2, "0")}</span>
-								<span aria-hidden="true">{"//"}</span>
-								<span>{link.category}</span>
-							</p>
-							<a href={link.url}>
-								{link.actionLabel}
-								<span aria-hidden="true">↗</span>
-							</a>
-							{link.description ? (
-								<p className="contact__description">{link.description}</p>
-							) : null}
+							<div className="contact__content">
+								<p className="contact__metadata">{link.category}</p>
+								<a aria-label={link.actionLabel} href={link.url}>
+									<span className="contact__title">{link.actionLabel}</span>
+									<span aria-hidden="true" className="contact__action">
+										{link.label === "Email" ? "Open email" : "View profile"}
+									</span>
+								</a>
+								{link.description ? (
+									<p className="contact__description">{link.description}</p>
+								) : null}
+							</div>
 						</li>
 					))}
 				</ul>

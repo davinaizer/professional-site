@@ -42,9 +42,6 @@ describe("App", () => {
 			screen.getByText("Senior Frontend & Product Engineer"),
 		).toBeInTheDocument();
 		expect(
-			screen.getByRole("link", { name: "Professional summary" }),
-		).toHaveAttribute("href", routes.summary);
-		expect(
 			screen.getByRole("link", { name: "Explore experience" }),
 		).toHaveAttribute("href", routes.experience);
 		expect(

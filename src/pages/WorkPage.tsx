@@ -14,34 +14,30 @@ function WorkPage() {
 				</p>
 			</header>
 
-			<section aria-labelledby="work-areas-heading" className="work__areas">
-				<h2 id="work-areas-heading">Explore the evidence</h2>
-				<p>
-					Use selected projects for focused examples of product engineering and
-					delivery, or examine a smaller set of work through context, decisions,
-					and outcomes.
-				</p>
-
+			<section aria-label="Explore the evidence" className="work__areas">
 				<ul className="work__links">
 					<li className="work__link">
-						<Link to={routes.projects}>
-							Selected projects
-							<span aria-hidden="true">↗</span>
-						</Link>
+						<p className="work__label">Project narratives</p>
+						<h2>Selected projects</h2>
 						<p className="work__description">
 							Focused project narratives covering product engineering, frontend
 							delivery, and workflow improvement.
 						</p>
-					</li>
-					<li className="work__link">
-						<Link to={routes.caseStudies}>
-							Case studies
-							<span aria-hidden="true">↗</span>
+						<Link className="work__action" to={routes.projects}>
+							Explore projects
 						</Link>
+					</li>
+
+					<li className="work__link">
+						<p className="work__label">Detailed analysis</p>
+						<h2>Case studies</h2>
 						<p className="work__description">
 							Deeper narratives examining the context, decisions, and outcomes
 							behind selected work.
 						</p>
+						<Link className="work__action" to={routes.caseStudies}>
+							Read case studies
+						</Link>
 					</li>
 				</ul>
 			</section>
