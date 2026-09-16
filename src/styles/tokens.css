@@ -13,10 +13,13 @@
 	--color-border-subtle: #4c4546;
 	--color-border-strong: #988e90;
 
-	--color-accent: oklch(76% 0.17 285);
-	--color-accent-soft: oklch(84% 0.1 285);
-	--color-accent-subtle: oklch(76% 0.17 285 / 0.1);
-	--color-accent-border: oklch(76% 0.17 285 / 0.42);
+	--color-accent: oklch(74% 0.16 275);
+	--color-accent-soft: oklch(84% 0.09 275);
+	--color-accent-subtle: oklch(74% 0.16 275 / 0.1);
+	--color-accent-border: oklch(74% 0.16 275 / 0.42);
+
+	--gradient-accent-start: oklch(40% 0.13 275 / 0.36) 0%;
+	--gradient-accent-middle: oklch(30% 0.08 275 / 0.25) 38%;
 
 	--color-link: var(--color-accent-soft);
 	--color-focus: var(--color-accent);
