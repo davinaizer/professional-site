@@ -1,7 +1,7 @@
 ---
 createdAt: 2026-08-07
 updatedAt: 2026-09-16
-version: 1.32
+version: 1.33
 status: active
 ---
 
@@ -269,9 +269,9 @@ Acceptance criteria:
 
 ### 3. Reading Journey Continuity
 
-- [ ] Use the confirmed intent map to define the smallest useful set of contextual end-of-page links for the long-form Experience, Selected Projects, Case Studies, and Resume routes.
-- [ ] Implement one quiet, reusable continuation pattern that clearly names the destination and does not compete with the page content or global navigation.
-- [ ] Verify route behaviour, keyboard order, responsive wrapping, and deep-link compatibility.
+- [x] Use the confirmed intent map to define the smallest useful set of contextual end-of-page links for the long-form Experience, Selected Projects, Case Studies, and Resume routes.
+- [x] Implement one quiet, reusable continuation pattern that clearly names the destination and does not compete with the page content or global navigation.
+- [x] Verify route behaviour, keyboard order, responsive wrapping, and deep-link compatibility.
 
 Acceptance criteria:
 

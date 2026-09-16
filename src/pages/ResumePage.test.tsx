@@ -1,12 +1,22 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, within } from "@testing-library/react";
+import { MemoryRouter } from "react-router";
 import { describe, expect, it } from "vitest";
+import { routes } from "../app/routes.ts";
 import { professionalContent } from "../content/professional-content.ts";
 import { axe } from "../test/axe.ts";
 import ResumePage from "./ResumePage.tsx";
 
+function renderResumePage() {
+	return render(
+		<MemoryRouter>
+			<ResumePage />
+		</MemoryRouter>,
+	);
+}
+
 describe("ResumePage", () => {
 	it("renders the approved resume access content", () => {
-		render(<ResumePage />);
+		renderResumePage();
 
 		expect(
 			screen.getByRole("heading", { level: 1, name: "Resume" }),
@@ -31,8 +41,18 @@ describe("ResumePage", () => {
 		);
 	});
 
+	it("provides a contextual continuation to Contact", () => {
+		renderResumePage();
+
+		expect(
+			within(
+				screen.getByRole("navigation", { name: "Continue exploring" }),
+			).getByRole("link", { name: "Get in touch" }),
+		).toHaveAttribute("href", routes.contact);
+	});
+
 	it("has no detectable accessibility violations", async () => {
-		const { container } = render(<ResumePage />);
+		const { container } = renderResumePage();
 
 		expect((await axe(container)).violations).toHaveLength(0);
 	});

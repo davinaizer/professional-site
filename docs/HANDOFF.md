@@ -1,7 +1,7 @@
 ---
 createdAt: 2026-08-10
 updatedAt: 2026-09-16
-version: 1.40
+version: 1.41
 status: active
 ---
 
@@ -9,11 +9,11 @@ status: active
 
 ## Completed outcome
 
-Completed the interaction affordance refinement using the approved UX baseline. Equivalent action states now provide consistent bounded feedback, reduced-motion handling is explicit, and existing contextual link semantics and focus behaviour are preserved.
+Completed Reading Journey Continuity with one quiet contextual continuation pattern across Experience, Selected Projects, Case Studies, and Resume. Route destinations, responsive behavior, accessibility checks, and the redundant list-divider regression were verified.
 
 ## Next task candidate
 
-- [ ] Use the confirmed intent map to define the smallest useful set of contextual end-of-page links for the long-form Experience, Selected Projects, Case Studies, and Resume routes.
+- [ ] Review Experience, Selected Projects, and Case Studies together for paragraph measure, heading separation, metadata hierarchy, section rhythm, and narrow-screen density.
 
 ## Roadmap position
 
@@ -22,16 +22,21 @@ Completed the interaction affordance refinement using the approved UX baseline. 
 
 ## Evidence pointers
 
-- `TODO.md#priority-ux-refinement-queue`
 - `TODO.md#3-reading-journey-continuity`
-- `docs/plans/2026-09-16-ux-revamp.md`
+- `TODO.md#4-long-form-reading-rhythm-and-content-resilience`
+- `docs/plans/2026-09-16-ux-revamp.md#stage-3--reading-journey-continuity`
 - `docs/evidence/2026-09-16-ux-baseline.md`
-- `src/styles/global.css`
-- `src/styles/shell.css`
-- `src/pages/HomePage.tsx`
-- `src/pages/ResumePage.css`
-- `src/pages/ContactPage.css`
-- `src/app/App.test.tsx`
+- `src/components/ContextualContinuation.tsx`
+- `src/styles/patterns.css`
+- `src/pages/ExperiencePage.tsx`
+- `src/pages/ProjectsPage.tsx`
+- `src/pages/CaseStudiesPage.tsx`
+- `src/pages/ResumePage.tsx`
+- `src/pages/ExperiencePage.test.tsx`
+- `src/pages/ProjectsPage.test.tsx`
+- `src/pages/CaseStudiesPage.test.tsx`
+- `src/pages/ResumePage.test.tsx`
+- `e2e/critical-journeys.spec.ts`
 
 ## Blockers
 
@@ -39,7 +44,6 @@ None.
 
 ## Constraints and deferred work
 
-- Visitor journeys remain hypotheses; preview and local performance measurements remain lab diagnostics.
-- Exact headed-browser 200% zoom and cross-browser production verification remain part of the separate production follow-up.
-- Reading journey continuity and not-found polish remain deferred until their recorded task order.
-- External Google Fonts reliability, privacy, and rendering review remains separate production follow-up work.
+- Approved professional copy and evidence boundaries were unchanged.
+- Long-form reading rhythm, content resilience, and not-found polish remain separate queue tasks.
+- Exact headed-browser 200% zoom, cross-browser production verification, and external Google Fonts review remain separate production follow-up work.

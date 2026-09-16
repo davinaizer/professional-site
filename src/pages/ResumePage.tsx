@@ -1,3 +1,5 @@
+import { routes } from "../app/routes.ts";
+import ContextualContinuation from "../components/ContextualContinuation.tsx";
 import { professionalContent } from "../content/professional-content.ts";
 import "./ResumePage.css";
 
@@ -36,6 +38,8 @@ function ResumePage() {
 					{resume.label}
 				</a>
 			</p>
+
+			<ContextualContinuation label="Get in touch" to={routes.contact} />
 		</section>
 	);
 }

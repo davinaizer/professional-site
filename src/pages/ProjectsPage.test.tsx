@@ -86,6 +86,16 @@ describe("ProjectsPage", () => {
 		}
 	});
 
+	it("provides a contextual continuation to case studies", () => {
+		renderProjectsPage();
+
+		expect(
+			within(
+				screen.getByRole("navigation", { name: "Continue exploring" }),
+			).getByRole("link", { name: "Read the case studies" }),
+		).toHaveAttribute("href", routes.caseStudies);
+	});
+
 	it("has no detectable accessibility violations", async () => {
 		const { container } = renderProjectsPage();
 

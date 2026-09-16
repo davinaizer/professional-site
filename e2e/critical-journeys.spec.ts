@@ -63,6 +63,82 @@ test("navigates through the shell and Work routes", async ({ page }) => {
 	await expect(page.getByRole("heading", { name: "Contact" })).toBeVisible();
 });
 
+test("continues between long-form routes", async ({ page }) => {
+	const continuations = [
+		{
+			from: "/experience",
+			label: "Explore selected work",
+			to: /\/work$/,
+		},
+		{
+			from: "/projects",
+			label: "Read the case studies",
+			to: /\/case-studies$/,
+		},
+		{
+			from: "/case-studies",
+			label: "View the career context",
+			to: /\/experience$/,
+		},
+		{
+			from: "/resume",
+			label: "Get in touch",
+			to: /\/contact$/,
+		},
+	] as const;
+
+	for (const { from, label, to } of continuations) {
+		await page.goto(from);
+		await page
+			.getByRole("navigation", { name: "Continue exploring" })
+			.getByRole("link", { name: label })
+			.click();
+		await expect(page).toHaveURL(to);
+	}
+});
+
+test("keeps contextual continuations usable at a narrow viewport", async ({
+	page,
+}) => {
+	const continuations = [
+		{ path: "/experience", label: "Explore selected work" },
+		{ path: "/projects", label: "Read the case studies" },
+		{ path: "/case-studies", label: "View the career context" },
+		{ path: "/resume", label: "Get in touch" },
+	] as const;
+
+	await page.setViewportSize({ width: 320, height: 900 });
+
+	for (const { path, label } of continuations) {
+		await page.goto(path);
+
+		const continuation = page.getByRole("navigation", {
+			name: "Continue exploring",
+		});
+		await expect(continuation).toBeVisible();
+		await expect(continuation.getByRole("link", { name: label })).toBeVisible();
+
+		const hasHorizontalOverflow = await page.evaluate(
+			() =>
+				document.documentElement.scrollWidth >
+				document.documentElement.clientWidth,
+		);
+		expect(hasHorizontalOverflow).toBe(false);
+	}
+});
+
+test("does not duplicate list separators before continuations", async ({
+	page,
+}) => {
+	for (const path of ["/experience", "/projects", "/case-studies"]) {
+		await page.goto(path);
+
+		await expect(
+			page.getByRole("navigation", { name: "Continue exploring" }),
+		).toHaveCSS("border-top-width", "0px");
+	}
+});
+
 test("supports keyboard traversal through the shell navigation", async ({
 	page,
 }) => {
