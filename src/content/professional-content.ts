@@ -10,6 +10,10 @@ export const professionalContent: ProfessionalContent = {
 				label: "LinkedIn",
 				url: "https://www.linkedin.com/in/davi-naizer",
 			},
+			{
+				label: "GitHub",
+				url: "https://github.com/davinaizer",
+			},
 		],
 	},
 	summary: {

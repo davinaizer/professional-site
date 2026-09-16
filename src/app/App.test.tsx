@@ -54,7 +54,19 @@ describe("App", () => {
 				}),
 			).getByRole("link", { name: "Contact" }),
 		).toHaveAttribute("href", routes.contact);
-		expect(screen.getByText("© DAVI NAIZER SANTOS | 2026")).toBeInTheDocument();
+		expect(screen.getByText("© 2026 Davi Naizer Santos")).toBeInTheDocument();
+		const footerNavigation = screen.getByRole("navigation", {
+			name: "Social and contact links",
+		});
+		expect(
+			within(footerNavigation).getByRole("link", { name: "LinkedIn" }),
+		).toHaveAttribute("href", "https://www.linkedin.com/in/davi-naizer");
+		expect(
+			within(footerNavigation).getByRole("link", { name: "GitHub" }),
+		).toHaveAttribute("href", "https://github.com/davinaizer");
+		expect(
+			within(footerNavigation).getByRole("link", { name: "Email" }),
+		).toHaveAttribute("href", "mailto:davi.naizer@gmail.com");
 	});
 
 	it("has no detectable accessibility violations", async () => {
