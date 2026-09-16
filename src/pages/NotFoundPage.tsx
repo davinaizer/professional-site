@@ -1,11 +1,19 @@
 import { Link } from "react-router";
 import { routes } from "../app/routes";
+import "./NotFoundPage.css";
 
 function NotFoundPage() {
 	return (
-		<section>
-			<h1>Page Not Found</h1>
-			<p>
+		<section className="not-found page-section">
+			<header className="not-found__header page-lead">
+				<p className="eyebrow">Page status</p>
+				<h1>Page Not Found</h1>
+				<p className="not-found__intro page-intro">
+					The page you requested does not exist or may have moved.
+				</p>
+			</header>
+
+			<p className="not-found__action">
 				<Link to={routes.home}>Return home</Link>
 			</p>
 		</section>

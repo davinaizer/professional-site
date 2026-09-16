@@ -197,6 +197,9 @@ test("recovers from an unknown route", async ({ page }) => {
 	await expect(
 		page.getByRole("heading", { name: "Page Not Found" }),
 	).toBeVisible();
+	await expect(
+		page.getByText("The page you requested does not exist or may have moved."),
+	).toBeVisible();
 
 	await page.getByRole("link", { name: "Return home" }).click();
 	await expect(page).toHaveURL(/\/$/);

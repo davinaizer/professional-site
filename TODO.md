@@ -1,7 +1,7 @@
 ---
 createdAt: 2026-08-07
 updatedAt: 2026-09-16
-version: 1.33
+version: 1.34
 status: active
 ---
 
@@ -296,9 +296,9 @@ Acceptance criteria:
 
 ### 5. Not-Found Experience Polish
 
-- [ ] Bring the existing not-found route into the established editorial visual language.
-- [ ] Add concise orientation and one clear route back to useful content without adding novelty, illustration, or unnecessary choices.
-- [ ] Add or update the focused route test and verify direct entry to an unknown URL.
+- [x] Bring the existing not-found route into the established editorial visual language.
+- [x] Add concise orientation and one clear route back to useful content without adding novelty, illustration, or unnecessary choices.
+- [x] Add or update the focused route test and verify direct entry to an unknown URL.
 
 Acceptance criteria:
 
