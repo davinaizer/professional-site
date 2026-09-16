@@ -24,7 +24,9 @@ function HomePage() {
 							<Link to={routes.experience}>Explore experience</Link>
 						</li>
 						<li>
-							<a href={resume.url}>{resume.label}</a>
+							<a download href={resume.url}>
+								{resume.label}
+							</a>
 						</li>
 						<li>
 							<Link to={routes.contact}>Contact</Link>

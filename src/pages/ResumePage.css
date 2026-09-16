@@ -12,13 +12,23 @@
 
 .resume__action a {
 	display: inline-block;
-	border: var(--border-width-default) solid var(--color-border-strong);
+	border: var(--border-width-default) solid var(--color-accent-border);
+	background-color: var(--color-accent-subtle);
+	color: var(--color-accent-soft);
+	font-family: var(--font-family-mono);
+	font-size: var(--font-size-label);
+	font-weight: var(--font-weight-medium);
+	letter-spacing: var(--letter-spacing-label);
+	line-height: var(--line-height-label);
 	padding: var(--space-1) var(--space-2);
 	text-decoration: none;
+	text-transform: uppercase;
 }
 
 .resume__action a:hover {
 	border-color: var(--color-accent);
+	background-color: var(--color-accent);
+	color: var(--color-background);
 }
 
 @media (max-width: 40rem) {

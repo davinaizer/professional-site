@@ -1,7 +1,7 @@
 ---
 createdAt: 2026-08-07
 updatedAt: 2026-09-16
-version: 1.31
+version: 1.32
 status: active
 ---
 
@@ -254,10 +254,10 @@ Acceptance criteria:
 
 ### 2. Interaction Affordance Refinement
 
-- [ ] Use the approved baseline findings to normalise only inconsistent navigation, link, action, contact-row, resume-download, and footer interaction treatments.
-- [ ] Preserve persistent link affordances where context alone does not make interactivity clear, and ensure visual hit areas have unambiguous boundaries and destinations.
-- [ ] Add short state transitions only where they improve feedback, and provide an explicit reduced-motion fallback.
-- [ ] Verify that interaction feedback remains clear without relying on motion or colour alone and that existing accessible names and touch targets are preserved.
+- [x] Use the approved baseline findings to normalise only inconsistent navigation, link, action, contact-row, resume-download, and footer interaction treatments.
+- [x] Preserve persistent link affordances where context alone does not make interactivity clear, and ensure visual hit areas have unambiguous boundaries and destinations.
+- [x] Add short state transitions only where they improve feedback, and provide an explicit reduced-motion fallback.
+- [x] Verify that interaction feedback remains clear without relying on motion or colour alone and that existing accessible names and touch targets are preserved.
 
 Acceptance criteria:
 

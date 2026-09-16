@@ -47,6 +47,9 @@ describe("App", () => {
 			screen.getByRole("link", { name: "Download Resume" }),
 		).toHaveAttribute("href", "/davi-naizer-santos-resume.pdf");
 		expect(
+			screen.getByRole("link", { name: "Download Resume" }),
+		).toHaveAttribute("download");
+		expect(
 			within(
 				screen.getByRole("navigation", {
 					name: "Explore core professional areas",
