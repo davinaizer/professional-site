@@ -71,7 +71,7 @@ test("supports keyboard traversal through the shell navigation", async ({
 
 	const header = page.getByRole("banner");
 	const links = [
-		header.getByRole("link", { name: "Davi Naizer Santos" }),
+		header.getByRole("link", { name: "Davi Naizer" }),
 		header
 			.getByRole("navigation", { name: "Primary" })
 			.getByRole("link", { name: "Experience" }),
@@ -98,7 +98,7 @@ test("keeps shell links visible without horizontal overflow at a narrow viewport
 
 	const header = page.getByRole("banner");
 	for (const name of [
-		"Davi Naizer Santos",
+		"Davi Naizer",
 		"Experience",
 		"Work",
 		"Resume",
@@ -125,7 +125,7 @@ test("recovers from an unknown route", async ({ page }) => {
 	await page.getByRole("link", { name: "Return home" }).click();
 	await expect(page).toHaveURL(/\/$/);
 	await expect(
-		page.getByRole("heading", { name: "Davi Naizer Santos" }),
+		page.getByRole("heading", { name: "Davi Naizer" }),
 	).toBeVisible();
 });
 

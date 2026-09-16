@@ -2,7 +2,7 @@ import type { ProfessionalContent } from "./professional";
 
 export const professionalContent: ProfessionalContent = {
 	identity: {
-		name: "Davi Naizer Santos",
+		name: "Davi Naizer",
 		headline: "Senior Frontend & Product Engineer",
 		location: "Hove, United Kingdom",
 		profileLinks: [

@@ -24,9 +24,10 @@ describe("App", () => {
 	it("renders the shared shell around the current route content", async () => {
 		renderApp();
 
-		expect(
-			screen.getByRole("link", { name: "Davi Naizer Santos" }),
-		).toHaveAttribute("href", routes.home);
+		expect(screen.getByRole("link", { name: "Davi Naizer" })).toHaveAttribute(
+			"href",
+			routes.home,
+		);
 		expect(
 			screen.getByRole("navigation", { name: "Primary" }),
 		).toBeInTheDocument();
@@ -35,9 +36,7 @@ describe("App", () => {
 				name: "Contact",
 			}),
 		).toHaveAttribute("href", routes.contact);
-		expect(await screen.findByRole("main")).toHaveTextContent(
-			"Davi Naizer Santos",
-		);
+		expect(await screen.findByRole("main")).toHaveTextContent("Davi Naizer");
 		expect(
 			screen.getByText("Senior Frontend & Product Engineer"),
 		).toBeInTheDocument();
@@ -54,7 +53,7 @@ describe("App", () => {
 				}),
 			).getByRole("link", { name: "Contact" }),
 		).toHaveAttribute("href", routes.contact);
-		expect(screen.getByText("© 2026 Davi Naizer Santos")).toBeInTheDocument();
+		expect(screen.getByText("© 2026 Davi Naizer")).toBeInTheDocument();
 		const footerNavigation = screen.getByRole("navigation", {
 			name: "Social and contact links",
 		});

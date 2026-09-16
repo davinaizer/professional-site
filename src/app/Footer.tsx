@@ -35,7 +35,7 @@ function Footer() {
 	return (
 		<footer className="site-footer">
 			<div className="site-footer__inner">
-				<small>© 2026 Davi Naizer Santos</small>
+				<small>© 2026 Davi Naizer</small>
 				<nav aria-label="Social and contact links">
 					<ul className="site-footer__links">
 						{footerLinks.map((link) => (
