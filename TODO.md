@@ -236,8 +236,9 @@ These tasks are intentionally separate from the approved application scope. Comp
 
 ### Live Production Verification
 
-- [ ] Verify direct entry and refresh behaviour for all client-side routes on Cloudflare Pages.
-- [ ] Verify the resume download, email, LinkedIn, project, case-study, and experience-anchor links in production.
+- [x] Verify direct entry and refresh behaviour for all client-side routes on the current Cloudflare Pages preview deployment.
+- [x] Verify the resume download, email, LinkedIn, project, case-study, and experience-anchor links on the current Cloudflare Pages preview deployment.
+- [ ] Re-run route and link verification after the current changes are merged to the Cloudflare Pages production branch.
 - [ ] Run production performance, accessibility, SEO, and best-practice measurements.
 - [ ] Review representative production layouts in Safari, Chrome, and Firefox across mobile, tablet, and desktop viewports.
 - [ ] Verify production focus visibility and colour contrast in real browsers.
