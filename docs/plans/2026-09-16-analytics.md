@@ -52,7 +52,7 @@ It advances Milestone 5 — Evidence-Driven Evolution by adding measurement only
 - Whether the current Cloudflare Pages configuration will use automatic analytics injection or require a manual snippet.
 - Whether six months of available history will be sufficient for future comparisons.
 - Whether direct resume-download, contact-link, or campaign measurement will later be needed.
-- The final privacy disclosure and applicable consent treatment for the production audience; vendor documentation is not treated as a legal conclusion.
+- Whether Cloudflare's actual processing arrangement and the applicable treatment in each target EU jurisdiction support the statistical-only opt-out model; this plan does not make a legal conclusion.
 
 ## Working model
 
@@ -80,6 +80,12 @@ Use Google Search Console separately for:
 
 Search Console is complementary search evidence, not a replacement for site analytics and not a runtime dependency of the application.
 
+### Privacy and consent treatment
+
+Use Cloudflare Web Analytics only for aggregate statistical information used to improve the site. Do not track individual users, collect identity data, create profiles, monitor cross-site behaviour, measure advertising, or add custom events. Provide a clear analytics/privacy disclosure and a simple, free way to disable analytics. A mandatory consent banner or full consent-management platform is not the default for this narrowly scoped model.
+
+This is a working product and engineering treatment, not a legal conclusion for every UK or EU jurisdiction. The implementation must preserve the stated data boundary, identify Cloudflare and the relevant processing in the disclosure, verify the opt-out behaviour, and reassess the treatment if the audience, jurisdiction, processing, or purpose changes.
+
 ## Scope
 
 - Confirm the Cloudflare Pages project and production hostname that should receive analytics.
@@ -87,7 +93,8 @@ Search Console is complementary search evidence, not a replacement for site anal
 - Enable Cloudflare Web Analytics for the production deployment only.
 - Verify page, route, referrer, device, and real-user performance signals where data is available.
 - Confirm that preview and local environments are not included in the production measurement baseline.
-- Record the observed setup, available signals, limitations, and privacy boundary in the implementation review evidence.
+- Add and verify the concise analytics/privacy disclosure and simple, free opt-out required by the accepted privacy treatment.
+- Record the observed setup, available signals, limitations, processing boundary, and privacy treatment in the implementation review evidence.
 - Confirm Google Search Console remains the complementary search-visibility source.
 
 ## Explicit exclusions
@@ -97,7 +104,8 @@ Search Console is complementary search evidence, not a replacement for site anal
 - No UTM or campaign-attribution implementation in this task.
 - No session replay, heatmaps, user identification, personal information, form content, or arbitrary event properties.
 - No analytics npm dependency, analytics abstraction, API, persistence layer, or dedicated runtime data model.
-- No public-content rewrite or new product area.
+- No general public-content rewrite or new product area; only the minimal analytics/privacy disclosure and opt-out control required by the accepted decision.
+- No mandatory consent banner or full consent-management platform unless a jurisdiction-specific review or changed processing scope requires it.
 - No performance optimisation based solely on newly collected telemetry; telemetry is evidence, not authorisation for unrelated remediation.
 
 ## Risks and controls
@@ -108,7 +116,8 @@ Search Console is complementary search evidence, not a replacement for site anal
 | Preview or developer activity pollutes production evidence | Restrict activation to the confirmed production hostname and exclude owned traffic where the platform supports it. |
 | Analytics is mistaken for career-outcome evidence | Treat page views, visits, and route journeys as behavioural proxies only; use direct recruiter and interview feedback for outcomes. |
 | Vendor limitations create pressure for speculative tooling | Use the review triggers below; do not add a second platform without a demonstrated decision need. |
-| Privacy expectations change or are unclear | Confirm the public disclosure and applicable treatment before activation; do not infer legal compliance from vendor claims. |
+| The statistical-only treatment is not applicable in a target jurisdiction or Cloudflare cannot honour opt-out | Keep the purpose and data boundary narrow; document the jurisdictional finding and disable analytics or introduce a consent-gated integration only through an approved scope change. |
+| Privacy expectations change or are unclear | Publish clear information, provide a simple free opt-out, and do not infer legal compliance from vendor claims. |
 
 ## Completion criteria
 
@@ -116,6 +125,9 @@ Search Console is complementary search evidence, not a replacement for site anal
 - Analytics data is observable for current production routes and real-user performance where traffic is available.
 - Preview and local environments are excluded from the production baseline.
 - The known limitations are explicit: no custom events, UTM attribution, direct resume/contact-click measurement, or guaranteed long-term history.
+- A clear analytics/privacy disclosure identifies the purpose, provider, relevant data categories, retention boundary, and opt-out path.
+- The opt-out prevents subsequent analytics beacon collection, or the integration is disabled if that behaviour cannot be verified.
+- The statistical-only treatment is recorded as a working product and engineering model, not a universal legal conclusion.
 - No personal information, identity data, session replay, or arbitrary event properties are collected.
 - Google Search Console is recorded as the complementary source for search visibility and queries.
 - No additional analytics platform or unnecessary application dependency is introduced.
@@ -125,18 +137,21 @@ Search Console is complementary search evidence, not a replacement for site anal
 
 1. Confirm the production Cloudflare Pages project, hostname, and current deployment state.
 2. Review the current Cloudflare Web Analytics setup path and choose automatic Pages injection or the documented manual snippet without adding an application dependency.
-3. Confirm the production-only and privacy-minimised configuration before activation.
-4. Enable the baseline and deploy any required configuration or source change.
-5. Verify direct entry, client-side navigation, refresh, and representative routes in the production deployment.
-6. Verify the Cloudflare dashboard receives route and performance data where traffic is available.
-7. Confirm Search Console remains separate and complementary.
-8. Record the implementation evidence, observed limitations, and any unresolved unknowns before formal review.
+3. Confirm the production-only and privacy-minimised configuration, including the statistical-only purpose, disclosure, and opt-out behaviour, before activation.
+4. Choose automatic Pages injection only if it can honour the opt-out; otherwise use the documented manual snippet behind the opt-out control without adding an analytics dependency.
+5. Enable the baseline and deploy any required configuration or source change.
+6. Verify direct entry, client-side navigation, refresh, and representative routes in the production deployment.
+7. Verify the Cloudflare dashboard receives route and performance data where traffic is available and that opt-out sessions do not send subsequent beacons.
+8. Confirm Search Console remains separate and complementary.
+9. Record the implementation evidence, observed limitations, processing boundary, privacy treatment, and any unresolved jurisdictional unknowns before formal review.
 
 ## Validation
 
 - Inspect the Cloudflare configuration and production deployment settings.
 - Use a production browser session to verify representative route changes and direct route entry.
 - Confirm the analytics beacon is absent from local and preview environments when those environments are in scope for verification.
+- Verify the analytics/privacy disclosure is discoverable and the opt-out is understandable, free, and reversible.
+- Verify that opting out prevents subsequent beacon collection without sending identity data or unapproved event properties.
 - Check that the Cloudflare dashboard exposes only the intended bounded signals.
 - Verify that no application code sends personal information or unapproved event properties.
 - Run `git diff --check` for documentation-only changes.
