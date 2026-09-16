@@ -1,7 +1,7 @@
 ---
 createdAt: 2026-08-07
 updatedAt: 2026-09-16
-version: 1.28
+version: 1.34
 status: active
 ---
 
@@ -222,6 +222,93 @@ Do not optimise without measured need.
 
 ---
 
+## Milestone 5 — Evidence-Driven Evolution
+
+The developer-requested UX review is sufficient evidence for the bounded refinement queue below. Do not add unrelated speculative features to this milestone.
+
+### Priority UX Refinement Queue
+
+This queue records the developer-requested UX craftsmanship review from 2026-09-16. It deliberately excludes a broad accessibility rework: the existing semantic, keyboard, focus, contrast, responsive, and automated-accessibility foundations are complete, and the current site scores 100 for accessibility in Lighthouse.
+
+Complete these tasks in order. Preserve the restrained, content-first design and do not introduce decorative animation, additional product areas, or unnecessary dependencies.
+
+The implementation and validation contract for this queue is recorded in `docs/plans/2026-09-16-ux-revamp.md`.
+
+### 1. User Intent and UX Baseline — Complete
+
+- [x] Treat the assumed recruiter, hiring-manager, engineer, and contact-ready journeys as hypotheses and map each one to its intended outcome, entry points, content needs, and likely continuation.
+- [x] Inventory the current navigation, text links, primary actions, contact rows, resume download, project and experience links, and footer controls without changing their presentation.
+- [x] Record current affordances, target boundaries, hover, active, focus-visible, visited-state relevance, accessible names, route outcomes, and representative keyboard order.
+- [x] Capture a representative desktop, mobile, 200% zoom, reduced-motion, and font-loading baseline, distinguishing observed defects from unvalidated assumptions.
+- [x] Produce a task-scoped findings record that confirms or narrows the remediation work below; do not implement speculative fixes during the baseline.
+
+Evidence: `docs/evidence/2026-09-16-ux-baseline.md`
+
+Acceptance criteria:
+
+- every proposed UX change traces to a named visitor intent or an observed interaction, content, accessibility, responsive, or performance issue;
+- assumptions are labelled and are not presented as user-research findings;
+- WCAG 2.2 target-size exceptions are applied correctly rather than treating every inline link as a button;
+- Lighthouse and lab measurements are recorded as diagnostics, not claimed as field evidence; and
+- the next remediation task is small enough for one implementation and review cycle.
+
+### 2. Interaction Affordance Refinement
+
+- [x] Use the approved baseline findings to normalise only inconsistent navigation, link, action, contact-row, resume-download, and footer interaction treatments.
+- [x] Preserve persistent link affordances where context alone does not make interactivity clear, and ensure visual hit areas have unambiguous boundaries and destinations.
+- [x] Add short state transitions only where they improve feedback, and provide an explicit reduced-motion fallback.
+- [x] Verify that interaction feedback remains clear without relying on motion or colour alone and that existing accessible names and touch targets are preserved.
+
+Acceptance criteria:
+
+- equivalent interactions use equivalent visual feedback;
+- state changes feel immediate and restrained rather than decorative;
+- keyboard focus remains at least as clear as the current implementation;
+- no layout shift, animated entrance, parallax, cursor effect, or new dependency is introduced; and
+- relevant component tests and representative keyboard/pointer checks pass.
+
+### 3. Reading Journey Continuity
+
+- [x] Use the confirmed intent map to define the smallest useful set of contextual end-of-page links for the long-form Experience, Selected Projects, Case Studies, and Resume routes.
+- [x] Implement one quiet, reusable continuation pattern that clearly names the destination and does not compete with the page content or global navigation.
+- [x] Verify route behaviour, keyboard order, responsive wrapping, and deep-link compatibility.
+
+Acceptance criteria:
+
+- long pages no longer end without a useful next step;
+- each destination follows the site's information architecture rather than forming a forced linear funnel;
+- the pattern uses semantic links and existing typography, spacing, and accent tokens; and
+- Home, Work, Contact, and the global footer are not duplicated unnecessarily.
+
+### 4. Long-Form Reading Rhythm and Content Resilience
+
+- [x] Review Experience, Selected Projects, and Case Studies together for paragraph measure, heading separation, metadata hierarchy, section rhythm, and narrow-screen density.
+- [ ] Test realistic stress cases including long headings, long link labels, fallback fonts, overridden text spacing, and content reflow at 320 CSS pixels.
+- [ ] Correct only demonstrated inconsistencies using existing tokens and shared patterns before adding any new token or component.
+- [ ] Verify representative desktop, mobile, 200% zoom, and reduced-motion layouts without changing approved professional copy.
+
+Acceptance criteria:
+
+- narrative copy, supporting metadata, and evidence sections remain visually distinct;
+- readable line lengths and hierarchy are preserved across representative widths;
+- repeated structures have consistent spacing without flattening meaningful hierarchy; and
+- no content claim or evidence boundary changes as part of the visual pass.
+
+### 5. Not-Found Experience Polish
+
+- [x] Bring the existing not-found route into the established editorial visual language.
+- [x] Add concise orientation and one clear route back to useful content without adding novelty, illustration, or unnecessary choices.
+- [x] Add or update the focused route test and verify direct entry to an unknown URL.
+
+Acceptance criteria:
+
+- the page feels intentional and consistent with the rest of the site;
+- visitors can recover with one obvious action;
+- the response remains concise, accessible, and responsive; and
+- the route introduces no special-case shell or dependency.
+
+---
+
 ## Post-MVP Publication Follow-up
 
 These tasks are intentionally separate from the approved application scope. Complete them when the production domain and publication window are confirmed.
@@ -243,29 +330,6 @@ These tasks are intentionally separate from the approved application scope. Comp
 - [ ] Review representative production layouts in Safari, Chrome, and Firefox across mobile, tablet, and desktop viewports.
 - [ ] Verify production focus visibility and colour contrast in real browsers.
 - [ ] Confirm whether externally hosted Google Fonts remain acceptable for production reliability, privacy, and rendering performance.
-
----
-
-## Milestone 5 — Evidence-Driven Evolution
-
-Do not maintain a speculative feature backlog for this milestone.
-
-Add tasks only when supported by demonstrated evidence such as:
-
-- interview feedback;
-- recruiter or hiring-manager feedback;
-- repeated implementation friction;
-- repeated content-maintenance friction;
-- gaps discovered during real applications or interviews;
-- clear engineering-learning needs.
-
-Every new task must:
-
-- support at least one product objective;
-- solve a demonstrated current problem;
-- remain a small, complete increment;
-- preserve maintainability and deployability;
-- respect the product non-goals.
 
 ---
 

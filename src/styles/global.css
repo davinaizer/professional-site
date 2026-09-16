@@ -50,6 +50,11 @@ h1 {
 
 a {
 	color: var(--color-link);
+	transition:
+		color 140ms ease,
+		background-color 140ms ease,
+		border-color 140ms ease,
+		text-decoration-color 140ms ease;
 	text-decoration-thickness: var(--border-width-default);
 	text-underline-offset: 0.16em;
 }
@@ -82,6 +87,12 @@ li + li {
 
 small {
 	font-family: var(--font-family-mono);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	a {
+		transition-duration: 0s;
+	}
 }
 
 @media (max-width: 40rem) {

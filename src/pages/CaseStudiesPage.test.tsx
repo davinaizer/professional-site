@@ -1,5 +1,8 @@
 import { render, screen, within } from "@testing-library/react";
+import type { ComponentProps } from "react";
+import { MemoryRouter } from "react-router";
 import { describe, expect, it } from "vitest";
+import { routes } from "../app/routes.ts";
 import type { CaseStudy } from "../content/evidence.ts";
 import { caseStudies } from "../content/evidence-content.ts";
 import { axe } from "../test/axe.ts";
@@ -31,9 +34,19 @@ const caseStudyFixture: CaseStudy = {
 		"The clearest boundary was more valuable than adding another abstraction.",
 };
 
+function renderCaseStudiesPage(
+	props: ComponentProps<typeof CaseStudiesPage> = {},
+) {
+	return render(
+		<MemoryRouter>
+			<CaseStudiesPage {...props} />
+		</MemoryRouter>,
+	);
+}
+
 describe("CaseStudiesPage", () => {
 	it("renders the approved Alfred case study content", () => {
-		render(<CaseStudiesPage />);
+		renderCaseStudiesPage();
 
 		const caseStudy = caseStudies.find(
 			({ slug }) => slug === "alfred-what-to-do-next",
@@ -51,7 +64,7 @@ describe("CaseStudiesPage", () => {
 	});
 
 	it("renders each explicit narrative section from a fixture", () => {
-		render(<CaseStudiesPage caseStudies={[caseStudyFixture]} />);
+		renderCaseStudiesPage({ caseStudies: [caseStudyFixture] });
 
 		const article = screen.getByRole("article", {
 			name: caseStudyFixture.title,
@@ -94,10 +107,20 @@ describe("CaseStudiesPage", () => {
 		).not.toBeInTheDocument();
 	});
 
+	it("provides a contextual continuation to Experience", () => {
+		renderCaseStudiesPage();
+
+		expect(
+			within(
+				screen.getByRole("navigation", { name: "Continue exploring" }),
+			).getByRole("link", { name: "View the career context" }),
+		).toHaveAttribute("href", routes.experience);
+	});
+
 	it("has no detectable accessibility violations with fixture content", async () => {
-		const { container } = render(
-			<CaseStudiesPage caseStudies={[caseStudyFixture]} />,
-		);
+		const { container } = renderCaseStudiesPage({
+			caseStudies: [caseStudyFixture],
+		});
 
 		expect((await axe(container)).violations).toHaveLength(0);
 	});

@@ -1,5 +1,6 @@
 import { Link } from "react-router";
 import { routes } from "../app/routes.ts";
+import ContextualContinuation from "../components/ContextualContinuation.tsx";
 import { projects } from "../content/evidence-content.ts";
 import { professionalContent } from "../content/professional-content.ts";
 import "./ProjectsPage.css";
@@ -134,6 +135,11 @@ function ProjectsPage() {
 					</li>
 				))}
 			</ul>
+
+			<ContextualContinuation
+				label="Read the case studies"
+				to={routes.caseStudies}
+			/>
 		</section>
 	);
 }

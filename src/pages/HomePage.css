@@ -168,6 +168,11 @@
 }
 
 @media (max-width: 40rem) {
+	.home__actions ul {
+		align-items: flex-start;
+		flex-direction: column;
+	}
+
 	.home h1 {
 		font-size: clamp(3rem, 15vw, 4rem);
 		line-height: 0.98;

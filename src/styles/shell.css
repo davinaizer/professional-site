@@ -131,12 +131,16 @@
 	display: grid;
 	inline-size: 2.75rem;
 	block-size: 2.75rem;
+	border: var(--border-width-default) solid transparent;
+	background-color: transparent;
 	place-items: center;
 	color: var(--color-text-secondary);
 }
 
 .site-footer__links a:hover {
-	color: var(--color-accent);
+	border-color: var(--color-accent-border);
+	background-color: var(--color-accent-subtle);
+	color: var(--color-accent-soft);
 }
 
 .site-footer__links svg {

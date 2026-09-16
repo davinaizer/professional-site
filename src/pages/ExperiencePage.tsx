@@ -1,3 +1,5 @@
+import { routes } from "../app/routes.ts";
+import ContextualContinuation from "../components/ContextualContinuation.tsx";
 import { professionalContent } from "../content/professional-content.ts";
 import "./ExperiencePage.css";
 
@@ -64,6 +66,8 @@ function ExperiencePage() {
 					);
 				})}
 			</ol>
+
+			<ContextualContinuation label="Explore selected work" to={routes.work} />
 		</section>
 	);
 }

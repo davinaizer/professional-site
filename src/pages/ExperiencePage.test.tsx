@@ -1,12 +1,22 @@
 import { render, screen, within } from "@testing-library/react";
+import { MemoryRouter } from "react-router";
 import { describe, expect, it } from "vitest";
+import { routes } from "../app/routes.ts";
 import { professionalContent } from "../content/professional-content.ts";
 import { axe } from "../test/axe.ts";
 import ExperiencePage from "./ExperiencePage.tsx";
 
+function renderExperiencePage() {
+	return render(
+		<MemoryRouter>
+			<ExperiencePage />
+		</MemoryRouter>,
+	);
+}
+
 describe("ExperiencePage", () => {
 	it("renders the approved experience in reverse chronological order", () => {
-		render(<ExperiencePage />);
+		renderExperiencePage();
 
 		expect(
 			screen.getByRole("heading", { level: 1, name: "Experience" }),
@@ -47,7 +57,7 @@ describe("ExperiencePage", () => {
 	});
 
 	it("omits empty optional detail sections", () => {
-		render(<ExperiencePage />);
+		renderExperiencePage();
 
 		const careerBreak = screen
 			.getByRole("heading", { level: 2, name: "Planned Career Break" })
@@ -72,8 +82,18 @@ describe("ExperiencePage", () => {
 		).not.toBeInTheDocument();
 	});
 
+	it("provides a contextual continuation to Work", () => {
+		renderExperiencePage();
+
+		expect(
+			within(
+				screen.getByRole("navigation", { name: "Continue exploring" }),
+			).getByRole("link", { name: "Explore selected work" }),
+		).toHaveAttribute("href", routes.work);
+	});
+
 	it("has no detectable accessibility violations", async () => {
-		const { container } = render(<ExperiencePage />);
+		const { container } = renderExperiencePage();
 
 		expect((await axe(container)).violations).toHaveLength(0);
 	});

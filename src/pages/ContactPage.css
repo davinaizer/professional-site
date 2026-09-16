@@ -101,6 +101,10 @@
 	color: var(--color-text-primary);
 }
 
+.contact__content > a:hover .contact__action {
+	border-color: var(--color-accent);
+}
+
 .contact__description {
 	grid-column: 1;
 	max-inline-size: 45ch;
