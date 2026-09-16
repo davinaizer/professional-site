@@ -12,7 +12,7 @@ function HomePage() {
 		<section className="home page-section">
 			<div className="home__hero page-lead">
 				<p className="eyebrow">Professional profile</p>
-				<h1>{identity.name}</h1>
+				<h1 className="home__identity">{identity.name}</h1>
 				<p className="home__headline">{identity.headline}</p>
 				<p className="home__summary page-intro">{summary.homeExcerpt}</p>
 				<nav
