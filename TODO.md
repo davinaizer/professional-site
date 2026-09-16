@@ -1,7 +1,7 @@
 ---
 createdAt: 2026-08-07
 updatedAt: 2026-09-16
-version: 1.30
+version: 1.31
 status: active
 ---
 
@@ -234,13 +234,15 @@ Complete these tasks in order. Preserve the restrained, content-first design and
 
 The implementation and validation contract for this queue is recorded in `docs/plans/2026-09-16-ux-revamp.md`.
 
-### 1. User Intent and UX Baseline — Next Task
+### 1. User Intent and UX Baseline — Complete
 
-- [ ] Treat the assumed recruiter, hiring-manager, engineer, and contact-ready journeys as hypotheses and map each one to its intended outcome, entry points, content needs, and likely continuation.
-- [ ] Inventory the current navigation, text links, primary actions, contact rows, resume download, project and experience links, and footer controls without changing their presentation.
-- [ ] Record current affordances, target boundaries, hover, active, focus-visible, visited-state relevance, accessible names, route outcomes, and representative keyboard order.
-- [ ] Capture a representative desktop, mobile, 200% zoom, reduced-motion, and font-loading baseline, distinguishing observed defects from unvalidated assumptions.
-- [ ] Produce a task-scoped findings record that confirms or narrows the remediation work below; do not implement speculative fixes during the baseline.
+- [x] Treat the assumed recruiter, hiring-manager, engineer, and contact-ready journeys as hypotheses and map each one to its intended outcome, entry points, content needs, and likely continuation.
+- [x] Inventory the current navigation, text links, primary actions, contact rows, resume download, project and experience links, and footer controls without changing their presentation.
+- [x] Record current affordances, target boundaries, hover, active, focus-visible, visited-state relevance, accessible names, route outcomes, and representative keyboard order.
+- [x] Capture a representative desktop, mobile, 200% zoom, reduced-motion, and font-loading baseline, distinguishing observed defects from unvalidated assumptions.
+- [x] Produce a task-scoped findings record that confirms or narrows the remediation work below; do not implement speculative fixes during the baseline.
+
+Evidence: `docs/evidence/2026-09-16-ux-baseline.md`
 
 Acceptance criteria:
 

@@ -1,7 +1,7 @@
 ---
 createdAt: 2026-08-10
 updatedAt: 2026-09-16
-version: 1.38
+version: 1.39
 status: active
 ---
 
@@ -9,42 +9,32 @@ status: active
 
 ## Completed outcome
 
-Completed current-branch route and public-link verification on the Cloudflare Pages preview deployment `https://ef3c40c3.davi-naizer.pages.dev/`. All supported routes, refreshes, resume, contact, project, case-study, and experience-anchor flows passed.
+Completed the read-only UX intent and interaction baseline. Findings, evidence gaps, and the smallest remediation candidate are recorded in `docs/evidence/2026-09-16-ux-baseline.md`.
 
 ## Next task candidate
 
-- [ ] Execute the read-only `TODO.md#1-user-intent-and-ux-baseline--next-task` using `docs/plans/2026-09-16-ux-revamp.md` as the research-backed contract.
-- [ ] Use the baseline findings to confirm or narrow interaction affordance refinement before implementation.
-- [ ] Follow with reading-journey continuity, long-form reading rhythm and content resilience, and not-found experience polish in the recorded order.
-- [ ] Preserve the completed accessibility foundation; validate that each refinement does not regress it rather than reopening a broad accessibility task.
-- [ ] Re-run route and link verification after the current changes are merged to the Cloudflare Pages production branch.
-- [ ] Run production performance, accessibility, SEO, and best-practice measurements.
-- [ ] Review representative production layouts in Safari, Chrome, and Firefox across mobile, tablet, and desktop viewports.
-- [ ] Verify production focus visibility and colour contrast in real browsers.
-- [ ] Confirm whether externally hosted Google Fonts remain acceptable for production reliability, privacy, and rendering performance.
+- [ ] Use the approved baseline findings to normalise only inconsistent navigation, link, action, contact-row, resume-download, and footer interaction treatments.
 
 ## Roadmap position
 
-- **Milestone:** Milestone 4 — MVP Release Readiness is complete; the developer-requested UX refinement queue is the current Milestone 5 priority.
-- **Workflow stage:** The research-backed UX revamp plan is proposed; its read-only user-intent and baseline task is next and requires developer approval before execution.
+- **Milestone:** Milestone 5 - Evidence-Driven Evolution.
+- **Workflow stage:** Current task completed after `review-task` returned `PASS`; awaiting the next `plan-next-task` invocation.
 
 ## Evidence pointers
 
-- `TODO.md#post-mvp-publication-follow-up`
 - `TODO.md#priority-ux-refinement-queue`
 - `docs/plans/2026-09-16-ux-revamp.md`
-- `docs/DESIGN_PRINCIPLES.md`
-- `docs/plans/2026-09-16-live-production-verification.md`
-- `docs/evidence/2026-09-16-live-production-verification.md`
-- `src/app/routes.ts`
-- `src/content/evidence-content.ts`
-- `src/content/professional-content.ts`
-- `docs/DECISIONS.md` — Cloudflare Pages deployment decision
+- `docs/evidence/2026-09-16-ux-baseline.md`
+- `src/app/App.tsx`
+- `src/components/PrimaryNavigation.tsx`
+- `src/app/Footer.tsx`
 
 ## Blockers
 
-The UX refinement queue is not blocked. Production verification remains pending until the current changes are merged to `main` and deployed.
+None.
 
-## Constraints and context
+## Constraints and deferred work
 
-The current Lighthouse accessibility score is treated as validation of the existing foundation, not as a reason to omit regression checks from later UX changes. The preview verification is not a claim about the older production deployment; re-run the recorded checks after publication.
+- Visitor journeys remain hypotheses; preview and local performance measurements remain lab diagnostics.
+- Exact headed-browser 200% zoom and cross-browser production verification remain part of the separate production follow-up.
+- Reading continuity and not-found polish remain deferred until their recorded task order.
