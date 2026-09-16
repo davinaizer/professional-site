@@ -15,7 +15,7 @@ function ExperiencePage() {
 			</header>
 
 			<ol className="experience__timeline">
-				{experience.map((entry, entryIndex) => {
+				{experience.map((entry) => {
 					const dates = `${entry.startDate} – ${entry.endDate ?? "Present"}`;
 					const roleSummary = entry.responsibilities?.[0];
 
@@ -26,9 +26,7 @@ function ExperiencePage() {
 						>
 							<article className="experience__entry" id={entry.slug}>
 								<header className="experience__entry-header">
-									<p className="experience__chronology">
-										{dates}
-									</p>
+									<p className="experience__chronology">{dates}</p>
 									<h2>{entry.role}</h2>
 									<p className="experience__company">
 										<span>{entry.company}</span>
