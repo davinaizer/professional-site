@@ -12,7 +12,7 @@ function HomePage() {
 		<section className="home page-section">
 			<div className="home__hero page-lead">
 				<p className="eyebrow">Professional profile</p>
-				<h1>{identity.name}</h1>
+				<h1 className="home__identity">{identity.name}</h1>
 				<p className="home__headline">{identity.headline}</p>
 				<p className="home__summary page-intro">{summary.homeExcerpt}</p>
 				<nav
@@ -64,6 +64,12 @@ function HomePage() {
 					<p className="home__role-summary">{currentRoleSummary}</p>
 				) : null}
 				<Link to={routes.experience}>View career timeline</Link>
+			</section>
+
+			<section aria-labelledby="about-heading" className="home__about">
+				<p className="eyebrow">A little about me</p>
+				<h2 id="about-heading">Beyond the work</h2>
+				<p>{summary.personalNote}</p>
 			</section>
 		</section>
 	);

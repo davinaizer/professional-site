@@ -1,16 +1,26 @@
 .home h1 {
-	font-size: clamp(3rem, 8vw, var(--font-size-display));
+	font-size: clamp(4rem, 9vw, 6.5rem);
+	font-weight: var(--font-weight-regular);
 	letter-spacing: var(--letter-spacing-display);
-	line-height: var(--line-height-display);
+	line-height: 0.95;
 }
 
 .home__hero {
 	max-inline-size: 70rem;
 }
 
+.home__identity::after {
+	color: var(--color-accent);
+	content: ".";
+}
+
 .home__headline {
-	font-size: var(--font-size-body-lg);
-	font-weight: var(--font-weight-semibold);
+	font-family: var(--font-family-serif);
+	font-optical-sizing: auto;
+	font-size: clamp(1.75rem, 3vw, 2.25rem);
+	font-weight: var(--font-weight-regular);
+	letter-spacing: -0.015em;
+	line-height: 1.2;
 }
 
 .home__summary {
@@ -63,7 +73,8 @@
 }
 
 .home__focus,
-.home__highlight {
+.home__highlight,
+.home__about {
 	border-block-start: var(--border-width-default) solid
 		var(--color-border-subtle);
 	margin-block-start: var(--layout-section-gap);
@@ -85,7 +96,8 @@
 }
 
 .home__focus h2,
-.home__highlight h2 {
+.home__highlight h2,
+.home__about h2 {
 	font-size: var(--font-size-heading-md);
 }
 
@@ -113,6 +125,18 @@
 
 .home__highlight {
 	max-inline-size: 52rem;
+}
+
+.home__about {
+	max-inline-size: 48rem;
+}
+
+.home__about > * + * {
+	margin-block-start: var(--space-2);
+}
+
+.home__about > p:last-child {
+	color: var(--color-text-secondary);
 }
 
 .home__highlight > * + * {
@@ -145,9 +169,8 @@
 
 @media (max-width: 40rem) {
 	.home h1 {
-		font-size: var(--font-size-heading-lg-mobile);
-		letter-spacing: var(--letter-spacing-heading-lg);
-		line-height: var(--line-height-heading-lg-mobile);
+		font-size: clamp(3rem, 15vw, 4rem);
+		line-height: 0.98;
 	}
 
 	.home__focus {

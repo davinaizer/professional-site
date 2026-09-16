@@ -30,9 +30,10 @@
 .site-header__identity {
 	justify-self: start;
 	color: var(--color-text-primary);
-	font-family: var(--font-family-sans);
+	font-family: var(--font-family-serif);
+	font-optical-sizing: auto;
 	font-size: var(--font-size-body);
-	font-weight: var(--font-weight-semibold);
+	font-weight: var(--font-weight-medium);
 	letter-spacing: var(--letter-spacing-heading-lg);
 	line-height: var(--line-height-heading-md);
 	text-decoration: none;

@@ -6,11 +6,11 @@ function WorkPage() {
 	return (
 		<section className="work page-section">
 			<header className="work__header page-lead">
-				<p className="eyebrow">Professional evidence</p>
+				<p className="eyebrow">Selected work</p>
 				<h1>Work</h1>
 				<p className="work__intro page-intro">
-					Explore concise project narratives and focused case studies that add
-					depth beyond the career timeline.
+					A selection of products, tools and workflows I’ve helped build, with
+					more context on the problems and decisions behind them.
 				</p>
 			</header>
 
@@ -20,8 +20,8 @@ function WorkPage() {
 						<p className="work__label">Project narratives</p>
 						<h2>Selected projects</h2>
 						<p className="work__description">
-							Focused project narratives covering product engineering, frontend
-							delivery, and workflow improvement.
+							A closer look at a few projects I’ve worked on and the problems
+							they were meant to solve.
 						</p>
 						<Link className="work__action" to={routes.projects}>
 							Explore projects
@@ -32,8 +32,8 @@ function WorkPage() {
 						<p className="work__label">Detailed analysis</p>
 						<h2>Case studies</h2>
 						<p className="work__description">
-							Deeper narratives examining the context, decisions, and outcomes
-							behind selected work.
+							More detailed accounts of how I approached a problem, the
+							decisions I made, and what I would do differently.
 						</p>
 						<Link className="work__action" to={routes.caseStudies}>
 							Read case studies

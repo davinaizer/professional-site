@@ -13,7 +13,7 @@ describe("ResumePage", () => {
 		).toBeInTheDocument();
 		expect(
 			screen.getByText(
-				"Download my current resume for a concise overview of my professional experience as a senior frontend and product engineer.",
+				"You can download my current resume for a concise overview of my experience, from frontend product development and architecture to developer tooling and recent native iOS work.",
 			),
 		).toBeInTheDocument();
 

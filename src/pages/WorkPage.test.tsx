@@ -18,7 +18,7 @@ describe("WorkPage", () => {
 		).toBeInTheDocument();
 		expect(
 			screen.getByText(
-				"Explore concise project narratives and focused case studies that add depth beyond the career timeline.",
+				"A selection of products, tools and workflows I’ve helped build, with more context on the problems and decisions behind them.",
 			),
 		).toBeInTheDocument();
 

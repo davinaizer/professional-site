@@ -20,7 +20,9 @@ export const professionalContent: ProfessionalContent = {
 		summary:
 			"Senior frontend and product engineer with experience building product applications, internal tools, and the engineering systems behind them. My commercial experience centres on React, TypeScript, and JavaScript, alongside recent native iOS development with Swift and SwiftUI.",
 		homeExcerpt:
-			"Senior frontend and product engineer who builds product experiences and improves the systems around them. My work centres on understanding workflows, reducing recurring friction, and making software easier to build, maintain, and use, with commercial experience in React and TypeScript and recent native iOS development in SwiftUI.",
+			"Hi, I’m Davi. I’m a frontend and product engineer who enjoys understanding how things work, fixing what gets in the way, and building software that is genuinely useful. Most of my commercial work has been with React, TypeScript and JavaScript, and more recently I’ve been building native iOS applications with SwiftUI.",
+		personalNote:
+			"Outside work, I’m usually cooking, making espresso, or spending time with my wife and daughter. I’ve always enjoyed taking things apart, understanding how they work, and helping people solve practical problems.",
 		focusAreas: [
 			"Frontend architecture",
 			"Product development",
@@ -215,14 +217,14 @@ export const professionalContent: ProfessionalContent = {
 			url: "mailto:davi.naizer@gmail.com",
 			category: "Direct",
 			actionLabel: "Send an email",
-			description: "Professional opportunities and collaboration.",
+			description: "The best way to reach me directly.",
 		},
 		{
 			label: "LinkedIn",
 			url: "https://www.linkedin.com/in/davi-naizer",
 			category: "Professional profile",
 			actionLabel: "View LinkedIn profile",
-			description: "Career history and professional background.",
+			description: "More about my work and professional experience.",
 		},
 	],
 };

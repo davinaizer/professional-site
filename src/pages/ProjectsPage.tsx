@@ -17,8 +17,8 @@ function ProjectsPage() {
 				<p className="eyebrow">Selected work</p>
 				<h1>Selected Projects</h1>
 				<p className="projects__intro page-intro">
-					Focused project narratives showing product engineering, frontend
-					delivery, workflow improvement, and technical judgement.
+					A closer look at a few projects I’ve worked on and the problems they
+					were meant to solve.
 				</p>
 			</header>
 
