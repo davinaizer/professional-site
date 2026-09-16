@@ -3,6 +3,7 @@
 	font-weight: var(--font-weight-regular);
 	letter-spacing: var(--letter-spacing-display);
 	line-height: 0.95;
+	margin-top: var(--space-4);
 }
 
 .home__hero {
