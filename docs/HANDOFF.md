@@ -1,7 +1,7 @@
 ---
 createdAt: 2026-08-10
 updatedAt: 2026-09-16
-version: 1.41
+version: 1.42
 status: active
 ---
 
@@ -9,11 +9,11 @@ status: active
 
 ## Completed outcome
 
-Completed Reading Journey Continuity with one quiet contextual continuation pattern across Experience, Selected Projects, Case Studies, and Resume. Route destinations, responsive behavior, accessibility checks, and the redundant list-divider regression were verified.
+Completed the long-form reading-rhythm and content-resilience review with a narrow-screen Home action layout correction. Explore Experience, Download Resume, and Contact now stack below 40rem without changing approved copy or interaction semantics.
 
 ## Next task candidate
 
-- [ ] Review Experience, Selected Projects, and Case Studies together for paragraph measure, heading separation, metadata hierarchy, section rhythm, and narrow-screen density.
+- [ ] Bring the existing not-found route into the established editorial visual language.
 
 ## Roadmap position
 
@@ -22,21 +22,10 @@ Completed Reading Journey Continuity with one quiet contextual continuation patt
 
 ## Evidence pointers
 
-- `TODO.md#3-reading-journey-continuity`
 - `TODO.md#4-long-form-reading-rhythm-and-content-resilience`
-- `docs/plans/2026-09-16-ux-revamp.md#stage-3--reading-journey-continuity`
-- `docs/evidence/2026-09-16-ux-baseline.md`
-- `src/components/ContextualContinuation.tsx`
-- `src/styles/patterns.css`
-- `src/pages/ExperiencePage.tsx`
-- `src/pages/ProjectsPage.tsx`
-- `src/pages/CaseStudiesPage.tsx`
-- `src/pages/ResumePage.tsx`
-- `src/pages/ExperiencePage.test.tsx`
-- `src/pages/ProjectsPage.test.tsx`
-- `src/pages/CaseStudiesPage.test.tsx`
-- `src/pages/ResumePage.test.tsx`
-- `e2e/critical-journeys.spec.ts`
+- `TODO.md#5-not-found-experience-polish`
+- `docs/plans/2026-09-16-ux-revamp.md#stage-4--long-form-reading-rhythm-and-content-resilience`
+- `src/pages/HomePage.css`
 
 ## Blockers
 
@@ -45,5 +34,5 @@ None.
 ## Constraints and deferred work
 
 - Approved professional copy and evidence boundaries were unchanged.
-- Long-form reading rhythm, content resilience, and not-found polish remain separate queue tasks.
+- Not-found polish remains the next separate queue task.
 - Exact headed-browser 200% zoom, cross-browser production verification, and external Google Fonts review remain separate production follow-up work.

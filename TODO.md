@@ -282,7 +282,7 @@ Acceptance criteria:
 
 ### 4. Long-Form Reading Rhythm and Content Resilience
 
-- [ ] Review Experience, Selected Projects, and Case Studies together for paragraph measure, heading separation, metadata hierarchy, section rhythm, and narrow-screen density.
+- [x] Review Experience, Selected Projects, and Case Studies together for paragraph measure, heading separation, metadata hierarchy, section rhythm, and narrow-screen density.
 - [ ] Test realistic stress cases including long headings, long link labels, fallback fonts, overridden text spacing, and content reflow at 320 CSS pixels.
 - [ ] Correct only demonstrated inconsistencies using existing tokens and shared patterns before adding any new token or component.
 - [ ] Verify representative desktop, mobile, 200% zoom, and reduced-motion layouts without changing approved professional copy.
