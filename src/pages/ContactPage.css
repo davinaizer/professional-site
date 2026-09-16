@@ -78,7 +78,8 @@
 
 .contact__title {
 	grid-column: 1;
-	font-family: var(--font-family-sans);
+	font-family: var(--font-family-serif);
+	font-optical-sizing: auto;
 	font-size: var(--font-size-heading-md);
 	font-weight: var(--font-weight-semibold);
 	line-height: var(--line-height-heading-md);

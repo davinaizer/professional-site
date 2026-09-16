@@ -1,7 +1,8 @@
 .home h1 {
-	font-size: clamp(3rem, 8vw, var(--font-size-display));
+	font-size: clamp(4rem, 9vw, 6.5rem);
+	font-weight: var(--font-weight-regular);
 	letter-spacing: var(--letter-spacing-display);
-	line-height: var(--line-height-display);
+	line-height: 0.95;
 }
 
 .home__hero {
@@ -14,8 +15,12 @@
 }
 
 .home__headline {
-	font-size: var(--font-size-body-lg);
-	font-weight: var(--font-weight-semibold);
+	font-family: var(--font-family-serif);
+	font-optical-sizing: auto;
+	font-size: clamp(1.75rem, 3vw, 2.25rem);
+	font-weight: var(--font-weight-regular);
+	letter-spacing: -0.015em;
+	line-height: 1.2;
 }
 
 .home__summary {
@@ -164,9 +169,8 @@
 
 @media (max-width: 40rem) {
 	.home h1 {
-		font-size: var(--font-size-heading-lg-mobile);
-		letter-spacing: var(--letter-spacing-heading-lg);
-		line-height: var(--line-height-heading-lg-mobile);
+		font-size: clamp(3rem, 15vw, 4rem);
+		line-height: 0.98;
 	}
 
 	.home__focus {

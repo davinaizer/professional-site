@@ -27,9 +27,6 @@ function ExperiencePage() {
 							<article className="experience__entry" id={entry.slug}>
 								<header className="experience__entry-header">
 									<p className="experience__chronology">
-										<span aria-hidden="true">
-											{String(entryIndex + 1).padStart(2, "0")}
-										</span>
 										{dates}
 									</p>
 									<h2>{entry.role}</h2>
