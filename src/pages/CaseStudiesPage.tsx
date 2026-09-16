@@ -12,11 +12,11 @@ function CaseStudiesPage({
 	return (
 		<section className="case-studies page-section">
 			<header className="case-studies__header page-lead">
-				<p className="eyebrow">Professional evidence</p>
+				<p className="eyebrow">Selected work</p>
 				<h1>Case Studies</h1>
 				<p className="case-studies__intro page-intro">
-					Deeper narratives examining the context, decisions, and outcomes
-					behind selected work.
+					A more detailed look at how I approached a problem, the decisions I
+					made, and what I would do differently.
 				</p>
 			</header>
 

@@ -10,8 +10,7 @@ function ExperiencePage() {
 				<p className="eyebrow">Career history</p>
 				<h1>Experience</h1>
 				<p className="experience__intro page-intro">
-					Career history with clear context and accurate contribution
-					boundaries.
+					The roles, products and teams that have shaped how I work today.
 				</p>
 			</header>
 

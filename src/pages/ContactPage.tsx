@@ -11,8 +11,8 @@ function ContactPage() {
 					<p className="eyebrow">Get in touch</p>
 					<h1>Contact</h1>
 					<p className="contact__intro">
-						For professional opportunities, conversations, and collaboration,
-						reach me through the channels below.
+						If you’d like to talk about an opportunity, a project, or simply
+						compare notes, feel free to email me or find me on LinkedIn.
 					</p>
 				</header>
 

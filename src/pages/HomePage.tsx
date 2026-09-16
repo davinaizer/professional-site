@@ -65,6 +65,12 @@ function HomePage() {
 				) : null}
 				<Link to={routes.experience}>View career timeline</Link>
 			</section>
+
+			<section aria-labelledby="about-heading" className="home__about">
+				<p className="eyebrow">A little about me</p>
+				<h2 id="about-heading">Beyond the work</h2>
+				<p>{summary.personalNote}</p>
+			</section>
 		</section>
 	);
 }
