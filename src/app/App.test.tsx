@@ -46,7 +46,7 @@ describe("App", () => {
 		).toHaveAttribute("href", routes.experience);
 		expect(
 			screen.getByRole("link", { name: "Download Resume" }),
-		).toHaveAttribute("href", "/resume.pdf");
+		).toHaveAttribute("href", "/davi-naizer-santos-resume.pdf");
 		expect(
 			within(
 				screen.getByRole("navigation", {
