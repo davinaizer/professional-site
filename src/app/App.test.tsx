@@ -24,9 +24,10 @@ describe("App", () => {
 	it("renders the shared shell around the current route content", async () => {
 		renderApp();
 
-		expect(
-			screen.getByRole("link", { name: "Davi Naizer Santos" }),
-		).toHaveAttribute("href", routes.home);
+		expect(screen.getByRole("link", { name: "Davi Naizer" })).toHaveAttribute(
+			"href",
+			routes.home,
+		);
 		expect(
 			screen.getByRole("navigation", { name: "Primary" }),
 		).toBeInTheDocument();
@@ -35,21 +36,16 @@ describe("App", () => {
 				name: "Contact",
 			}),
 		).toHaveAttribute("href", routes.contact);
-		expect(await screen.findByRole("main")).toHaveTextContent(
-			"Davi Naizer Santos",
-		);
+		expect(await screen.findByRole("main")).toHaveTextContent("Davi Naizer");
 		expect(
 			screen.getByText("Senior Frontend & Product Engineer"),
 		).toBeInTheDocument();
-		expect(
-			screen.getByRole("link", { name: "Professional summary" }),
-		).toHaveAttribute("href", routes.summary);
 		expect(
 			screen.getByRole("link", { name: "Explore experience" }),
 		).toHaveAttribute("href", routes.experience);
 		expect(
 			screen.getByRole("link", { name: "Download Resume" }),
-		).toHaveAttribute("href", "/resume.pdf");
+		).toHaveAttribute("href", "/davi-naizer-santos-resume.pdf");
 		expect(
 			within(
 				screen.getByRole("navigation", {
@@ -57,7 +53,19 @@ describe("App", () => {
 				}),
 			).getByRole("link", { name: "Contact" }),
 		).toHaveAttribute("href", routes.contact);
-		expect(screen.getByText("© DAVI NAIZER SANTOS | 2026")).toBeInTheDocument();
+		expect(screen.getByText("© 2026 Davi Naizer")).toBeInTheDocument();
+		const footerNavigation = screen.getByRole("navigation", {
+			name: "Social and contact links",
+		});
+		expect(
+			within(footerNavigation).getByRole("link", { name: "LinkedIn" }),
+		).toHaveAttribute("href", "https://www.linkedin.com/in/davi-naizer");
+		expect(
+			within(footerNavigation).getByRole("link", { name: "GitHub" }),
+		).toHaveAttribute("href", "https://github.com/davinaizer");
+		expect(
+			within(footerNavigation).getByRole("link", { name: "Email" }),
+		).toHaveAttribute("href", "mailto:davi.naizer@gmail.com");
 	});
 
 	it("has no detectable accessibility violations", async () => {

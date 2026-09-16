@@ -6,16 +6,16 @@ The application is being built as a real, maintainable product—not as a techno
 
 ## Current status
 
-Milestone 1, the application foundation, is in progress. The project currently includes:
+The implemented MVP scope is complete, locally validated, and approved for publication follow-up. The project includes:
 
 - a strict TypeScript React application built with Vite;
 - route structure and keyboard-accessible primary navigation;
 - a semantic application shell with a responsive, CSS-first styling foundation;
 - component, automated accessibility, and bounded browser-journey tests; and
-- formatting, linting, type-checking, test, and build scripts; and
+- formatting, linting, type-checking, test, and build scripts;
 - a Cloudflare Pages deployment, with production deployments from `main` and optional isolated pull-request previews.
 
-Professional profile, experience, project, and contact content are intentionally still in development. Milestone 1 completion assessment is the remaining foundation task.
+The website focuses on professional experience, selected projects, and case studies. Publication metadata and live-production verification remain tracked separately in `TODO.md`.
 
 ## Technology and quality practices
 

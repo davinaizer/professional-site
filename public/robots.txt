@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://davi-naizer.pages.dev/sitemap.xml

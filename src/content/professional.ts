@@ -1,3 +1,5 @@
+import type { EvidenceReference } from "./evidence";
+
 export type PublicLink = {
 	label: string;
 	url: string;
@@ -12,10 +14,12 @@ export type ProfessionalIdentity = {
 
 export type ProfessionalSummary = {
 	summary: string;
+	homeExcerpt: string;
 	focusAreas: readonly string[];
 };
 
 export type ExperienceEntry = {
+	slug: string;
 	company: string;
 	role: string;
 	startDate: string;
@@ -37,10 +41,18 @@ export type ContactLink = PublicLink & {
 	description?: string;
 };
 
+export type ProfessionalClaim = {
+	slug: string;
+	statement: string;
+	experienceSlugs?: readonly string[];
+	supportingEvidence: readonly EvidenceReference[];
+};
+
 export type ProfessionalContent = {
 	identity: ProfessionalIdentity;
 	summary: ProfessionalSummary;
 	experience: readonly ExperienceEntry[];
+	claims: readonly ProfessionalClaim[];
 	resume: ResumeAccess;
 	contact: readonly ContactLink[];
 };

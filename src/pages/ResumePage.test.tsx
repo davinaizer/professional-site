@@ -23,7 +23,7 @@ describe("ResumePage", () => {
 		expect(resumeLink).toHaveAttribute("href", professionalContent.resume.url);
 		expect(resumeLink).toHaveAttribute("download");
 
-		const updatedDate = screen.getByText("13 August 2026");
+		const updatedDate = screen.getByText("15 September 2026");
 		expect(updatedDate.tagName).toBe("TIME");
 		expect(updatedDate).toHaveAttribute(
 			"datetime",

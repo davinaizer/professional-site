@@ -1,7 +1,7 @@
 ---
 createdAt: 2026-08-07
-updatedAt: 2026-08-07
-version: 1.0
+updatedAt: 2026-09-15
+version: 1.2
 status: active
 ---
 
@@ -97,7 +97,6 @@ Milestone 1.
 ### Scope
 
 - Home
-- Professional Summary
 - Experience
 - Resume
 - Contact
@@ -110,6 +109,8 @@ Milestone 1.
 - The completed experience remains deployable.
 
 ## Milestone 3: Professional evidence
+
+**Status:** Complete for the simplified evidence scope approved on 2026-09-15.
 
 ### Outcome
 
@@ -130,7 +131,6 @@ Milestone 2.
 
 - Selected Projects
 - Case Studies
-- Engineering
 - Connections from summary and experience content to relevant supporting evidence
 
 ### Completion conditions
@@ -141,6 +141,8 @@ Milestone 2.
 - Content can support interview preparation and reuse without becoming a general knowledge-management system.
 
 ## Milestone 4: MVP release readiness
+
+**Status:** Complete, validated, and approved on 2026-09-15. Publication metadata and live-production verification are tracked as separate follow-up work.
 
 ### Outcome
 
@@ -162,7 +164,7 @@ Milestone 3.
 - Accessibility verification
 - Responsive behaviour verification
 - Relevant automated and manual testing
-- Measured performance review
+- Local production-build and material-performance review
 - Content and professional-evidence review
 - Production deployment readiness
 
@@ -171,7 +173,7 @@ Milestone 3.
 - All MVP areas are complete and coherent.
 - Relevant tests and quality checks pass.
 - Accessibility and responsive behaviour have been verified.
-- Performance has been measured and material issues resolved or recorded.
+- Local production output has been reviewed and no material pre-publication performance concern remains.
 - Content is accurate, evidence-backed, and free from confidential information.
 - The application is production-ready and deployable.
 

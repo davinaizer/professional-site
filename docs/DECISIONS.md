@@ -1,12 +1,122 @@
 ---
 createdAt: 2026-08-07
-updatedAt: 2026-08-24
-version: 1.15
+updatedAt: 2026-09-15
+version: 1.19
 status: active
 order: ASC
 ---
 
 # Decisions
+
+## Use the resume builder as canonical professional copy — 2026-09-15
+
+**Decision:** Treat `/Users/naizer/Workspace/markdown-resume-builder/source/canon-resume` as the canonical source for professional summary and experience copy. The Professional Site remains a manually curated public projection and may add approved project and case-study narrative, but it must not contradict the canonical résumé content.
+
+**Rationale:** Maintaining the same career wording independently in two repositories creates avoidable drift in role names, chronology, attribution, technologies, and measured outcomes. The resume builder already owns the reviewed professional narrative.
+
+**Consequence:** When professional copy differs, validate it against the canonical resume-builder source and update the site projection accordingly. Website-specific navigation, labels, calls to action, project framing, and case-study structure remain owned by this repository. The site does not import the other repository at runtime or build time.
+
+**Review triggers:** Reconsider the manual projection only if repeated synchronization work justifies a separate approved export contract. Do not introduce a runtime dependency between the repositories.
+
+## Remove the Engineering area and obsolete routes — 2026-09-15
+
+**Decision:** Remove the Engineering route and area permanently from the product scope. Communicate engineering judgement through professional experience, selected projects, case studies, and the implementation itself rather than through a separate destination. Remove the obsolete `/summary` compatibility redirect because Home is the only supported destination for professional-summary content.
+
+**Rationale:** A separate Engineering area would duplicate evidence already expressed more clearly through career context and concrete work. Removing it simplifies the information architecture and keeps the website focused on professional experience and case studies. Publicly reachable placeholder or legacy routes also conflict with the requirement that every page justify its existence.
+
+**Consequence:** `/engineering` and `/summary` use the standard not-found route. Primary navigation contains Experience, Work, and Resume, with Contact presented separately. Product requirements, roadmap scope, architecture, content contracts, and execution tracking no longer include a standalone Engineering area.
+
+**Review triggers:** Reconsider the overall information architecture only if evidence from real users shows that professional experience, projects, and case studies cannot communicate engineering judgement clearly. Do not restore the Engineering route as a default expansion path.
+
+## Consolidate Professional Summary into Home — 2026-09-15
+
+**Decision:** Remove the dedicated Professional Summary page because Home already renders the same approved summary and complete focus-area content. Keep the shared professional-summary content contract because Home consumes it. The later “Remove unfinished and obsolete routes” decision supersedes the original compatibility redirect.
+
+**Rationale:** The dedicated route added no unique evidence, context, or interaction and was discoverable only through a Home-page action. Consolidating the content removes an unnecessary navigation step and better satisfies the product requirement that every page justify its existence.
+
+**Consequence:** Home is the sole presentation owner for the professional summary and focus areas. The Summary component, route constant, route-specific styling, test, Home action, and legacy redirect are removed.
+
+**Review triggers:** Introduce a dedicated summary destination again only when approved content or a user need cannot be represented clearly on Home without harming its hierarchy or initial comprehension.
+
+## Allocate Alfred: What To Do Next as the first case study — 2026-08-31
+
+**Decision:** Allocate Alfred to the Case Studies area as **Alfred: What To Do Next**, using the stable slug `alfred-what-to-do-next`. Treat Alfred and the possible future name UpNext as the same project identity; UpNext is not used as the current public case-study name. Keep the existing `alfred` Selected Projects record unchanged as the shorter project projection. Beacon remains deferred.
+
+**Rationale:** The reviewed Alfred evidence provides the strongest current basis for one deeper narrative: clear product intent, mobile UX and implementation ownership, layered architecture, asynchronous recommendation integration, explicit decision states, and broad test coverage. The evidence also gives clear limits: the work is exploratory, and user validation, adoption, public launch, market success, and unsupported metrics are unavailable.
+
+**Consequence:** The first populated `CaseStudy` record expands the existing Alfred project narrative without importing source material, private paths, provenance, or governance metadata. Public copy must preserve the shared product-direction and backend-ownership boundary and must describe results as implementation evidence rather than validated user or business outcomes.
+
+**Review triggers:** Reconsider the public name if the project is formally renamed, if new evidence changes the approved contribution or confidentiality boundary, or if public validation establishes a stronger outcome. Any later allocation of Beacon or another case study remains a separate decision.
+
+## Use explicit fields for reusable case-study narratives — 2026-08-31
+
+**Decision:** Define `CaseStudy` with explicit fields for context, problem, role, constraints, decisions, product and user experience, engineering, outcomes, and reflection. Render each field as a named page section and keep case-study content manually curated.
+
+**Rationale:** A case study needs a repeatable narrative that supports product, UX, engineering, attribution, outcomes, and interview reflection without hiding meaning inside a generic approach field or flexible content-block system. Explicit fields keep the content contract understandable and make omissions visible during editorial review.
+
+**Consequence:** The case-study contract is stricter than the project contract and does not inherit optional narrative fields. The page supports fixture-driven verification of populated content, while case-study content and allocation remain governed by separate approved decisions.
+
+**Review triggers:** Reconsider the fields if an approved case study cannot be represented clearly, repeated narrative changes create meaningful maintenance pressure, or a demonstrated product requirement requires a different content boundary. Any flexible block model, content source, or governance metadata proposal remains a separate decision.
+
+## Select a small set of distinct evidence projects — 2026-08-24
+
+**Decision:** Select three public-safe project narratives for the Selected Projects area: **Vessel List Template Administration**, **an internal content-production workflow**, and **Alfred**. Map them to the existing experience entries for Signal, Gamesys / Bally's, and the independent product venture / planned career break respectively. Use these narratives to represent distinct evidence dimensions: production product and frontend delivery; workflow-oriented product engineering and automation; and recent product-engineering ownership, architecture, and learning in an unfamiliar ecosystem.
+
+**Rationale:** The set is intentionally small and avoids representing every employer or technology. Vessel List Template Administration provides the clearest recent production React and TypeScript product evidence. The internal content-production workflow adds distinct systems, workflow, validation, and delivery evidence without exposing internal project details. Alfred is the most recent project and validates the product-engineer direction through end-to-end product development, shared product and architecture decisions, and recent work in an unfamiliar ecosystem. Together they add depth beyond the CV without duplicating the same narrative.
+
+**Consequence:** The selected identities are public-safe working descriptions rather than an import of PKM project records. Future project content must remain within the approved experience evidence, contribution boundaries, outcome confidence, and confidentiality rules. Alfred must be described as recent exploratory or private-validation work where applicable; no public-launch, adoption, or market-success claims are implied. The separate Alfred case-study allocation keeps the existing Selected Projects record as its shorter projection. Beacon's micro-frontend POC is not part of this set and remains deferred.
+
+**Review triggers:** Reconsider the set if a selected narrative cannot be represented clearly by the existing `Project` contract, public-safe review disallows its current abstraction, or later approved content demonstrates that another candidate provides more distinct evidence with less duplication. Any decision to allocate Alfred to a case study or replace it with Beacon must be made before project content implementation and recorded separately.
+
+**Deferred:** Project records, final public copy, stable project slugs, evidence relationships, project-page rendering, and Beacon implementation remain deferred to later approved tasks.
+
+## Establish public evidence governance rules — 2026-08-24
+
+**Decision:** Treat evidence confidence, contribution boundaries, and confidentiality as editorial publication gates for manually curated public content rather than public application metadata or runtime validation. Publish claims and outcomes only when the available evidence supports the strength of the statement. Distinguish measured outcomes from qualitative outcomes, and omit or reframe unsupported, uncertain, or unverifiable claims. Describe personal contribution separately from team, client, or organisational contribution without implying sole ownership where the work was collaborative. Distinguish production work from exploratory work. Publish only approved public-safe abstractions, excluding confidential employer or client information, private metrics, internal system details, secrets, personal information, and private source-governance metadata.
+
+**Rationale:** The product must provide useful professional evidence without overstating ownership, impact, certainty, or public disclosure. Editorial gates preserve honest boundaries while keeping the public content model small, static, and manually curated. Confidence and confidentiality are properties of the publication decision and source governance, not information that the public application needs to render or resolve.
+
+**Consequence:** The `Project`, `CaseStudy`, `Outcome`, and `ProfessionalClaim` contracts contain only public presentation data. Narrative fields and outcomes support clear contribution boundaries but do not certify evidence or encode private governance state. Future content must be reviewed against these rules before it is added to the public repository. When evidence or confidentiality is uncertain, the content is excluded or rewritten at a safer level of abstraction.
+
+**Review triggers:** Reconsider this policy if repeated editorial errors show that manual review is insufficient, public users need an explicit evidence-status presentation, or an approved public content source requires a different governance boundary. Any schema, runtime validation, provenance, or synchronisation proposal must be reviewed as a separate decision.
+
+**Deferred:** Public confidence labels, publication-status fields, provenance, source links, confidentiality metadata, automated content governance, PKM import or synchronisation, and claim content remain undefined until a demonstrated requirement and separate approved task justify them.
+
+## Define claim-owned relationships between evidence and professional experience — 2026-08-24
+
+**Decision:** Add stable `slug` identifiers to `ExperienceEntry`, define `EvidenceReference` as a discriminated reference to a project or case-study record, and define `ProfessionalClaim` with optional experience references and required supporting-evidence references. Add an empty claims collection to `ProfessionalContent`. Claims own the one-way relationships; evidence and experience do not store reciprocal claim arrays.
+
+**Rationale:** The PKM schema makes claims the reusable assertion boundary and lets claims reference the experiences and evidence that support them. A claim-owned relationship model preserves that ownership without importing PKM entities, wiki links, provenance, or a general knowledge graph. Stable slugs make the manually curated public projection addressable without coupling identifiers to display copy.
+
+**Consequence:** Existing experience copy remains unchanged while each entry gains a stable public slug. The current site content contains no claim records yet; `ProfessionalContent.claims` is initialised empty. Evidence references are manually curated strings distinguished by evidence kind, with no runtime resolver or reciprocal relationship state.
+
+**Review triggers:** Reconsider the relationship owner when public content requires derived reverse indexes, relationship resolution becomes error-prone, or a validated content source replaces manual curation. Review the identifier strategy if display-independent stable slugs cannot remain unique.
+
+**Deferred at the time of this decision:** Evidence confidence, contribution-boundary, and confidentiality rules were left to a separate governance decision; claim content, relationship rendering, and PKM import or synchronisation remain deferred.
+
+## Use project-owned presentation connections for selected-project context — 2026-08-31
+
+**Decision:** Store optional `relatedExperienceSlugs` and capability labels on manually curated `Project` records. Use stable `ExperienceEntry.slug` values for one-way navigation from selected projects to the experience timeline. Treat capabilities as a curated subset of the existing professional summary focus areas. These are presentation-level connections and do not replace `ProfessionalClaim` as the owner of evidentiary relationships.
+
+**Rationale:** The selected project set already has an approved mapping to existing experience entries, and the summary already provides a small, public capability vocabulary. Project-level context makes the relationship visible where the evidence is read without introducing a capability entity, reciprocal relationship state, or a general relationship resolver.
+
+**Consequence:** Project entries can show relevant experience links and capability signals, while experience entries expose stable anchors for direct navigation. Claim content and claim-owned evidence relationships remain separate and deferred. No new route, dependency, API, CMS, or PKM integration is required.
+
+**Review triggers:** Reconsider this boundary if capabilities require independent descriptions or routes, project labels repeatedly drift from the summary vocabulary, relationship maintenance becomes error-prone, or public claims require explicit claim rendering.
+
+**Deferred:** Capability records, capability routes, reverse project indexes, claim content, runtime relationship validation, and reciprocal relationship arrays remain undefined until a demonstrated requirement justifies them.
+
+## Define a static evidence contract from approved PKM projection patterns — 2026-08-24
+
+**Decision:** Add `src/content/evidence.ts` as a separate local TypeScript contract for `Outcome`, `Project`, and `CaseStudy`. Use explicit narrative fields for case studies rather than a flexible section or block model. Let `Project` own purpose, problem, solution, technologies, and outcomes, and let `CaseStudy` own personal contribution and narrative decisions. Keep the contract limited to manually curated site content.
+
+**Rationale:** The PKM entity schema distinguishes a project from the experiences and claims derived from it. Its project contract owns purpose, problem, solution, technologies, and outcomes, while its experience contract owns factual actions and outcomes. The site contract adopts those useful ownership boundaries without reproducing PKM entities, relationships, or private editorial metadata such as evidence levels, provenance, unsupported claims, missing-evidence notes, and source links.
+
+**Consequence:** The repository contains only approved site content. Because the repository is public, PKM source files and source-governance metadata must not be committed, imported, or represented as hidden application fields. Stable slugs identify site records, unknown optional fields are omitted, and claim-owned relationships are defined separately. The evidence contract adds no content values, routes, rendering, runtime validation, or PKM integration.
+
+**Review triggers:** Reconsider the contract when approved evidence content cannot be represented clearly, repeated narrative changes justify a different boundary, or a demonstrated requirement supports a validated public export. Any import or synchronisation proposal must be reviewed as a separate architecture decision.
+
+**Deferred at the time of this decision:** Evidence confidence, contribution-boundary, confidentiality, and publication-governance rules were left to a separate governance decision; claim content and project and case-study implementation remained deferred.
 
 ## Use a contact-specific public-link contract — 2026-08-24
 
@@ -22,7 +132,7 @@ order: ASC
 
 ## Colocate route-owned CSS with route components — 2026-08-14
 
-**Decision:** Keep global styling layers in `src/styles/` and import them through `src/index.css`. Place CSS that belongs exclusively to one route alongside that route component in `src/pages/`, using a matching filename and a direct component import—for example, `ProfessionalSummaryPage.tsx` imports `./ProfessionalSummaryPage.css`. Continue to scope selectors with distinctive page prefixes. Migrate the existing Home route stylesheet to `src/pages/HomePage.css` as part of adopting this convention; subsequent route-owned styles follow it by default.
+**Decision:** Keep global styling layers in `src/styles/` and import them through `src/index.css`. Place CSS that belongs exclusively to one route alongside that route component in `src/pages/`, using a matching filename and a direct component import—for example, `ProjectsPage.tsx` imports `./ProjectsPage.css`. Continue to scope selectors with distinctive page prefixes. Migrate the existing Home route stylesheet to `src/pages/HomePage.css` as part of adopting this convention; subsequent route-owned styles follow it by default.
 
 **Rationale:** Page components and their presentation change together. Colocation makes the ownership, discovery, maintenance, and removal of route-specific styles explicit without introducing CSS Modules, a dependency, or a component abstraction. The repository has a demonstrated need for a second page-owned stylesheet; maintaining a central registry for route-owned CSS would separate related implementation without providing a current benefit.
 
@@ -38,7 +148,7 @@ order: ASC
 
 **Rationale:** Contact and Core Navigation completed the core route set, and the four routes demonstrated repeated semantic styling with no need for a component abstraction. A small CSS layer removes verified duplication while preserving the shallow route ownership boundary and relevant frontend practice.
 
-**Consequence:** The shared layer owns only the four extracted patterns and their shared mobile page-section adjustment. Home layout variations, Experience timeline styling, Summary focus styling, and Resume-specific responsive treatment remain colocated with their routes. No dependency, CSS Module, utility framework, or React wrapper is introduced.
+**Consequence:** The shared layer owns only the four extracted patterns and their shared mobile page-section adjustment. Home layout and focus styling, Experience timeline styling, and Resume-specific responsive treatment remain colocated with their routes. No dependency, CSS Module, utility framework, or React wrapper is introduced.
 
 **Review triggers:** Reconsider the boundary if shared selectors cause cascade-order defects, semantic roles diverge, route-specific modifiers become difficult to understand, or later evidence justifies extracting additional patterns.
 
@@ -50,7 +160,7 @@ order: ASC
 
 **Rationale:** Identity, summary, and experience information will be reused across core routes, so route-local definitions would duplicate a known public boundary. A TypeScript module gives strict compile-time checking and straightforward React imports without adding parsing, runtime validation, dependencies, or build complexity. Markdown is better suited to future narrative content, while JSON becomes useful only when the PKM can produce an accepted public export that warrants a validated import boundary.
 
-**Consequence:** `src/content/professional.ts` is the local source of truth for the public-content shape. Collections are readonly; experience dates are represented as distinct start and optional end values so current roles can be unambiguous. `ResumeAccess` composes `PublicLink` with an optional updated date. The module contains no PKM imports, paths, provenance, confidentiality, or source-governance metadata.
+**Consequence:** `src/content/professional.ts` is the local source of truth for the public-content shape, while the canonical resume-builder source owns approved professional summary and experience wording. Collections are readonly; experience dates are represented as distinct start and optional end values so current roles can be unambiguous. `ResumeAccess` composes `PublicLink` with an optional updated date. The module contains no runtime imports, paths, provenance, confidentiality, or source-governance metadata from the canonical repository.
 
 **Review triggers:** Reconsider this representation when accepted public-ready PKM records and repeated manual-transfer friction justify a versioned static export and validated import or generation step; when editorial authoring needs show that a narrative representation is required; or when a content requirement cannot be expressed cleanly by the current contract.
 
@@ -66,7 +176,7 @@ order: ASC
 
 **Review triggers:** Reconsider this boundary when the PKM contains accepted public-ready records with sufficient governance metadata, when a public content area needs fields beyond the recorded vocabulary, or when a product requirement requires a content source, loading mechanism, or integration.
 
-**Deferred:** PKM integration, CMS or remote data loading, generated resume, and Milestone 3 project, case-study, and engineering-evidence structures remain undefined until a demonstrated requirement exists.
+**Deferred:** PKM integration, CMS or remote data loading, generated resume, and further project or case-study structures remain undefined until a demonstrated requirement exists.
 
 ## Use Cloudflare Pages for static application deployment — 2026-08-12
 
@@ -106,15 +216,15 @@ order: ASC
 
 ## Use a centred primary navigation and Work evidence hub — 2026-08-11
 
-**Decision:** Use a shared header with a home-linked identity at the left, centred direct navigation to Experience, Work, Engineering, and Resume, and a visually distinct Contact link at the right. Add a Work index route that groups the existing Projects and Case Studies routes. Keep Engineering top-level. Preserve Summary, Projects, and Case Studies as independently addressable routes without presenting them as primary-navigation items.
+**Decision:** Use a shared header with a home-linked identity at the left, centred direct navigation to Experience, Work, and Resume, and a visually distinct Contact link at the right. Add a Work index route that groups the existing Projects and Case Studies routes. Preserve Projects and Case Studies as independently addressable routes without presenting them as primary-navigation items. The original Summary-route decision is superseded by “Consolidate Professional Summary into Home,” and the separate Engineering area is removed by “Remove the Engineering area and obsolete routes.”
 
-**Rationale:** Recruiters need direct access to career history, the CV, and contact details, while hiring managers need a concise path to professional evidence and engineering judgement. Projects provide scan-friendly evidence and case studies provide selected depth, so grouping them under Work establishes their relationship without hiding destinations behind a dropdown. Engineering represents the product's engineering practice and decisions rather than a project subtype. A three-column CSS Grid keeps the core navigation genuinely centred even though the identity and Contact link have different widths.
+**Rationale:** Recruiters need direct access to career history, the CV, and contact details, while hiring managers need a concise path to professional evidence and engineering judgement. Projects provide scan-friendly evidence and case studies provide selected depth, so grouping them under Work establishes their relationship without hiding destinations behind a dropdown. A three-column CSS Grid keeps the core navigation genuinely centred even though the identity and Contact link have different widths.
 
 **Consequence:** `/work` is the durable evidence entry point; `/projects` and `/case-studies` remain stable direct destinations. The header has no separate Home item because the identity links home. Contact uses anchor semantics because it navigates. Responsive CSS reflows the same visible links rather than introducing a menu control or client state.
 
-**Review triggers:** Reconsider the primary navigation when real content shows that Summary needs persistent direct discovery, when additional evidence areas make the Work grouping unclear, when measured navigation behaviour indicates the visible-link model is unusable at supported viewports, or when user evidence justifies a different navigation interaction.
+**Review triggers:** Reconsider the primary navigation when additional evidence areas make the Work grouping unclear, when measured navigation behaviour indicates the visible-link model is unusable at supported viewports, or when user evidence justifies a different navigation interaction.
 
-**Deferred:** The final content and layout of the Work index, the future relationship between individual projects and case studies, whether Summary needs a dedicated content destination, custom focus treatment, and any dropdown or menu interaction remain undefined until a demonstrated requirement exists.
+**Deferred:** The future relationship between individual projects and case studies, custom focus treatment, and any dropdown or menu interaction remain undefined until a demonstrated requirement exists.
 
 ## Use reference hex values for the initial CSS token foundation — 2026-08-10
 

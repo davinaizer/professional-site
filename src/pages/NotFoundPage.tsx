@@ -6,7 +6,7 @@ function NotFoundPage() {
 		<section>
 			<h1>Page Not Found</h1>
 			<p>
-				<Link to={routes.home}>Click here to go back to the homepage.</Link>
+				<Link to={routes.home}>Return home</Link>
 			</p>
 		</section>
 	);

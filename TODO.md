@@ -1,7 +1,7 @@
 ---
 createdAt: 2026-08-07
-updatedAt: 2026-08-24
-version: 1.19
+updatedAt: 2026-09-16
+version: 1.28
 status: active
 ---
 
@@ -35,7 +35,7 @@ Task boundaries should balance developer implementation effort with reliable AI-
 
 ---
 
-# Completed Governance
+## Completed Governance
 
 - [x] Create the initial `ROADMAP.md` derived from `PRODUCT_REQUIREMENTS.md`.
 - [x] Align the project-local AI workflow and skills with the developer-owned collaboration model.
@@ -43,43 +43,43 @@ Task boundaries should balance developer implementation effort with reliable AI-
 
 ---
 
-# Milestone 1 — Application Foundation
+## Milestone 1 — Application Foundation
 
-## Project Bootstrap
+### Project Bootstrap
 
 - [x] Initialise and validate the React application with strict TypeScript.
 - [x] Configure and validate the development, build, type-checking, linting, and formatting tooling.
 
-## Application Structure
+### Application Structure
 
 - [x] Establish the initial source structure and application entry boundaries.
 - [x] Create the semantic application shell and baseline page composition.
 - [x] Establish the MVP route structure and navigation behaviour.
 - [x] Verify usable content and navigation with minimal client-side behaviour where practical.
 
-## Styling Foundation
+### Styling Foundation
 
 - [x] Define the initial global CSS, design tokens, typography, and spacing primitives.
 - [x] Apply the styling foundation and existing design principles to the application shell.
 - [x] Establish responsive shell and navigation behaviour.
 
-## Accessibility Foundation
+### Accessibility Foundation
 
 - [x] Establish keyboard-accessible navigation and visible focus behaviour.
 - [x] Validate shell semantics, baseline colour contrast, and representative viewport layouts.
 
-## Quality Foundation
+### Quality Foundation
 
 - [x] Establish the initial unit/component testing and automated accessibility-validation approach where justified.
 - [x] Establish end-to-end testing for a bounded set of critical journeys.
 - [x] Configure CI to run the established relevant quality checks.
 
-## Deployment Foundation
+### Deployment Foundation
 
 - [x] Select the simplest suitable deployment target.
 - [x] Configure, deploy, and validate the application foundation using the approved deployment target.
 
-### Milestone 1 Completion
+#### Milestone 1 Completion
 
 - [x] Complete Milestone 1 after confirming:
   - the application builds and deploys;
@@ -90,86 +90,77 @@ Task boundaries should balance developer implementation effort with reliable AI-
 
 ---
 
-# Milestone 2 — Core Professional Experience
+## Milestone 2 — Core Professional Experience
 
-## Content Foundation
+### Content Foundation
 
 - [x] Define the minimum content structure required for core professional information.
 - [x] Decide where professional content should live and how it should be represented.
 - [x] Add the approved professional identity and summary content.
 - [x] Add the approved experience content, résumé, and contact.
 
-## Home
+### Home
 
 - [x] Implement the Home experience, communicating professional focus within the initial viewport and providing clear routes to relevant core areas.
 
-## Professional Summary
-
-- [x] Implement a concise, defensible professional summary aligned with the current CV and product-engineering direction.
-
-## Experience
+### Experience
 
 - [x] Implement the career timeline with clear chronology, defensible contribution boundaries, and content suitable for interview preparation and reuse.
 
-## Resume
+### Resume
 
 - [x] Add production-ready access to the current CV.
 
-## Contact
+### Contact
 
 - [x] Add and validate accessible professional contact links.
 
-## Core Navigation
+### Core Navigation
 
 - [x] Connect and validate all core professional areas through consistent keyboard-accessible and responsive navigation.
 
-### Milestone 2 Completion
+#### Milestone 2 Completion
 
 - [x] Complete Milestone 2 after confirming:
   - professional identity is understandable within one or two minutes;
   - core content is clear, accessible, responsive, and deployable;
   - professional evidence remains accurate and defensible; and
-	  - the core profile does not require unnecessary interaction to understand.
+    - the core profile does not require unnecessary interaction to understand.
 
-## Shared CSS Patterns
+### Shared CSS Patterns
 
 - [x] Extract high-confidence shared page styles for the core routes.
 
 ---
 
-# Milestone 3 — Professional Evidence
+## Milestone 3 — Professional Evidence
 
-## Evidence Model
+### Evidence Model
 
-- [ ] Define the minimum structure for projects, case studies, outcomes, and engineering evidence.
-- [ ] Define how evidence connects back to experience and professional claims.
-- [ ] Establish rules for evidence confidence, contribution boundaries, and confidentiality.
+- [x] Define the minimum structure for projects, case studies, and outcomes.
+- [x] Define how evidence connects back to experience and professional claims.
+- [x] Establish rules for evidence confidence, contribution boundaries, and confidentiality.
 
-## Selected Projects
+### Selected Projects
 
-- [ ] Select the smallest set of projects that add distinct evidence.
-- [ ] Implement the Selected Projects experience.
-- [ ] Connect projects to relevant experience and capabilities.
+- [x] Select the smallest set of projects that add distinct evidence.
+- [x] Implement the Selected Projects experience.
+- [x] Connect projects to relevant experience and capabilities.
 
-## Case Studies
+### Case Studies
 
-- [ ] Define the minimum reusable case-study structure.
-- [ ] Write and implement one deliberately bounded case study that validates the approved structure.
+- [x] Define the minimum reusable case-study structure.
+- [x] Write and implement one deliberately bounded case study that validates the approved structure.
 
 Add further case studies only when they provide distinct evidence.
 
-## Engineering
+### Evidence Connections
 
-- [ ] Define the purpose and scope of the Engineering area.
-- [ ] Implement the approved Engineering area using meaningful evidence without duplicating repository documentation.
+- [x] Connect selected projects to the relevant experience and capability context.
 
-## Evidence Connections
+#### Milestone 3 Completion
 
-- [ ] Connect professional claims to optional supporting projects, case studies, decisions, or outcomes.
-
-### Milestone 3 Completion
-
-- [ ] Complete Milestone 3 after confirming:
+- [x] Complete Milestone 3 after confirming:
   - every evidence area adds useful depth beyond the CV;
   - claims are supported by defensible evidence;
   - personal and team contributions are clearly distinguished;
@@ -178,58 +169,84 @@ Add further case studies only when they provide distinct evidence.
 
 ---
 
-# Milestone 4 — MVP Release Readiness
+## Milestone 4 — MVP Release Readiness
 
-## Integration
+**Status:** Complete, validated, and approved on 2026-09-15 for the implemented MVP scope.
 
-- [ ] Review navigation, information architecture, and content hierarchy across all MVP areas.
-- [ ] Resolve material duplication and inconsistent interaction patterns identified by the integration review.
+### Integration
 
-## Accessibility
+- [x] Review navigation, information architecture, and content hierarchy across all MVP areas.
+- [x] Resolve material duplication and inconsistent interaction patterns identified by the integration review.
 
-- [ ] Review keyboard behaviour, focus, semantics, and automated accessibility results across the MVP.
-- [ ] Resolve material accessibility issues identified by the accessibility review.
+### Accessibility
 
-## Responsive Behaviour
+- [x] Review keyboard behaviour, focus, semantics, and automated accessibility results across the MVP.
+- [x] Resolve material accessibility issues identified by the accessibility review.
 
-- [ ] Review layouts, readability, and navigation at representative mobile, tablet, and desktop viewports.
-- [ ] Resolve material issues identified by the responsive-behaviour review.
+### Responsive Behaviour
 
-## Testing
+- [x] Review layouts, readability, and navigation at representative mobile, tablet, and desktop viewports.
+- [x] Resolve material issues identified by the responsive-behaviour review.
 
-- [ ] Review and strengthen test coverage for a bounded set of critical user journeys, then run the complete relevant test suite.
+### Testing
 
-## Performance
+- [x] Review and strengthen test coverage for a bounded set of critical user journeys, then run the complete relevant test suite.
 
-- [ ] Measure production performance and identify any material bottlenecks.
-- [ ] Resolve or explicitly document measured material performance issues.
+### Performance
+
+- [x] Review production build output and identify any material performance concern within the implemented scope.
+- [x] Confirm no measured local build concern requires pre-publication remediation.
 
 Do not optimise without measured need.
 
-## Content Review
+### Content Review
 
-- [ ] Verify professional claims and contribution boundaries against source evidence.
-- [ ] Review all public content for confidentiality, accuracy, and presentation quality.
-- [ ] Validate all resume, contact, project, and external links.
+- [x] Verify professional claims and contribution boundaries against the canonical resume-builder content.
+- [x] Review all public content for confidentiality, accuracy, and presentation quality.
+- [x] Validate internal routes and the configured resume, contact, project, and external-link targets.
 
-## Production Readiness
+### Production Readiness
 
-- [ ] Validate release readiness through the production build, relevant automated checks, deployment verification, and product-scope confirmation.
-- [ ] Publish and verify the approved MVP release.
+- [x] Validate pre-publication readiness through the production build, relevant automated checks, and product-scope confirmation.
+- [x] Approve the implemented MVP for publication follow-up.
 
-### Milestone 4 Completion
+#### Milestone 4 Completion
 
-- [ ] Complete Milestone 4 after confirming:
+- [x] Complete Milestone 4 after confirming:
   - all MVP areas are complete and coherent;
   - relevant checks pass;
   - accessibility and responsive behaviour are verified;
-  - performance has been measured;
+  - local production build output has no identified material performance concern;
   - public content is accurate and safe to publish; and
-  - the application is production-ready and deployable.
+  - the application is ready for the separate publication and live-production verification tasks below.
 
 ---
 
-# Milestone 5 — Evidence-Driven Evolution
+## Post-MVP Publication Follow-up
+
+These tasks are intentionally separate from the approved application scope. Complete them when the production domain and publication window are confirmed.
+
+### Publication Metadata
+
+- [x] Add a production meta description.
+- [x] Add the canonical URL after confirming the production domain.
+- [x] Add Open Graph and social-preview metadata and an approved preview image.
+- [x] Add favicon and site-icon assets.
+- [x] Decide and implement the production indexing policy, including `robots.txt` and a sitemap if required.
+
+### Live Production Verification
+
+- [x] Verify direct entry and refresh behaviour for all client-side routes on the current Cloudflare Pages preview deployment.
+- [x] Verify the resume download, email, LinkedIn, project, case-study, and experience-anchor links on the current Cloudflare Pages preview deployment.
+- [ ] Re-run route and link verification after the current changes are merged to the Cloudflare Pages production branch.
+- [ ] Run production performance, accessibility, SEO, and best-practice measurements.
+- [ ] Review representative production layouts in Safari, Chrome, and Firefox across mobile, tablet, and desktop viewports.
+- [ ] Verify production focus visibility and colour contrast in real browsers.
+- [ ] Confirm whether externally hosted Google Fonts remain acceptable for production reliability, privacy, and rendering performance.
+
+---
+
+## Milestone 5 — Evidence-Driven Evolution
 
 Do not maintain a speculative feature backlog for this milestone.
 
@@ -252,7 +269,7 @@ Every new task must:
 
 ---
 
-# Backlog Rules
+## Backlog Rules
 
 Do not add a backlog item solely because it may be useful later.
 
