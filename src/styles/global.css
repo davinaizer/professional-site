@@ -8,9 +8,9 @@ body {
 	background-color: var(--color-background);
 	background-image: radial-gradient(
 		ellipse 72rem 48rem at 0 0,
-		rgb(83 49 126 / 0.32) 0%,
-		rgb(49 31 70 / 0.22) 36%,
-		transparent 72%
+		var(--gradient-accent-start) 0%,
+		var(--gradient-accent-middle) 36%,
+		transparent 74%
 	);
 	background-attachment: fixed;
 	background-repeat: no-repeat;
