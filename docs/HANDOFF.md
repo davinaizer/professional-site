@@ -1,7 +1,7 @@
 ---
 createdAt: 2026-08-10
 updatedAt: 2026-09-16
-version: 1.46
+version: 1.47
 status: active
 ---
 
@@ -13,15 +13,17 @@ Recorded production Lighthouse diagnostics for mobile and desktop. Accessibility
 
 ## Next task candidate
 
-- [ ] Review representative production layouts in Safari, Chrome, and Firefox across mobile, tablet, and desktop viewports.
+- [ ] Implement and verify the approved, smallest defensible, zero-cost analytics baseline using Cloudflare Web Analytics.
 
 ## Roadmap position
 
 - **Milestone:** Milestone 5 - Evidence-Driven Evolution.
-- **Workflow stage:** Current task completed after `review-task` returned `PASS` and `complete-task` was run; awaiting the next `plan-next-task` invocation.
+- **Workflow stage:** The Analytics plan is approved; implementation and review remain pending.
 
 ## Evidence pointers
 
+- `TODO.md#priority-analytics`
+- `docs/plans/2026-09-16-analytics.md`
 - `TODO.md#live-production-verification`
 - `docs/audit/2026-09-16-lighthouse-production.md`
 - `docs/audit/lighthouse-mobile-davi-naizer.pages.dev-20260916T214944.json`

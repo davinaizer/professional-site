@@ -1,12 +1,24 @@
 ---
 createdAt: 2026-08-07
-updatedAt: 2026-09-15
-version: 1.19
+updatedAt: 2026-09-16
+version: 1.20
 status: active
 order: ASC
 ---
 
 # Decisions
+
+## Use Cloudflare Web Analytics as the initial zero-cost baseline — 2026-09-16
+
+**Decision:** Use Cloudflare Web Analytics as the initial production analytics baseline for the Professional Site. Use Google Search Console as the complementary source for search visibility and queries. Do not introduce Umami, PostHog, Google Analytics 4, or another behavioural analytics platform at this stage.
+
+**Rationale:** The site is already hosted on Cloudflare, and the current product is a browser-only, static, manually curated professional-evidence site. Cloudflare provides a free, low-maintenance way to observe route usage, referrers, devices, and real-user performance while the site has no demonstrated need for advanced product analytics. This is a reversible, proportionate commitment that addresses the current absence of field performance evidence without optimising analytics as an isolated subsystem.
+
+**Consequence:** The baseline can inform content findability, route usage, and real-user performance decisions, but it cannot directly measure custom actions such as resume downloads or contact-link clicks, UTM campaigns, or custom funnels. The initial measurement must remain production-only and must not collect personal information, identity data, session replay, or arbitrary event properties. Page views and visits are behavioural evidence, not evidence of recruiter engagement, interview impact, or career outcomes.
+
+**Review triggers:** Reassess the platform if a real decision requires custom events, direct CTA measurement, UTM attribution, history beyond the available retention period, advanced interaction diagnosis, experiments, or measurement for a genuinely interactive product area. Reassess privacy and disclosure requirements before activation if the deployment or audience context changes. Do not add another platform solely to obtain more detailed metrics without a demonstrated decision need.
+
+**Deferred:** Umami, PostHog, Google Analytics 4, session replay, heatmaps, custom event taxonomy, campaign attribution, and a dedicated analytics data layer remain undefined until a review trigger demonstrates that the Cloudflare baseline is insufficient.
 
 ## Use the resume builder as canonical professional copy — 2026-09-15
 

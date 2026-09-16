@@ -226,6 +226,24 @@ Do not optimise without measured need.
 
 The developer-requested UX review is sufficient evidence for the bounded refinement queue below. Do not add unrelated speculative features to this milestone.
 
+### Priority Analytics
+
+This is the highest-priority Milestone 5 task following the 2026-09-16 decision to establish the smallest defensible, zero-cost analytics baseline for the production site.
+
+The implementation and validation contract is recorded in `docs/plans/2026-09-16-analytics.md`.
+
+- [ ] Enable and verify Cloudflare Web Analytics for the production deployment.
+- [ ] Confirm that the baseline provides useful route, page, referrer, device, and real-user performance signals for the current browser-only site.
+- [ ] Record the known boundaries: no custom events, UTM attribution, or direct resume/contact-click measurement; no personal information, session replay, or second analytics platform without a demonstrated need.
+- [ ] Keep the measurement production-only, privacy-minimised, and free of unnecessary dependencies or public-content changes.
+
+Acceptance criteria:
+
+- Cloudflare analytics data is observable for the current production routes and real-user performance where traffic is available.
+- The known limitations are explicit, and no unvalidated career or user-intent conclusions are drawn from page views.
+- Google Search Console remains the complementary source for search visibility and queries.
+- No additional analytics platform is introduced unless a real decision is blocked by the Cloudflare baseline.
+
 ### Priority UX Refinement Queue
 
 This queue records the developer-requested UX craftsmanship review from 2026-09-16. It deliberately excludes a broad accessibility rework: the existing semantic, keyboard, focus, contrast, responsive, and automated-accessibility foundations are complete, and the current site scores 100 for accessibility in Lighthouse.
