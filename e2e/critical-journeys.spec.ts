@@ -63,6 +63,24 @@ test("navigates through the shell and Work routes", async ({ page }) => {
 	await expect(page.getByRole("heading", { name: "Contact" })).toBeVisible();
 });
 
+test("restores the top of the destination after navigating from the bottom", async ({
+	page,
+}) => {
+	await page.goto("/experience");
+	await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+	await expect
+		.poll(() => page.evaluate(() => window.scrollY))
+		.toBeGreaterThan(0);
+
+	await page
+		.getByRole("navigation", { name: "Continue exploring" })
+		.getByRole("link", { name: "Explore selected work" })
+		.click();
+
+	await expect(page).toHaveURL(/\/work$/);
+	await expect.poll(() => page.evaluate(() => window.scrollY)).toBe(0);
+});
+
 test("continues between long-form routes", async ({ page }) => {
 	const continuations = [
 		{

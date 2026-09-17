@@ -327,6 +327,11 @@ Acceptance criteria:
 - the response remains concise, accessible, and responsive; and
 - the route introduces no special-case shell or dependency.
 
+### Completed developer-directed navigation fix
+
+- [x] Restore the destination scroll position to the top for internal route navigation through the shared React Router shell.
+- [x] Verify the behaviour from the bottom of a long-form route with a browser-level regression test and the relevant quality checks.
+
 ---
 
 ## Post-MVP Publication Follow-up

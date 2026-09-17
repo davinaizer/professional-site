@@ -1,4 +1,4 @@
-import { Link, Outlet } from "react-router";
+import { Link, Outlet, ScrollRestoration } from "react-router";
 import PrimaryNavigation from "../components/PrimaryNavigation.tsx";
 import Footer from "./Footer.tsx";
 import { routes } from "./routes.ts";
@@ -23,6 +23,7 @@ function App() {
 			</main>
 
 			<Footer />
+			<ScrollRestoration />
 		</>
 	);
 }
