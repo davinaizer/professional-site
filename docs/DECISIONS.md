@@ -1,7 +1,7 @@
 ---
 createdAt: 2026-08-07
 updatedAt: 2026-09-16
-version: 1.20
+version: 1.21
 status: active
 order: ASC
 ---

@@ -15,10 +15,10 @@ The baseline should reduce uncertainty about route usage, discoverability, and r
 
 ## Project position
 
-- **Completed:** The MVP, release-readiness review, production Lighthouse diagnostics, and the analytics platform comparison are complete. Cloudflare Web Analytics was selected as the initial working model because the site is already hosted on Cloudflare and no paid analytics service is currently justified.
-- **Current:** Milestone 5's highest-priority task is the approved Cloudflare analytics baseline. The current site has lab performance diagnostics but no field Core Web Vitals or route-usage evidence.
-- **Next outcome:** A production-only measurement baseline will provide bounded evidence for future content, UX, and performance decisions while preserving the option to add a behavioural platform later.
-- **Workflow stage:** This plan is approved. Implementation, validation, and formal review remain pending.
+- **Completed:** The MVP, release-readiness review, production Lighthouse diagnostics, analytics platform comparison, production Cloudflare Web Analytics activation, and initial beacon/dashboard verification are complete.
+- **Current:** Milestone 5's highest-priority task has a partial analytics implementation. Production route, page, referrer, device, and real-user performance signals are observable, but automatic injection also reaches the `develop` deployment and the disclosure/opt-out is not implemented.
+- **Next outcome:** A production-only, privacy-minimised measurement baseline with an explicit disclosure and opt-out will provide bounded evidence for future content, UX, and performance decisions.
+- **Workflow stage:** This plan is approved and partially implemented. Production-only isolation, disclosure/opt-out, final evidence, and formal review remain pending.
 
 ## Product objective and roadmap milestone
 
@@ -49,8 +49,8 @@ It advances Milestone 5 — Evidence-Driven Evolution by adding measurement only
 ### Unknown
 
 - Whether production traffic will be sufficient to produce useful field performance trends.
-- Whether the current Cloudflare Pages configuration will use automatic analytics injection or require a manual snippet.
-- Whether six months of available history will be sufficient for future comparisons.
+- Whether Cloudflare Pages automatic analytics injection can be restricted to the production deployment; current evidence shows that it also injects the beacon into `develop`.
+- Whether the current dashboard's maximum selectable range of 30 days reflects the effective history available for this site; Cloudflare documentation separately states six months.
 - Whether direct resume-download, contact-link, or campaign measurement will later be needed.
 - Whether Cloudflare's actual processing arrangement and the applicable treatment in each target EU jurisdiction support the statistical-only opt-out model; this plan does not make a legal conclusion.
 
@@ -66,7 +66,7 @@ Use Cloudflare Web Analytics for:
 - device, browser, and operating-system context; and
 - real-user performance and Core Web Vitals where traffic is available.
 
-Cloudflare's current documentation states that Web Analytics is free, privacy-focused, supports SPA route tracking, and does not currently support UTM parameters or custom events. It also documents a six-month analytics access period.
+Cloudflare's current documentation states that Web Analytics is free, privacy-focused, supports SPA route tracking, and does not currently support UTM parameters or custom events. It documents a six-month analytics access period, while the current dashboard evidence exposes a maximum selectable range of 30 days. The implementation will report the observed site-specific range rather than promise the vendor-documented period.
 
 ### Google Search Console
 
@@ -124,7 +124,7 @@ This is a working product and engineering treatment, not a legal conclusion for 
 - Cloudflare Web Analytics is enabled and verified for the confirmed production deployment.
 - Analytics data is observable for current production routes and real-user performance where traffic is available.
 - Preview and local environments are excluded from the production baseline.
-- The known limitations are explicit: no custom events, UTM attribution, direct resume/contact-click measurement, or guaranteed long-term history.
+- The known limitations are explicit: no custom events, UTM attribution, direct resume/contact-click measurement, or guaranteed long-term history; the current dashboard exposes a maximum selectable range of 30 days.
 - A clear analytics/privacy disclosure identifies the purpose, provider, relevant data categories, retention boundary, and opt-out path.
 - The opt-out prevents subsequent analytics beacon collection, or the integration is disabled if that behaviour cannot be verified.
 - The statistical-only treatment is recorded as a working product and engineering model, not a universal legal conclusion.
