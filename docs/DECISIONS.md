@@ -1,7 +1,7 @@
 ---
 createdAt: 2026-08-07
 updatedAt: 2026-09-19
-version: 1.22
+version: 1.23
 status: active
 order: ASC
 ---
@@ -19,6 +19,18 @@ order: ASC
 **Review triggers:** Reconsider this boundary if route-level code splitting becomes necessary, static CSS loading creates measurable performance cost, the manifest becomes difficult to maintain, or a scoped styling approach provides a concrete benefit without weakening discoverability.
 
 **Deferred:** CSS Modules, utility frameworks, dynamic stylesheet loading, and generated CSS manifests remain undefined until a demonstrated requirement justifies them.
+
+## Extend the shared CSS pattern layer for evidence-list reuse — 2026-09-19
+
+**Decision:** Extend `src/styles/patterns.css` beyond the original four semantic patterns to own the verified base structure shared by the Projects and Case Studies evidence lists. Keep route-specific grid widths, content modifiers, list resets with cascade-sensitive overrides, and responsive modifiers in the colocated page stylesheets. Do not change the rendered DOM or introduce generic utility classes.
+
+**Rationale:** Projects and Case Studies have stable semantic reuse across their list containers, entries, metadata structure, typography, and base spacing. The shared declarations remove substantial duplication without erasing the meaningful route-specific differences. Keeping cascade-sensitive and responsive overrides local avoids lower-layer shared rules overriding page-owned behavior.
+
+**Consequence:** `patterns.css` now contains a small cross-route evidence-list pattern using the existing page-prefixed selectors. New evidence-list variants should first demonstrate the same structure and cascade boundary before joining the shared selectors. No React component abstraction or dependency is introduced.
+
+**Review triggers:** Reconsider this boundary if the Projects and Case Studies structures diverge, shared selector lists become difficult to maintain, route-specific exceptions multiply, or a scoped styling approach provides a concrete benefit.
+
+**Deferred:** Shared Work/Contact list patterns, generic list-reset utilities, generic metadata or action-link classes, CSS Modules, utility frameworks, and React wrapper components remain undefined until demonstrated reuse or a concrete requirement justifies them.
 
 ## Use Cloudflare Web Analytics as the initial zero-cost baseline — 2026-09-16
 

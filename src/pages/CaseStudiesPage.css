@@ -1,75 +1,12 @@
-.case-studies__list {
-	margin-block-start: var(--layout-section-gap);
-	padding-inline-start: 0;
-	border-block-start: var(--border-width-default) solid
-		var(--color-border-subtle);
-	list-style: none;
-}
-
-.case-studies__item {
-	border-block-end: var(--border-width-default) solid var(--color-border-subtle);
-	padding-block: var(--space-6);
-}
-
-.case-studies__item + .case-studies__item {
-	margin-block-start: 0;
-}
-
 .case-studies__entry {
-	display: grid;
 	grid-template-columns: minmax(0, 3fr) minmax(18rem, 2fr);
-	column-gap: var(--space-8);
 	max-inline-size: 72rem;
-}
-
-.case-studies__narrative,
-.case-studies__metadata {
-	min-inline-size: 0;
-}
-
-.case-studies__narrative > * + *,
-.case-studies__metadata > * + * {
-	margin-block-start: var(--space-4);
 }
 
 .case-studies__metadata {
 	border-inline-start: var(--border-width-default) solid
 		var(--color-border-subtle);
 	padding-inline-start: var(--space-4);
-}
-
-.case-studies__entry-header {
-	display: flex;
-	flex-direction: column;
-	gap: var(--space-1);
-}
-
-.case-studies__entry-header > * {
-	margin-block-start: 0;
-}
-
-.case-studies__label,
-.case-studies__detail h3 {
-	font-family: var(--font-family-mono);
-	font-size: var(--font-size-label);
-	font-weight: var(--font-weight-medium);
-	letter-spacing: var(--letter-spacing-label);
-	line-height: var(--line-height-label);
-	text-transform: uppercase;
-}
-
-.case-studies__label {
-	display: flex;
-	align-items: center;
-	gap: var(--space-2);
-	color: var(--color-accent-soft);
-}
-
-.case-studies__label::before {
-	content: "";
-	inline-size: var(--space-3);
-	block-size: var(--size-marker);
-	background: var(--color-accent);
 }
 
 .case-studies__entry h2,
@@ -80,21 +17,6 @@
 .case-studies__entry h2 {
 	letter-spacing: var(--letter-spacing-heading-md);
 	margin-block-start: var(--space-2);
-}
-
-.case-studies__summary {
-	font-size: var(--font-size-body-lg);
-	line-height: 1.45;
-}
-
-.case-studies__detail h3 {
-	color: var(--color-text-secondary);
-	margin-block-end: var(--space-1);
-}
-
-.case-studies__detail p,
-.case-studies__detail li {
-	max-inline-size: var(--measure-content);
 }
 
 .case-studies__detail ul {
@@ -137,14 +59,6 @@
 }
 
 @media (max-width: 40rem) {
-	.case-studies__list {
-		margin-block-start: var(--space-6);
-	}
-
-	.case-studies__item {
-		padding-block: var(--space-4);
-	}
-
 	.case-studies__summary {
 		font-size: var(--font-size-body);
 	}
