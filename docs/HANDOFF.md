@@ -1,7 +1,7 @@
 ---
 createdAt: 2026-08-10
-updatedAt: 2026-09-17
-version: 1.49
+updatedAt: 2026-09-19
+version: 1.50
 status: active
 ---
 
@@ -9,7 +9,7 @@ status: active
 
 ## Completed outcome
 
-Added React Router `ScrollRestoration` to the shared application shell and verified that internal navigation from the bottom of a long page lands at the top of the destination. The focused browser regression and full relevant test suites pass.
+Completed the approved CSS refactor across four validated phases: centralized repeated values, explicit cascade layers, shared Projects/Case Studies evidence-list patterns, and dead-token/lint hygiene. Visual output remains 32/32 byte-identical to the baseline; the final production CSS is 25.64 kB / 4.19 kB gzip.
 
 ## Next task candidate
 
@@ -18,16 +18,17 @@ Added React Router `ScrollRestoration` to the shared application shell and verif
 ## Roadmap position
 
 - **Milestone:** Milestone 5 - Evidence-Driven Evolution.
-- **Workflow stage:** Scroll-restoration defect is implemented, reviewed with `PASS`, and closed; the repository is ready for the next approved task.
+- **Workflow stage:** CSS refactor is implemented, reviewed with `PASS`, and closed; the repository is ready for the next approved task.
 
 ## Evidence pointers
 
-- `TODO.md#priority-analytics`
-- `TODO.md#priority-ux-refinement-queue`
-- `src/app/App.tsx`
-- `e2e/critical-journeys.spec.ts`
-- `docs/plans/2026-09-16-analytics.md`
-- `docs/evidence/2026-09-16-analytics-baseline.md`
+- `TODO.md#shared-css-patterns`
+- `docs/plans/2026-09-19-css-refactor.md`
+- `docs/ARCHITECTURE.md#styling-architecture`
+- `docs/DECISIONS.md`
+- `src/index.css`
+- `src/styles/patterns.css`
+- `biome.json`
 
 ## Blockers
 
@@ -38,4 +39,5 @@ Added React Router `ScrollRestoration` to the shared application shell and verif
 ## Constraints and deferred work
 
 - Lighthouse results are lab diagnostics only; field Core Web Vitals are unavailable.
-- Cross-browser layout, focus/contrast, and external Google Fonts review remain separate TODO items.
+- Long-form stress cases for long headings, fallback fonts, overridden text spacing, 200% zoom, and content reflow remain open in `TODO.md`.
+- The CSS boundary remains global and layer-based; CSS Modules, utility frameworks, dynamic stylesheet loading, and generic shared Work/Contact patterns remain deferred.

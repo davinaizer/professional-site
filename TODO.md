@@ -1,7 +1,7 @@
 ---
 createdAt: 2026-08-07
-updatedAt: 2026-09-16
-version: 1.38
+updatedAt: 2026-09-19
+version: 1.39
 status: active
 ---
 
@@ -130,6 +130,7 @@ Task boundaries should balance developer implementation effort with reliable AI-
 ### Shared CSS Patterns
 
 - [x] Extract high-confidence shared page styles for the core routes.
+- [x] Complete the approved CSS refactor: centralize repeated values, define cascade layers, deduplicate verified evidence-list patterns, remove dead tokens, document the structure, and enforce CSS selector hygiene.
 
 ---
 
