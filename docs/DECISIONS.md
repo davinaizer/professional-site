@@ -1,12 +1,24 @@
 ---
 createdAt: 2026-08-07
-updatedAt: 2026-09-16
-version: 1.21
+updatedAt: 2026-09-19
+version: 1.22
 status: active
 order: ASC
 ---
 
 # Decisions
+
+## Use a central CSS import manifest for layered route-owned styles — 2026-09-19
+
+**Decision:** Keep route-owned stylesheet files colocated with their route components in `src/pages/`, using matching filenames and page-prefixed selectors. Import those files through `src/index.css` with explicit `@layer pages` assignments instead of direct component imports. Keep `src/index.css` as the ordered manifest for all static CSS so reset, tokens, shared styles, route styles, utilities, and overrides have a deterministic cascade order. This supersedes the direct component import and non-registry portions of the 2026-08-14 route-owned CSS decision.
+
+**Rationale:** Explicit cascade layers require a stable stylesheet import boundary. A central manifest makes the layer order visible and deterministic while preserving file ownership and route-level discoverability. The current application statically loads all route modules, so moving CSS imports into the manifest does not introduce a demonstrated loading or code-splitting cost. This avoids CSS Modules, a dependency, or a broader styling abstraction.
+
+**Consequence:** Route CSS remains easy to find beside its owning page, but page components no longer import their styles directly. New route-owned styles must be added to both `src/pages/` and the `pages` section of `src/index.css`. The manifest is now responsible for preserving the documented cascade order; route-specific selectors remain prefixed to limit collisions.
+
+**Review triggers:** Reconsider this boundary if route-level code splitting becomes necessary, static CSS loading creates measurable performance cost, the manifest becomes difficult to maintain, or a scoped styling approach provides a concrete benefit without weakening discoverability.
+
+**Deferred:** CSS Modules, utility frameworks, dynamic stylesheet loading, and generated CSS manifests remain undefined until a demonstrated requirement justifies them.
 
 ## Use Cloudflare Web Analytics as the initial zero-cost baseline — 2026-09-16
 
