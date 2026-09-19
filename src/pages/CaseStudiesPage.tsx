@@ -1,7 +1,7 @@
 import { routes } from "../app/routes.ts";
 import ContextualContinuation from "../components/ContextualContinuation.tsx";
-import type { CaseStudy } from "../content/evidence.ts";
 import { caseStudies as caseStudyContent } from "../content/evidence-content.ts";
+import type { CaseStudy } from "../types/evidence.ts";
 import "./CaseStudiesPage.css";
 
 type CaseStudiesPageProps = {

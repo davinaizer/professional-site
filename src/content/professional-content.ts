@@ -1,4 +1,4 @@
-import type { ProfessionalContent } from "./professional";
+import type { ProfessionalContent } from "../types/professional";
 
 export const professionalContent: ProfessionalContent = {
 	identity: {

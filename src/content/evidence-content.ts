@@ -1,4 +1,4 @@
-import type { CaseStudy, Project } from "./evidence.ts";
+import type { CaseStudy, Project } from "../types/evidence.ts";
 
 export const caseStudies: readonly CaseStudy[] = [
 	{

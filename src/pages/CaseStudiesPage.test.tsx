@@ -3,9 +3,9 @@ import type { ComponentProps } from "react";
 import { MemoryRouter } from "react-router";
 import { describe, expect, it } from "vitest";
 import { routes } from "../app/routes.ts";
-import type { CaseStudy } from "../content/evidence.ts";
 import { caseStudies } from "../content/evidence-content.ts";
 import { axe } from "../test/axe.ts";
+import type { CaseStudy } from "../types/evidence.ts";
 import CaseStudiesPage from "./CaseStudiesPage.tsx";
 
 const caseStudyFixture: CaseStudy = {
