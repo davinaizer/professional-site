@@ -129,8 +129,8 @@
 
 .site-footer__links a {
 	display: grid;
-	inline-size: 2.75rem;
-	block-size: 2.75rem;
+	inline-size: var(--size-footer-link);
+	block-size: var(--size-footer-link);
 	border: var(--border-width-default) solid transparent;
 	background-color: transparent;
 	place-items: center;
@@ -144,8 +144,8 @@
 }
 
 .site-footer__links svg {
-	inline-size: 1.25rem;
-	block-size: 1.25rem;
+	inline-size: var(--size-icon);
+	block-size: var(--size-icon);
 	fill: currentColor;
 }
 

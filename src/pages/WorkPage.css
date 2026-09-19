@@ -20,10 +20,10 @@
 .work__link::before {
 	content: "";
 	position: absolute;
-	inset-block-start: calc(var(--space-6) + 0.45rem);
+	inset-block-start: calc(var(--space-6) + var(--space-marker-offset));
 	inset-inline-start: 0;
 	inline-size: var(--space-3);
-	block-size: 2px;
+	block-size: var(--size-marker);
 	background: var(--color-accent);
 }
 
@@ -73,6 +73,6 @@
 	}
 
 	.work__link::before {
-		inset-block-start: calc(var(--space-4) + 0.45rem);
+		inset-block-start: calc(var(--space-4) + var(--space-marker-offset));
 	}
 }

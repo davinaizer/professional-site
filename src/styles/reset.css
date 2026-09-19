@@ -41,5 +41,5 @@ h6 {
 
 /* Let the application shell occupy the available viewport height. */
 #root {
-	min-height: 100vh;
+	min-height: var(--layout-viewport-min);
 }

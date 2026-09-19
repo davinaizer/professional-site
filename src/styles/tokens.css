@@ -49,7 +49,10 @@
 	--line-height-label: 1.35;
 	--letter-spacing-display: -0.04em;
 	--letter-spacing-heading-lg: -0.02em;
+	--letter-spacing-heading-md: -0.015em;
 	--letter-spacing-label: 0.095em;
+	--letter-spacing-tag: 0.035em;
+	--text-underline-offset: 0.16em;
 
 	/* Spacing and layout */
 	--space-unit: 0.5rem;
@@ -67,8 +70,21 @@
 	--layout-edge: var(--space-5);
 	--layout-section-gap: var(--space-15);
 	--layout-grid-columns: 12;
+	--layout-viewport-min: 100vh;
+	--measure-content: 65ch;
+	--space-marker-offset: 0.45rem;
+	--space-tag-block: 0.35rem;
 
 	/* Shape */
 	--border-width-default: 1px;
+	--border-width-accent: 3px;
 	--border-radius-none: 0;
+	--size-marker: 2px;
+	--size-timeline-dot: 0.75rem;
+	--size-footer-link: 2.75rem;
+	--size-icon: 1.25rem;
+
+	/* Motion */
+	--motion-duration-fast: 140ms;
+	--motion-easing-standard: ease;
 }

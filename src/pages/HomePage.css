@@ -20,7 +20,7 @@
 	font-optical-sizing: auto;
 	font-size: clamp(1.75rem, 3vw, 2.25rem);
 	font-weight: var(--font-weight-regular);
-	letter-spacing: -0.015em;
+	letter-spacing: var(--letter-spacing-heading-md);
 	line-height: 1.2;
 }
 
@@ -107,7 +107,7 @@
 }
 
 .home__focus li {
-	border-inline-start: 3px solid var(--color-accent);
+	border-inline-start: var(--border-width-accent) solid var(--color-accent);
 	color: var(--color-text-secondary);
 	font-family: var(--font-family-mono);
 	font-size: var(--font-size-label);

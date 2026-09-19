@@ -17,8 +17,8 @@
 	position: absolute;
 	inset-block-start: var(--space-6);
 	inset-inline-start: 0;
-	inline-size: 0.75rem;
-	block-size: 0.75rem;
+	inline-size: var(--size-timeline-dot);
+	block-size: var(--size-timeline-dot);
 	border: var(--border-width-default) solid var(--color-accent-border);
 	background: var(--color-background);
 	transform: translate(-50%, 0.15rem);
@@ -65,7 +65,7 @@
 
 .experience__entry h2 {
 	font-size: var(--font-size-heading-md);
-	letter-spacing: -0.015em;
+	letter-spacing: var(--letter-spacing-heading-md);
 }
 
 .experience__chronology,
@@ -137,8 +137,8 @@
 	color: var(--color-text-secondary);
 	font-family: var(--font-family-mono);
 	font-size: var(--font-size-label);
-	letter-spacing: 0.035em;
-	padding: 0.35rem var(--space-1);
+	letter-spacing: var(--letter-spacing-tag);
+	padding: var(--space-tag-block) var(--space-1);
 }
 
 .experience__technologies li + li {
