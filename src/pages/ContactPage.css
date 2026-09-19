@@ -3,10 +3,6 @@
 	flex-direction: column;
 }
 
-.contact__header {
-	max-inline-size: 46rem;
-}
-
 .contact__intro {
 	font-size: var(--font-size-body-lg);
 	margin-block-start: var(--space-1);
@@ -96,12 +92,11 @@
 	padding-block-end: var(--space-1);
 }
 
-.contact__content > a:hover .contact__title,
-.contact__content > a:hover .contact__action {
+.contact__content > a:hover :where(.contact__title, .contact__action) {
 	color: var(--color-text-primary);
 }
 
-.contact__content > a:hover .contact__action {
+.contact__content > a:hover :where(.contact__action) {
 	border-color: var(--color-accent);
 }
 

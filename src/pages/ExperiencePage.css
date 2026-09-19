@@ -24,7 +24,7 @@
 	transform: translate(-50%, 0.15rem);
 }
 
-.experience__item:first-child::before {
+.experience__item:where(:first-child)::before {
 	border-color: var(--color-accent);
 	background: var(--color-accent);
 	box-shadow: 0 0 0 0.3rem var(--color-accent-subtle);

@@ -1,6 +1,5 @@
 import { Link } from "react-router";
 import { routes } from "../app/routes";
-import "./NotFoundPage.css";
 
 function NotFoundPage() {
 	return (

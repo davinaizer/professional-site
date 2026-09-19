@@ -3,7 +3,6 @@ import { routes } from "../app/routes.ts";
 import ContextualContinuation from "../components/ContextualContinuation.tsx";
 import { projects } from "../content/evidence-content.ts";
 import { professionalContent } from "../content/professional-content.ts";
-import "./ProjectsPage.css";
 
 const projectLabels: Readonly<Record<string, string>> = {
 	"vessel-list-template-administration": "Production product work",

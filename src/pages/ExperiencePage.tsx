@@ -1,7 +1,6 @@
 import { routes } from "../app/routes.ts";
 import ContextualContinuation from "../components/ContextualContinuation.tsx";
 import { professionalContent } from "../content/professional-content.ts";
-import "./ExperiencePage.css";
 
 function ExperiencePage() {
 	const { experience } = professionalContent;

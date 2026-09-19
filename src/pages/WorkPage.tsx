@@ -1,6 +1,5 @@
 import { Link } from "react-router";
 import { routes } from "../app/routes.ts";
-import "./WorkPage.css";
 
 function WorkPage() {
 	return (

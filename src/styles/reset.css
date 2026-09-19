@@ -40,6 +40,6 @@ h6 {
 }
 
 /* Let the application shell occupy the available viewport height. */
-#root {
+:where(#root) {
 	min-height: var(--layout-viewport-min);
 }

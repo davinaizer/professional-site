@@ -77,7 +77,7 @@
 	border-block-end-color: var(--color-accent);
 }
 
-.primary-navigation .active {
+.primary-navigation a:where(.active) {
 	color: var(--color-accent);
 	border-block-end-color: var(--color-accent);
 }

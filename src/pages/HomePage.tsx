@@ -1,7 +1,6 @@
 import { Link } from "react-router";
 import { routes } from "../app/routes.ts";
 import { professionalContent } from "../content/professional-content.ts";
-import "./HomePage.css";
 
 function HomePage() {
 	const { identity, summary, experience, resume } = professionalContent;
