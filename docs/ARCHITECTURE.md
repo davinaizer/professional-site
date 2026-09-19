@@ -1,7 +1,7 @@
 ---
 createdAt: 2026-08-10
-updatedAt: 2026-09-15
-version: 1.8
+updatedAt: 2026-09-19
+version: 1.9
 status: active
 ---
 
@@ -51,6 +51,14 @@ src/main.tsx
 - `src/styles/global.css` applies document-level typography, content flow, and layout defaults.
 
 Keep these boundaries shallow. Introduce new layers only when a current requirement or repeated change pressure demonstrates that the existing structure is insufficient.
+
+## Styling architecture
+
+`src/index.css` is the ordered CSS manifest. It declares the cascade order `reset`, `tokens`, `base`, `layout`, `components`, `pages`, `utilities`, and `overrides`, then imports each stylesheet into its assigned layer. `src/main.tsx` imports this manifest before the router so the emitted stylesheet order is deterministic.
+
+`src/styles/` owns reset rules, design tokens, document defaults, shell styling, and shared patterns. `src/pages/` owns route-specific stylesheets colocated with their page components; the manifest imports those files into the `pages` layer. Shared Projects and Case Studies evidence-list base structure lives in `src/styles/patterns.css`, while route-specific grid widths, modifiers, and cascade-sensitive responsive overrides remain with the pages.
+
+Keep selectors page-prefixed when they belong to one route. Add a shared selector only after stable semantic reuse is demonstrated and its layer and responsive cascade boundaries are understood. Do not introduce a utility framework, CSS Modules, or a component styling abstraction without a concrete requirement.
 
 ## Navigation and rendering
 
