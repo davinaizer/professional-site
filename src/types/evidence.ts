@@ -28,6 +28,12 @@ export type CaseStudy = EvidenceBase & {
 	context: string;
 	problem: string;
 	role: string;
+	visuals?: readonly {
+		src: string;
+		alt: string;
+		caption: string;
+		layout: "flow" | "screen";
+	}[];
 	constraints: readonly string[];
 	decisions: readonly string[];
 	productAndUx: string;

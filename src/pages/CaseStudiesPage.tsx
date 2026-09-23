@@ -36,6 +36,46 @@ function CaseStudiesPage({
 										<p className="case-studies__summary">{caseStudy.summary}</p>
 									</header>
 
+									{caseStudy.visuals?.length ? (
+										<section
+											aria-labelledby={`${caseStudy.slug}-visuals-heading`}
+											className="case-studies__visuals"
+										>
+											<div className="case-studies__visuals-intro">
+												<h3 id={`${caseStudy.slug}-visuals-heading`}>
+													Design concepts
+												</h3>
+												<p>
+													These mockups show the product direction, not verified
+													app screens. The onboarding concept uses Alfred’s
+													earlier WhatNext name.
+												</p>
+											</div>
+											<ul className="case-studies__visual-grid">
+												{caseStudy.visuals.map((visual) => (
+													<li
+														className={`case-studies__visual-item case-studies__visual-item--${visual.layout}`}
+														key={visual.src}
+													>
+														<figure
+															className={`case-studies__visual case-studies__visual--${visual.layout}`}
+														>
+															<div className="case-studies__visual-image">
+																<img
+																	alt={visual.alt}
+																	decoding="async"
+																	loading="lazy"
+																	src={visual.src}
+																/>
+															</div>
+															<figcaption>{visual.caption}</figcaption>
+														</figure>
+													</li>
+												))}
+											</ul>
+										</section>
+									) : null}
+
 									<section
 										aria-labelledby={`${caseStudy.slug}-context-heading`}
 										className="case-studies__detail"

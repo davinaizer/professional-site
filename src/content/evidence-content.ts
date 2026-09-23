@@ -6,16 +6,45 @@ export const caseStudies: readonly CaseStudy[] = [
 		title: "Alfred: What To Do Next",
 		summary:
 			"A native iOS product exploring how to help people decide what to do next.",
+		visuals: [
+			{
+				src: "/images/alfred/onboarding-flow-concept.png",
+				alt: "Six-step onboarding flow from setting an intention through choosing and planning an activity.",
+				caption:
+					"Onboarding flow concept using Alfred’s earlier WhatNext name.",
+				layout: "flow",
+			},
+			{
+				src: "/images/alfred/recommendation-detail-concept.png",
+				alt: "Dark recommendation screen concept with a highlighted top choice, reasons for the match, alternatives, and a planning action.",
+				caption:
+					"A clear rationale supports the recommended choice while alternatives stay in view.",
+				layout: "screen",
+			},
+			{
+				src: "/images/alfred/ideas-list-concept.png",
+				alt: "Ideas list concept with filters for chosen and undecided ideas.",
+				caption:
+					"Decision filters separate chosen ideas from those still open.",
+				layout: "screen",
+			},
+			{
+				src: "/images/alfred/event-planning-concept.png",
+				alt: "Annotated event planning screen concept with upcoming events, day navigation, event details, and an add-event action.",
+				caption: "Planning view for dates, events, and the next action.",
+				layout: "screen",
+			},
+		],
 		context:
 			"Alfred: What To Do Next was an exploratory native iOS product built around a decision-first loop: Idea -> Recommendation -> Decision -> Event/commitment. The product work covered onboarding, idea capture, recommendations, and planning.",
 		problem:
 			"The product was designed to help move an idea or intention toward a concrete next action. A browsing-first experience would leave the decision unresolved, so the core problem was to make recommendation, choice, and commitment understandable as one flow.",
-		role: "I lead development of the native iOS application while sharing responsibility for product direction, application architecture and technical decisions.",
+		role: "I led development of the native iOS application and shared responsibility for product direction, architecture, and technical decisions.",
 		constraints: [
-			"The work was exploratory, and no user validation feedback or adoption metrics are available.",
-			"Recommendation enrichment was asynchronous, so the client had to represent loading, intermediate progress, completion, and refresh states.",
+			"The work was exploratory; I have no user feedback or adoption data.",
+			"Recommendation generation was asynchronous, so the app needed to show progress, completion, and refresh states.",
 			"The mobile app needed clear boundaries between feature presentation, domain logic, data mapping, infrastructure, and application routing.",
-			"Backend infrastructure, data management, model training, and API development were outside the mobile ownership boundary.",
+			"The backend engineer owned infrastructure, data management, model training, and API development.",
 		],
 		decisions: [
 			"Make the product decision-first: connect Idea -> Recommendation -> Decision -> Event/commitment instead of treating recommendations as passive browsing. This narrows exploration in exchange for a clearer next action.",
@@ -25,21 +54,21 @@ export const caseStudies: readonly CaseStudy[] = [
 			"Model recommendation readiness and commitment states explicitly so accepting, dismissing, scheduling, deferring, and refreshing are distinguishable actions rather than variations of passive browsing.",
 		],
 		productAndUx:
-			"The experience prioritised decision completion: capture an idea, add lightweight context, receive recommendations, evaluate a clear option, and turn the decision into a scheduled or otherwise actionable event. Onboarding and recommendation design used a dominant recommendation, clear rationale, and a primary action. This was a documented product direction, not a validated user finding.",
+			"The design took someone from onboarding and a few preferences to an idea, a recommendation, and a commitment. It gave one recommendation a clear rationale while keeping other options available. This was the product direction, not a finding from user validation.",
 		engineering:
-			"The mobile client separated feature presentation and view-model state from domain entities and services, repository interfaces, DTO mapping, infrastructure adapters, and application routing. It integrated authenticated API requests and SignalR recommendation refreshes, while client-side readiness and decision models represented whether recommendations were available and what happened next.",
+			"View models held the screen state; repositories, DTO mapping, and API services handled data access. Idea capture checked for empty details and possible duplicates before submitting. Recommendation generation could take time, so the feed showed generating, awaiting, ready, and error states. The app checked for results periodically and handled real-time updates. A person could accept or dismiss a recommendation. When they chose to schedule one, the app carried the idea and recommendation into event creation. I owned the iOS app; the backend engineer owned the API and enrichment services.",
 		outcomes: [
 			{
 				statement:
-					"The mobile implementation established an end-to-end product experience across onboarding, idea capture, recommendations, planning, authentication, and application state.",
+					"The iOS app connected onboarding, idea capture, recommendations, planning, authentication, and app state into one product flow.",
 			},
 			{
 				statement:
-					"Added automated tests across routing, view models, domain services, data mapping, repositories, notifications, real-time refresh, and design-system utilities.",
+					"I added automated tests for routing, view models, domain services, data mapping, repositories, notifications, real-time refresh, and design-system utilities.",
 			},
 		],
 		reflection:
-			"I would validate the decision-first proposition with users earlier, then preserve only the architectural boundaries that demonstrably improve feature isolation or testability.",
+			"I would test the idea with users earlier. Then I’d keep the architecture boundaries that made features easier to isolate or test.",
 	},
 	{
 		slug: "signal-vessel-list-template-administration",
