@@ -41,6 +41,45 @@ export const caseStudies: readonly CaseStudy[] = [
 		reflection:
 			"I would validate the decision-first proposition with users earlier, then preserve only the architectural boundaries that demonstrably improve feature isolation or testability.",
 	},
+	{
+		slug: "signal-vessel-list-template-administration",
+		title: "Vessel List Template Administration",
+		summary:
+			"A self-service, role-aware workflow for creating and managing reusable templates in Signal Ocean’s Vessel List.",
+		context:
+			"As a Senior Frontend Software Engineer at The Signal Group, I worked with a cross-functional team on the Vessel List area of Signal Ocean. The application used a large React and TypeScript monorepo, shared frontend state, and metadata-driven APIs.",
+		problem:
+			"Creating reusable Vessel List templates involved support requests and manual engineering work. The workflow needed to let company administrators create and manage templates while making permissions, validation, and the resulting data states clear to administrators and end users.",
+		role: "I contributed collaborative frontend implementation across the Template Admin workflow, from forms and state integration through testing, fixes, and production release. Product, design, backend, and QA partners contributed to the wider work; I did not own the platform, backend services, or the feature alone.",
+		constraints: [
+			"The feature had to fit an established React and TypeScript monorepo, shared application state, and existing API contracts.",
+			"Administrator and end-user workflows required permission-aware creation, editing, read-only, validation, and deletion states.",
+			"Template configuration sat alongside a data-intensive Vessel List with shared UI components and grid behaviour.",
+			"The available evidence supports implementation and production release, but does not establish adoption, time saved, or other business impact.",
+		],
+		decisions: [
+			"Keep the administrator workflow permission-aware, with distinct create, edit, and delete actions, and carry those permissions through the corresponding UI states.",
+			"Represent validation and read-only states in the frontend so that configuration errors and unavailable actions are visible in context.",
+			"Integrate template operations with the existing metadata-driven APIs and shared frontend state, keeping request and response mappings aligned with the backend contracts without taking ownership of backend design.",
+			"Move Template Admin state and behaviour into a focused context while refactoring existing store usage, keeping the new workflow integrated with the surrounding Vessel List application.",
+		],
+		productAndUx:
+			"The experience connected the existing “Save as Template” entry point to modal and form flows for creating and maintaining templates. It handled input validation, dropdown values, map-preview coordinates, administrator permissions, and the different editing, read-only, and deletion states needed across administrator and end-user workflows.",
+		engineering:
+			"I worked in React and TypeScript across Template Admin and the wider Vessel List. The implementation included context and store changes, API request mapping, DTO and enum alignment, role and feature-permission checks, and AG Grid configuration. I also maintained focused tests and snapshots, addressed type, lint, SonarLint, and review feedback, and contributed to modernising deprecated shared UI components.",
+		outcomes: [
+			{
+				statement:
+					"The frontend workflow progressed through implementation, testing, fixes, and production release, supporting role-based template creation and management.",
+			},
+			{
+				statement:
+					"The work included permission-aware editing, validation, read-only and deletion states integrated with frontend state and metadata-driven APIs.",
+			},
+		],
+		reflection:
+			"A production release confirms delivery, but not whether the workflow reduced support effort or became easy to use. I would pair implementation evidence with administrator feedback and usage evidence before making those outcome claims.",
+	},
 ];
 
 export const projects: readonly Project[] = [
