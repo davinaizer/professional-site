@@ -119,6 +119,43 @@ export const caseStudies: readonly CaseStudy[] = [
 		reflection:
 			"I would make conflict and file-change behaviour clearer before delivery, then measure cycle time and support effort consistently. The current evidence supports the reported speed improvement, but it does not establish adoption scale or a measured effect on quality.",
 	},
+	{
+		slug: "hsbc-learning-portal-and-assessment-tools",
+		title: "Building Tools for Employee Learning",
+		summary:
+			"I changed the course search and built a tool for creating question banks and randomised assessments.",
+		context:
+			"I joined HSBC’s Training & Development team as an analyst in July 2005 and stayed until July 2007. My work included the employee learning portal and tools for creating assessments.",
+		problem:
+			"Employees had started reporting slow access and difficulty finding material as the learning catalogue grew. The training team also needed a way to create randomised assessments without editing database records directly.",
+		role: "I was the department’s only developer, so I designed and built the updated portal and the assessment authoring tool.",
+		constraints: [
+			"The tools had to fit an XML-based learning portal and the existing Flash assessment player.",
+			"I no longer have the project files or a performance benchmark to measure the search change.",
+			"The course names and assessment questions were internal, so I’ve left them out.",
+		],
+		decisions: [
+			"I replaced the course catalogue’s brute-force search with binary search to make lookups faster.",
+			"I built a form-based tool so training staff could create question banks without editing database records directly.",
+			"I exported the question data as XML for the existing Flash assessment player.",
+		],
+		productAndUx:
+			"For employees, the goal was to make course material easier to find. For the training team, I built a form-based way to maintain question banks and create randomised tests, then export the questions to the assessment player.",
+		engineering:
+			"The portal stored course content in XML. The authoring tool used ASP and an MDB database, then exported XML for the Flash assessment player. Those were the tools I used at the time.",
+		outcomes: [
+			{
+				statement:
+					"I replaced the course search’s brute-force loop with binary search. I remember a substantial speed-up, but I no longer have a before-and-after measurement.",
+			},
+			{
+				statement:
+					"I built a tool for creating question banks and randomised assessments. I don’t have figures for how often it was used or how many assessments it produced.",
+			},
+		],
+		reflection:
+			"I would measure the search before and after changing it, using the same catalog for both runs. That would let me show the improvement instead of relying on memory.",
+	},
 ];
 
 export const projects: readonly Project[] = [

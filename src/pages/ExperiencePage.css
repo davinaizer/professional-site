@@ -4,6 +4,32 @@
 	list-style: none;
 }
 
+.experience__timeline--earlier .experience__item:first-child::before {
+	border-color: var(--color-accent-border);
+	background: var(--color-background);
+	box-shadow: none;
+}
+
+.experience__earlier-career {
+	border-block-start: var(--border-width-default) solid
+		var(--color-border-subtle);
+	margin-block-start: var(--layout-section-gap);
+	padding-block-start: var(--space-6);
+}
+
+.experience__earlier-career-header {
+	max-inline-size: 62rem;
+}
+
+.experience__earlier-career-header h2 {
+	font-size: var(--font-size-heading-md);
+	letter-spacing: var(--letter-spacing-heading-md);
+}
+
+.experience__earlier-career-header > * + * {
+	margin-block-start: var(--space-2);
+}
+
 .experience__item {
 	position: relative;
 	border-block-start: var(--border-width-default) solid
@@ -63,7 +89,8 @@
 	margin-block-start: 0;
 }
 
-.experience__entry h2 {
+.experience__entry h2,
+.experience__entry h3 {
 	font-size: var(--font-size-heading-md);
 	letter-spacing: var(--letter-spacing-heading-md);
 }
