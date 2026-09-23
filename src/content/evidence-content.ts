@@ -80,6 +80,45 @@ export const caseStudies: readonly CaseStudy[] = [
 		reflection:
 			"A production release confirms delivery, but not whether the workflow reduced support effort or became easy to use. I would pair implementation evidence with administrator feedback and usage evidence before making those outcome claims.",
 	},
+	{
+		slug: "promotional-content-production-workflow",
+		title: "A Repeatable Promotional Content Workflow",
+		summary:
+			"A set of internal authoring, preview, and delivery tools made a repetitive promotional-content workflow faster and easier to review.",
+		context:
+			"At Gamesys/Bally’s Interactive, I contributed to a collaborative set of tools supporting configuration-driven promotional content. This case study focuses on making the authoring and delivery workflow more repeatable, while keeping employer-specific systems and campaign details private.",
+		problem:
+			"Producing and delivering promotional UI involved repetitive setup across templates, configuration, versions, and repositories. The production cycle could take days, and each delivery needed to remain compatible with its target configuration and pass review before release.",
+		role: "As a frontend engineer, I contributed to the Node.js tooling and preview workflow alongside other engineers and partner teams. My work included maintaining and migrating tooling to TypeScript, improving generated-content validation, and supporting reviewable delivery. The wider toolchain and its outcomes were collaborative.",
+		constraints: [
+			"Generated UI had to match the target configuration and compatible framework versions.",
+			"Delivery used a pull request and left the merge and release decision for human review.",
+			"The workflow operated within an existing internal ecosystem; its product names, campaign information, and repository details are not public.",
+			"The accepted outcome is a reported reduction from days to minutes. There is no independent adoption count or broader business-impact measurement in the available evidence.",
+		],
+		decisions: [
+			"Use reusable templates and guided inputs to generate promotional UI consistently, reducing repeated manual setup while keeping the chosen configuration explicit.",
+			"Pin compatible framework versions in generated output so a delivery has a clear, reproducible dependency baseline.",
+			"Add a preview workflow that checks generated UI against real configuration before delivery, making configuration problems easier to spot before review.",
+			"Prepare changes through a pull request for review, keeping the final release decision with the team.",
+		],
+		productAndUx:
+			"The authoring flow guided an engineer through the required content choices, generated a working set of files from reusable templates, and provided a preview against the target configuration. The workflow connected creation, validation, and review so that the next step was visible without hiding the release decision behind automation.",
+		engineering:
+			"The toolchain used Node.js, with the command-line tooling migrated to TypeScript. It generated version-pinned UI from templates, validated generated output in a preview application against real configuration, and prepared changes for pull-request-based delivery. I also introduced supporting CI and release practices around the tooling. Internal package names, endpoints, repository identifiers, and campaign data are omitted.",
+		outcomes: [
+			{
+				statement:
+					"The reported production cycle for the promotional-content workflow fell from days to minutes.",
+			},
+			{
+				statement:
+					"Template-based generation, configuration preview, and reviewable delivery made the production path more repeatable while retaining a human review step.",
+			},
+		],
+		reflection:
+			"I would make conflict and file-change behaviour clearer before delivery, then measure cycle time and support effort consistently. The current evidence supports the reported speed improvement, but it does not establish adoption scale or a measured effect on quality.",
+	},
 ];
 
 export const projects: readonly Project[] = [
