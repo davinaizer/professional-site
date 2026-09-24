@@ -115,6 +115,23 @@
 	font-size: var(--font-size-caption);
 }
 
+.site-footer__text-link {
+	border: 0;
+	background: transparent;
+	color: var(--color-text-secondary);
+	cursor: pointer;
+	font: inherit;
+	font-size: var(--font-size-caption);
+	line-height: var(--line-height-label);
+	padding: var(--space-1) 0;
+	text-decoration: underline;
+	text-underline-offset: var(--text-underline-offset);
+}
+
+.site-footer__text-link:hover {
+	color: var(--color-text-primary);
+}
+
 .site-footer__links {
 	display: flex;
 	align-items: center;

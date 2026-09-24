@@ -160,7 +160,107 @@
 	text-transform: uppercase;
 }
 
+.analytics-settings__dialog {
+	inline-size: min(34rem, calc(100vw - 2rem));
+	max-block-size: calc(100dvh - 2rem);
+	border: var(--border-width-default) solid var(--color-border-strong);
+	background: var(--color-background);
+	color: var(--color-text-primary);
+	margin: auto;
+	padding: var(--space-3);
+}
+
+.analytics-settings__dialog::backdrop {
+	background: rgb(0 0 0 / 0.65);
+}
+
+.analytics-settings__form {
+	display: grid;
+	gap: var(--space-2);
+}
+
+.analytics-settings__form h2,
+.analytics-settings__form p {
+	margin: 0;
+}
+
+.analytics-settings__form h2 {
+	font-size: var(--font-size-heading-md);
+}
+
+.analytics-settings__choice {
+	display: flex;
+	align-items: center;
+	gap: var(--space-2);
+	border-block: var(--border-width-default) solid var(--color-border-subtle);
+	padding-block: var(--space-2);
+}
+
+.analytics-settings__choice input {
+	accent-color: var(--color-accent);
+	inline-size: 1.25rem;
+	block-size: 1.25rem;
+}
+
+.analytics-settings__note,
+.analytics-settings__error {
+	color: var(--color-text-secondary);
+	font-size: var(--font-size-caption);
+}
+
+.analytics-settings__error {
+	color: var(--color-accent-soft);
+}
+
+.analytics-settings__actions {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	gap: var(--space-1);
+	margin-block-start: var(--space-1);
+}
+
+.analytics-settings__button {
+	min-block-size: var(--size-footer-link);
+	border: var(--border-width-default) solid var(--color-border-strong);
+	background: transparent;
+	color: var(--color-text-primary);
+	cursor: pointer;
+	font: inherit;
+	padding: var(--space-1) var(--space-2);
+}
+
+.analytics-settings__button:hover {
+	border-color: var(--color-accent);
+	color: var(--color-accent-soft);
+}
+
+.analytics-settings__button--primary {
+	border-color: var(--color-accent);
+	background: var(--color-accent);
+	color: var(--color-background);
+}
+
+.analytics-settings__button--primary:hover {
+	background: var(--color-accent-soft);
+	color: var(--color-background);
+}
+
 @media (max-width: 40rem) {
+	.analytics-settings__dialog {
+		inline-size: calc(100vw - 2rem);
+		max-block-size: calc(100dvh - 2rem);
+		padding: var(--space-2);
+	}
+
+	.analytics-settings__actions {
+		flex-direction: column-reverse;
+	}
+
+	.analytics-settings__button {
+		inline-size: 100%;
+	}
+
 	.page-section {
 		padding-block: var(--space-6);
 	}

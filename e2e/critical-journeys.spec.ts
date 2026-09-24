@@ -209,6 +209,60 @@ test("keeps shell links visible without horizontal overflow at a narrow viewport
 	expect(hasHorizontalOverflow).toBe(false);
 });
 
+test("opens analytics settings only when requested and remains usable on mobile", async ({
+	page,
+}) => {
+	await page.setViewportSize({ width: 390, height: 844 });
+	await page.goto("/");
+
+	const settingsButton = page.getByRole("button", {
+		name: "Privacy & analytics",
+	});
+	const dialog = page.getByRole("dialog", { name: "Analytics settings" });
+
+	await expect(settingsButton).toBeVisible();
+	await expect(dialog).not.toBeVisible();
+	await settingsButton.click();
+	await expect(dialog).toBeVisible();
+	await expect(dialog.getByRole("checkbox")).toBeChecked();
+
+	const hasHorizontalOverflow = await page.evaluate(
+		() =>
+			document.documentElement.scrollWidth >
+			document.documentElement.clientWidth,
+	);
+	expect(hasHorizontalOverflow).toBe(false);
+
+	await dialog.getByRole("button", { name: "Close" }).click();
+	await expect(dialog).not.toBeVisible();
+});
+
+test("persists an analytics opt-out and reflects it when settings reopen", async ({
+	page,
+}) => {
+	await page.goto("/");
+	await page.getByRole("button", { name: "Privacy & analytics" }).click();
+
+	const dialog = page.getByRole("dialog", { name: "Analytics settings" });
+	await dialog.getByRole("checkbox").uncheck();
+	await dialog.getByRole("button", { name: "Save preferences" }).click();
+
+	await expect
+		.poll(() =>
+			page.evaluate(() =>
+				localStorage.getItem("professional-site.analytics-opt-out"),
+			),
+		)
+		.toBe("true");
+
+	await page.getByRole("button", { name: "Privacy & analytics" }).click();
+	await expect(
+		page
+			.getByRole("dialog", { name: "Analytics settings" })
+			.getByRole("checkbox"),
+	).not.toBeChecked();
+});
+
 test("recovers from an unknown route", async ({ page }) => {
 	await page.goto("/unknown-route");
 

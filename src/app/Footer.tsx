@@ -1,3 +1,4 @@
+import AnalyticsSettings from "../components/AnalyticsSettings.tsx";
 import { Icon } from "../components/Icon.tsx";
 import { professionalContent } from "../content/professional-content.ts";
 
@@ -13,6 +14,7 @@ function Footer() {
 		<footer className="site-footer">
 			<div className="site-footer__inner">
 				<small>© 2026 Davi Naizer</small>
+				<AnalyticsSettings />
 				<nav aria-label="Social and contact links">
 					<ul className="site-footer__links">
 						{footerLinks.map((link) => (
