@@ -1,7 +1,7 @@
 ---
 createdAt: 2026-08-07
-updatedAt: 2026-09-19
-version: 1.39
+updatedAt: 2026-09-24
+version: 1.40
 status: active
 ---
 
@@ -236,7 +236,7 @@ The implementation and validation contract is recorded in `docs/plans/2026-09-16
 - [x] Enable and verify Cloudflare Web Analytics for the production deployment.
 - [x] Confirm that the baseline provides useful route, page, referrer, device, and real-user performance signals for the current browser-only site.
 - [x] Record the known boundaries: no custom events, UTM attribution, or direct resume/contact-click measurement; no personal information, session replay, or second analytics platform without a demonstrated need.
-- [ ] Keep the measurement production-only, privacy-minimised, and free of unnecessary dependencies or public-content changes.
+- [x] Keep the measurement production-only, privacy-minimised, and free of unnecessary dependencies or public-content changes.
 
 Acceptance criteria:
 
@@ -245,7 +245,7 @@ Acceptance criteria:
 - Google Search Console remains the complementary source for search visibility and queries.
 - No additional analytics platform is introduced unless a real decision is blocked by the Cloudflare baseline.
 
-Current evidence: `docs/evidence/2026-09-16-analytics-baseline.md`. The production-only and disclosure/opt-out portions remain open.
+Current evidence: `docs/evidence/2026-09-16-analytics-baseline.md` (initial activation) and `docs/evidence/2026-09-24-analytics-manual-rollout.md` (manual production rollout and verification).
 
 ### Priority UX Refinement Queue
 
