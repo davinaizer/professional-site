@@ -1,7 +1,7 @@
 ---
 createdAt: 2026-08-07
 updatedAt: 2026-09-24
-version: 1.40
+version: 1.41
 status: active
 ---
 
@@ -353,7 +353,9 @@ These tasks are intentionally separate from the approved application scope. Comp
 - [x] Verify the resume download, email, LinkedIn, project, case-study, and experience-anchor links on the current Cloudflare Pages preview deployment.
 - [x] Re-run route and link verification after the current changes are merged to the Cloudflare Pages production branch.
 - [x] Run production performance, accessibility, SEO, and best-practice measurements.
-- [ ] Review representative production layouts in Safari, Chrome, and Firefox across mobile, tablet, and desktop viewports.
+- [x] Review representative production layouts in Safari, Chrome, and Firefox across mobile, tablet, and desktop viewports.
+
+Evidence: `docs/evidence/2026-09-24-production-layout-review.md`.
 - [ ] Verify production focus visibility and colour contrast in real browsers.
 - [ ] Confirm whether externally hosted Google Fonts remain acceptable for production reliability, privacy, and rendering performance.
 
