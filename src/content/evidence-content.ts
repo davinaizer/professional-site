@@ -8,31 +8,20 @@ export const caseStudies: readonly CaseStudy[] = [
 			"A native iOS product exploring how to help people decide what to do next.",
 		visuals: [
 			{
-				src: "/images/alfred/onboarding-flow-concept.png",
-				alt: "Six-step onboarding flow from setting an intention through choosing and planning an activity.",
+				src: "/images/alfred/alfred-landing-page.jpg",
+				alt: "Three Alfred onboarding app screens: a welcome screen, a statement of the product’s purpose, and Apple, Google, or email sign-in options.",
+				title: "Introducing Alfred",
 				caption:
-					"Onboarding flow concept using Alfred’s earlier WhatNext name.",
+					"A short onboarding sequence establishes the product’s purpose before moving into authentication, keeping the path from first impression to entry focused and lightweight.",
 				layout: "flow",
 			},
 			{
-				src: "/images/alfred/recommendation-detail-concept.png",
-				alt: "Dark recommendation screen concept with a highlighted top choice, reasons for the match, alternatives, and a planning action.",
+				src: "/images/alfred/alfred-idea-flow.jpg",
+				alt: "Four Alfred app screens: a suggested outdoor walk, an idea-entry form, a board-game gathering recommendation, and a past-events list.",
+				title: "From an idea to a plan",
 				caption:
-					"A clear rationale supports the recommended choice while alternatives stay in view.",
-				layout: "screen",
-			},
-			{
-				src: "/images/alfred/ideas-list-concept.png",
-				alt: "Ideas list concept with filters for chosen and undecided ideas.",
-				caption:
-					"Decision filters separate chosen ideas from those still open.",
-				layout: "screen",
-			},
-			{
-				src: "/images/alfred/event-planning-concept.png",
-				alt: "Annotated event planning screen concept with upcoming events, day navigation, event details, and an add-event action.",
-				caption: "Planning view for dates, events, and the next action.",
-				layout: "screen",
+					"The core experience follows a continuous decision loop: discover what matters now, capture an idea, develop it through recommendations, make a choice, and turn that choice into a scheduled event.",
+				layout: "flow",
 			},
 		],
 		context:

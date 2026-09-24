@@ -31,6 +31,7 @@ export type CaseStudy = EvidenceBase & {
 	visuals?: readonly {
 		src: string;
 		alt: string;
+		title: string;
 		caption: string;
 		layout: "flow" | "screen";
 	}[];

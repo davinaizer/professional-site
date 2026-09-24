@@ -36,46 +36,6 @@ function CaseStudiesPage({
 										<p className="case-studies__summary">{caseStudy.summary}</p>
 									</header>
 
-									{caseStudy.visuals?.length ? (
-										<section
-											aria-labelledby={`${caseStudy.slug}-visuals-heading`}
-											className="case-studies__visuals"
-										>
-											<div className="case-studies__visuals-intro">
-												<h3 id={`${caseStudy.slug}-visuals-heading`}>
-													Design concepts
-												</h3>
-												<p>
-													These mockups show the product direction, not verified
-													app screens. The onboarding concept uses Alfred’s
-													earlier WhatNext name.
-												</p>
-											</div>
-											<ul className="case-studies__visual-grid">
-												{caseStudy.visuals.map((visual) => (
-													<li
-														className={`case-studies__visual-item case-studies__visual-item--${visual.layout}`}
-														key={visual.src}
-													>
-														<figure
-															className={`case-studies__visual case-studies__visual--${visual.layout}`}
-														>
-															<div className="case-studies__visual-image">
-																<img
-																	alt={visual.alt}
-																	decoding="async"
-																	loading="lazy"
-																	src={visual.src}
-																/>
-															</div>
-															<figcaption>{visual.caption}</figcaption>
-														</figure>
-													</li>
-												))}
-											</ul>
-										</section>
-									) : null}
-
 									<section
 										aria-labelledby={`${caseStudy.slug}-context-heading`}
 										className="case-studies__detail"
@@ -91,7 +51,33 @@ function CaseStudiesPage({
 										<h3 id={`${caseStudy.slug}-problem-heading`}>Problem</h3>
 										<p>{caseStudy.problem}</p>
 									</section>
+								</div>
 
+								<aside className="case-studies__metadata">
+									<section
+										aria-labelledby={`${caseStudy.slug}-role-heading`}
+										className="case-studies__detail"
+									>
+										<h3 id={`${caseStudy.slug}-role-heading`}>Role</h3>
+										<p>{caseStudy.role}</p>
+									</section>
+
+									<section
+										aria-labelledby={`${caseStudy.slug}-constraints-heading`}
+										className="case-studies__detail"
+									>
+										<h3 id={`${caseStudy.slug}-constraints-heading`}>
+											Constraints
+										</h3>
+										<ul className="case-studies__constraints">
+											{caseStudy.constraints.map((constraint) => (
+												<li key={constraint}>{constraint}</li>
+											))}
+										</ul>
+									</section>
+								</aside>
+
+								<div className="case-studies__narrative">
 									<section
 										aria-labelledby={`${caseStudy.slug}-decisions-heading`}
 										className="case-studies__detail case-studies__decisions"
@@ -115,6 +101,52 @@ function CaseStudiesPage({
 										</h3>
 										<p>{caseStudy.productAndUx}</p>
 									</section>
+
+									{caseStudy.visuals?.length ? (
+										<section
+											aria-labelledby={`${caseStudy.slug}-visuals-heading`}
+											className="case-studies__visuals"
+										>
+											<div className="case-studies__visuals-intro">
+												<h3 id={`${caseStudy.slug}-visuals-heading`}>
+													App screens
+												</h3>
+												<p>
+													These screenshots are from the Alfred app. The
+													onboarding screens use Alfred’s earlier WhatNext name.
+												</p>
+											</div>
+											<ul className="case-studies__visual-grid">
+												{caseStudy.visuals.map((visual) => (
+													<li
+														className={`case-studies__visual-item case-studies__visual-item--${visual.layout}`}
+														key={visual.src}
+													>
+														<figure
+															className={`case-studies__visual case-studies__visual--${visual.layout}`}
+														>
+															<div className="case-studies__visual-image">
+																<img
+																	alt={visual.alt}
+																	decoding="async"
+																	loading="lazy"
+																	src={visual.src}
+																/>
+															</div>
+															<figcaption>
+																<strong className="case-studies__visual-title">
+																	{visual.title}
+																</strong>
+																<p className="case-studies__visual-caption">
+																	{visual.caption}
+																</p>
+															</figcaption>
+														</figure>
+													</li>
+												))}
+											</ul>
+										</section>
+									) : null}
 
 									<section
 										aria-labelledby={`${caseStudy.slug}-engineering-heading`}
@@ -151,30 +183,6 @@ function CaseStudiesPage({
 										<p>{caseStudy.reflection}</p>
 									</section>
 								</div>
-
-								<aside className="case-studies__metadata">
-									<section
-										aria-labelledby={`${caseStudy.slug}-role-heading`}
-										className="case-studies__detail"
-									>
-										<h3 id={`${caseStudy.slug}-role-heading`}>Role</h3>
-										<p>{caseStudy.role}</p>
-									</section>
-
-									<section
-										aria-labelledby={`${caseStudy.slug}-constraints-heading`}
-										className="case-studies__detail"
-									>
-										<h3 id={`${caseStudy.slug}-constraints-heading`}>
-											Constraints
-										</h3>
-										<ul className="case-studies__constraints">
-											{caseStudy.constraints.map((constraint) => (
-												<li key={constraint}>{constraint}</li>
-											))}
-										</ul>
-									</section>
-								</aside>
 							</article>
 						</li>
 					))}

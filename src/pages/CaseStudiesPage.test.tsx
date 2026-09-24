@@ -61,6 +61,39 @@ describe("CaseStudiesPage", () => {
 
 		expect(within(article).getByText(caseStudy.summary)).toBeInTheDocument();
 		expect(within(article).queryByText("UpNext")).not.toBeInTheDocument();
+		expect(
+			within(article)
+				.getAllByRole("heading", { level: 3 })
+				.map(({ textContent }) => textContent?.trim()),
+		).toEqual([
+			"Context",
+			"Problem",
+			"Role",
+			"Constraints",
+			"Decisions",
+			"Product / UX",
+			"App screens",
+			"Engineering",
+			"Outcomes",
+			"Reflection",
+		]);
+		const visuals = within(article).getByRole("region", {
+			name: "App screens",
+		});
+		expect(
+			within(visuals).getByText(
+				"These screenshots are from the Alfred app. The onboarding screens use Alfred’s earlier WhatNext name.",
+			),
+		).toBeInTheDocument();
+
+		for (const visual of caseStudy.visuals ?? []) {
+			expect(visual.alt).not.toBe("PLACEHOLDER");
+			expect(
+				within(visuals).getByRole("img", { name: visual.alt }),
+			).toHaveAttribute("src", visual.src);
+			expect(within(visuals).getByText(visual.title)).toBeInTheDocument();
+			expect(within(visuals).getByText(visual.caption)).toBeInTheDocument();
+		}
 	});
 
 	it("renders each explicit narrative section from a fixture", () => {
