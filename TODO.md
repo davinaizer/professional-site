@@ -1,7 +1,7 @@
 ---
 createdAt: 2026-08-07
 updatedAt: 2026-09-24
-version: 1.41
+version: 1.42
 status: active
 ---
 
@@ -356,7 +356,9 @@ These tasks are intentionally separate from the approved application scope. Comp
 - [x] Review representative production layouts in Safari, Chrome, and Firefox across mobile, tablet, and desktop viewports.
 
 Evidence: `docs/evidence/2026-09-24-production-layout-review.md`.
-- [ ] Verify production focus visibility and colour contrast in real browsers.
+- [x] Verify production focus visibility and colour contrast in real browsers.
+
+Evidence: `docs/evidence/2026-09-24-production-focus-contrast-review.md`.
 - [ ] Confirm whether externally hosted Google Fonts remain acceptable for production reliability, privacy, and rendering performance.
 
 ---

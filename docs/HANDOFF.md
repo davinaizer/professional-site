@@ -1,7 +1,7 @@
 ---
 createdAt: 2026-08-10
 updatedAt: 2026-09-24
-version: 1.53
+version: 1.54
 status: active
 ---
 
@@ -9,23 +9,24 @@ status: active
 
 ## Completed outcome
 
-Production layouts were reviewed in Safari, Chrome, and Firefox across mobile, tablet, and desktop viewports. The developer reports all checked routes passed; see the review evidence.
+Production focus visibility and colour contrast were reviewed. The developer reports manual passes in Safari, Chrome, and Firefox; Chromium audit results and measurement limitations are recorded in the evidence.
 
 ## Next task candidate
 
-- [ ] Verify production focus visibility and colour contrast in real browsers.
+- [ ] Confirm whether externally hosted Google Fonts remain acceptable for production reliability, privacy, and rendering performance.
 
 ## Roadmap position
 
 - **Milestone:** Milestone 5 - Evidence-Driven Evolution.
-- **Workflow stage:** Production layout review received `PASS` and is closed; the next task has not started.
+- **Workflow stage:** Focus and contrast verification received `PASS` and is closed; the next task has not started.
 
 ## Evidence pointers
 
 - `TODO.md`
-- `docs/evidence/2026-09-24-production-layout-review.md`
-- `src/styles/shell.css`
+- `docs/evidence/2026-09-24-production-focus-contrast-review.md`
+- `docs/DECISIONS.md`
 - `src/styles/global.css`
+- `src/styles/tokens.css`
 
 ## Blockers
 
