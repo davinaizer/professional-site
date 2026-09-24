@@ -33,12 +33,20 @@ describe("ResumePage", () => {
 		expect(resumeLink).toHaveAttribute("href", professionalContent.resume.url);
 		expect(resumeLink).toHaveAttribute("download");
 
-		const updatedDate = screen.getByText("15 September 2026");
+		const updatedAt = professionalContent.resume.updatedAt;
+		if (!updatedAt) {
+			throw new Error("Expected the approved resume update date.");
+		}
+
+		const updatedDateLabel = new Intl.DateTimeFormat("en-GB", {
+			day: "numeric",
+			month: "long",
+			year: "numeric",
+			timeZone: "UTC",
+		}).format(new Date(`${updatedAt}T00:00:00Z`));
+		const updatedDate = screen.getByText(updatedDateLabel);
 		expect(updatedDate.tagName).toBe("TIME");
-		expect(updatedDate).toHaveAttribute(
-			"datetime",
-			professionalContent.resume.updatedAt,
-		);
+		expect(updatedDate).toHaveAttribute("datetime", updatedAt);
 	});
 
 	it("provides a contextual continuation to Contact", () => {

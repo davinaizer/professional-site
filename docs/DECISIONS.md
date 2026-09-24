@@ -1,12 +1,48 @@
 ---
 createdAt: 2026-08-07
-updatedAt: 2026-09-15
-version: 1.19
+updatedAt: 2026-09-19
+version: 1.23
 status: active
 order: ASC
 ---
 
 # Decisions
+
+## Use a central CSS import manifest for layered route-owned styles — 2026-09-19
+
+**Decision:** Keep route-owned stylesheet files colocated with their route components in `src/pages/`, using matching filenames and page-prefixed selectors. Import those files through `src/index.css` with explicit `@layer pages` assignments instead of direct component imports. Keep `src/index.css` as the ordered manifest for all static CSS so reset, tokens, shared styles, route styles, utilities, and overrides have a deterministic cascade order. This supersedes the direct component import and non-registry portions of the 2026-08-14 route-owned CSS decision.
+
+**Rationale:** Explicit cascade layers require a stable stylesheet import boundary. A central manifest makes the layer order visible and deterministic while preserving file ownership and route-level discoverability. The current application statically loads all route modules, so moving CSS imports into the manifest does not introduce a demonstrated loading or code-splitting cost. This avoids CSS Modules, a dependency, or a broader styling abstraction.
+
+**Consequence:** Route CSS remains easy to find beside its owning page, but page components no longer import their styles directly. New route-owned styles must be added to both `src/pages/` and the `pages` section of `src/index.css`. The manifest is now responsible for preserving the documented cascade order; route-specific selectors remain prefixed to limit collisions.
+
+**Review triggers:** Reconsider this boundary if route-level code splitting becomes necessary, static CSS loading creates measurable performance cost, the manifest becomes difficult to maintain, or a scoped styling approach provides a concrete benefit without weakening discoverability.
+
+**Deferred:** CSS Modules, utility frameworks, dynamic stylesheet loading, and generated CSS manifests remain undefined until a demonstrated requirement justifies them.
+
+## Extend the shared CSS pattern layer for evidence-list reuse — 2026-09-19
+
+**Decision:** Extend `src/styles/patterns.css` beyond the original four semantic patterns to own the verified base structure shared by the Projects and Case Studies evidence lists. Keep route-specific grid widths, content modifiers, list resets with cascade-sensitive overrides, and responsive modifiers in the colocated page stylesheets. Do not change the rendered DOM or introduce generic utility classes.
+
+**Rationale:** Projects and Case Studies have stable semantic reuse across their list containers, entries, metadata structure, typography, and base spacing. The shared declarations remove substantial duplication without erasing the meaningful route-specific differences. Keeping cascade-sensitive and responsive overrides local avoids lower-layer shared rules overriding page-owned behavior.
+
+**Consequence:** `patterns.css` now contains a small cross-route evidence-list pattern using the existing page-prefixed selectors. New evidence-list variants should first demonstrate the same structure and cascade boundary before joining the shared selectors. No React component abstraction or dependency is introduced.
+
+**Review triggers:** Reconsider this boundary if the Projects and Case Studies structures diverge, shared selector lists become difficult to maintain, route-specific exceptions multiply, or a scoped styling approach provides a concrete benefit.
+
+**Deferred:** Shared Work/Contact list patterns, generic list-reset utilities, generic metadata or action-link classes, CSS Modules, utility frameworks, and React wrapper components remain undefined until demonstrated reuse or a concrete requirement justifies them.
+
+## Use Cloudflare Web Analytics as the initial zero-cost baseline — 2026-09-16
+
+**Decision:** Use Cloudflare Web Analytics as the initial production analytics baseline for the Professional Site, limited to aggregate statistical analytics that improve the site. Use Google Search Console as the complementary source for search visibility and queries. Do not track individual users, collect identity data, create profiles, monitor cross-site behaviour, measure advertising, add custom events, or introduce Umami, PostHog, Google Analytics 4, or another behavioural analytics platform at this stage. Provide a clear analytics/privacy disclosure and a simple, free way to disable analytics. A mandatory consent banner is not the default for this narrowly scoped model.
+
+**Rationale:** The site is already hosted on Cloudflare, and the current product is a browser-only, static, manually curated professional-evidence site. Cloudflare provides a free, low-maintenance way to observe route usage, referrers, devices, and real-user performance while the site has no demonstrated need for advanced product analytics. The intended signals align with aggregate site-improvement analytics rather than user tracking. This is a reversible, proportionate commitment that addresses the current absence of field performance evidence without optimising analytics as an isolated subsystem.
+
+**Consequence:** The baseline can inform content findability, route usage, and real-user performance decisions, but it cannot directly measure custom actions such as resume downloads or contact-link clicks, UTM campaigns, or custom funnels. The initial measurement must remain production-only and must not collect personal information, identity data, session replay, or arbitrary event properties. The public disclosure must identify Cloudflare, the statistical purposes, the relevant data categories, the retention boundary, and the opt-out path. The implementation must verify that an opt-out prevents subsequent beacon collection. This is a working product and engineering treatment, not a legal conclusion for every UK or EU jurisdiction; applicable local requirements must be reassessed before relying on the model in a new audience or jurisdiction. Page views and visits are behavioural evidence, not evidence of recruiter engagement, interview impact, or career outcomes.
+
+**Review triggers:** Reassess the platform and privacy treatment if a real decision requires custom events, direct CTA measurement, UTM attribution, history beyond the available retention period, advanced interaction diagnosis, experiments, measurement for a genuinely interactive product area, individual-level processing, a new audience or jurisdiction, or a Cloudflare configuration that cannot honour the opt-out. Do not add another platform solely to obtain more detailed metrics without a demonstrated decision need.
+
+**Deferred:** Umami, PostHog, Google Analytics 4, session replay, heatmaps, custom event taxonomy, campaign attribution, a full consent-management platform, a mandatory consent banner, and a dedicated analytics data layer remain undefined until a review trigger demonstrates that the Cloudflare baseline or its privacy treatment is insufficient.
 
 ## Use the resume builder as canonical professional copy — 2026-09-15
 

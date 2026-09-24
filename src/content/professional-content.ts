@@ -1,4 +1,4 @@
-import type { ProfessionalContent } from "./professional";
+import type { ProfessionalContent } from "../types/professional";
 
 export const professionalContent: ProfessionalContent = {
 	identity: {
@@ -187,14 +187,27 @@ export const professionalContent: ProfessionalContent = {
 			],
 		},
 		{
-			slug: "unbox-learning-experience-co-founder-technical-lead-2009-2017",
-			company: "UNBOX Learning Experience",
-			role: "Co-founder & Technical Lead",
-			startDate: "2009",
-			endDate: "2017",
+			slug: "self-employed-frontend-developer-2017-2019",
+			company: "Self-employed",
+			role: "Freelance Frontend Developer",
+			startDate: "07/2017",
+			endDate: "02/2019",
 			location: "Brazil",
 			responsibilities: [
-				"Co-founded a digital learning company developing e-learning platforms, Learning Management Systems (LMS) and interactive educational products for Fortune 500 and global enterprise clients, including Volvo Brasil, Grupo Boticário, MetLife and HSBC. Worked across product discovery, solution design, technical leadership, frontend development and client delivery while coordinating a multidisciplinary team of designers and developers.",
+				"I worked as a freelancer on frontend and online learning projects.",
+			],
+			contributions: [],
+			technologies: [],
+		},
+		{
+			slug: "unbox-learning-experience-co-founder-technical-lead-2009-2017",
+			company: "UNBOX Learning Experience",
+			role: "Co-founder & Frontend Developer",
+			startDate: "10/2009",
+			endDate: "03/2017",
+			location: "Brazil",
+			responsibilities: [
+				"Co-founded a digital learning company developing e-learning platforms, Learning Management Systems (LMS) and interactive educational products for Fortune 500 and global enterprise clients, including Volvo Brasil, Grupo Boticário, MetLife, HSBC and Electrolux. Worked across product discovery, solution design, technical leadership, frontend development and client delivery while coordinating a multidisciplinary team of designers and developers.",
 			],
 			contributions: [
 				"Worked directly with clients, designers and instructional specialists to translate business and learning requirements into practical software solutions.",
@@ -205,11 +218,76 @@ export const professionalContent: ProfessionalContent = {
 			technologies: ["JavaScript", "HTML", "CSS", "ActionScript", "Moodle"],
 		},
 	],
+	earlierCareer: [
+		{
+			slug: "gpac-lead-web-developer-2007-2009",
+			company: "Grupo GPAC Comunicação Integrada",
+			role: "Lead Web Developer",
+			startDate: "07/2007",
+			endDate: "07/2009",
+			location: "Brazil",
+			responsibilities: [
+				"I worked on web and digital learning projects and took on team lead responsibilities.",
+			],
+			contributions: [],
+			technologies: [],
+		},
+		{
+			slug: "hsbc-training-development-analyst-2005-2007",
+			company: "HSBC Bank Brasil",
+			role: "Training & Development Analyst",
+			startDate: "07/2005",
+			endDate: "07/2007",
+			location: "Brazil",
+			responsibilities: [
+				"I built tools for learning content and supported the Learning Management System (LMS).",
+			],
+			contributions: [],
+			technologies: [],
+		},
+		{
+			slug: "gpac-web-developer-2001-2005",
+			company: "Grupo GPAC Comunicação Integrada",
+			role: "Web Developer",
+			startDate: "09/2001",
+			endDate: "07/2005",
+			location: "Brazil",
+			responsibilities: [
+				"I developed web applications and digital learning content.",
+			],
+			contributions: [],
+			technologies: [],
+		},
+		{
+			slug: "omni-technical-support-2000-2001",
+			company: "Omni Informática Ltda.",
+			role: "Technical Support",
+			startDate: "01/2000",
+			endDate: "08/2001",
+			location: "Brazil",
+			responsibilities: [
+				"I handled computer, network, video-editing, and Apple desktop support.",
+			],
+			contributions: [],
+			technologies: [],
+		},
+		{
+			slug: "sy-megasoft-computer-support-1998-1999",
+			company: "SY-MEGASOFT",
+			role: "Computer Support",
+			startDate: "04/1998",
+			endDate: "04/1999",
+			location: "Brazil",
+			responsibilities: ["I worked in computer support."],
+			contributions: [],
+			technologies: [],
+		},
+	],
 	claims: [],
 	resume: {
 		label: "Download Resume",
-		url: "/davi-naizer-santos-resume.pdf",
-		updatedAt: "2026-09-15",
+		url: "/davi-naizer-resume.pdf",
+		updatedAt: "2026-09-22",
 	},
 	contact: [
 		{

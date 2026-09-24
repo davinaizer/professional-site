@@ -30,9 +30,3 @@
 	background-color: var(--color-accent);
 	color: var(--color-background);
 }
-
-@media (max-width: 40rem) {
-	.resume__intro {
-		font-size: var(--font-size-body);
-	}
-}

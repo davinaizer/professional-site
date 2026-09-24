@@ -53,6 +53,7 @@ export type ProfessionalContent = {
 	identity: ProfessionalIdentity;
 	summary: ProfessionalSummary;
 	experience: readonly ExperienceEntry[];
+	earlierCareer: readonly ExperienceEntry[];
 	claims: readonly ProfessionalClaim[];
 	resume: ResumeAccess;
 	contact: readonly ContactLink[];

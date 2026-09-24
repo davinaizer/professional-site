@@ -1,7 +1,7 @@
 ---
 createdAt: 2026-08-07
-updatedAt: 2026-09-16
-version: 1.34
+updatedAt: 2026-09-19
+version: 1.39
 status: active
 ---
 
@@ -130,6 +130,7 @@ Task boundaries should balance developer implementation effort with reliable AI-
 ### Shared CSS Patterns
 
 - [x] Extract high-confidence shared page styles for the core routes.
+- [x] Complete the approved CSS refactor: centralize repeated values, define cascade layers, deduplicate verified evidence-list patterns, remove dead tokens, document the structure, and enforce CSS selector hygiene.
 
 ---
 
@@ -226,6 +227,26 @@ Do not optimise without measured need.
 
 The developer-requested UX review is sufficient evidence for the bounded refinement queue below. Do not add unrelated speculative features to this milestone.
 
+### Priority Analytics
+
+This is the highest-priority Milestone 5 task following the 2026-09-16 decision to establish the smallest defensible, zero-cost analytics baseline for the production site.
+
+The implementation and validation contract is recorded in `docs/plans/2026-09-16-analytics.md`.
+
+- [x] Enable and verify Cloudflare Web Analytics for the production deployment.
+- [x] Confirm that the baseline provides useful route, page, referrer, device, and real-user performance signals for the current browser-only site.
+- [x] Record the known boundaries: no custom events, UTM attribution, or direct resume/contact-click measurement; no personal information, session replay, or second analytics platform without a demonstrated need.
+- [ ] Keep the measurement production-only, privacy-minimised, and free of unnecessary dependencies or public-content changes.
+
+Acceptance criteria:
+
+- Cloudflare analytics data is observable for the current production routes and real-user performance where traffic is available.
+- The known limitations are explicit, and no unvalidated career or user-intent conclusions are drawn from page views.
+- Google Search Console remains the complementary source for search visibility and queries.
+- No additional analytics platform is introduced unless a real decision is blocked by the Cloudflare baseline.
+
+Current evidence: `docs/evidence/2026-09-16-analytics-baseline.md`. The production-only and disclosure/opt-out portions remain open.
+
 ### Priority UX Refinement Queue
 
 This queue records the developer-requested UX craftsmanship review from 2026-09-16. It deliberately excludes a broad accessibility rework: the existing semantic, keyboard, focus, contrast, responsive, and automated-accessibility foundations are complete, and the current site scores 100 for accessibility in Lighthouse.
@@ -307,6 +328,11 @@ Acceptance criteria:
 - the response remains concise, accessible, and responsive; and
 - the route introduces no special-case shell or dependency.
 
+### Completed developer-directed navigation fix
+
+- [x] Restore the destination scroll position to the top for internal route navigation through the shared React Router shell.
+- [x] Verify the behaviour from the bottom of a long-form route with a browser-level regression test and the relevant quality checks.
+
 ---
 
 ## Post-MVP Publication Follow-up
@@ -325,8 +351,8 @@ These tasks are intentionally separate from the approved application scope. Comp
 
 - [x] Verify direct entry and refresh behaviour for all client-side routes on the current Cloudflare Pages preview deployment.
 - [x] Verify the resume download, email, LinkedIn, project, case-study, and experience-anchor links on the current Cloudflare Pages preview deployment.
-- [ ] Re-run route and link verification after the current changes are merged to the Cloudflare Pages production branch.
-- [ ] Run production performance, accessibility, SEO, and best-practice measurements.
+- [x] Re-run route and link verification after the current changes are merged to the Cloudflare Pages production branch.
+- [x] Run production performance, accessibility, SEO, and best-practice measurements.
 - [ ] Review representative production layouts in Safari, Chrome, and Firefox across mobile, tablet, and desktop viewports.
 - [ ] Verify production focus visibility and colour contrast in real browsers.
 - [ ] Confirm whether externally hosted Google Fonts remain acceptable for production reliability, privacy, and rendering performance.

@@ -1,5 +1,4 @@
 import { professionalContent } from "../content/professional-content.ts";
-import "./ContactPage.css";
 
 function ContactPage() {
 	const { contact } = professionalContent;
