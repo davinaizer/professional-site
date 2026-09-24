@@ -1,6 +1,7 @@
 import { render, screen, within } from "@testing-library/react";
 import { createMemoryRouter, RouterProvider } from "react-router";
 import { describe, expect, it } from "vitest";
+import { professionalContent } from "../content/professional-content.ts";
 import HomePage from "../pages/HomePage.tsx";
 import { axe } from "../test/axe.ts";
 import App from "./App.tsx";
@@ -45,7 +46,7 @@ describe("App", () => {
 		).toHaveAttribute("href", routes.experience);
 		expect(
 			screen.getByRole("link", { name: "Download Resume" }),
-		).toHaveAttribute("href", "/davi-naizer-santos-resume.pdf");
+		).toHaveAttribute("href", professionalContent.resume.url);
 		expect(
 			screen.getByRole("link", { name: "Download Resume" }),
 		).toHaveAttribute("download");

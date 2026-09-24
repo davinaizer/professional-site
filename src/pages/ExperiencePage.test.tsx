@@ -16,42 +16,63 @@ function renderExperiencePage() {
 
 describe("ExperiencePage", () => {
 	it("renders the approved experience in reverse chronological order", () => {
-		renderExperiencePage();
+		const { container } = renderExperiencePage();
 
 		expect(
 			screen.getByRole("heading", { level: 1, name: "Experience" }),
 		).toBeInTheDocument();
 
-		const roleHeadings = screen.getAllByRole("heading", { level: 2 });
+		const roleTimeline = container.querySelector<HTMLOListElement>(
+			".experience__timeline:not(.experience__timeline--earlier)",
+		);
+		if (!roleTimeline) {
+			throw new Error("Expected the current-role timeline to be rendered.");
+		}
+
+		const currentExperience = within(roleTimeline);
+		const roleHeadings = currentExperience.getAllByRole("heading", {
+			level: 2,
+		});
 		expect(roleHeadings.map(({ textContent }) => textContent)).toEqual(
 			professionalContent.experience.map(({ role }) => role),
 		);
 
 		for (const entry of professionalContent.experience) {
-			expect(screen.getByText(entry.company)).toBeInTheDocument();
 			expect(
-				screen
+				currentExperience.getAllByText(entry.company).length,
+			).toBeGreaterThan(0);
+			expect(
+				currentExperience
 					.getByRole("heading", { level: 2, name: entry.role })
 					.closest("article"),
 			).toHaveAttribute("id", entry.slug);
 
 			expect(
-				screen.getByText(`${entry.startDate} – ${entry.endDate ?? "Present"}`),
+				currentExperience.getByText(
+					`${entry.startDate} – ${entry.endDate ?? "Present"}`,
+				),
 			).toBeInTheDocument();
 			if (entry.location) {
 				expect(
-					screen.getAllByText(entry.location, { exact: false }).length,
+					currentExperience.getAllByText(entry.location, { exact: false })
+						.length,
 				).toBeGreaterThan(0);
 			}
 
 			for (const responsibility of entry.responsibilities ?? []) {
-				expect(screen.getByText(responsibility)).toBeInTheDocument();
+				expect(
+					currentExperience.getAllByText(responsibility).length,
+				).toBeGreaterThan(0);
 			}
 			for (const contribution of entry.contributions ?? []) {
-				expect(screen.getByText(contribution)).toBeInTheDocument();
+				expect(
+					currentExperience.getAllByText(contribution).length,
+				).toBeGreaterThan(0);
 			}
 			for (const technology of entry.technologies ?? []) {
-				expect(screen.getAllByText(technology).length).toBeGreaterThan(0);
+				expect(
+					currentExperience.getAllByText(technology).length,
+				).toBeGreaterThan(0);
 			}
 		}
 	});

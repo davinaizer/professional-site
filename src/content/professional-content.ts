@@ -286,8 +286,8 @@ export const professionalContent: ProfessionalContent = {
 	claims: [],
 	resume: {
 		label: "Download Resume",
-		url: "/davi-naizer-santos-resume.pdf",
-		updatedAt: "2026-09-15",
+		url: "/davi-naizer-resume.pdf",
+		updatedAt: "2026-09-22",
 	},
 	contact: [
 		{
