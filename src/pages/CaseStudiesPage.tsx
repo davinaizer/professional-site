@@ -1,4 +1,5 @@
 import { routes } from "../app/routes.ts";
+import CaseStudyGallery from "../components/CaseStudyGallery.tsx";
 import ContextualContinuation from "../components/ContextualContinuation.tsx";
 import { caseStudies as caseStudyContent } from "../content/evidence-content.ts";
 import type { CaseStudy } from "../types/evidence.ts";
@@ -103,49 +104,10 @@ function CaseStudiesPage({
 									</section>
 
 									{caseStudy.visuals?.length ? (
-										<section
-											aria-labelledby={`${caseStudy.slug}-visuals-heading`}
-											className="case-studies__visuals"
-										>
-											<div className="case-studies__visuals-intro">
-												<h3 id={`${caseStudy.slug}-visuals-heading`}>
-													App screens
-												</h3>
-												<p>
-													These screenshots are from the Alfred app. The
-													onboarding screens use Alfred’s earlier WhatNext name.
-												</p>
-											</div>
-											<ul className="case-studies__visual-grid">
-												{caseStudy.visuals.map((visual) => (
-													<li
-														className={`case-studies__visual-item case-studies__visual-item--${visual.layout}`}
-														key={visual.src}
-													>
-														<figure
-															className={`case-studies__visual case-studies__visual--${visual.layout}`}
-														>
-															<div className="case-studies__visual-image">
-																<img
-																	alt={visual.alt}
-																	decoding="async"
-																	loading="lazy"
-																	src={visual.src}
-																/>
-															</div>
-															<figcaption>
-																<strong className="case-studies__visual-title">
-																	{visual.title}
-																</strong>
-																<p className="case-studies__visual-caption">
-																	{visual.caption}
-																</p>
-															</figcaption>
-														</figure>
-													</li>
-												))}
-											</ul>
-										</section>
+										<CaseStudyGallery
+											slug={caseStudy.slug}
+											visuals={caseStudy.visuals}
+										/>
 									) : null}
 
 									<section
