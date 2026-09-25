@@ -1,14 +1,12 @@
 import { createBrowserRouter } from "react-router";
-import {
-	CaseStudiesPage,
-	ContactPage,
-	ExperiencePage,
-	HomePage,
-	NotFoundPage,
-	ProjectsPage,
-	ResumePage,
-	WorkPage,
-} from "../pages/";
+import CaseStudiesPage from "../pages/CaseStudiesPage.tsx";
+import ContactPage from "../pages/ContactPage.tsx";
+import ExperiencePage from "../pages/ExperiencePage.tsx";
+import HomePage from "../pages/HomePage.tsx";
+import NotFoundPage from "../pages/NotFoundPage.tsx";
+import ProjectsPage from "../pages/ProjectsPage.tsx";
+import ResumePage from "../pages/ResumePage.tsx";
+import WorkPage from "../pages/WorkPage.tsx";
 import App from "./App.tsx";
 import { routes } from "./routes.ts";
 
