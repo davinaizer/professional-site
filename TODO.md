@@ -20,7 +20,7 @@ Tasks should be completed in order unless repository evidence or explicit develo
 Each task should remain small enough to:
 
 - plan independently;
-- implement through code pairing;
+- implement through `implement-task`;
 - review against explicit acceptance criteria;
 - complete without starting unrelated work.
 
@@ -31,7 +31,7 @@ Task boundaries should balance developer implementation effort with reliable AI-
 - Separate product, architecture, content, or engineering decisions when they materially affect later implementation.
 - Separate diagnosis or measurement from remediation when the remediation scope is not yet known.
 - Keep the change surface and validation set small enough for `review-task` to assess completely from the approved plan and task-scoped evidence.
-- Prefer a separate task when a failure would otherwise return several unrelated concerns to `code-pairing`.
+- Prefer a separate task when a failure would otherwise return several unrelated concerns to `implement-task`.
 
 ---
 
