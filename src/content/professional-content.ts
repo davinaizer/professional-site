@@ -18,7 +18,7 @@ export const professionalContent: ProfessionalContent = {
 	},
 	summary: {
 		summary:
-			"Senior frontend and product engineer with experience building product applications, internal tools, and the engineering systems behind them. My commercial experience centres on React, TypeScript, and JavaScript, alongside recent native iOS development with Swift and SwiftUI.",
+			"Senior frontend and product engineer with experience building product applications, internal tools and the delivery systems behind them. Most of my commercial experience has been with React, TypeScript and JavaScript, while more recently I've been building a native iOS application using Swift and SwiftUI. Throughout my career, I've worked across the product lifecycle, contributing to product development while improving the engineering systems that support software delivery. As I took on more responsibility, I found myself increasingly drawn to frontend architecture, developer tooling, workflow automation and broader product ownership, with a focus on reducing complexity and making software easier to build, maintain and evolve. I naturally gravitate towards recurring sources of friction. Whether that's delivering product features, improving engineering workflows or building internal tools, I enjoy understanding how people work and finding practical ways to make that work simpler.",
 		homeExcerpt:
 			"Hi, I’m Davi. I’m a frontend and product engineer who enjoys understanding how things work, fixing what gets in the way, and building software that is genuinely useful. Most of my commercial work has been with React, TypeScript and JavaScript, and more recently I’ve been building native iOS applications with SwiftUI.",
 		personalNote:
@@ -83,11 +83,10 @@ export const professionalContent: ProfessionalContent = {
 				"Worked on Signal Ocean, a maritime intelligence platform used by brokers, operators and analysts to monitor global shipping activity. As part of a cross-functional product team, I worked on the Vessel List area within a large React and TypeScript monorepo. One recurring challenge was that creating reusable Vessel List templates required support requests and manual engineering work. We redesigned that workflow into a self-service experience that allowed company administrators to create and manage templates directly.",
 			],
 			contributions: [
-				"Developed the frontend implementation of the Template Admin experience, taking the feature through implementation, testing, fixes and production release.",
-				"Implemented role-based template management for a multi-company SaaS platform, separating administrator management capabilities from end-user template consumption.",
-				"Built data-intensive configuration workflows using AG Grid, including role-based editing, validation, read-only and deletion states, and reusable editing behaviours.",
-				"Worked closely with backend engineers on metadata-driven APIs and shared application state to support reusable template configuration across multiple dashboards.",
-				"Developed React and TypeScript features across the Vessel List area and shared UI component library.",
+				"Developed the frontend implementation of the Template Admin experience, taking the feature through implementation, testing, fixes and production release, including permission-aware creation, editing, validation and deletion flows integrated with frontend state and metadata-driven APIs.",
+				"Built data-intensive Vessels List configuration workflows using AG Grid, including role-based editing, validation, read-only and deletion states, and reusable editing behaviours.",
+				"Maintained shared UI components across dashboards, forms and administration surfaces, including migrations away from deprecated components.",
+				"Maintained focused tests and snapshots and addressed type, lint, SonarLint and refactoring issues during frontend feature development.",
 				"Onboarded a frontend engineer to the monorepo, Vessel List architecture and Azure-based development environment.",
 			],
 			technologies: [
@@ -144,8 +143,8 @@ export const professionalContent: ProfessionalContent = {
 			],
 			contributions: [
 				"Built a Node.js tool around the Jira REST API that reduced a promotional content workflow from days to minutes.",
-				"Developed reusable tooling around the GitHub Enterprise REST API that removed the need to clone repositories for deployment-related tasks.",
-				"Built internal tooling supporting Offer Builder, promotional content generation, deployment and day-to-day engineering workflows.",
+				"Created a Node.js CLI that generated version-pinned promotional UI from templates and automated pull-request-based delivery; migrated it to TypeScript and introduced supporting CI and release practices.",
+				"Built a React preview application for validating generated promotional UI against real configuration before release, and maintained shared configuration infrastructure used by multiple delivery tools.",
 				"Created onboarding guides, architecture documentation and dependency maps that helped engineers understand large projects more quickly.",
 				"Supported the team through mentoring, code reviews and production troubleshooting.",
 			],
@@ -172,8 +171,8 @@ export const professionalContent: ProfessionalContent = {
 			],
 			contributions: [
 				"Led the technical improvement initiative for Landing Pages, defining the proposed frontend architecture, documenting the roadmap and presenting the approach to engineering, QA, design and business stakeholders.",
+				"Contributed to a configuration-driven promotional UI framework and reusable components used across multiple consumer brands, helping non-engineers compose and deliver promotional experiences without changing application code.",
 				"Built reusable frontend components and styling foundations to improve consistency across promotional interfaces.",
-				"Developed GitHub API-based deployment tooling that simplified deployment workflows and reduced reliance on repository cloning.",
 				"Mentored developers, designers and stakeholders through code reviews, frontend debugging, Git support and technical documentation.",
 				"Contributed to customer-facing React applications while helping improve internal engineering tooling and workflows.",
 			],
