@@ -51,12 +51,10 @@ describe("App", () => {
 			screen.getByRole("link", { name: "Download Resume" }),
 		).toHaveAttribute("download");
 		expect(
-			within(
-				screen.getByRole("navigation", {
-					name: "Explore core professional areas",
-				}),
-			).getByRole("link", { name: "Contact" }),
-		).toHaveAttribute("href", routes.contact);
+			screen.getByRole("link", {
+				name: "Explore my independent experiments",
+			}),
+		).toHaveAttribute("href", routes.experiments);
 		expect(screen.getByText("© 2026 Davi Naizer")).toBeInTheDocument();
 		const footerNavigation = screen.getByRole("navigation", {
 			name: "Social and contact links",

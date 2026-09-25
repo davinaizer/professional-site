@@ -1,7 +1,7 @@
 ---
 createdAt: 2026-08-07
-updatedAt: 2026-09-24
-version: 1.42
+updatedAt: 2026-09-25
+version: 1.44
 status: active
 ---
 
@@ -332,6 +332,17 @@ Acceptance criteria:
 
 - [x] Restore the destination scroll position to the top for internal route navigation through the shared React Router shell.
 - [x] Verify the behaviour from the bottom of a long-form route with a browser-level regression test and the relevant quality checks.
+
+### Preserve Case Studies and repurpose Selected Projects as Experiments
+
+Completed and reviewed with `PASS`. The approved scope and acceptance criteria are recorded in `docs/plans/2026-09-23-consolidate-portfolio-evidence.md`.
+
+- [x] Keep Work as the chooser for professional Case Studies and independent Experiments; preserve `/projects` as the Experiments URL.
+- [x] Preserve useful professional Project metadata and Experience links in Case Studies, then remove the duplicate professional Project records.
+- [x] Move UV Insect Trap into Experiments with evidence-qualified narrative and optional visuals and reflection.
+- [x] Update the home Experiments link, sitemap, current product and engineering guidance, and focused unit and browser coverage.
+- [x] Pass `pnpm validate`, `pnpm build`, and `pnpm test:e2e`.
+- [x] Complete formal review and close the task.
 
 ---
 

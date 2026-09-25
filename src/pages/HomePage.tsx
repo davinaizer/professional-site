@@ -27,9 +27,6 @@ function HomePage() {
 								{resume.label}
 							</a>
 						</li>
-						<li>
-							<Link to={routes.contact}>Contact</Link>
-						</li>
 					</ul>
 				</nav>
 			</div>
@@ -55,22 +52,7 @@ function HomePage() {
 				<p className="eyebrow">A little about me</p>
 				<h2 id="about-heading">Beyond the work</h2>
 				<p>{summary.personalNote}</p>
-			</section>
-
-			<section aria-labelledby="focus-heading" className="home__focus">
-				<div className="home__section-lead">
-					<p className="eyebrow">Focus areas</p>
-					<h2 id="focus-heading">Product-minded frontend engineering</h2>
-					<p>
-						Building useful products, clearer workflows, and maintainable
-						engineering systems.
-					</p>
-				</div>
-				<ul>
-					{summary.focusAreas.map((focusArea) => (
-						<li key={focusArea}>{focusArea}</li>
-					))}
-				</ul>
+				<Link to={routes.experiments}>Explore my independent experiments</Link>
 			</section>
 		</section>
 	);

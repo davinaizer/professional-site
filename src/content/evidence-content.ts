@@ -6,6 +6,18 @@ export const caseStudies: readonly CaseStudy[] = [
 		title: "Alfred: What To Do Next",
 		summary:
 			"A native iOS product exploring how to help people decide what to do next.",
+		relatedExperienceSlugs: [
+			"independent-product-venture-product-engineer-co-creator-2025",
+			"self-employed-planned-career-break-2024-2025",
+		],
+		technologies: [
+			"Swift",
+			"SwiftUI",
+			"REST APIs",
+			"Firebase",
+			"XCTest",
+			"XcodeGen",
+		],
 		visuals: [
 			{
 				src: "/images/alfred/alfred-landing-page.jpg",
@@ -45,7 +57,7 @@ export const caseStudies: readonly CaseStudy[] = [
 		productAndUx:
 			"The design took someone from onboarding and a few preferences to an idea, a recommendation, and a commitment. It gave one recommendation a clear rationale while keeping other options available. This was the product direction, not a finding from user validation.",
 		engineering:
-			"View models held the screen state; repositories, DTO mapping, and API services handled data access. Idea capture checked for empty details and possible duplicates before submitting. Recommendation generation could take time, so the feed showed generating, awaiting, ready, and error states. The app checked for results periodically and handled real-time updates. A person could accept or dismiss a recommendation. When they chose to schedule one, the app carried the idea and recommendation into event creation. I owned the iOS app; the backend engineer owned the API and enrichment services.",
+			"View models held the screen state; use cases and dependency injection kept business logic decoupled from presentation; repositories, DTO mapping, and API services handled data access. Idea capture checked for empty details and possible duplicates before submitting. Recommendation generation could take time, so the feed showed generating, awaiting, ready, and error states. The app checked for results periodically and handled real-time updates. Authentication and deep links connected entry and return paths to application state. A person could accept or dismiss a recommendation. When they chose to schedule one, the app carried the idea and recommendation into event creation. I owned the iOS app; the backend engineer owned the API and enrichment services.",
 		outcomes: [
 			{
 				statement:
@@ -64,6 +76,10 @@ export const caseStudies: readonly CaseStudy[] = [
 		title: "Vessel List Template Administration",
 		summary:
 			"A self-service, role-aware workflow for creating and managing reusable templates in Signal Ocean’s Vessel List.",
+		relatedExperienceSlugs: [
+			"signal-group-senior-frontend-software-engineer-2023-2024",
+		],
+		technologies: ["React", "TypeScript", "MobX", "AG Grid", "REST APIs"],
 		context:
 			"As a Senior Frontend Software Engineer at The Signal Group, I worked with a cross-functional team on the Vessel List area of Signal Ocean. The application used a large React and TypeScript monorepo, shared frontend state, and metadata-driven APIs.",
 		problem:
@@ -103,6 +119,11 @@ export const caseStudies: readonly CaseStudy[] = [
 		title: "A Repeatable Promotional Content Workflow",
 		summary:
 			"A set of internal authoring, preview, and delivery tools made a repetitive promotional-content workflow faster and easier to review.",
+		relatedExperienceSlugs: [
+			"gamesys-ballys-senior-frontend-engineer-2020-2022",
+			"ballys-interactive-frontend-tech-lead-2022-2023",
+		],
+		technologies: ["Node.js", "Jira REST API", "GitHub Enterprise REST API"],
 		context:
 			"At Gamesys/Bally’s Interactive, I contributed to a collaborative set of tools supporting configuration-driven promotional content. This case study focuses on making the authoring and delivery workflow more repeatable, while keeping employer-specific systems and campaign details private.",
 		problem:
@@ -178,99 +199,68 @@ export const caseStudies: readonly CaseStudy[] = [
 
 export const projects: readonly Project[] = [
 	{
-		slug: "vessel-list-template-administration",
-		title: "Vessel List Template Administration",
+		slug: "uv-insect-trap",
+		title: "UV Insect Trap",
 		summary:
-			"A role-based administration experience for managing vessel-list templates within a multi-company SaaS platform.",
+			"A 3D-printed trap shaped through repeated work on airflow, grille noise, and cleaning.",
+		visualsHeading: "The final prototype and CAD",
+		visualsIntro:
+			"The final photo shows the assembled prototype; the CAD views show the enclosure and grille design.",
+		visuals: [
+			{
+				src: "/images/uv-insect-trap/final-prototype.jpeg",
+				alt: "The assembled black 3D-printed insect trap on a wooden surface, with blue light visible around its upper grille.",
+				title: "Final prototype",
+				caption:
+					"The version I tested at home, photographed with the UV LEDs on.",
+				layout: "grid",
+			},
+			{
+				src: "/images/uv-insect-trap/cad-assembly-view.png",
+				alt: "Angled CAD view of the cylindrical trap body, circular upper grille, and central light tower.",
+				title: "Enclosure and grille",
+				caption:
+					"This view shows how the outer body, upper grille, and light tower fit together.",
+				layout: "grid",
+			},
+			{
+				src: "/images/uv-insect-trap/cad-grille-top-view.png",
+				alt: "Top-down CAD view of the circular grille vanes arranged around the UV light tower.",
+				title: "Grille geometry",
+				caption:
+					"The top view shows the curved vanes I adjusted while working on airflow and fan noise.",
+				layout: "grid",
+			},
+		],
 		context:
-			"Production product work delivered with Product, Design, Backend, and QA in a React and TypeScript monorepo.",
+			"Mosquitoes were a persistent problem at home. I wanted to try a chemical-free trap, using UV light to attract insects and a fan to draw them into a collection area. I looked at existing products and light-based attraction, then started modelling a version I could make and test myself.",
 		purpose:
-			"Give authorised users a self-service workflow for creating and maintaining templates.",
+			"Explore whether a home-built UV-and-fan trap could be made practical to assemble, clean, and live with.",
 		problem:
-			"Data-intensive configuration required clear validation, permissions, interaction states, and reusable editing behaviour.",
+			"The first prototype had almost no suction, and the UV light was too weak. Increasing airflow with a larger fan brought a new problem: the fan and grille made a high-pitched whine. The design had to move air, fit the filter and wiring, and still be practical to assemble and clean.",
+		role: "I took it from research through Onshape modelling, component selection, printing, assembly, and home testing. I built around an off-the-shelf fan, UV LEDs, and electronics.",
+		decisions: [
+			"The first version barely pulled air, so I fitted a larger fan and redesigned the body around it. I added an internal filter, screw mounts, snap joints, and a route for the wiring.",
+			"The larger fan moved more air but made a high-pitched whine. I tried different grille angles, sizes, and shapes, using a NACA 0030 airfoil as a reference for the vanes. I kept the version that sounded best when I used it.",
+			"I tried a funnel, but it restricted airflow; widening the vanes did not help, so I removed it.",
+		],
 		solution:
-			"Implemented the frontend experience, including role-based template management, validation, reusable editing behaviour, testing, fixes, and production release.",
-		relatedExperienceSlugs: [
-			"signal-group-senior-frontend-software-engineer-2023-2024",
-		],
-		capabilities: [
-			"Frontend architecture",
-			"Product development",
-			"Engineering practices",
-		],
+			"I designed the enclosure in Onshape and printed it in PLA on a Bambu Lab A1, with a larger fan, internal filter, screw mounts, snap and torsional snap joints, and internal cable routing.",
 		outcomes: [
 			{
 				statement:
-					"Developed the frontend implementation of the Template Admin experience, taking the feature through implementation, testing, fixes and production release.",
+					"My sister reported that she saw the trap catch mosquitoes during home use.",
+				detail:
+					"We noticed fewer problems with mosquitoes indoors while it was running, but this was not a measured change in mosquito population. In an overnight outdoor test, it caught moths and other flying insects but no mosquitoes.",
 			},
-		],
-		technologies: ["React", "TypeScript", "MobX", "AG Grid", "REST APIs"],
-	},
-	{
-		slug: "internal-content-production-workflow",
-		title: "Internal Content-production Workflow",
-		summary:
-			"A safe abstraction of internal tooling that improved the repeatability and speed of a promotional-content workflow.",
-		context:
-			"Workflow-oriented product engineering across internal tools and developer-facing automation.",
-		purpose:
-			"Reduce manual effort in content production while making delivery steps more repeatable and reviewable.",
-		problem:
-			"A promotional-content workflow took days and depended on repetitive operational steps.",
-		solution:
-			"Built reusable Node.js and API tooling around internal workflow systems, with validation and automation that reduced the workflow from days to minutes.",
-		relatedExperienceSlugs: [
-			"gamesys-ballys-senior-frontend-engineer-2020-2022",
-			"ballys-interactive-frontend-tech-lead-2022-2023",
-		],
-		capabilities: [
-			"Developer tooling",
-			"Workflow automation",
-			"Engineering practices",
-		],
-		outcomes: [
 			{
-				statement:
-					"Reduced a promotional-content workflow from days to minutes.",
+				statement: "The steady fan sound seemed to soothe the dogs.",
+				detail:
+					"My sister noticed less barking and better sleep while it was running; this was an informal household observation.",
 			},
 		],
-		technologies: ["Node.js", "Jira REST API", "GitHub Enterprise REST API"],
-	},
-	{
-		slug: "alfred",
-		title: "Alfred",
-		summary:
-			"A native product experience exploring end-to-end development, shared product decisions, and architecture in an unfamiliar ecosystem.",
-		context:
-			"Recent exploratory product work spanning an independent product project and a planned career break.",
-		purpose:
-			"Build and learn through a complete product experience across onboarding, authentication, recommendations, and planning.",
-		problem:
-			"A complete product experience needed coherent boundaries across networking, domain logic, application state, and presentation.",
-		solution:
-			"Delivered the first end-to-end experience and designed a layered architecture using MVVM-style presentation, repositories, use cases, and dependency injection.",
-		relatedExperienceSlugs: [
-			"independent-product-venture-product-engineer-co-creator-2025",
-			"self-employed-planned-career-break-2024-2025",
-		],
-		capabilities: [
-			"Product development",
-			"Frontend architecture",
-			"Engineering practices",
-		],
-		outcomes: [
-			{
-				statement:
-					"Integrated authentication, real-time updates, deep linking, and application state with clear boundaries between networking, domain logic, and presentation.",
-			},
-		],
-		technologies: [
-			"Swift",
-			"SwiftUI",
-			"REST APIs",
-			"Firebase",
-			"XCTest",
-			"XcodeGen",
-		],
+		reflection:
+			"From my notes and recollection, I went through at least seven versions. Dust build-up was manageable, but cleaning meant removing the top grille. The wire between the light tower and body made this awkward and felt fragile. Each change moved the problem somewhere else: a bigger fan improved suction but created a whine, and a funnel restricted airflow. If I made another one, I would add a connector so the top is easier to remove.",
+		technologies: ["Onshape", "PLA 3D printing", "Bambu Lab A1"],
 	},
 ];

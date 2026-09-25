@@ -1,7 +1,9 @@
+import { Link } from "react-router";
 import { routes } from "../app/routes.ts";
 import CaseStudyGallery from "../components/CaseStudyGallery.tsx";
 import ContextualContinuation from "../components/ContextualContinuation.tsx";
 import { caseStudies as caseStudyContent } from "../content/evidence-content.ts";
+import { professionalContent } from "../content/professional-content.ts";
 import type { CaseStudy } from "../types/evidence.ts";
 
 type CaseStudiesPageProps = {
@@ -23,7 +25,7 @@ function CaseStudiesPage({
 			</header>
 
 			{caseStudies.length ? (
-				<ul aria-label="Case studies" className="case-studies__list">
+				<ul aria-label="Portfolio evidence" className="case-studies__list">
 					{caseStudies.map((caseStudy) => (
 						<li className="case-studies__item" key={caseStudy.slug}>
 							<article
@@ -76,6 +78,54 @@ function CaseStudiesPage({
 											))}
 										</ul>
 									</section>
+
+									{caseStudy.relatedExperienceSlugs?.length ? (
+										<section
+											aria-labelledby={`${caseStudy.slug}-experience-heading`}
+											className="case-studies__detail"
+										>
+											<h3 id={`${caseStudy.slug}-experience-heading`}>
+												Relevant experience
+											</h3>
+											<ul className="case-studies__links">
+												{caseStudy.relatedExperienceSlugs.map(
+													(experienceSlug) => {
+														const experienceEntry =
+															professionalContent.experience.find(
+																(entry) => entry.slug === experienceSlug,
+															);
+
+														return experienceEntry ? (
+															<li key={experienceEntry.slug}>
+																<Link
+																	to={`${routes.experience}#${experienceEntry.slug}`}
+																>
+																	{experienceEntry.role} at{" "}
+																	{experienceEntry.company}
+																</Link>
+															</li>
+														) : null;
+													},
+												)}
+											</ul>
+										</section>
+									) : null}
+
+									{caseStudy.technologies?.length ? (
+										<section
+											aria-labelledby={`${caseStudy.slug}-technologies-heading`}
+											className="case-studies__detail"
+										>
+											<h3 id={`${caseStudy.slug}-technologies-heading`}>
+												Technologies
+											</h3>
+											<ul className="case-studies__tags">
+												{caseStudy.technologies.map((technology) => (
+													<li key={technology}>{technology}</li>
+												))}
+											</ul>
+										</section>
+									) : null}
 								</aside>
 
 								<div className="case-studies__narrative">

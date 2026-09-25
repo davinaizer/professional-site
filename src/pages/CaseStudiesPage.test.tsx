@@ -4,6 +4,7 @@ import { MemoryRouter } from "react-router";
 import { describe, expect, it } from "vitest";
 import { routes } from "../app/routes.ts";
 import { caseStudies } from "../content/evidence-content.ts";
+import { professionalContent } from "../content/professional-content.ts";
 import { axe } from "../test/axe.ts";
 import type { CaseStudy } from "../types/evidence.ts";
 import CaseStudiesPage from "./CaseStudiesPage.tsx";
@@ -70,6 +71,8 @@ describe("CaseStudiesPage", () => {
 			"Problem",
 			"Role",
 			"Constraints",
+			"Relevant experience",
+			"Technologies",
 			"Decisions",
 			"Product / UX",
 			"App screens",
@@ -80,11 +83,6 @@ describe("CaseStudiesPage", () => {
 		const visuals = within(article).getByRole("region", {
 			name: "App screens",
 		});
-		expect(
-			within(visuals).getByText(
-				"These screenshots are from the Alfred app. The onboarding screens use Alfred’s earlier WhatNext name.",
-			),
-		).toBeInTheDocument();
 
 		for (const visual of caseStudy.visuals ?? []) {
 			expect(visual.alt).not.toBe("PLACEHOLDER");
@@ -94,6 +92,74 @@ describe("CaseStudiesPage", () => {
 			expect(within(visuals).getByText(visual.title)).toBeInTheDocument();
 			expect(within(visuals).getByText(visual.caption)).toBeInTheDocument();
 		}
+	});
+
+	it("does not include the UV Insect Trap in professional case studies", () => {
+		renderCaseStudiesPage();
+
+		expect(
+			screen.queryByRole("article", { name: "UV Insect Trap" }),
+		).not.toBeInTheDocument();
+	});
+
+	it("preserves technologies and links case studies to relevant experience", () => {
+		renderCaseStudiesPage();
+
+		for (const slug of [
+			"alfred-what-to-do-next",
+			"signal-vessel-list-template-administration",
+			"promotional-content-production-workflow",
+		]) {
+			const caseStudy = caseStudies.find((entry) => entry.slug === slug);
+			if (!caseStudy) {
+				throw new Error(`Expected case study ${slug} to be published.`);
+			}
+
+			const article = screen.getByRole("article", { name: caseStudy.title });
+			const experience = within(article).getByRole("region", {
+				name: "Relevant experience",
+			});
+
+			for (const experienceSlug of caseStudy.relatedExperienceSlugs ?? []) {
+				const entry = professionalContent.experience.find(
+					(candidate) => candidate.slug === experienceSlug,
+				);
+				if (!entry) {
+					throw new Error(`Missing experience entry for ${experienceSlug}.`);
+				}
+
+				expect(
+					within(experience).getByRole("link", {
+						name: `${entry.role} at ${entry.company}`,
+					}),
+				).toHaveAttribute("href", `${routes.experience}#${entry.slug}`);
+			}
+
+			const technologies = within(article).getByRole("region", {
+				name: "Technologies",
+			});
+			for (const technology of caseStudy.technologies ?? []) {
+				expect(within(technologies).getByText(technology)).toBeInTheDocument();
+			}
+		}
+	});
+
+	it("retains the qualified Gamesys outcome", () => {
+		renderCaseStudiesPage();
+
+		const caseStudy = caseStudies.find(
+			(entry) => entry.slug === "promotional-content-production-workflow",
+		);
+		if (!caseStudy) {
+			throw new Error("Expected the Gamesys case study to be published.");
+		}
+
+		const article = screen.getByRole("article", { name: caseStudy.title });
+		expect(
+			within(article).getByText(
+				"The reported production cycle for the promotional-content workflow fell from days to minutes.",
+			),
+		).toBeInTheDocument();
 	});
 
 	it("renders each explicit narrative section from a fixture", () => {

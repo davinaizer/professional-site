@@ -1,7 +1,7 @@
 ---
 createdAt: 2026-08-10
-updatedAt: 2026-09-19
-version: 1.9
+updatedAt: 2026-09-25
+version: 1.10
 status: active
 ---
 
@@ -56,19 +56,19 @@ Keep these boundaries shallow. Introduce new layers only when a current requirem
 
 `src/index.css` is the ordered CSS manifest. It declares the cascade order `reset`, `tokens`, `base`, `layout`, `components`, `pages`, `utilities`, and `overrides`, then imports each stylesheet into its assigned layer. `src/main.tsx` imports this manifest before the router so the emitted stylesheet order is deterministic.
 
-`src/styles/` owns reset rules, design tokens, document defaults, shell styling, and shared patterns. `src/pages/` owns route-specific stylesheets colocated with their page components; the manifest imports those files into the `pages` layer. Shared Projects and Case Studies evidence-list base structure lives in `src/styles/patterns.css`, while route-specific grid widths, modifiers, and cascade-sensitive responsive overrides remain with the pages.
+`src/styles/` owns reset rules, design tokens, document defaults, shell styling, and shared patterns. `src/pages/` owns route-specific stylesheets colocated with their page components; the manifest imports those files into the `pages` layer. Shared Experiments and Case Studies evidence-list base structure lives in `src/styles/patterns.css`, while route-specific grid widths, modifiers, and cascade-sensitive responsive overrides remain with the pages.
 
 Keep selectors page-prefixed when they belong to one route. Add a shared selector only after stable semantic reuse is demonstrated and its layer and responsive cascade boundaries are understood. Do not introduce a utility framework, CSS Modules, or a component styling abstraction without a concrete requirement.
 
 ## Navigation and rendering
 
-The root route renders the shared application shell and nested page routes through an outlet. The route configuration includes the implemented product areas, a Work index that links to Projects and Case Studies, and a catch-all not-found page.
+The root route renders the shared application shell and nested page routes through an outlet. The route configuration includes the implemented product areas, a Work index that links to professional Case Studies and independent Experiments, and a catch-all not-found page. Experiments is the route's user-facing name and route-constant key; it retains the existing `/projects` URL. The sitemap lists `/work`, `/case-studies`, and `/projects` as active evidence destinations.
 
-The shared shell provides a home-linked identity, direct routes to Experience, Work, and Resume, and a distinct Contact link. Projects and Case Studies remain independently addressable but are not primary navigation destinations. Home owns the professional summary and focus-area content. There is no separate Engineering area; engineering judgement is communicated through experience, projects, case studies, and the implementation itself. Use semantic links and document structure so navigation remains understandable and keyboard accessible. Prefer content that does not require unnecessary interaction to discover. Client-side routing is the current delivery architecture; progressive enhancement beyond semantic browser foundations remains subject to demonstrated product need and the review triggers in `docs/DECISIONS.md`.
+The shared shell provides a home-linked identity, direct routes to Experience, Work, and Resume, and a distinct Contact link. Experiments and Case Studies remain independently addressable but are not primary navigation destinations; Work is the chooser for both, and Home's “Beyond the work” section links to Experiments. Home owns the professional summary and focus-area content. There is no separate Engineering area; engineering judgement is communicated through experience, experiments, case studies, and the implementation itself. Use semantic links and document structure so navigation remains understandable and keyboard accessible. Prefer content that does not require unnecessary interaction to discover. Client-side routing is the current delivery architecture; progressive enhancement beyond semantic browser foundations remains subject to demonstrated product need and the review triggers in `docs/DECISIONS.md`.
 
 ## Content and data
 
-Current page content is colocated with route components. `src/content/professional.ts` owns the local TypeScript contract for the editorially approved professional projection: identity, professional summary, stable-slugged experience entries, claim references, resume access, and contact. `src/content/evidence.ts` owns the separate local TypeScript contract for manually curated projects, case studies, outcomes, and typed evidence references. Professional claims own one-way references to experience and supporting evidence; the model stores no reciprocal relationship arrays. Home composes core content and has no separate content model.
+Current page content is held in manually curated TypeScript modules. `src/content/professional-content.ts` owns the editorially approved professional projection: identity, professional summary, stable-slugged experience entries, claim references, resume access, and contact. `src/content/evidence-content.ts` owns projects used for independent experiments, professional case studies, outcomes, and typed evidence references. Project experiment narratives support optional visuals, contribution, decisions, and reflection; entries render only the sections they provide. Professional claims own one-way references to experience and supporting evidence; the model stores no reciprocal relationship arrays. Home composes core content and has no separate content model.
 
 Content remains static and manually curated in the site. Do not introduce a CMS, database, API, state-management library, additional content abstraction, or PKM integration until a current product requirement or repeated maintenance problem justifies it. The repository is public, so only approved site content may be committed: PKM source files and source-governance metadata must not be copied into, imported into, or stored in this repository, whether or not the website would render them. Relationship references are manually curated stable slugs with no runtime resolver. Site content must preserve evidence accuracy, contribution boundaries, confidentiality, chronology, and reuse requirements from `PRODUCT_REQUIREMENTS.md`.
 

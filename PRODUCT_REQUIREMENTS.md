@@ -1,7 +1,7 @@
 ---
 createdAt: 2026-08-07
-updatedAt: 2026-09-15
-version: 1.2
+updatedAt: 2026-09-25
+version: 1.3
 status: active
 ---
 
@@ -385,8 +385,9 @@ The first public release should contain only:
 
 - Home
 - Experience
-- Selected Projects
-- Case Studies
+- Work, linking to two distinct evidence areas:
+  - Case Studies for detailed professional evidence;
+  - Experiments for selected independent projects and builds.
 - Resume
 - Contact
 

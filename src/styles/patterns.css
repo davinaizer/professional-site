@@ -34,8 +34,8 @@
 	margin-block-start: var(--space-1);
 }
 
-/* Projects and case studies share the same evidence-list structure. */
-.projects__list,
+/* Experiments and case studies share the same evidence-list structure. */
+.experiments__list,
 .case-studies__list {
 	margin-block-start: var(--layout-section-gap);
 	padding-inline-start: 0;
@@ -44,51 +44,51 @@
 	list-style: none;
 }
 
-.projects__item,
+.experiments__item,
 .case-studies__item {
 	border-block-end: var(--border-width-default) solid var(--color-border-subtle);
 	padding-block: var(--space-6);
 }
 
-.projects__item + .projects__item,
+.experiments__item + .experiments__item,
 .case-studies__item + .case-studies__item {
 	margin-block-start: 0;
 }
 
-.projects__entry,
+.experiments__entry,
 .case-studies__entry {
 	display: grid;
 	column-gap: var(--space-8);
 }
 
-.projects__narrative,
-.projects__metadata,
+.experiments__narrative,
+.experiments__metadata,
 .case-studies__narrative,
 .case-studies__metadata {
 	min-inline-size: 0;
 }
 
-.projects__narrative > * + *,
-.projects__metadata > * + *,
+.experiments__narrative > * + *,
+.experiments__metadata > * + *,
 .case-studies__narrative > * + *,
 .case-studies__metadata > * + * {
 	margin-block-start: var(--space-4);
 }
 
-.projects__entry-header,
+.experiments__entry-header,
 .case-studies__entry-header {
 	display: flex;
 	flex-direction: column;
 	gap: var(--space-1);
 }
 
-.projects__entry-header > *,
+.experiments__entry-header > *,
 .case-studies__entry-header > * {
 	margin-block-start: 0;
 }
 
-.projects__label,
-.projects__detail h3,
+.experiments__label,
+.experiments__detail h3,
 .case-studies__label,
 .case-studies__detail h3 {
 	font-family: var(--font-family-mono);
@@ -99,7 +99,7 @@
 	text-transform: uppercase;
 }
 
-.projects__label,
+.experiments__label,
 .case-studies__label {
 	display: flex;
 	align-items: center;
@@ -107,7 +107,7 @@
 	color: var(--color-accent-soft);
 }
 
-.projects__label::before,
+.experiments__label::before,
 .case-studies__label::before {
 	content: "";
 	inline-size: var(--space-3);
@@ -115,32 +115,32 @@
 	background: var(--color-accent);
 }
 
-.projects__summary,
+.experiments__summary,
 .case-studies__summary {
 	font-size: var(--font-size-body-lg);
 	line-height: 1.45;
 }
 
-.projects__detail h3,
+.experiments__detail h3,
 .case-studies__detail h3 {
 	color: var(--color-text-secondary);
 	margin-block-end: var(--space-1);
 }
 
-.projects__detail p,
-.projects__detail li,
+.experiments__detail p,
+.experiments__detail li,
 .case-studies__detail p,
 .case-studies__detail li {
 	max-inline-size: var(--measure-content);
 }
 
 @media (max-width: 40rem) {
-	.projects__list,
+	.experiments__list,
 	.case-studies__list {
 		margin-block-start: var(--space-6);
 	}
 
-	.projects__item,
+	.experiments__item,
 	.case-studies__item {
 		padding-block: var(--space-4);
 	}

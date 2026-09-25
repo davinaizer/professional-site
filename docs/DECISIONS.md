@@ -1,12 +1,24 @@
 ---
 createdAt: 2026-08-07
-updatedAt: 2026-09-19
-version: 1.23
+updatedAt: 2026-09-25
+version: 1.24
 status: active
 order: ASC
 ---
 
 # Decisions
+
+## Keep professional Case Studies and independent Experiments as distinct Work destinations — 2026-09-25
+
+**Decision:** Keep `/work` as the evidence chooser and maintain two distinct areas: `/case-studies` for detailed professional evidence and `/projects` presented as Experiments for selected independent builds and prototypes. Keep `/projects` as the stable public URL while naming its route constant and page presentation `experiments`. Link to Experiments from Home's “Beyond the work” section. Keep the `Project` content type for Experiments, with optional visuals, role or contribution, decisions, and reflection so entries can use only the sections that fit. Preserve professional Project metadata and Experience links in their Case Studies before removing duplicate Project narratives.
+
+**Rationale:** Professional Case Studies and independent experiments have different evidence contexts. Keeping them separate helps visitors understand the distinction, avoids duplicated professional narratives, and gives personal prototypes room for observed details and unknowns without forcing them into the professional case-study structure. Reusing `/projects` avoids route churn while making the purpose of the destination clear.
+
+**Consequence:** Work remains the entry point to both areas; the shell's primary navigation remains unchanged. The sitemap retains `/work`, `/case-studies`, and `/projects`. Experiment entries remain manually curated Project records, and claims continue to own any evidentiary references rather than adding reciprocal relationships.
+
+**Review triggers:** Reconsider the two-area structure if repeated content maintenance demonstrates duplication, if independent experiments cannot be distinguished clearly from professional evidence, or if visitor evidence shows the Work chooser is unclear.
+
+**Supersedes:** The earlier planning proposal to present all Case Studies on `/work` as the only evidence area. That proposal remains historical; the approved two-area direction is recorded in `docs/plans/2026-09-23-consolidate-portfolio-evidence.md`.
 
 ## Use a central CSS import manifest for layered route-owned styles — 2026-09-19
 
@@ -21,6 +33,8 @@ order: ASC
 **Deferred:** CSS Modules, utility frameworks, dynamic stylesheet loading, and generated CSS manifests remain undefined until a demonstrated requirement justifies them.
 
 ## Extend the shared CSS pattern layer for evidence-list reuse — 2026-09-19
+
+**Status:** The shared evidence-list structure remains in use; Projects is now presented as Experiments under the 2026-09-25 two-area decision.
 
 **Decision:** Extend `src/styles/patterns.css` beyond the original four semantic patterns to own the verified base structure shared by the Projects and Case Studies evidence lists. Keep route-specific grid widths, content modifiers, list resets with cascade-sensitive overrides, and responsive modifiers in the colocated page stylesheets. Do not change the rendered DOM or introduce generic utility classes.
 
@@ -76,6 +90,8 @@ order: ASC
 
 ## Allocate Alfred: What To Do Next as the first case study — 2026-08-31
 
+**Status:** The case-study allocation remains current. The companion Alfred Selected Projects record was retired under “Keep professional Case Studies and independent Experiments as distinct Work destinations — 2026-09-25.”
+
 **Decision:** Allocate Alfred to the Case Studies area as **Alfred: What To Do Next**, using the stable slug `alfred-what-to-do-next`. Treat Alfred and the possible future name UpNext as the same project identity; UpNext is not used as the current public case-study name. Keep the existing `alfred` Selected Projects record unchanged as the shorter project projection. Beacon remains deferred.
 
 **Rationale:** The reviewed Alfred evidence provides the strongest current basis for one deeper narrative: clear product intent, mobile UX and implementation ownership, layered architecture, asynchronous recommendation integration, explicit decision states, and broad test coverage. The evidence also gives clear limits: the work is exploratory, and user validation, adoption, public launch, market success, and unsupported metrics are unavailable.
@@ -95,6 +111,8 @@ order: ASC
 **Review triggers:** Reconsider the fields if an approved case study cannot be represented clearly, repeated narrative changes create meaningful maintenance pressure, or a demonstrated product requirement requires a different content boundary. Any flexible block model, content source, or governance metadata proposal remains a separate decision.
 
 ## Select a small set of distinct evidence projects — 2026-08-24
+
+**Status:** Historical selection decision. The three professional Project records were retired after their useful metadata was preserved in Case Studies; see “Keep professional Case Studies and independent Experiments as distinct Work destinations — 2026-09-25.”
 
 **Decision:** Select three public-safe project narratives for the Selected Projects area: **Vessel List Template Administration**, **an internal content-production workflow**, and **Alfred**. Map them to the existing experience entries for Signal, Gamesys / Bally's, and the independent product venture / planned career break respectively. Use these narratives to represent distinct evidence dimensions: production product and frontend delivery; workflow-oriented product engineering and automation; and recent product-engineering ownership, architecture, and learning in an unfamiliar ecosystem.
 
@@ -131,6 +149,8 @@ order: ASC
 **Deferred at the time of this decision:** Evidence confidence, contribution-boundary, and confidentiality rules were left to a separate governance decision; claim content, relationship rendering, and PKM import or synchronisation remain deferred.
 
 ## Use project-owned presentation connections for selected-project context — 2026-08-31
+
+**Status:** The optional fields remain part of the Project content contract. Current professional evidence connections are rendered on the corresponding Case Studies under the 2026-09-25 two-area decision; the Project model remains for independent experiments.
 
 **Decision:** Store optional `relatedExperienceSlugs` and capability labels on manually curated `Project` records. Use stable `ExperienceEntry.slug` values for one-way navigation from selected projects to the experience timeline. Treat capabilities as a curated subset of the existing professional summary focus areas. These are presentation-level connections and do not replace `ProfessionalClaim` as the owner of evidentiary relationships.
 
@@ -251,6 +271,8 @@ order: ASC
 **Deferred:** Browser-level automated accessibility testing, visual regression testing, network mocking, and broad page-level coverage remain undefined until a demonstrated requirement exists.
 
 ## Use a centred primary navigation and Work evidence hub — 2026-08-11
+
+**Status:** Historical navigation decision. Its grouping of Projects and Case Studies is updated by “Keep professional Case Studies and independent Experiments as distinct Work destinations — 2026-09-25”; the Work chooser and stable `/projects` path remain.
 
 **Decision:** Use a shared header with a home-linked identity at the left, centred direct navigation to Experience, Work, and Resume, and a visually distinct Contact link at the right. Add a Work index route that groups the existing Projects and Case Studies routes. Preserve Projects and Case Studies as independently addressable routes without presenting them as primary-navigation items. The original Summary-route decision is superseded by “Consolidate Professional Summary into Home,” and the separate Engineering area is removed by “Remove the Engineering area and obsolete routes.”
 

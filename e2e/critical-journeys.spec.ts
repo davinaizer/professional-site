@@ -9,12 +9,40 @@ test("renders a durable route when opened directly", async ({ page }) => {
 		"aria-current",
 		"page",
 	);
+	await page.reload();
+	await expect(page.getByRole("heading", { name: "Work" })).toBeVisible();
+
+	await page.goto("/projects");
+	await expect(
+		page.getByRole("heading", { name: "Experiments" }),
+	).toBeVisible();
+	await page.reload();
+	await expect(
+		page.getByRole("heading", { name: "Experiments" }),
+	).toBeVisible();
+
+	await page.goto("/case-studies");
+	await expect(
+		page.getByRole("heading", { name: "Case Studies" }),
+	).toBeVisible();
+	await page.reload();
+	await expect(
+		page.getByRole("heading", { name: "Case Studies" }),
+	).toBeVisible();
 });
 
 test("navigates through the shell and Work routes", async ({ page }) => {
 	await page.goto("/");
+	await page
+		.getByRole("link", { name: "Explore my independent experiments" })
+		.click();
+	await expect(page).toHaveURL(/\/projects$/);
+	await expect(
+		page.getByRole("heading", { name: "Experiments" }),
+	).toBeVisible();
 
 	const primaryNavigation = page.getByRole("navigation", { name: "Primary" });
+	await page.goto("/");
 
 	await primaryNavigation.getByRole("link", { name: "Experience" }).click();
 	await expect(page).toHaveURL(/\/experience$/);
@@ -24,28 +52,34 @@ test("navigates through the shell and Work routes", async ({ page }) => {
 	await expect(page).toHaveURL(/\/work$/);
 	await expect(page.getByRole("heading", { name: "Work" })).toBeVisible();
 
-	await page.getByRole("link", { name: "Explore projects" }).click();
+	await page.getByRole("link", { name: "Explore experiments" }).click();
 	await expect(page).toHaveURL(/\/projects$/);
 	await expect(
-		page.getByRole("heading", { name: "Selected Projects" }),
+		page.getByRole("heading", { name: "Experiments" }),
 	).toBeVisible();
 	await expect(
 		page.getByRole("heading", {
-			name: "Vessel List Template Administration",
+			name: "UV Insect Trap",
 		}),
 	).toBeVisible();
-
-	await page
-		.getByRole("link", {
-			name: "Senior Frontend Software Engineer at The Signal Group",
-		})
-		.click();
-	await expect(page).toHaveURL(
-		/\/experience#signal-group-senior-frontend-software-engineer-2023-2024$/,
-	);
+	await page.reload();
 	await expect(
-		page.locator("#signal-group-senior-frontend-software-engineer-2023-2024"),
+		page.getByRole("heading", { name: "UV Insect Trap" }),
 	).toBeVisible();
+
+	await page.setViewportSize({ width: 320, height: 900 });
+	const experimentVisuals = page.getByRole("region", {
+		name: "The final prototype and CAD",
+	});
+	await expect(experimentVisuals).toBeVisible();
+	await expect(experimentVisuals.getByRole("img")).toHaveCount(3);
+	await expect(experimentVisuals.getByRole("img").first()).toBeVisible();
+	const hasExperimentOverflow = await page.evaluate(
+		() =>
+			document.documentElement.scrollWidth >
+			document.documentElement.clientWidth,
+	);
+	expect(hasExperimentOverflow).toBe(false);
 
 	await page.goto("/work");
 	await page.getByRole("link", { name: "Read case studies" }).click();

@@ -159,7 +159,7 @@
 	margin-block-start: var(--space-2);
 }
 
-.home__highlight > a {
+.home a {
 	display: inline-block;
 	font-family: var(--font-family-mono);
 	font-size: var(--font-size-label);

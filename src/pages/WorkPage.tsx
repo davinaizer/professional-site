@@ -16,18 +16,6 @@ function WorkPage() {
 			<section aria-label="Explore the evidence" className="work__areas">
 				<ul className="work__links">
 					<li className="work__link">
-						<p className="work__label">Project narratives</p>
-						<h2>Selected projects</h2>
-						<p className="work__description">
-							A closer look at a few projects I’ve worked on and the problems
-							they were meant to solve.
-						</p>
-						<Link className="work__action" to={routes.projects}>
-							Explore projects
-						</Link>
-					</li>
-
-					<li className="work__link">
 						<p className="work__label">Detailed analysis</p>
 						<h2>Case studies</h2>
 						<p className="work__description">
@@ -36,6 +24,18 @@ function WorkPage() {
 						</p>
 						<Link className="work__action" to={routes.caseStudies}>
 							Read case studies
+						</Link>
+					</li>
+
+					<li className="work__link">
+						<p className="work__label">Independent projects</p>
+						<h2>Experiments</h2>
+						<p className="work__description">
+							Prototypes and builds I’ve explored independently, with notes on
+							what I tried, observed, and would change.
+						</p>
+						<Link className="work__action" to={routes.experiments}>
+							Explore experiments
 						</Link>
 					</li>
 				</ul>

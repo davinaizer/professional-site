@@ -28,8 +28,8 @@ describe("WorkPage", () => {
 		const links = within(evidenceAreas).getAllByRole("link");
 
 		expect(links).toHaveLength(2);
-		expect(links[0]).toHaveAttribute("href", routes.projects);
-		expect(links[1]).toHaveAttribute("href", routes.caseStudies);
+		expect(links[0]).toHaveAttribute("href", routes.caseStudies);
+		expect(links[1]).toHaveAttribute("href", routes.experiments);
 	});
 
 	it("has no detectable accessibility violations", async () => {
