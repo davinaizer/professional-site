@@ -21,10 +21,6 @@
 	font-size: var(--font-size-caption);
 }
 
-.experiments__detail ul {
-	padding-inline-start: var(--space-3);
-}
-
 .experiments__outcome {
 	border-inline-start: var(--border-width-accent) solid var(--color-accent);
 	padding-inline-start: var(--space-2);

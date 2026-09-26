@@ -261,6 +261,6 @@ export const projects: readonly Project[] = [
 		],
 		reflection:
 			"From my notes and recollection, I went through at least seven versions. Dust build-up was manageable, but cleaning meant removing the top grille. The wire between the light tower and body made this awkward and felt fragile. Each change moved the problem somewhere else: a bigger fan improved suction but created a whine, and a funnel restricted airflow. If I made another one, I would add a connector so the top is easier to remove.",
-		technologies: ["Onshape", "PLA 3D printing", "Bambu Lab A1"],
+		technologies: ["CAD", "OnShape", "3D Printing"],
 	},
 ];

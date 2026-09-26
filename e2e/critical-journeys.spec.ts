@@ -31,6 +31,27 @@ test("renders a durable route when opened directly", async ({ page }) => {
 	).toBeVisible();
 });
 
+test("keeps the Case Studies narrative flowing beside metadata", async ({
+	page,
+}) => {
+	await page.setViewportSize({ width: 1024, height: 900 });
+	await page.goto("/case-studies");
+
+	const article = page.getByRole("article", {
+		name: "Alfred: What To Do Next",
+	});
+	const decisions = article.getByRole("region", { name: "Decisions" });
+	const metadata = article.locator(".case-studies__metadata");
+	const decisionsBox = await decisions.boundingBox();
+	const metadataBox = await metadata.boundingBox();
+
+	if (!decisionsBox || !metadataBox) {
+		throw new Error("Expected Case Studies layout boxes to be measurable.");
+	}
+
+	expect(decisionsBox.y).toBeLessThan(metadataBox.y + metadataBox.height);
+});
+
 test("navigates through the shell and Work routes", async ({ page }) => {
 	await page.goto("/");
 	await page

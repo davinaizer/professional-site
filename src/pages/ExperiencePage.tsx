@@ -40,11 +40,11 @@ function ExperienceTimeline({
 							{entry.contributions?.length ? (
 								<section className="experience__detail">
 									<h3>Selected contributions</h3>
-									<ol className="experience__contributions">
+									<ul className="experience__contributions">
 										{entry.contributions.map((contribution) => (
 											<li key={contribution}>{contribution}</li>
 										))}
-									</ol>
+									</ul>
 								</section>
 							) : null}
 
@@ -67,7 +67,7 @@ function ExperienceTimeline({
 }
 
 function ExperiencePage() {
-	const { experience, earlierCareer } = professionalContent;
+	const { experience } = professionalContent;
 
 	return (
 		<section className="experience page-section">
@@ -81,7 +81,7 @@ function ExperiencePage() {
 
 			<ExperienceTimeline entries={experience} />
 
-			<section
+			{/*<section
 				aria-labelledby="experience-earlier-career-heading"
 				className="experience__earlier-career"
 			>
@@ -96,7 +96,7 @@ function ExperiencePage() {
 					</p>
 				</header>
 				<ExperienceTimeline entries={earlierCareer} earlier />
-			</section>
+			</section>*/}
 
 			<ContextualContinuation label="Explore selected work" to={routes.work} />
 		</section>

@@ -1,7 +1,7 @@
 ---
 createdAt: 2026-08-07
-updatedAt: 2026-09-25
-version: 1.44
+updatedAt: 2026-09-26
+version: 1.45
 status: active
 ---
 
@@ -327,6 +327,12 @@ Acceptance criteria:
 - visitors can recover with one obvious action;
 - the response remains concise, accessible, and responsive; and
 - the route introduces no special-case shell or dependency.
+
+### Completed developer-directed Case Studies layout fix
+
+- [x] Keep the Case Studies narrative in one grid column so metadata height does not create a gap before later sections.
+- [x] Add focused component and browser regression coverage; pass `pnpm validate`, `pnpm build`, and `pnpm test:e2e`.
+- [x] Complete formal review and close the task with `PASS`.
 
 ### Completed developer-directed navigation fix
 

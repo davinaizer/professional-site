@@ -69,16 +69,16 @@ describe("CaseStudiesPage", () => {
 		).toEqual([
 			"Context",
 			"Problem",
-			"Role",
-			"Constraints",
-			"Relevant experience",
-			"Technologies",
 			"Decisions",
 			"Product / UX",
 			"App screens",
 			"Engineering",
 			"Outcomes",
 			"Reflection",
+			"Role",
+			"Constraints",
+			"Relevant experience",
+			"Technologies",
 		]);
 		const visuals = within(article).getByRole("region", {
 			name: "App screens",

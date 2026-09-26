@@ -54,6 +54,71 @@ function CaseStudiesPage({
 										<h3 id={`${caseStudy.slug}-problem-heading`}>Problem</h3>
 										<p>{caseStudy.problem}</p>
 									</section>
+									<section
+										aria-labelledby={`${caseStudy.slug}-decisions-heading`}
+										className="case-studies__detail case-studies__decisions"
+									>
+										<h3 id={`${caseStudy.slug}-decisions-heading`}>
+											Decisions
+										</h3>
+										<ul>
+											{caseStudy.decisions.map((decision) => (
+												<li key={decision}>{decision}</li>
+											))}
+										</ul>
+									</section>
+
+									<section
+										aria-labelledby={`${caseStudy.slug}-product-ux-heading`}
+										className="case-studies__detail"
+									>
+										<h3 id={`${caseStudy.slug}-product-ux-heading`}>
+											Product / UX
+										</h3>
+										<p>{caseStudy.productAndUx}</p>
+									</section>
+
+									{caseStudy.visuals?.length ? (
+										<CaseStudyGallery
+											slug={caseStudy.slug}
+											visuals={caseStudy.visuals}
+										/>
+									) : null}
+
+									<section
+										aria-labelledby={`${caseStudy.slug}-engineering-heading`}
+										className="case-studies__detail"
+									>
+										<h3 id={`${caseStudy.slug}-engineering-heading`}>
+											Engineering
+										</h3>
+										<p>{caseStudy.engineering}</p>
+									</section>
+
+									<section
+										aria-labelledby={`${caseStudy.slug}-outcomes-heading`}
+										className="case-studies__detail case-studies__outcomes"
+									>
+										<h3 id={`${caseStudy.slug}-outcomes-heading`}>Outcomes</h3>
+										<ul>
+											{caseStudy.outcomes.map((outcome) => (
+												<li key={outcome.statement}>
+													{outcome.statement}
+													{outcome.detail ? ` ${outcome.detail}` : null}
+												</li>
+											))}
+										</ul>
+									</section>
+
+									<section
+										aria-labelledby={`${caseStudy.slug}-reflection-heading`}
+										className="case-studies__detail"
+									>
+										<h3 id={`${caseStudy.slug}-reflection-heading`}>
+											Reflection
+										</h3>
+										<p>{caseStudy.reflection}</p>
+									</section>
 								</div>
 
 								<aside className="case-studies__metadata">
@@ -127,74 +192,6 @@ function CaseStudiesPage({
 										</section>
 									) : null}
 								</aside>
-
-								<div className="case-studies__narrative">
-									<section
-										aria-labelledby={`${caseStudy.slug}-decisions-heading`}
-										className="case-studies__detail case-studies__decisions"
-									>
-										<h3 id={`${caseStudy.slug}-decisions-heading`}>
-											Decisions
-										</h3>
-										<ul>
-											{caseStudy.decisions.map((decision) => (
-												<li key={decision}>{decision}</li>
-											))}
-										</ul>
-									</section>
-
-									<section
-										aria-labelledby={`${caseStudy.slug}-product-ux-heading`}
-										className="case-studies__detail"
-									>
-										<h3 id={`${caseStudy.slug}-product-ux-heading`}>
-											Product / UX
-										</h3>
-										<p>{caseStudy.productAndUx}</p>
-									</section>
-
-									{caseStudy.visuals?.length ? (
-										<CaseStudyGallery
-											slug={caseStudy.slug}
-											visuals={caseStudy.visuals}
-										/>
-									) : null}
-
-									<section
-										aria-labelledby={`${caseStudy.slug}-engineering-heading`}
-										className="case-studies__detail"
-									>
-										<h3 id={`${caseStudy.slug}-engineering-heading`}>
-											Engineering
-										</h3>
-										<p>{caseStudy.engineering}</p>
-									</section>
-
-									<section
-										aria-labelledby={`${caseStudy.slug}-outcomes-heading`}
-										className="case-studies__detail case-studies__outcomes"
-									>
-										<h3 id={`${caseStudy.slug}-outcomes-heading`}>Outcomes</h3>
-										<ul>
-											{caseStudy.outcomes.map((outcome) => (
-												<li key={outcome.statement}>
-													{outcome.statement}
-													{outcome.detail ? ` ${outcome.detail}` : null}
-												</li>
-											))}
-										</ul>
-									</section>
-
-									<section
-										aria-labelledby={`${caseStudy.slug}-reflection-heading`}
-										className="case-studies__detail"
-									>
-										<h3 id={`${caseStudy.slug}-reflection-heading`}>
-											Reflection
-										</h3>
-										<p>{caseStudy.reflection}</p>
-									</section>
-								</div>
 							</article>
 						</li>
 					))}
