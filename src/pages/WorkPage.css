@@ -5,7 +5,6 @@
 }
 
 .work__links {
-	margin-block-start: 0;
 	padding-inline-start: 0;
 	list-style: none;
 }
@@ -25,10 +24,6 @@
 	inline-size: var(--space-3);
 	block-size: var(--size-marker);
 	background: var(--color-accent);
-}
-
-.work__link + .work__link {
-	margin-block-start: 0;
 }
 
 .work__label,

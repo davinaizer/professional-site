@@ -21,6 +21,12 @@ body {
 	line-height: var(--line-height-body);
 }
 
+@supports (height: 100dvh) {
+	body {
+		min-block-size: var(--layout-viewport-min-dynamic);
+	}
+}
+
 main {
 	max-inline-size: var(--layout-container-max);
 	margin-inline: auto;
@@ -73,17 +79,13 @@ p {
 	max-inline-size: var(--measure-content);
 }
 
-section > * + * {
+.page-section > * + * {
 	margin-block-start: var(--space-3);
 }
 
 ul,
 ol {
 	padding-inline-start: var(--space-3);
-}
-
-li + li {
-	margin-block-start: var(--space-1);
 }
 
 small {
@@ -93,6 +95,12 @@ small {
 @media (prefers-reduced-motion: reduce) {
 	a {
 		transition-duration: 0s;
+	}
+}
+
+@media (forced-colors: active) {
+	:focus-visible {
+		outline-color: Highlight;
 	}
 }
 

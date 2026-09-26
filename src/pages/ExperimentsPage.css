@@ -52,10 +52,6 @@
 	padding: var(--space-tag-block) var(--space-1);
 }
 
-.experiments__tags li + li {
-	margin-block-start: 0;
-}
-
 .experiments__links li + li {
 	margin-block-start: var(--space-1);
 }

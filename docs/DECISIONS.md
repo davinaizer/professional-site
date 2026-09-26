@@ -22,7 +22,7 @@ order: ASC
 
 ## Use a central CSS import manifest for layered route-owned styles — 2026-09-19
 
-**Decision:** Keep route-owned stylesheet files colocated with their route components in `src/pages/`, using matching filenames and page-prefixed selectors. Import those files through `src/index.css` with explicit `@layer pages` assignments instead of direct component imports. Keep `src/index.css` as the ordered manifest for all static CSS so reset, tokens, shared styles, route styles, utilities, and overrides have a deterministic cascade order. This supersedes the direct component import and non-registry portions of the 2026-08-14 route-owned CSS decision.
+**Decision:** Keep route-owned stylesheet files colocated with their route components in `src/pages/`, using matching filenames and page-prefixed selectors. Import those files through `src/index.css` with explicit `@layer pages` assignments instead of direct component imports. Keep `src/index.css` as the ordered manifest for all static CSS so reset, tokens, shared styles, and route styles have a deterministic cascade order. This supersedes the direct component import and non-registry portions of the 2026-08-14 route-owned CSS decision.
 
 **Rationale:** Explicit cascade layers require a stable stylesheet import boundary. A central manifest makes the layer order visible and deterministic while preserving file ownership and route-level discoverability. The current application statically loads all route modules, so moving CSS imports into the manifest does not introduce a demonstrated loading or code-splitting cost. This avoids CSS Modules, a dependency, or a broader styling abstraction.
 

@@ -61,10 +61,6 @@
 	list-style: none;
 }
 
-.primary-navigation li + li {
-	margin-block-start: 0;
-}
-
 .primary-navigation a {
 	display: inline-block;
 	border-block-end: var(--border-width-default) solid transparent;
@@ -120,7 +116,6 @@
 	background: transparent;
 	color: var(--color-text-secondary);
 	cursor: pointer;
-	font: inherit;
 	font-size: var(--font-size-caption);
 	line-height: var(--line-height-label);
 	padding: var(--space-1) 0;
@@ -138,10 +133,6 @@
 	gap: var(--space-1);
 	padding-inline-start: 0;
 	list-style: none;
-}
-
-.site-footer__links li + li {
-	margin-block-start: 0;
 }
 
 .site-footer__links a {

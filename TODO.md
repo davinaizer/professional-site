@@ -376,7 +376,9 @@ Evidence: `docs/evidence/2026-09-24-production-layout-review.md`.
 - [x] Verify production focus visibility and colour contrast in real browsers.
 
 Evidence: `docs/evidence/2026-09-24-production-focus-contrast-review.md`.
-- [ ] Confirm whether externally hosted Google Fonts remain acceptable for production reliability, privacy, and rendering performance.
+- [x] Review and implement the CSS audit remediation plan: `docs/plans/2026-09-26-css-audit-remediation.md`.
+
+Evidence: `docs/plans/2026-09-26-css-audit-remediation.md`.
 
 ---
 

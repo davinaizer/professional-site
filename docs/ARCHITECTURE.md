@@ -54,7 +54,7 @@ Keep these boundaries shallow. Introduce new layers only when a current requirem
 
 ## Styling architecture
 
-`src/index.css` is the ordered CSS manifest. It declares the cascade order `reset`, `tokens`, `base`, `layout`, `components`, `pages`, `utilities`, and `overrides`, then imports each stylesheet into its assigned layer. `src/main.tsx` imports this manifest before the router so the emitted stylesheet order is deterministic.
+`src/index.css` is the ordered CSS manifest. It declares the cascade order `reset`, `tokens`, `base`, `layout`, `components`, and `pages`, then imports each stylesheet into its assigned layer. `src/main.tsx` imports this manifest before the router so the emitted stylesheet order is deterministic.
 
 `src/styles/` owns reset rules, design tokens, document defaults, shell styling, and shared patterns. `src/pages/` owns route-specific stylesheets colocated with their page components; the manifest imports those files into the `pages` layer. Shared Experiments and Case Studies evidence-list base structure lives in `src/styles/patterns.css`, while route-specific grid widths, modifiers, and cascade-sensitive responsive overrides remain with the pages.
 

@@ -50,11 +50,6 @@
 	padding-block: var(--space-6);
 }
 
-.experiments__item + .experiments__item,
-.case-studies__item + .case-studies__item {
-	margin-block-start: 0;
-}
-
 .experiments__entry,
 .case-studies__entry {
 	display: grid;
@@ -80,11 +75,6 @@
 	display: flex;
 	flex-direction: column;
 	gap: var(--space-1);
-}
-
-.experiments__entry-header > *,
-.case-studies__entry-header > * {
-	margin-block-start: 0;
 }
 
 .experiments__label,
@@ -132,6 +122,12 @@
 .case-studies__detail p,
 .case-studies__detail li {
 	max-inline-size: var(--measure-content);
+}
+
+.experiments__detail > ul:not(.experiments__tags) > li + li,
+.case-studies__detail > ul:not(.case-studies__tags) > li + li,
+.experience__contributions > li + li {
+	margin-block-start: var(--space-1);
 }
 
 @media (max-width: 40rem) {
@@ -226,7 +222,6 @@
 	background: transparent;
 	color: var(--color-text-primary);
 	cursor: pointer;
-	font: inherit;
 	padding: var(--space-1) var(--space-2);
 }
 
@@ -249,7 +244,6 @@
 @media (max-width: 40rem) {
 	.analytics-settings__dialog {
 		inline-size: calc(100vw - 2rem);
-		max-block-size: calc(100dvh - 2rem);
 		padding: var(--space-2);
 	}
 
