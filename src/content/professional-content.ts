@@ -199,14 +199,14 @@ export const professionalContent: ProfessionalContent = {
 			technologies: [],
 		},
 		{
-			slug: "unbox-learning-experience-co-founder-technical-lead-2009-2017",
-			company: "UNBOX Learning Experience",
+			slug: "unbox-design-studio-co-founder-technical-lead-2009-2017",
+			company: "UNBOX Design Studio",
 			role: "Co-founder & Frontend Developer",
 			startDate: "10/2009",
 			endDate: "03/2017",
 			location: "Brazil",
 			responsibilities: [
-				"Co-founded a digital learning company developing e-learning platforms, Learning Management Systems (LMS) and interactive educational products for Fortune 500 and global enterprise clients, including Volvo Brasil, Grupo Boticário, MetLife, HSBC and Electrolux. Worked across product discovery, solution design, technical leadership, frontend development and client delivery while coordinating a multidisciplinary team of designers and developers.",
+				"Co-founded a technology and design studio delivering digital learning platforms, Learning Management Systems (LMS), and interactive educational products for Fortune 500 and global enterprise clients, including Volvo Brasil, Grupo Boticário, MetLife, HSBC, and Electrolux. Worked across product discovery, solution design, technical leadership, frontend development, and client delivery as part of a founding team comprising a computer engineer, a UX designer, and a graphic designer.",
 			],
 			contributions: [
 				"Worked directly with clients, designers and instructional specialists to translate business and learning requirements into practical software solutions.",
